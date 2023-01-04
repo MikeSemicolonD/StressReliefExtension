@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Screen Shake Stress Reliever",
+  "description": "*Desktop Only* Adds physics to HTML objects in the current tab when the screen is shaken, allowing you to throw objects. When your stress has finally subsided you can reset the page back to it's original state.",
+  "version": "1.0",
+  "permissions": [
+    "accelerometer"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
