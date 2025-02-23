@@ -1,15 +1,25 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Screen Shake Stress Reliever",
-  "description": "*Desktop Only* Adds physics to HTML objects in the current tab when the screen is shaken, allowing you to throw objects. When your stress has finally subsided you can reset the page back to it's original state.",
+  "author": "Michael Frye",
+  "description": "Adds physics to HTML elements in the current tab for fun.",
   "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Toggle Physics",
+    "default_popup": "settings.html"
+  },
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["*"],
-      "js": ["content.js"]
+      "matches": ["<all_urls>"],
+      "js": ["matter.min.js", "content.js"],
+      "css": ["styles.css"]
     }
   ]
 }

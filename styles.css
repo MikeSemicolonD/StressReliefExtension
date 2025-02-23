@@ -1,0 +1,96 @@
+.physics-enabled {
+    cursor: grab !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    pointer-events: none !important;
+}
+
+/* When physics is enabled, make the body unselectable but keep pointer events */
+body.physics-mode {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+  
+.physics-enabled:active {
+    cursor: grabbing !important;
+}
+
+/* Popup Styles */
+.settings-container {
+    width: 300px;
+    padding: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+  
+.setting-group {
+  margin-bottom: 16px;
+}
+
+.setting-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.setting-value {
+  display: inline-block;
+  width: 50px;
+  margin-left: 8px;
+}
+
+.slider {
+  width: 200px;
+}
+
+.toggle-button {
+  width: 100%;
+  padding: 8px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.toggle-button.enabled {
+  background: #f44336;
+}
+
+.toggle-button.enabled:hover {
+  background: #d32f2f;
+}
+
+.toggle-button.disabled {
+  background: #4CAF50;
+}
+
+.toggle-button.disabled:hover {
+  background: #45a049;
+}
+
+.reset-button {
+    width: 100%;
+    padding: 8px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+  
+.reset-button:hover {
+    background: #d32f2f;
+}
+  
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}

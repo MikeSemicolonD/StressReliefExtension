@@ -1,4 +1,8 @@
-var mouseDownPos = {x: 0, y: 0};
+chrome.action.onClicked.addListener((tab) => {
+  chrome.tabs.sendMessage(tab.id, { action: "togglePhysics" });
+});
+
+/*var mouseDownPos = {x: 0, y: 0};
 
 var mousePositions = [];
 
@@ -7,13 +11,67 @@ var shakeTimer = null;
 const shakeCheckTimeMilliseconds = 50;
 const maxShakeThreshold = 50;
 
-
-
 window.addEventListener("mousedown", handleMouseDown);
 window.addEventListener("mouseup", handleMouseUp);
 window.addEventListener("mousemove", handleMouseMove);
 
+// Listen for messages from the background script
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  // Check if the message is a shake event
+  if (message.type == "shake") {
 
+    if(!usingPhysics) {
+
+        // Count to 5 shakes before Initializing
+        if(currentShakeCount < maxShakeCount) {
+    
+            if(resetShakeCountTimer != null) {
+                clearInterval(resetShakeCountTimer);
+                resetShakeCountTimer = null;
+            }
+    
+            resetShakeCountTimer = setInterval(resetShakeCount, resetShakeCountTimeMilliseconds);
+    
+            currentShakeCount++;
+    
+            return;
+        }
+        else
+        {
+            resetShakeCount();
+        }
+
+        // Add physics to the HTML objects on the page
+        initializeWorld();
+    }
+
+    if(usingPhysics) {
+        // Add force relative to mouse velocity
+        addForceToAllObjects(message.velocityX, message.velocityY);
+    }
+  }
+});
+
+// Add a listener for the chrome.runtime.onConnect event
+chrome.runtime.onConnect.addListener(function(port) {
+  // Check the name of the port
+  if (port.name == "popup") {
+    // Create a port to communicate with the pop-up
+    var popupPort = port;
+
+    // Add a listener for the message event
+    popupPort.onMessage.addListener(function(message) {
+      // Check the type of the message
+      if (message.type == "get-variables") {
+        // Send the current values of the global variables to the pop-up
+        popupPort.postMessage({ type: "variables", gravity: gravity, mass: mass });
+      } else if (message.type == "set-variables") {
+        // Update the global variables with the values from the pop-up
+        gravity = message.gravity;
+        mass = message.mass;
+      }});
+    }
+  });
 
 function handleMouseUp(event) {
     // Set the dragging variable to false
@@ -66,34 +124,12 @@ function handleMouseMove(event) {
       }
 }
 
-function checkForShake() {
 
-    // Calculate the average velocity of the mouse over the last few positions
-    var totalVelocity = 0;
-    var totalXVelocity = 0;
-    var totalYVelocity = 0;
+function resetShakeCount() {
 
-    for (var i = 1; i < mousePositions.length; i++) {
-      var xVelocity = mousePositions[i].x - mousePositions[i - 1].x;
-      var yVelocity = mousePositions[i].y - mousePositions[i - 1].y;
+    currentShakeCount = 0;
 
-      totalXVelocity += xVelocity;
-      totalYVelocity += yVelocity;
-
-      totalVelocity += Math.sqrt(Math.pow(xVelocity, 2) + Math.pow(yVelocity, 2));
-    }
-
-    var averageVelocity = totalVelocity / mousePositions.length;
-
-    var averageXVelocity = totalXVelocity / mousePositions.length;
-    var averageYVelocity = totalYVelocity / mousePositions.length;
-  
-    // If the average velocity is above a certain threshold, send the shake message
-    if (averageVelocity > maxShakeThreshold) {
-
-      // Send a message to the content script
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {type: "shake", velocityX: averageXVelocity, averageYVelocity: velocityY }, function(response) {});
-      });
-    }
+    clearInterval(resetShakeCountTimer);
+    resetShakeCountTimer = null;
 }
+*/
