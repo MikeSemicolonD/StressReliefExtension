@@ -1,5 +1,6 @@
 let engine, render, runner, mouse, world, isPhysicsEnabled = false;
 let bodies = new Map();
+let originalStyles = new Map(); // Store original inline styles
 let shakeDetector = {
   lastMouseX: 0,
   lastMouseY: 0,
@@ -92,14 +93,17 @@ function initPhysics() {
 
 function createPhysicsBodies() {
   const elements = document.querySelectorAll('div, p, img, button');
-  
+
   elements.forEach(element => {
     if (!bodies.has(element)) {
       const rect = element.getBoundingClientRect();
-      
+
       if (rect.width < 10 || rect.height < 10 || !element.offsetParent) {
         return;
       }
+
+      // Save original inline style attribute
+      originalStyles.set(element, element.getAttribute('style') || '');
 
       const body = Matter.Bodies.rectangle(
         rect.x + rect.width / 2,
@@ -178,18 +182,23 @@ function togglePhysics() {
     document.addEventListener('mousedown', handleMouseDown, true);
   } else {
     bodies.forEach((body, element) => {
-      element.style.position = '';
-      element.style.left = '';
-      element.style.top = '';
-      element.style.transform = '';
-      element.style.zIndex = '';
+      // Restore original inline style attribute
+      const originalStyle = originalStyles.get(element);
+      if (originalStyle !== undefined) {
+        if (originalStyle === '') {
+          element.removeAttribute('style');
+        } else {
+          element.setAttribute('style', originalStyle);
+        }
+      }
       element.classList.remove('physics-enabled');
     });
 
     Matter.World.clear(world);
     bodies.clear();
+    originalStyles.clear(); // Clear saved styles
     document.body.classList.remove('physics-mode');
-    
+
     Matter.Render.stop(render);
     Matter.Runner.stop(runner);
 
@@ -225,15 +234,29 @@ function handleMouseDown(e) {
 
 function updatePhysicsSettings(newSettings) {
   Object.assign(settings, newSettings);
-  
+
   if (world) {
     world.gravity.y = settings.gravity;
   }
-  
+
   if (isPhysicsEnabled) {
+    // Restore elements before re-creating bodies
+    bodies.forEach((_body, element) => {
+      const originalStyle = originalStyles.get(element);
+      if (originalStyle !== undefined) {
+        if (originalStyle === '') {
+          element.removeAttribute('style');
+        } else {
+          element.setAttribute('style', originalStyle);
+        }
+      }
+      element.classList.remove('physics-enabled');
+    });
+
     // Re-create bodies with new settings
     Matter.World.clear(world);
     bodies.clear();
+    originalStyles.clear();
     createPhysicsBodies();
     enableDragging();
   }
