@@ -36,63 +36,83 @@ function initPhysics() {
   world = engine.world;
   world.gravity.y = settings.gravity;
 
-  render = Matter.Render.create({
-    element: document.body,
-    engine: engine,
-    options: {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      wireframes: false,
-      background: 'transparent'
-    }
+  // Create a hidden canvas just for mouse interaction
+  // We don't use Matter.Render because we're positioning DOM elements ourselves
+  const canvas = document.createElement('canvas');
+
+  // CRITICAL: Canvas pixel dimensions must match CSS dimensions exactly
+  // Otherwise mouse coordinates will be scaled incorrectly
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = `${window.innerWidth}px`;  // Explicit pixels, not percentage
+  canvas.style.height = `${window.innerHeight}px`; // Explicit pixels, not percentage
+  canvas.style.pointerEvents = 'auto';
+  canvas.style.zIndex = '999998';
+  canvas.style.opacity = '0'; // Invisible canvas just for mouse events
+  document.body.appendChild(canvas);
+
+  // Store canvas reference for cleanup
+  render = { canvas: canvas };
+
+  // Run the physics engine with corrected settings
+  runner = Matter.Runner.create({
+    isFixed: true,  // Use fixed timestep for stability
+    delta: 1000 / 60,  // 60 FPS
+    maxUpdates: 10,  // Limit updates per frame to prevent warning
+    maxFrameTime: 1000 / 30  // Performance budget: ~30 FPS minimum
   });
-  render.canvas.style.display = 'none';
+  Matter.Runner.run(runner, engine);
 
-  //Matter.Engine.run(engine);
-  Matter.Render.run(render);
-
-  runner = Matter.Runner.create()
-  Matter.Runner.run(runner,engine);
-
+  const wallThickness = 500; // Thick walls to prevent escape
   const wallOptions = {
     isStatic: true,
     render: { visible: false }
   };
 
-  Matter.World.add(world, [
+  // Store wall bodies for potential updates on resize
+  const walls = [
+    // Bottom wall
     Matter.Bodies.rectangle(
       window.innerWidth / 2,
-      window.innerHeight + 50,
-      window.innerWidth,
-      100,
+      window.innerHeight + wallThickness / 2,
+      window.innerWidth + wallThickness * 2,
+      wallThickness,
       wallOptions
     ),
+    // Top wall
     Matter.Bodies.rectangle(
       window.innerWidth / 2,
-      -50,
-      window.innerWidth,
-      100,
+      -wallThickness / 2,
+      window.innerWidth + wallThickness * 2,
+      wallThickness,
       wallOptions
     ),
+    // Left wall
     Matter.Bodies.rectangle(
-      -50,
+      -wallThickness / 2,
       window.innerHeight / 2,
-      100,
-      window.innerHeight,
+      wallThickness,
+      window.innerHeight + wallThickness * 2,
       wallOptions
     ),
+    // Right wall
     Matter.Bodies.rectangle(
-      window.innerWidth + 50,
+      window.innerWidth + wallThickness / 2,
       window.innerHeight / 2,
-      100,
-      window.innerHeight,
+      wallThickness,
+      window.innerHeight + wallThickness * 2,
       wallOptions
     )
-  ]);
+  ];
+
+  Matter.World.add(world, walls);
 }
 
 function createPhysicsBodies() {
-  const elements = document.querySelectorAll('div, p, img, button');
+  const elements = document.querySelectorAll('div, p, img, button, a, span, h1, h2, h3, h4, h5, h6, li');
 
   elements.forEach(element => {
     if (!bodies.has(element)) {
@@ -142,10 +162,9 @@ function updateElements() {
 }
 
 function enableDragging() {
-  mouse = Matter.Mouse.Create(render.canvas)
+  mouse = Matter.Mouse.create(render.canvas);
   let mouseConstraint = Matter.MouseConstraint.create(engine, {
     mouse: mouse,
-    element: document.body,
     constraint: {
       stiffness: settings.stiffness,
       render: {
@@ -155,6 +174,8 @@ function enableDragging() {
   });
 
   Matter.World.add(world, mouseConstraint);
+
+  // Keep the mouse in sync with rendering
   render.mouse = mouse;
 }
 
@@ -165,10 +186,6 @@ function togglePhysics() {
     if (!engine) {
       initPhysics();
       enableDragging();
-      Matter.Render.lookAt(render, {
-        min: { x: 0, y: 0 },
-        max: { x: 800, y: 600 }
-      })
     }
     createPhysicsBodies();
     updateElements();
@@ -199,7 +216,10 @@ function togglePhysics() {
     originalStyles.clear(); // Clear saved styles
     document.body.classList.remove('physics-mode');
 
-    Matter.Render.stop(render);
+    // Clean up canvas and physics engine
+    if (render && render.canvas && render.canvas.parentNode) {
+      render.canvas.parentNode.removeChild(render.canvas);
+    }
     Matter.Runner.stop(runner);
 
     // Remove event listeners when physics is disabled
@@ -346,9 +366,12 @@ window.addEventListener('mousemove', (e) => {
 });
 
 window.addEventListener('resize', () => {
-  if (render) {
+  if (render && render.canvas) {
+    // Update canvas dimensions to match new window size
     render.canvas.width = window.innerWidth;
     render.canvas.height = window.innerHeight;
+    render.canvas.style.width = `${window.innerWidth}px`;
+    render.canvas.style.height = `${window.innerHeight}px`;
   }
 });
 
