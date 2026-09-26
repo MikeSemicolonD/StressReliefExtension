@@ -1,119 +1,46 @@
-let physicsOn = false;
+// Settings only need to be written to storage: every tab's content script
+// listens to chrome.storage.onChanged and applies them live.
+const DEFAULTS = self.PHYSICS_DEFAULTS;
 
-const DEFAULT_SETTINGS = {
-    gravity: 0.5,
-    restitution: 0.7,
-    friction: 0.3,
-    density: 0.001,
-    stiffness: 0.2,
-    shakeThreshold: 100,
-    timeWindow: 1000,
-    requiredShakes: 5
-};
-
-function updateToggleButton(isEnabled) {
-  const toggleButton = document.getElementById('togglePhysics');
-  toggleButton.textContent = isEnabled ? 'Disable Physics' : 'Enable Physics';
-  toggleButton.classList.remove(isEnabled ? 'disabled' : 'enabled');
-  toggleButton.classList.add(isEnabled ? 'enabled' : 'disabled');
+function showSettings(values) {
+  for (const [key, value] of Object.entries(values)) {
+    const slider = document.getElementById(key);
+    const valueDisplay = document.getElementById(`${key}Value`);
+    if (!slider || !valueDisplay) continue;
+    slider.value = value;
+    valueDisplay.textContent = value;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Check current state when popup opens
-  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { action: "getPhysicsState" }, (response) => {
-      if (response && response.isEnabled !== undefined) {
-        updateToggleButton(response.isEnabled);
-      }
-    });
-  });
-
-  // Load saved settings
-  chrome.storage.local.get({
-    gravity: 0.5,
-    restitution: 0.7,
-    friction: 0.3,
-    density: 0.001,
-    stiffness: 0.2
-  }, (settings) => {
-    Object.entries(settings).forEach(([key, value]) => {
-      const slider = document.getElementById(key);
-      const valueDisplay = document.getElementById(`${key}Value`);
-      if (slider && valueDisplay) {
-        slider.value = value;
-        valueDisplay.textContent = value;
-      }
-    });
-  });
-
-  // Handle slider changes
-  const sliders = document.querySelectorAll('.slider');
-  sliders.forEach(slider => {
-    slider.addEventListener('input', (e) => {
-      const valueDisplay = document.getElementById(`${e.target.id}Value`);
-      if (valueDisplay) {
-        valueDisplay.textContent = e.target.value;
-      }
-      
-      // Save settings
-      chrome.storage.local.set({
-        [e.target.id]: parseFloat(e.target.value)
-      });
-
-      // Send settings to content script
-      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, {
-          action: "updateSettings",
-          settings: {
-            [e.target.id]: parseFloat(e.target.value)
-          }
-        });
-      });
-    });
-  });
-
-  // Handle toggle button
-  // Listen for physics state changes from content script
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === "physicsStateChanged") {
-      updateToggleButton(request.isEnabled);
+  chrome.storage.local.get(DEFAULTS, (settings) => {
+    if (chrome.runtime.lastError) {
+      console.error('Error loading settings:', chrome.runtime.lastError);
+      return;
     }
+    showSettings(settings);
   });
 
-  // Handle toggle button
-  document.getElementById('togglePhysics').addEventListener('click', () => {
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      physicsOn = !physicsOn
-      chrome.tabs.sendMessage(tabs[0].id, { action: "togglePhysics" });
-    });
-  });
-
-  // Handle reset button
-  document.getElementById('resetSettings').addEventListener('click', () => {
-    // Show confirmation dialog
-    const confirmed = confirm("Are you sure you want to reset all settings to their default values?");
-    
-    if (confirmed) {
-      // Update UI
-      Object.entries(DEFAULT_SETTINGS).forEach(([key, value]) => {
-        const slider = document.getElementById(key);
-        const valueDisplay = document.getElementById(`${key}Value`);
-        if (slider && valueDisplay) {
-          slider.value = value;
-          valueDisplay.textContent = value;
+  for (const slider of document.querySelectorAll('.slider')) {
+    slider.addEventListener('input', (e) => {
+      const value = parseFloat(e.target.value);
+      document.getElementById(`${e.target.id}Value`).textContent = value;
+      chrome.storage.local.set({ [e.target.id]: value }, () => {
+        if (chrome.runtime.lastError) {
+          console.error('Error saving settings:', chrome.runtime.lastError);
         }
       });
+    });
+  }
 
-      // Save default settings
-      chrome.storage.local.set(DEFAULT_SETTINGS);
-
-      // Send settings to content script
-      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, {
-          action: "updateSettings",
-          settings: DEFAULT_SETTINGS
-        });
-      });
-    }
+  document.getElementById('resetSettings').addEventListener('click', () => {
+    if (!confirm('Are you sure you want to reset all settings to their default values?')) return;
+    showSettings(DEFAULTS);
+    chrome.storage.local.set(DEFAULTS, () => {
+      if (chrome.runtime.lastError) {
+        console.error('Error resetting settings:', chrome.runtime.lastError);
+        alert('Failed to reset settings. Please try again.');
+      }
+    });
   });
 });

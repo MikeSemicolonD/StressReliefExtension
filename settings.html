@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <title>Screen Shake Stress Reliever - Settings</title>
+  <link rel="stylesheet" href="settings.css">
 </head>
 <body>
   <div class="settings-container">
     <h2>Physics Settings</h2>
+    <p class="section-note">Default behavior is a top-down view (no gravity). Raise gravity if you want elements to fall.</p>
+
     <div class="setting-group">
       <label class="setting-label">
         Gravity
-        <span class="setting-value" id="gravityValue">0.5</span>
+        <span class="setting-value" id="gravityValue">0</span>
       </label>
-      <input type="range" class="slider" id="gravity" min="0" max="2" step="0.1" value="0.5">
+      <input type="range" class="slider" id="gravity" min="0" max="2" step="0.1" value="0">
     </div>
-    
+
+    <div class="setting-group">
+      <label class="setting-label">
+        Air Friction (how fast thrown items slow down)
+        <span class="setting-value" id="frictionAirValue">0.02</span>
+      </label>
+      <input type="range" class="slider" id="frictionAir" min="0" max="0.1" step="0.005" value="0.02">
+    </div>
+
     <div class="setting-group">
       <label class="setting-label">
         Bounce (Restitution)
-        <span class="setting-value" id="restitutionValue">0.7</span>
+        <span class="setting-value" id="restitutionValue">0.5</span>
       </label>
-      <input type="range" class="slider" id="restitution" min="0" max="1" step="0.1" value="0.7">
+      <input type="range" class="slider" id="restitution" min="0" max="1" step="0.1" value="0.5">
     </div>
-    
+
     <div class="setting-group">
       <label class="setting-label">
-        Friction
-        <span class="setting-value" id="frictionValue">0.3</span>
+        Surface Friction
+        <span class="setting-value" id="frictionValue">0.1</span>
       </label>
-      <input type="range" class="slider" id="friction" min="0" max="1" step="0.1" value="0.3">
+      <input type="range" class="slider" id="friction" min="0" max="1" step="0.1" value="0.1">
     </div>
-    
+
     <div class="setting-group">
       <label class="setting-label">
         Density
@@ -37,7 +48,7 @@
       </label>
       <input type="range" class="slider" id="density" min="0.001" max="0.01" step="0.001" value="0.001">
     </div>
-    
+
     <div class="setting-group">
       <label class="setting-label">
         Drag Stiffness
@@ -47,56 +58,37 @@
     </div>
 
     <h2>Shake Detection Settings</h2>
+    <p class="section-note">A swing is one push of the window in a direction before you reverse it. Lower the distance or required swings if shaking doesn't trigger physics.</p>
     <div class="setting-group">
       <label class="setting-label">
-        Shake Sensitivity (px)
-        <span class="setting-value" id="shakeThresholdValue">100</span>
+        Swing Distance (px)
+        <span class="setting-value" id="shakeDistanceValue">40</span>
       </label>
-      <input type="range" class="slider" id="shakeThreshold" min="50" max="200" step="10" value="100">
+      <input type="range" class="slider" id="shakeDistance" min="10" max="150" step="5" value="40">
     </div>
 
     <div class="setting-group">
       <label class="setting-label">
-        Required Shakes
-        <span class="setting-value" id="requiredShakesValue">5</span>
+        Required Swings
+        <span class="setting-value" id="requiredShakesValue">4</span>
       </label>
-      <input type="range" class="slider" id="requiredShakes" min="2" max="10" step="1" value="5">
+      <input type="range" class="slider" id="requiredShakes" min="2" max="10" step="1" value="4">
     </div>
 
     <div class="setting-group">
       <label class="setting-label">
         Shake Time Window (ms)
-        <span class="setting-value" id="timeWindowValue">1000</span>
+        <span class="setting-value" id="timeWindowValue">1500</span>
       </label>
-      <input type="range" class="slider" id="timeWindow" min="500" max="2000" step="100" value="1000">
+      <input type="range" class="slider" id="timeWindow" min="500" max="3000" step="100" value="1500">
     </div>
 
     <div class="button-group">
-      <button class="toggle-button" id="togglePhysics">Toggle ON Physics</button>
+      <p class="info-text">Grab the window by its title bar and shake it to start, or click the extension icon. While physics is on, moving the window sloshes everything around. Press Esc or click the icon again to put the page back.</p>
       <button class="reset-button" id="resetSettings">Reset All Settings</button>
     </div>
   </div>
+  <script src="defaults.js"></script>
   <script src="settings.js"></script>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Settings</title>
-  </head>
-  <body>
-    <!-- Form for changing global variables ->
-    <form id="form">
-      <!-- Input field for changing the gravity variable ->
-      <label for="gravity">Gravity:</label>
-      <input type="number" id="gravity" name="gravity" value="9.81">
-      <br>
-      <!-- Input field for changing the mass variable ->
-      <label for="mass">Mass:</label>
-      <input type="number" id="mass" name="mass" value="1">
-      <br>
-      <!-- Submit button ->
-      <input type="submit" value="Save">
-    </form>
-  </body>
-</html>-->
