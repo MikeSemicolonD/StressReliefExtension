@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shadow DOM fixture</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; margin: 24px; background: #fafafa; }
+</style>
+<script>
+  // Counts component constructions, so tests can check copies never run them
+  window.constructedCount = 0;
+  const define = (name, mode, html) => customElements.define(name, class extends HTMLElement {
+    constructor() {
+      super();
+      window.constructedCount++;
+      this.attachShadow({ mode }).innerHTML = html;
+    }
+  });
+  define('x-icon', 'open', '<style>:host{display:inline-block;width:18px;height:18px;vertical-align:middle}</style>' +
+    '<svg viewBox="0 0 10 10" width="18" height="18"><circle cx="5" cy="5" r="4" fill="tomato"/></svg>');
+  define('x-card', 'open', '<style>.card{border:2px solid #36c;border-radius:8px;padding:12px;margin:12px 0;' +
+    'background:#eef4ff;width:420px}h3{margin:0 0 6px;color:#36c}</style>' +
+    '<div class="card"><h3><slot name="title">fallback</slot></h3><slot></slot><p>Card footer in the shadow root.</p></div>');
+  define('x-closed', 'closed', '<style>div{background:#fde;padding:8px;border:1px solid #c69;width:300px}</style>' +
+    '<div>Closed shadow content <b>bold</b></div>');
+  define('x-outer', 'open', '<p style="margin:8px 0">Outer shadow paragraph</p><x-inner></x-inner>');
+  define('x-inner', 'open', '<button style="padding:6px 12px">Nested button</button>');
+  define('x-text', 'open', 'Text directly in a shadow root');
+</script>
+</head>
+<body>
+  <h1>Shadow DOM fixture</h1>
+  <p>A light paragraph with an inline <x-icon></x-icon> icon component in it.</p>
+  <x-card><span slot="title">Slotted title</span><p>Slotted body paragraph.</p></x-card>
+  <x-closed></x-closed>
+  <x-outer></x-outer>
+  <x-text></x-text>
+</body>
+</html>

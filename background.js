@@ -1,4 +1,4 @@
-const CONTENT_FILES = ['defaults.js', 'matter.min.js', 'content.js'];
+const CONTENT_FILES = ['defaults.js', 'lib.js', 'matter.min.js', 'content.js'];
 
 chrome.action.onClicked.addListener(async (tab) => {
   try {

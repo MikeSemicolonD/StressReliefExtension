@@ -1,0 +1,14 @@
+{
+  "name": "screen-shake-stress-reliever",
+  "private": true,
+  "description": "Development tooling for the browser extension (the extension itself has no dependencies)",
+  "scripts": {
+    "package": "node scripts/package.js pkg",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test \"test/unit/*.test.js\"",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

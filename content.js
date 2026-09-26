@@ -26,6 +26,10 @@
     // After physics is turned off, ignore shakes for this long so the tail of
     // a shake doesn't immediately turn it back on.
     SHAKE_COOLDOWN: 1500,
+    // How often the window position is checked while physics is off. A timer
+    // rather than requestAnimationFrame, which would keep every idle tab
+    // rendering 60 frames a second.
+    POSITION_POLL_MS: 50,
 
     // Cards: atomic containers thrown as one unit along with everything inside.
     CARD_CANDIDATE_SELECTOR: 'article, div, li, section, a',
@@ -624,12 +628,50 @@
   }
 
   function copyComputedStyles(source, clone, computed = window.getComputedStyle(source)) {
+    const defaults = nativeControlDefaults(source, computed);
     let css = '';
     for (let i = 0; i < computed.length; i++) {
       const prop = computed[i];
-      css += `${prop}:${computed.getPropertyValue(prop)};`;
+      const value = computed.getPropertyValue(prop);
+      if (defaults && defaults.get(prop) === value) continue;
+      css += `${prop}:${value};`;
     }
     clone.style.cssText = css;
+  }
+
+  // Natively drawn form controls switch to plain author styling as soon as a
+  // border or background is set on them, so a clone given its original's
+  // computed defaults would look different. Returns the browser's default
+  // border/background values for this kind of control (measured once on a
+  // probe inside a shadow root, out of reach of page CSS), so equal values
+  // can be skipped. Values the page customized differ and are still copied.
+  const CONTROL_TAGS = new Set(['input', 'button', 'select', 'textarea']);
+  const controlDefaults = new Map();
+  let probeRoot = null;
+
+  function nativeControlDefaults(source, computed) {
+    if (!CONTROL_TAGS.has(source.localName) || computed.appearance === 'none' || !overlay) return null;
+    const key = `${source.localName}:${source.type ?? ''}`;
+    if (!controlDefaults.has(key)) {
+      if (!probeRoot) {
+        const host = document.createElement('div');
+        host.style.cssText = 'position:absolute;visibility:hidden;';
+        overlay.appendChild(host);
+        probeRoot = host.attachShadow({ mode: 'closed' });
+      }
+      const probe = document.createElement(source.localName);
+      if (source.localName === 'input') probe.type = source.type;
+      probeRoot.appendChild(probe);
+      const cs = window.getComputedStyle(probe);
+      const values = new Map();
+      for (let i = 0; i < cs.length; i++) {
+        const prop = cs[i];
+        if (prop.startsWith('border') || prop.startsWith('background')) values.set(prop, cs.getPropertyValue(prop));
+      }
+      probe.remove();
+      controlDefaults.set(key, values);
+    }
+    return controlDefaults.get(key);
   }
 
   // Decode CSS string escape sequences like "\f005" -> the icon-font character.
@@ -713,15 +755,49 @@
     Object.assign(node.style, { translate: 'none', rotate: 'none', scale: 'none' });
     node.classList.add('physics-clone');
     node.style.transformOrigin = 'center center';
-    node.style.willChange = 'transform';
   }
 
   function makeClone(el, w, h) {
     const clone = freezeClone(el);
     stripIdentity(clone);
     pin(clone, w, h);
+    keepCellAlignment(el, clone);
     markPiece(clone);
     return clone;
+  }
+
+  // An absolutely positioned clone of a table cell is a plain block, so its
+  // vertical-align (middle by default) stops centering the content; a flex
+  // column reproduces it. (Collapsed borders are handled by pieceRect.)
+  function keepCellAlignment(el, clone) {
+    const cs = window.getComputedStyle(el);
+    if (cs.display !== 'table-cell') return;
+    if (cs.verticalAlign === 'middle' || cs.verticalAlign === 'bottom') {
+      Object.assign(clone.style, {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: cs.verticalAlign === 'middle' ? 'center' : 'flex-end'
+      });
+    }
+  }
+
+  // The box a whole clone occupies. A collapsed table border is shared with
+  // the neighbouring cell and centred on the grid line, so the cell's box
+  // holds only half of it; a clone draws its full border inside its own box.
+  // Grow the box by half a border on each side so the line and the content
+  // land exactly where they were.
+  function pieceRect(el, rect) {
+    const cs = window.getComputedStyle(el);
+    if (cs.display !== 'table-cell' || cs.borderCollapse !== 'collapse') return rect;
+    const half = (side) => parseFloat(cs[`border${side}Width`]) / 2;
+    const left = rect.left - half('Left');
+    const top = rect.top - half('Top');
+    return {
+      left,
+      top,
+      width: rect.width + half('Left') + half('Right'),
+      height: rect.height + half('Top') + half('Bottom')
+    };
   }
 
   // The box an element visibly occupies. A block's layout box can be much wider
@@ -787,7 +863,11 @@
       range.setEnd(textNode, m.index + m[0].length);
       const rects = range.getClientRects();
       if (rects.length === 1) {
-        if (rects[0].width) tokens.push({ textNode, text: m[0], rect: rects[0] });
+        // Keep a following space from the same text node, so decorations and
+        // inline backgrounds span it (an underlined "a link") and the piece's
+        // text reads normally
+        const space = /\s/.test(text[m.index + m[0].length] ?? '') ? ' ' : '';
+        if (rects[0].width) tokens.push({ textNode, text: m[0] + space, rect: rects[0] });
       } else if (rects.length > 1) {
         // Broken across lines (hyphenation, overflow-wrap): measure per character
         let offset = m.index;
@@ -802,26 +882,20 @@
     }
   }
 
-  const MARKER_GLYPHS = { disc: '•', circle: '◦', square: '▪' };
   let measureCtx = null;
+  const MARKER_SHAPES = new Set(['disc', 'circle', 'square']);
 
   // A list item's bullet or number is a ::marker, not a text node, so a split
   // <li> would lose it. Rebuild it as a token beside the first line: outside
   // markers end at the content edge, inside ones just before the first word.
   function listMarkerToken(li, cs, tokens) {
     if (cs.display !== 'list-item' || cs.listStyleImage !== 'none' || !tokens.length) return null;
+    const siblings = [...li.parentElement.children].filter(c => c.tagName === 'LI');
+    const start = li.parentElement instanceof HTMLOListElement ? li.parentElement.start : 1;
+    const n = li.value > 0 ? li.value : start + siblings.indexOf(li);
+    const text = PhysicsLib.markerText(cs.listStyleType, n);
+    if (!text) return null;
     const type = cs.listStyleType;
-    let text = MARKER_GLYPHS[type];
-    if (!text) {
-      const siblings = [...li.parentElement.children].filter(c => c.tagName === 'LI');
-      const start = li.parentElement instanceof HTMLOListElement ? li.parentElement.start : 1;
-      const n = li.value > 0 ? li.value : start + siblings.indexOf(li);
-      if (type === 'decimal') text = `${n}.`;
-      else if (type === 'lower-alpha' || type === 'lower-latin') text = `${String.fromCharCode(96 + n)}.`;
-      else if (type === 'upper-alpha' || type === 'upper-latin') text = `${String.fromCharCode(64 + n)}.`;
-      else return null;
-    }
-    text += ' ';
 
     measureCtx ||= document.createElement('canvas').getContext('2d');
     // Built from longhands: Firefox returns an empty computed `font`
@@ -829,12 +903,18 @@
     const width = measureCtx.measureText(text).width;
     const first = tokens[0].rect;
     const rect = li.getBoundingClientRect();
-    const right = cs.listStylePosition === 'inside'
-      ? first.left
-      : rect.left + parseFloat(cs.borderLeftWidth) + parseFloat(cs.paddingLeft);
+    const outside = cs.listStylePosition !== 'inside';
+    const right = outside
+      ? rect.left + parseFloat(cs.borderLeftWidth) + parseFloat(cs.paddingLeft)
+      : first.left;
     return {
       markerOf: li,
       text,
+      // Outside markers are drawn by the browser (see splitLines): the exact
+      // shape for bullets, the list's own counter style for numbers
+      outside,
+      listStyleType: MARKER_SHAPES.has(type) ? type : JSON.stringify(text),
+      contentLeft: right,
       rect: { left: right - width, top: first.top, right, bottom: first.bottom, width, height: first.height }
     };
   }
@@ -892,29 +972,7 @@
       if (marker) tokens.unshift(marker);
     }
 
-    // Group tokens into lines: a token joins the current line if its vertical
-    // midpoint falls within the line's extent. Tall atoms (floated images,
-    // block-sized inline-blocks) become pieces of their own.
-    const lines = [];
-    let line = null;
-    for (const t of tokens) {
-      const r = t.rect;
-      if (t.atom && r.height > lineHeight * 2) {
-        lines.push({ top: r.top, bottom: r.bottom, left: r.left, right: r.right, tokens: [t] });
-        continue;
-      }
-      const mid = (r.top + r.bottom) / 2;
-      if (line && mid >= line.top && mid <= line.bottom) {
-        line.top = Math.min(line.top, r.top);
-        line.bottom = Math.max(line.bottom, r.bottom);
-        line.left = Math.min(line.left, r.left);
-        line.right = Math.max(line.right, r.right);
-        line.tokens.push(t);
-      } else {
-        line = { top: r.top, bottom: r.bottom, left: r.left, right: r.right, tokens: [t] };
-        lines.push(line);
-      }
-    }
+    const lines = PhysicsLib.groupLines(tokens, lineHeight);
 
     const styles = new Map();
     const pieces = [];
@@ -948,14 +1006,37 @@
           // Composed parent: text directly in a shadow root has no parentElement,
           // and slotted text inherits its styles through the slot
           const parent = t.markerOf ?? composedParent(t.textNode);
-          if (!styles.has(parent)) styles.set(parent, wordStyle(parent, block));
+          if (!styles.has(parent)) {
+            styles.set(parent, {
+              css: wordStyle(parent, block),
+              lineHeight: parseFloat(window.getComputedStyle(parent).lineHeight)
+            });
+          }
+          const style = styles.get(parent);
           node = document.createElement('span');
-          node.style.cssText = styles.get(parent);
-          // Line height equal to the measured glyph box puts the glyphs
-          // exactly where they were (no half-leading above them).
-          node.style.lineHeight = `${t.rect.height}px`;
+          node.style.cssText = style.css;
+          // The original line height, offset by the same half-leading, puts
+          // the glyph box (t.rect) exactly where it was and rounds the
+          // baseline to pixels the same way. Chrome floors the leading above
+          // the glyphs to whole pixels. (`normal` line height: use the glyph
+          // box itself.)
+          const lineHeight = Number.isFinite(style.lineHeight) ? style.lineHeight : t.rect.height;
+          const leadingAbove = Math.floor((lineHeight - t.rect.height) / 2);
+          node.style.lineHeight = `${lineHeight}px`;
           node.textContent = t.text;
-          node.style.top = `${t.rect.top - l.top + pad}px`;
+          node.style.top = `${t.rect.top - leadingAbove - l.top + pad}px`;
+          if (t.outside) {
+            // A zero-width list item at the content edge: the browser draws
+            // its marker just outside it, exactly where the original's was
+            Object.assign(node.style, {
+              display: 'list-item',
+              listStylePosition: 'outside',
+              listStyleType: t.listStyleType,
+              width: '0px'
+            });
+            node.textContent = '\u200b';
+            left = t.contentLeft;
+          }
         }
         node.style.left = `${left - l.left}px`;
         wrap.appendChild(node);
@@ -986,7 +1067,10 @@
       case 'split': return splitLines(el);
       case 'loose': return splitLines(el, true);
       case 'shell': return [{ node: makeShell(el, rect), rect }];
-      default: return [{ node: makeClone(el, rect.width, rect.height), rect }];
+      default: {
+        const box = pieceRect(el, rect);
+        return [{ node: makeClone(el, box.width, box.height), rect: box }];
+      }
     }
   }
 
@@ -996,8 +1080,11 @@
   // Hiding uses inline !important styles rather than classes: the extension's
   // stylesheet doesn't reach inside shadow roots, and inline !important beats
   // page rules. The original style attribute is restored verbatim.
-  const HIDE_ELEMENT = { visibility: 'hidden' };
+  // transition: none -- a page's `transition: all` would otherwise animate
+  // the hiding, leaving the original visible under its piece for a moment
+  const HIDE_ELEMENT = { visibility: 'hidden', transition: 'none' };
   const HIDE_BOX = {
+    transition: 'none',
     background: 'none',
     'border-color': 'transparent',
     'box-shadow': 'none',
@@ -1048,8 +1135,11 @@
 
   function restoreOriginals() {
     for (const [el, style] of hiddenStyles) {
+      // Set the attribute even when removing it: Chrome writes CSSOM changes
+      // back to the attribute lazily, and a bare removeAttribute would leave a
+      // pending write-back that later reappears as style="".
+      el.setAttribute('style', style ?? '');
       if (style === null) el.removeAttribute('style');
-      else el.setAttribute('style', style);
     }
     hiddenStyles = new Map();
     if (window.CSS?.highlights) CSS.highlights.delete(CONFIG.HIDDEN_TEXT_HIGHLIGHT);
@@ -1103,8 +1193,17 @@
         );
         body.collisionFilter.ghosts = new Set();
         Matter.Composite.add(world, body);
-        // w/h are the DOM box (centered on the body), including any padding
-        items.push({ clone: node, body, w: r.width, h: r.height + pad * 2 });
+        // w/h are the DOM box (centered on the body), including any padding.
+        // The box's sub-pixel offset goes into left/top rather than the
+        // transform: a fractional translation stops Chrome snapping borders
+        // to pixels, so crisp 1px lines would render blurred. At spawn the
+        // transform then carries whole pixels only.
+        const h = r.height + pad * 2;
+        const fx = r.left - Math.floor(r.left);
+        const fy = (r.top - pad) - Math.floor(r.top - pad);
+        node.style.left = `${fx}px`;
+        node.style.top = `${fy}px`;
+        items.push({ clone: node, body, w: r.width, h, fx, fy });
       }
     }
 
@@ -1117,11 +1216,40 @@
 
   // --- Frame loop ---------------------------------------------------------------
 
-  // Transform-only writes: no layout reads, no left/top reflow.
+  // Moving pieces get their own GPU layer (will-change) so animating them is
+  // cheap; resting ones are painted normally, because a layer rounds its
+  // sub-pixel offset differently and shifts text by a pixel. So pieces at
+  // their spawn position are pixel-identical to the page they replace.
+  const MOVING_SPEED = 0.05;
+  const RESTING_SPEED = 0.01;
+
+  function updateLayer(item) {
+    const motion = item.body.speed + Math.abs(item.body.angularSpeed) * 20;
+    const moving = item.moving ? motion > RESTING_SPEED : motion > MOVING_SPEED;
+    if (moving !== !!item.moving) {
+      item.moving = moving;
+      item.clone.style.willChange = moving ? 'transform' : 'auto';
+    }
+  }
+
+  // Absorbs floating-point noise so a piece at rest in its spawn position gets
+  // an exactly whole-pixel translation
+  function snapToPixel(v) {
+    const rounded = Math.round(v);
+    return Math.abs(v - rounded) < 0.01 ? rounded : v;
+  }
+
+  // Transform-only writes: no layout reads, no left/top reflow. Also checks the
+  // window position every frame so sloshing is smooth.
   function renderFrame() {
-    for (const { clone, body, w, h } of items) {
+    pollWindowPosition();
+    for (const item of items) {
+      const { clone, body, w, h, fx, fy } = item;
       const { x, y } = body.position;
-      clone.style.transform = `translate(${x - w / 2}px, ${y - h / 2}px) rotate(${body.angle}rad)`;
+      const tx = snapToPixel(x - w / 2 - fx);
+      const ty = snapToPixel(y - h / 2 - fy);
+      clone.style.transform = `translate(${tx}px, ${ty}px) rotate(${body.angle}rad)`;
+      updateLayer(item);
     }
     frameId = requestAnimationFrame(renderFrame);
   }
@@ -1141,8 +1269,7 @@
       document.addEventListener('keydown', onKeyDown, true);
     } else {
       tearDown();
-      shake.cooldownUntil = performance.now() + CONFIG.SHAKE_COOLDOWN;
-      shake.swings = [];
+      shakeDetector.cooldown(performance.now() + CONFIG.SHAKE_COOLDOWN);
     }
 
     notifyState();
@@ -1159,7 +1286,7 @@
     canvas?.remove();
     if (runner) Matter.Runner.stop(runner);
     if (engine) Matter.Engine.clear(engine);
-    engine = runner = world = mouseConstraint = overlay = canvas = null;
+    engine = runner = world = mouseConstraint = overlay = canvas = probeRoot = null;
 
     document.body.classList.remove('physics-mode');
     if (!document.body.classList.length) document.body.removeAttribute('class');
@@ -1202,66 +1329,21 @@
 
   // --- Shake detection ----------------------------------------------------------
 
-  // Dragging the window by its title bar happens outside the page, so no mouse
-  // events arrive. Instead, watch the window's own screen position: a "swing"
-  // is a run of movement in one direction, long enough to count, that then
-  // reverses. Enough swings inside the time window turn physics on.
-  const shake = {
-    x: window.screenX,
-    y: window.screenY,
-    axes: {
-      x: { dir: 0, travel: 0, lastMove: 0 },
-      y: { dir: 0, travel: 0, lastMove: 0 }
-    },
-    swings: [],
-    cooldownUntil: 0
-  };
+  // Title-bar drags happen outside the page, so no mouse events arrive: watch
+  // the window's own screen position instead (see PhysicsLib.createShakeDetector).
+  const shakeDetector = PhysicsLib.createShakeDetector(() => settings);
+  let lastX = window.screenX;
+  let lastY = window.screenY;
 
   function pollWindowPosition() {
-    const x = window.screenX;
-    const y = window.screenY;
-    const dx = x - shake.x;
-    const dy = y - shake.y;
-    shake.x = x;
-    shake.y = y;
-    if (dx || dy) onWindowMoved(dx, dy);
-    requestAnimationFrame(pollWindowPosition);
-  }
-
-  function onWindowMoved(dx, dy) {
+    const dx = window.screenX - lastX;
+    const dy = window.screenY - lastY;
+    if (!dx && !dy) return;
+    lastX += dx;
+    lastY += dy;
     if (isPhysicsEnabled) {
       slosh(dx, dy);
-      return;
-    }
-    const now = performance.now();
-    trackSwing(shake.axes.x, dx, now);
-    trackSwing(shake.axes.y, dy, now);
-  }
-
-  function trackSwing(axis, d, now) {
-    if (!d) return;
-    const dir = Math.sign(d);
-    // A long pause starts a fresh leg rather than extending a stale one
-    if (now - axis.lastMove > settings.timeWindow) {
-      axis.dir = 0;
-      axis.travel = 0;
-    }
-    axis.lastMove = now;
-
-    if (dir === axis.dir) {
-      axis.travel += Math.abs(d);
-      return;
-    }
-    if (axis.travel >= settings.shakeDistance) registerSwing(now);
-    axis.dir = dir;
-    axis.travel = Math.abs(d);
-  }
-
-  function registerSwing(now) {
-    shake.swings = shake.swings.filter(t => now - t <= settings.timeWindow);
-    shake.swings.push(now);
-    if (shake.swings.length >= settings.requiredShakes && now >= shake.cooldownUntil) {
-      shake.swings = [];
+    } else if (shakeDetector.move(dx, dy, performance.now())) {
       setPhysicsEnabled(true);
     }
   }
@@ -1280,5 +1362,5 @@
     }
   }
 
-  requestAnimationFrame(pollWindowPosition);
+  setInterval(pollWindowPosition, CONFIG.POSITION_POLL_MS);
 })();
