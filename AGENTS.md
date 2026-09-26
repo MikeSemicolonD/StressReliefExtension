@@ -67,7 +67,7 @@ Title-bar drags happen outside the page, so no mouse events arrive. Instead `pol
 
 Chrome needs `background.service_worker`; Firefox (140+) uses `background.scripts` and ignores the other key. `npx web-ext lint --source-dir .` checks Firefox compatibility; two warnings are expected (the ignored `service_worker` key, and the Chrome-only `chrome.dom` call, which is feature-detected).
 
-Releases: pushing a `v<manifest version>` tag runs `.github/workflows/release.yml`, which packages an explicit file list, lints it, and publishes a GitHub release (plus a signed `.xpi` when `AMO_API_KEY`/`AMO_API_SECRET` secrets exist). Add any new runtime file to that list.
+Branches and CI: work goes to `staging` (CI: `ci.yml` → reusable `build.yml`, which syntax-checks, packages an explicit file list, and lints the package), then to `main` via pull request. Every push to `main` runs `release.yml`, which releases only when `manifest.json`'s version has no `v<version>` tag yet: it creates the GitHub release, then calls `publish-firefox.yml`, `publish-chrome.yml` and `publish-edge.yml` directly (a release made with `GITHUB_TOKEN` can't trigger other workflows). Store workflows skip themselves until their secrets/variables exist. Add any new runtime file to the package list in `build.yml`.
 
 Load unpacked from `chrome://extensions/` (Developer mode), or in Firefox via `about:debugging#/runtime/this-firefox` → Load Temporary Add-on → `manifest.json`. After editing, reload the extension and refresh the target tab.
 

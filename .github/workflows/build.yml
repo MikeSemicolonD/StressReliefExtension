@@ -1,0 +1,50 @@
+name: Build
+
+# Reusable: checks, packages and lints the extension, then uploads the zip as
+# the `extension` artifact. Called by CI (staging / PRs) and Release (main).
+on:
+  workflow_call:
+    outputs:
+      version:
+        description: Version from manifest.json
+        value: ${{ jobs.build.outputs.version }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - id: version
+        name: Read manifest version
+        run: echo "version=$(node -p "require('./manifest.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Syntax check
+        run: for f in background.js content.js defaults.js settings.js; do node --check "$f"; done
+
+      # An explicit list, so docs, tooling and the unminified matter.js never
+      # ship. Add new runtime files here.
+      - name: Package
+        run: |
+          mkdir -p dist pkg
+          cp -r manifest.json background.js content.js defaults.js matter.min.js \
+            settings.html settings.js settings.css styles.css images pkg/
+          (cd pkg && zip -r "../dist/screen-shake-stress-reliever-${{ steps.version.outputs.version }}.zip" .)
+
+      # Lints the packaged files, so anything missing from the list above fails
+      # here. Two warnings are expected (Firefox ignores background.service_worker;
+      # the Chrome-only chrome.dom call is feature-detected).
+      - name: Lint for Firefox
+        run: npx --yes web-ext@8 lint --source-dir pkg
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension
+          path: dist/*.zip
+          if-no-files-found: error

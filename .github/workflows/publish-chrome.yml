@@ -1,0 +1,70 @@
+name: Publish to Chrome Web Store
+
+# Uploads a released version to the Chrome Web Store and submits it for
+# review. Called by Release; can also be run by hand for an existing tag.
+#
+# Setup (once): pay the developer fee and create the item with a first manual
+# upload at https://chrome.google.com/webstore/devconsole, then:
+#   - repository variable CHROME_EXTENSION_ID: the item's ID
+#   - secrets CHROME_CLIENT_ID, CHROME_CLIENT_SECRET, CHROME_REFRESH_TOKEN:
+#     OAuth credentials for the Chrome Web Store API, see
+#     https://github.com/fregante/chrome-webstore-upload-keys
+# Secrets can live in the `chrome-web-store` environment or the repository.
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish (e.g. v1.1)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: chrome-web-store
+    env:
+      TAG: ${{ inputs.tag }}
+      EXTENSION_ID: ${{ vars.CHROME_EXTENSION_ID }}
+      CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
+      REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
+    steps:
+      - id: creds
+        name: Check credentials
+        run: |
+          if [ -z "$EXTENSION_ID" ] || [ -z "$CLIENT_ID" ] || [ -z "$CLIENT_SECRET" ] || [ -z "$REFRESH_TOKEN" ]; then
+            echo "::notice::Skipping Chrome Web Store: CHROME_EXTENSION_ID / CHROME_CLIENT_ID / CHROME_CLIENT_SECRET / CHROME_REFRESH_TOKEN not configured"
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.creds.outputs.configured == 'true'
+        with:
+          node-version: 22
+
+      - name: Download release package
+        if: steps.creds.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release download "$TAG" --pattern '*.zip' --dir dist
+
+      # Uploads, then publishes (submits for review)
+      - name: Upload and publish
+        if: steps.creds.outputs.configured == 'true'
+        run: |
+          npx --yes chrome-webstore-upload-cli@3 \
+            --source dist/*.zip \
+            --extension-id "$EXTENSION_ID" \
+            --client-id "$CLIENT_ID" \
+            --client-secret "$CLIENT_SECRET" \
+            --refresh-token "$REFRESH_TOKEN"

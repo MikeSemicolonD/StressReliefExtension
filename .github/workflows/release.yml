@@ -1,0 +1,85 @@
+name: Release
+
+# Every push to main is built and linted. It's only released when
+# manifest.json has a version that hasn't been released yet: then it's
+# tagged v<version>, published as a GitHub release, and sent to the stores.
+# Bump the version to cut a release; pushes without a bump release nothing.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+
+  check:
+    needs: build
+    runs-on: ubuntu-latest
+    outputs:
+      release: ${{ steps.tag.outputs.release }}
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - id: tag
+        name: Is this version new?
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: v${{ needs.build.outputs.version }}
+        run: |
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          if gh api "repos/$GITHUB_REPOSITORY/git/ref/tags/$TAG" > /dev/null 2>&1; then
+            echo "::notice::$TAG is already released; bump the version in manifest.json to release"
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  github-release:
+    needs: check
+    if: needs.check.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: extension
+          path: dist
+
+      # Creates the tag on the pushed commit along with the release
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ needs.check.outputs.tag }}
+        run: gh release create "$TAG" dist/* --target "$GITHUB_SHA" --title "$TAG" --generate-notes
+
+  # Store deployments are reusable workflows (also runnable by hand from the
+  # Actions tab to retry one store). They're called directly because a release
+  # created with GITHUB_TOKEN doesn't trigger other workflows. Each one skips
+  # itself until its credentials are configured.
+  firefox:
+    needs: [check, github-release]
+    uses: ./.github/workflows/publish-firefox.yml
+    with:
+      tag: ${{ needs.check.outputs.tag }}
+    secrets: inherit
+
+  chrome:
+    needs: [check, github-release]
+    uses: ./.github/workflows/publish-chrome.yml
+    with:
+      tag: ${{ needs.check.outputs.tag }}
+    secrets: inherit
+
+  edge:
+    needs: [check, github-release]
+    uses: ./.github/workflows/publish-edge.yml
+    with:
+      tag: ${{ needs.check.outputs.tag }}
+    secrets: inherit

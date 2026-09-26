@@ -1,0 +1,19 @@
+name: CI
+
+# Runs on every push to staging and on pull requests into main. Make this a
+# required status check on main so only passing changes get released.
+on:
+  push:
+    branches: [staging]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+
+  # Tests go here once they exist, e.g.:
+  # test:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps: ...

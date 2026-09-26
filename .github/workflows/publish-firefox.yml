@@ -1,0 +1,65 @@
+name: Publish to Firefox Add-ons
+
+# Submits a released version to addons.mozilla.org (listed, i.e. public on
+# the store after Mozilla's review). Called by Release; can also be run by
+# hand for an existing release tag.
+#
+# Setup (once): create the listing by hand at addons.mozilla.org with a first
+# upload, then add AMO_API_KEY and AMO_API_SECRET secrets (from
+# https://addons.mozilla.org/developers/addon/api/key/) to the `firefox`
+# environment or the repository.
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish (e.g. v1.1)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: firefox
+    env:
+      TAG: ${{ inputs.tag }}
+      AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
+      AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+    steps:
+      - id: creds
+        name: Check credentials
+        run: |
+          if [ -z "$AMO_API_KEY" ] || [ -z "$AMO_API_SECRET" ]; then
+            echo "::notice::Skipping Firefox Add-ons: AMO_API_KEY / AMO_API_SECRET not configured"
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.creds.outputs.configured == 'true'
+        with:
+          node-version: 22
+
+      - name: Download release package
+        if: steps.creds.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release download "$TAG" --pattern '*.zip' --dir dist
+          mkdir pkg && unzip -q dist/*.zip -d pkg
+
+      # Review of listed versions can take days, so don't wait for it
+      - name: Submit to addons.mozilla.org
+        if: steps.creds.outputs.configured == 'true'
+        run: |
+          npx --yes web-ext@8 sign --source-dir pkg --channel listed \
+            --api-key "$AMO_API_KEY" --api-secret "$AMO_API_SECRET" \
+            --approval-timeout 0

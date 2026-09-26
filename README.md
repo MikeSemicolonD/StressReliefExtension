@@ -34,16 +34,23 @@ This was greatly inspired by [Stress Reducers for Windows](https://www.mobygames
 
 Right-click the extension icon and choose **Options** to tune the physics and how hard you have to shake.
 
-## Releasing
+## Development and releasing
 
-Releases are built by the GitHub Actions workflow in `.github/workflows/release.yml`.
+Work happens on the `staging` branch and reaches `main` through pull requests.
 
-1. Bump `"version"` in `manifest.json` (e.g. to `1.1`) and commit it
-2. Tag that commit with the same version and push the tag:
-   ```bash
-   git tag v1.1
-   git push origin v1.1
-   ```
-3. The workflow checks the tag matches the manifest, packages only the extension's files, lints the package for Firefox, and publishes a GitHub release with the `.zip` attached. The same zip can be uploaded to the Chrome Web Store and to addons.mozilla.org.
+- **CI** (`.github/workflows/ci.yml`) builds, syntax-checks and lints the extension on every push to `staging` and every pull request into `main`.
+- **Release** (`.github/workflows/release.yml`) runs on every push to `main`. If the `"version"` in `manifest.json` hasn't been released yet, it tags the commit `v<version>`, publishes a GitHub release with the packaged `.zip`, and submits that version to each extension store. Pushes that don't bump the version are built and checked but not released.
 
-To also attach a signed Firefox `.xpi` (installable without the store), add `AMO_API_KEY` and `AMO_API_SECRET` repository secrets using keys from [addons.mozilla.org](https://addons.mozilla.org/developers/addon/api/key/).
+To cut a release: bump `"version"` in `manifest.json` on `staging`, then merge `staging` into `main`.
+
+### Extension stores
+
+Each store has its own workflow, called by Release and also runnable by hand from the Actions tab (to retry one store for an existing tag). Each one skips itself until its credentials exist, so stores can be added one at a time. The first upload to each store must be done by hand, which creates the listing. After that:
+
+| Store | Workflow | Repository variable | Secrets |
+|---|---|---|---|
+| Firefox Add-ons | `publish-firefox.yml` | – | `AMO_API_KEY`, `AMO_API_SECRET` |
+| Chrome Web Store | `publish-chrome.yml` | `CHROME_EXTENSION_ID` | `CHROME_CLIENT_ID`, `CHROME_CLIENT_SECRET`, `CHROME_REFRESH_TOKEN` |
+| Edge Add-ons | `publish-edge.yml` | `EDGE_PRODUCT_ID` | `EDGE_CLIENT_ID`, `EDGE_API_KEY` |
+
+Where to get each credential is described at the top of its workflow file. Secrets can be stored on the matching GitHub environment (`firefox`, `chrome-web-store`, `edge-addons`), which also lets you require a manual approval before a store deployment.

@@ -1,0 +1,88 @@
+name: Publish to Edge Add-ons
+
+# Uploads a released version to Microsoft Edge Add-ons and submits it for
+# certification. Called by Release; can also be run by hand for an existing tag.
+#
+# Setup (once): create the listing with a first manual upload at
+# https://partner.microsoft.com/dashboard/microsoftedge, then in its
+# Publish API page create API credentials and add:
+#   - repository variable EDGE_PRODUCT_ID: the product ID
+#   - secrets EDGE_CLIENT_ID and EDGE_API_KEY
+# Secrets can live in the `edge-addons` environment or the repository.
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish (e.g. v1.1)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: edge-addons
+    env:
+      TAG: ${{ inputs.tag }}
+      PRODUCT_ID: ${{ vars.EDGE_PRODUCT_ID }}
+      CLIENT_ID: ${{ secrets.EDGE_CLIENT_ID }}
+      API_KEY: ${{ secrets.EDGE_API_KEY }}
+      API: https://api.addons.microsoftedge.microsoft.com/v1/products
+    steps:
+      - id: creds
+        name: Check credentials
+        run: |
+          if [ -z "$PRODUCT_ID" ] || [ -z "$CLIENT_ID" ] || [ -z "$API_KEY" ]; then
+            echo "::notice::Skipping Edge Add-ons: EDGE_PRODUCT_ID / EDGE_CLIENT_ID / EDGE_API_KEY not configured"
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download release package
+        if: steps.creds.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release download "$TAG" --pattern '*.zip' --dir dist
+
+      # Both calls are asynchronous: each returns an operation ID in the
+      # Location header, polled until it succeeds or fails.
+      - name: Upload and submit
+        if: steps.creds.outputs.configured == 'true'
+        run: |
+          set -euo pipefail
+          auth=(-H "Authorization: ApiKey $API_KEY" -H "X-ClientID: $CLIENT_ID")
+
+          wait_for() {  # $1 = operation status URL
+            for _ in $(seq 60); do
+              body=$(curl -sS "${auth[@]}" "$1")
+              status=$(echo "$body" | jq -r .status)
+              case "$status" in
+                Succeeded) return 0 ;;
+                Failed) echo "::error::$body"; return 1 ;;
+              esac
+              sleep 10
+            done
+            echo "::error::Timed out waiting for $1"; return 1
+          }
+
+          location() {  # prints the operation ID from a response's Location header
+            grep -i '^location:' | tail -1 | tr -d '\r' | awk '{print $2}' | sed 's#.*/##'
+          }
+
+          op=$(curl -sS -D - -o /dev/null "${auth[@]}" -H "Content-Type: application/zip" \
+            -X POST --data-binary @"$(ls dist/*.zip)" \
+            "$API/$PRODUCT_ID/submissions/draft/package" | location)
+          wait_for "$API/$PRODUCT_ID/submissions/draft/package/operations/$op"
+
+          op=$(curl -sS -D - -o /dev/null "${auth[@]}" -H "Content-Type: application/json" \
+            -X POST -d "{\"notes\": \"Release $TAG\"}" \
+            "$API/$PRODUCT_ID/submissions" | location)
+          wait_for "$API/$PRODUCT_ID/submissions/operations/$op"
