@@ -5,7 +5,10 @@ name: Publish to Chrome Web Store
 #
 # Setup (once): pay the developer fee and create the item with a first manual
 # upload at https://chrome.google.com/webstore/devconsole, then:
-#   - repository variable CHROME_EXTENSION_ID: the item's ID
+#   - repository variable CHROME_EXTENSION_ID: the item's ID (32 letters, shown
+#     on the item's page in the developer dashboard)
+#   - repository variable CHROME_PUBLISHER_ID: your developer account's
+#     publisher ID (developer dashboard -> Account)
 #   - secrets CHROME_CLIENT_ID, CHROME_CLIENT_SECRET, CHROME_REFRESH_TOKEN:
 #     OAuth credentials for the Chrome Web Store API, see
 #     https://github.com/fregante/chrome-webstore-upload-keys
@@ -32,6 +35,7 @@ jobs:
     env:
       TAG: ${{ inputs.tag }}
       EXTENSION_ID: ${{ vars.CHROME_EXTENSION_ID }}
+      PUBLISHER_ID: ${{ vars.CHROME_PUBLISHER_ID }}
       CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
       CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
       REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
@@ -39,14 +43,14 @@ jobs:
       - id: creds
         name: Check credentials
         run: |
-          if [ -z "$EXTENSION_ID" ] || [ -z "$CLIENT_ID" ] || [ -z "$CLIENT_SECRET" ] || [ -z "$REFRESH_TOKEN" ]; then
-            echo "::notice::Skipping Chrome Web Store: CHROME_EXTENSION_ID / CHROME_CLIENT_ID / CHROME_CLIENT_SECRET / CHROME_REFRESH_TOKEN not configured"
+          if [ -z "$EXTENSION_ID" ] || [ -z "$PUBLISHER_ID" ] || [ -z "$CLIENT_ID" ] || [ -z "$CLIENT_SECRET" ] || [ -z "$REFRESH_TOKEN" ]; then
+            echo "::notice::Skipping Chrome Web Store: CHROME_EXTENSION_ID / CHROME_PUBLISHER_ID / CHROME_CLIENT_ID / CHROME_CLIENT_SECRET / CHROME_REFRESH_TOKEN not configured"
             echo "configured=false" >> "$GITHUB_OUTPUT"
           else
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         if: steps.creds.outputs.configured == 'true'
         with:
           node-version: 22
@@ -58,13 +62,13 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: gh release download "$TAG" --pattern '*-chrome.zip' --dir dist
 
-      # Uploads, then publishes (submits for review)
+      # Uploads, then publishes (submits for review). Uses the Chrome Web
+      # Store API v2; the OAuth credentials are read from CLIENT_ID,
+      # CLIENT_SECRET and REFRESH_TOKEN in the environment.
       - name: Upload and publish
         if: steps.creds.outputs.configured == 'true'
         run: |
-          npx --yes chrome-webstore-upload-cli@3 \
+          npx --yes chrome-webstore-upload-cli@4.0.1 \
             --source dist/*.zip \
             --extension-id "$EXTENSION_ID" \
-            --client-id "$CLIENT_ID" \
-            --client-secret "$CLIENT_SECRET" \
-            --refresh-token "$REFRESH_TOKEN"
+            --publisher-id "$PUBLISHER_ID"

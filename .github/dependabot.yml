@@ -1,0 +1,30 @@
+# Keeps pinned dependencies current. Pull requests target staging, so updates
+# go through CI and reach main like any other change. Each ecosystem's updates
+# come grouped into one weekly pull request.
+#
+# Not covered: the exact tool versions in `npx --yes ...@x.y.z` commands in the
+# workflows (web-ext, chrome-webstore-upload-cli) -- Dependabot can't see
+# versions inside run: steps, so bump those by hand.
+version: 2
+updates:
+  # Actions are pinned to commit SHAs with a "# vX.Y.Z" comment; Dependabot
+  # updates both
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: staging
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
+
+  # Development tooling only (Playwright, axe); the extension itself ships no
+  # npm dependencies
+  - package-ecosystem: npm
+    directory: /
+    target-branch: staging
+    schedule:
+      interval: weekly
+    groups:
+      dev-dependencies:
+        patterns: ["*"]
