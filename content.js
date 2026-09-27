@@ -109,6 +109,10 @@
   // Updates the live world in place so thrown items keep their positions.
   function applySettings(changed) {
     Object.assign(settings, changed);
+    if ('hideRestoreButton' in changed && isPhysicsEnabled) {
+      if (settings.hideRestoreButton) removeRestoreButton();
+      else showRestoreButton();
+    }
     if (!engine) return;
 
     engine.gravity.y = settings.gravity;
@@ -1284,6 +1288,109 @@
 
   // --- Toggle + teardown --------------------------------------------------------
 
+  // --- Restore button -----------------------------------------------------------
+
+  // A visible way out while physics is on: Esc and the toolbar icon aren't
+  // discoverable, least of all when a shake turned physics on by accident.
+  // Rendered in a shadow root so page CSS can't restyle it, above the physics
+  // canvas (same z-index, later in the DOM), and never a throwable piece. The
+  // first time, a note under it explains what happened.
+  const RESTORE_CSS = `
+    :host { all: initial; }
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    button {
+      all: initial;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      font: 600 15px/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: #000;
+      background: #f2665e;
+      border: 2.5px solid #000;
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 #000;
+      cursor: pointer;
+    }
+    button:hover { background: #e24f47; }
+    button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #000; }
+    button:focus-visible { outline: 3px solid #2f6fe4; outline-offset: 3px; }
+    kbd {
+      padding: 0 5px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 4px;
+    }
+    .note {
+      box-sizing: border-box;
+      max-width: 270px;
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #2b2b35;
+      background: #fff1b8;
+      border: 2.5px solid #000;
+      border-radius: 6px;
+      box-shadow: 3px 3px 0 #000;
+    }
+  `;
+
+  let restoreHost = null;
+
+  function showRestoreButton() {
+    if (restoreHost || settings.hideRestoreButton) return;
+    restoreHost = document.createElement('div');
+    restoreHost.setAttribute('data-physics-restore', '');
+    restoreHost.style.cssText = 'all: initial; position: fixed; top: 16px; right: 16px; z-index: 2147483647;';
+    const root = restoreHost.attachShadow({ mode: 'open' });
+
+    const style = document.createElement('style');
+    style.textContent = RESTORE_CSS;
+    const wrap = document.createElement('div');
+    wrap.className = 'wrap';
+    const button = document.createElement('button');
+    button.type = 'button';
+    const key = document.createElement('kbd');
+    key.textContent = 'Esc';
+    button.append('Restore page', key);
+    button.addEventListener('click', () => setPhysicsEnabled(false));
+    wrap.append(button);
+    root.append(style, wrap);
+    document.documentElement.appendChild(restoreHost);
+
+    showRestoreHintOnce(wrap);
+  }
+
+  function showRestoreHintOnce(wrap) {
+    chrome.storage.local.get({ restoreHintSeen: false }, ({ restoreHintSeen }) => {
+      if (chrome.runtime.lastError || restoreHintSeen || !wrap.isConnected) return;
+      const note = document.createElement('p');
+      note.className = 'note';
+      note.setAttribute('role', 'status');
+      note.textContent = 'Shaking your browser window turns this on. ' +
+        'Press Restore page or Esc to put everything back.';
+      wrap.append(note);
+      chrome.storage.local.set({ restoreHintSeen: true });
+    });
+  }
+
+  function removeRestoreButton() {
+    restoreHost?.remove();
+    restoreHost = null;
+  }
+
   function setPhysicsEnabled(on) {
     if (on === isPhysicsEnabled || !document.body) return;
     isPhysicsEnabled = on;
@@ -1292,6 +1399,7 @@
       initPhysics();
       spawnClones();
       renderFrame();
+      showRestoreButton();
       document.body.classList.add('physics-mode');
       document.addEventListener('contextmenu', preventDefault, true);
       document.addEventListener('keydown', onKeyDown, true);
@@ -1305,6 +1413,7 @@
 
   function tearDown() {
     cancelAnimationFrame(frameId);
+    removeRestoreButton();
     restoreOriginals();
     items = [];
     walls = [];

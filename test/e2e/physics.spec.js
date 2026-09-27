@@ -11,6 +11,8 @@ test.describe('article page', () => {
   });
 
   test('pieces look exactly like the page they replace', async ({ extension }) => {
+    // The Restore page button is meant to cover part of the page
+    await extension.setSettings({ hideRestoreButton: true });
     const before = await extension.screenshot();
     await extension.start();
     const after = await extension.screenshot();
@@ -82,6 +84,32 @@ test.describe('article page', () => {
     expect(await overlay.locator('input[type=checkbox]').evaluate(el => el.checked)).toBe(true);
   });
 
+  test('the Restore page button restores the page', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await page.getByRole('button', { name: 'Restore page' }).click();
+    await expect(page.locator('.physics-overlay')).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('the first time, a note explains how physics got turned on', async ({ page, extension }) => {
+    const note = page.getByRole('status').filter({ hasText: 'Shaking your browser window' });
+    await extension.start();
+    await expect(note).toBeVisible();
+    await extension.stop();
+    await extension.start();
+    await expect(page.getByRole('button', { name: 'Restore page' })).toBeVisible();
+    await expect(note).toHaveCount(0);
+  });
+
+  test('the Restore page button can be hidden, even while physics is on', async ({ page, extension }) => {
+    await extension.start();
+    const button = page.getByRole('button', { name: 'Restore page' });
+    await expect(button).toBeVisible();
+    await extension.setSettings({ hideRestoreButton: true });
+    await expect(button).toHaveCount(0);
+  });
+
   test('the toolbar badge shows when physics is on', async ({ extension }) => {
     await extension.start();
     await expect.poll(() => extension.badgeText()).toBe('ON');
@@ -114,6 +142,8 @@ test.describe('shadow DOM page', () => {
   });
 
   test('pieces look exactly like the page they replace', async ({ extension }) => {
+    // The Restore page button is meant to cover part of the page
+    await extension.setSettings({ hideRestoreButton: true });
     const before = await extension.screenshot();
     await extension.start();
     const after = await extension.screenshot();

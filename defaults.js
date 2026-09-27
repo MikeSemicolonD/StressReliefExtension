@@ -9,5 +9,6 @@ self.PHYSICS_DEFAULTS = Object.freeze({
   stiffness: 0.2,
   shakeDistance: 40,   // Window travel (px) a swing needs before reversing to count
   requiredShakes: 4,   // Swings (direction reversals) needed to activate
-  timeWindow: 1500     // ms within which those swings must happen
+  timeWindow: 1500,    // ms within which those swings must happen
+  hideRestoreButton: false // The on-page "Restore page" button shows while physics is on
 });
