@@ -447,13 +447,15 @@ h2 {
   transition: background-color 0.12s ease-out;
 }
 
+/* The track's inside is 43x23px; the knob is 19px across including its
+   border, leaving a 2px gap all round (and 20px to travel) */
 .switch-track::before {
   content: '';
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 19px;
-  height: 19px;
+  width: 15px;
+  height: 15px;
   background: var(--window);
   border: 2px solid var(--line);
   border-radius: 50%;

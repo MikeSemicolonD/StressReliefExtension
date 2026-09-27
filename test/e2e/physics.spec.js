@@ -60,6 +60,76 @@ test.describe('article page', () => {
     expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(150);
   });
 
+  // Throws the heading clone down and to the right; returns its locator
+  async function throwHeading(page) {
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const box = await heading.boundingBox();
+    const x = box.x + box.width / 2;
+    const y = box.y + box.height / 2;
+    await page.mouse.move(x, y);
+    await page.mouse.down();
+    for (let i = 1; i <= 10; i++) {
+      await page.mouse.move(x + 30 * i, y + 25 * i);
+      await page.waitForTimeout(16);
+    }
+    await page.mouse.up();
+    await page.waitForTimeout(200);
+    return heading;
+  }
+
+  test('restoring glides the pieces home, then gives the page back exactly', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    const home = await page.locator('.physics-clone', { hasText: 'Article fixture' }).evaluate(el => el.style.transform);
+    const heading = await throwHeading(page);
+    await page.keyboard.press('Escape');
+    // Still in flight: the pieces are on screen, heading for where they started
+    await expect(page.locator('.physics-overlay')).toHaveCount(1);
+    expect(await heading.evaluate(el => el.style.transform)).toBe(home);
+    await expect.poll(() => extension.badgeText()).toBe('');
+    await expect(page.locator('.physics-overlay')).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('restoring again mid-flight finishes at once', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await throwHeading(page);
+    await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape');
+    expect(await page.locator('.physics-overlay').count()).toBe(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('turning physics on mid-flight starts again from the restored page', async ({ page, extension }) => {
+    await extension.start();
+    const count = await page.locator('.physics-clone').count();
+    await throwHeading(page);
+    await page.keyboard.press('Escape');
+    await extension.start();
+    await expect(page.locator('.physics-overlay')).toHaveCount(1);
+    await expect(page.locator('.physics-clone')).toHaveCount(count);
+  });
+
+  test('with reduced motion, restoring is instant', async ({ page, extension }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await extension.start();
+    await throwHeading(page);
+    await page.keyboard.press('Escape');
+    expect(await page.locator('.physics-overlay').count()).toBe(0);
+  });
+
+  test('pieces glide to where the page has scrolled to', async ({ page, extension }) => {
+    await page.evaluate(() => { document.body.style.paddingBottom = '2000px'; });
+    await extension.start();
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const home = await heading.evaluate(el => el.style.transform);
+    await page.evaluate(() => window.scrollBy(0, 50));
+    await page.keyboard.press('Escape');
+    const [, x, y] = home.match(/translate\(([-\d.]+)px, ([-\d.]+)px\)/).map(Number);
+    expect(await heading.evaluate(el => el.style.transform)).toBe(`translate(${x}px, ${y - 50}px) rotate(0rad)`);
+  });
+
   test('settings apply live without respawning', async ({ page, extension }) => {
     await extension.start();
     const pieces = page.locator('.physics-clone');

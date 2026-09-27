@@ -60,6 +60,7 @@ Every candidate is first filtered by `overlapsViewport` (a cheap rect read) befo
 - Fixed-step `Matter.Runner`; walls are thick static bodies just outside the viewport, rebuilt on resize (bodies are pulled back inside). Bodies are at least `MIN_BODY_SIZE` thick so 1px rules stay grabbable.
 - `renderFrame` writes only `transform: translate() rotate()` per clone -- no layout reads.
 - Settings changes update bodies in place with `Matter.Body.set` (no rebuild, positions preserved).
+- Restoring (`glideHome`) stops the simulation and CSS-transitions every clone back to its spawn transform (rotation unwound the short way, shifted by however far its original has moved since spawn, e.g. by scrolling), then tears down; the clones match the page at home, so the swap is invisible. Instant with `prefers-reduced-motion`, a second Esc, turning physics back on mid-flight, or an orphaned script. `restoreOriginals` finishes any CSS transitions the restored styles start, so a page's `transition: all` doesn't fade boxes back in.
 
 ### Shake detection
 
