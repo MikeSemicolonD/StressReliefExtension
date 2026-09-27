@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scaled fixture</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; margin: 24px 40px; color: #222; background: #fff; }
+  /* Like MikeSemicolonD.github.io: headings shrunk with the scale property,
+     words drawn as images in a grid */
+  .hero { text-align: center; }
+  .hero h1 { scale: 0.9; font-size: 48px; margin: 8px 0; }
+  .hero p { scale: 0.6; display: grid; grid-auto-flow: column; font-size: 32px; margin: 0; }
+  .hero span { display: block; padding: 0 2px; position: relative; top: 3px; }
+  .hero span:first-child { left: 30px; }
+  /* Plain text split into lines, inside a scaled container */
+  .shrunk { transform: scale(0.75); transform-origin: top left; width: 600px; font-size: 24px; }
+  .card { display: inline-block; width: 260px; padding: 16px; border: 2px solid #36c; border-radius: 8px;
+          background: #eef4ff; font-size: 22px; transform: scale(0.8); }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <h1><img alt="Hello" width="240" height="64" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='64'%3E%3Crect width='240' height='64' rx='12' fill='%23c36'/%3E%3C/svg%3E"></h1>
+    <p>
+      <span><img alt="Welcome" width="200" height="56" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='56'%3E%3Crect width='200' height='56' rx='10' fill='%2336c'/%3E%3C/svg%3E"></span>
+      <span><img alt="to" width="60" height="56" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='56'%3E%3Crect width='60' height='56' rx='10' fill='%23396'/%3E%3C/svg%3E"></span>
+      <span><img alt="website" width="200" height="56" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='56'%3E%3Crect width='200' height='56' rx='10' fill='%23963'/%3E%3C/svg%3E"></span>
+    </p>
+  </div>
+  <div class="shrunk">
+    <p>This paragraph sits in a container shrunk with a transform, so its words
+      are measured at three quarters of the size its font says. It wraps onto
+      a few lines so it gets split.</p>
+  </div>
+  <div class="card">A card scaled down with a transform.</div>
+</body>
+</html>

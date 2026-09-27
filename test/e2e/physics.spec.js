@@ -77,6 +77,38 @@ test.describe('article page', () => {
     return heading;
   }
 
+  test('pieces can still be thrown on a heavily throttled CPU', async ({ page, extension }) => {
+    const cdp = await page.context().newCDPSession(page);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
+    await extension.start();
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const start = await heading.boundingBox();
+    await throwHeading(page);
+    const end = await heading.boundingBox();
+    expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(150);
+    await extension.stop();
+  });
+
+  test('pieces still work after the tab was frozen in the background', async ({ page, extension }) => {
+    // What Chrome does to background tabs: no timers, no animation frames
+    const cdp = await page.context().newCDPSession(page);
+    await extension.start();
+    await cdp.send('Page.setWebLifecycleState', { state: 'frozen' });
+    await page.waitForTimeout(1000);
+    await cdp.send('Page.setWebLifecycleState', { state: 'active' });
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const start = await heading.boundingBox();
+    // Nothing flew off while the simulation caught up on the frozen second
+    expect(await page.locator('.physics-clone').evaluateAll(els => els.every(el => {
+      const r = el.getBoundingClientRect();
+      return r.right > 0 && r.bottom > 0 && r.left < innerWidth && r.top < innerHeight;
+    }))).toBe(true);
+    await throwHeading(page);
+    const end = await heading.boundingBox();
+    expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(150);
+    await extension.stop();
+  });
+
   test('restoring glides the pieces home, then gives the page back exactly', async ({ page, extension }) => {
     const html = await page.evaluate(() => document.documentElement.outerHTML);
     await extension.start();
@@ -266,5 +298,104 @@ test.describe('shadow DOM page', () => {
     await extension.start();
     await extension.stop();
     expect(await snapshot()).toEqual(before);
+  });
+});
+
+test.describe('page with nothing to throw', () => {
+  test.beforeEach(async ({ extension }) => {
+    await extension.open('empty.html');
+  });
+
+  test("physics doesn't turn on or cover the page", async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    expect(await extension.message({ action: 'togglePhysics' })).toMatchObject({ isEnabled: false });
+    await expect(page.locator('.physics-canvas, .physics-overlay')).toHaveCount(0);
+    await page.mouse.click(200, 200);
+    expect(await page.evaluate(() => window.bodyClicks)).toBe(1);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+    await expect.poll(() => extension.badgeText()).toBe('');
+  });
+});
+
+test.describe('slow connection', () => {
+  const SVG = "<svg xmlns='http://www.w3.org/2000/svg' width='160' height='120'><rect width='160' height='120' fill='#6a6'/></svg>";
+
+  // Holds back slow.svg until release() is called; returns release
+  async function holdImage(page) {
+    let release;
+    const released = new Promise(r => { release = r; });
+    await page.route('**/slow.svg', async route => {
+      await released;
+      await route.fulfill({ contentType: 'image/svg+xml', body: SVG }).catch(() => {});
+    });
+    return release;
+  }
+
+  test('physics works while the page is still loading, and the image arrives in its piece', async ({ page, extension }) => {
+    const release = await holdImage(page);
+    await page.goto('http://physics.test/slow.html', { waitUntil: 'domcontentloaded' });
+    await expect.poll(() => extension.message({ action: 'getPhysicsState' }).catch(() => null))
+      .toMatchObject({ isEnabled: false });
+    expect(await page.evaluate(() => document.readyState)).not.toBe('complete');
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+
+    await extension.start();
+    const image = page.locator('.physics-overlay img');
+    await expect(image).toHaveCount(1);
+    release();
+    await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth)).toBe(160);
+
+    await extension.stop();
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('physics can be turned off before the page finishes loading', async ({ page, extension }) => {
+    const release = await holdImage(page);
+    await page.goto('http://physics.test/slow.html', { waitUntil: 'domcontentloaded' });
+    await expect.poll(() => extension.message({ action: 'getPhysicsState' }).catch(() => null))
+      .toMatchObject({ isEnabled: false });
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await extension.stop();
+    release();
+    await page.waitForLoadState('load');
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+    await expect(page.locator('img.slow')).toBeVisible();
+  });
+});
+
+test.describe('scaled page', () => {
+  test.beforeEach(async ({ extension }) => {
+    await extension.open('scaled.html');
+  });
+
+  // Content shrunk with `scale` or a transform (its own or an ancestor's)
+  // keeps that size in its piece
+  test('pieces look exactly like the page they replace', async ({ extension }) => {
+    await extension.setSettings({ hideRestoreButton: true });
+    const before = await extension.screenshot();
+    await extension.start();
+    const after = await extension.screenshot();
+    expect(await extension.diffRatio(before, after)).toBeLessThan(MAX_SPAWN_DIFF);
+  });
+
+  test('images land exactly where they were, at the same size', async ({ page, extension }) => {
+    const boxes = (root) => page.locator(`${root} img`).evaluateAll(imgs => Object.fromEntries(imgs.map(img => {
+      const r = img.getBoundingClientRect();
+      return [img.alt, [r.left, r.top, r.width, r.height].map(v => Math.round(v))];
+    })));
+    const before = await boxes('body');
+    await extension.start();
+    const after = await boxes('.physics-overlay');
+    for (const [alt, box] of Object.entries(before)) {
+      after[alt].forEach((v, i) => expect(Math.abs(v - box[i]), `${alt} [${i}]`).toBeLessThanOrEqual(1));
+    }
+  });
+
+  test('Esc restores the page exactly', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await extension.stop();
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
   });
 });

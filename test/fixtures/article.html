@@ -53,5 +53,10 @@
     <label><input type="checkbox" id="agree"> Agree</label>
     <button type="button">Button</button>
   </form>
+  <script>
+    // A prefixed attribute set by script has no namespace (YouTube's icons
+    // have these); copying it with setAttributeNS(null, ...) throws
+    document.querySelector('.card').setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+  </script>
 </body>
 </html>
