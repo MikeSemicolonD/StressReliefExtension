@@ -49,7 +49,7 @@ test.describe('settings page', () => {
 
   test('sliders announce their value with its unit', async ({ page }) => {
     await expect(page.locator('#shakeDistance')).toHaveAttribute('aria-valuetext', '40 pixels');
-    await expect(page.locator('#minShakeSpeed')).toHaveAttribute('aria-valuetext', '300 pixels per second');
+    await expect(page.locator('#minShakeSpeed')).toHaveAttribute('aria-valuetext', '150 pixels per second');
     await expect(page.locator('#timeWindow')).toHaveAttribute('aria-valuetext', '1500 milliseconds');
     await expect(page.locator('#gravity')).toHaveAttribute('aria-valuetext', '0');
   });
