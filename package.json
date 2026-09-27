@@ -1,6 +1,7 @@
 {
   "name": "screen-shake-stress-reliever",
   "private": true,
+  "license": "MIT",
   "description": "Development tooling for the browser extension (the extension itself has no dependencies)",
   "scripts": {
     "package": "node scripts/package.js pkg",

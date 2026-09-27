@@ -46,3 +46,7 @@ Right-click the extension icon and choose **Options** to tune the physics and ho
 3. Click "Load Temporary Add-on"
 4. Navigate to the extension folder and select the `manifest.json` file
 5. The extension is now installed temporarily (will be removed when Firefox restarts)
+
+## License
+
+[MIT](LICENSE). Includes [Matter.js](https://github.com/liabru/matter-js) (MIT) and the [Fredoka](https://github.com/hafontia/Fredoka-One) font ([SIL Open Font License](fonts/OFL.txt)).

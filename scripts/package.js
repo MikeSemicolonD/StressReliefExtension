@@ -20,7 +20,8 @@ const FILES = [
   'settings.css',
   'styles.css',
   'images',
-  'fonts'
+  'fonts',
+  'LICENSE'
 ];
 
 function packageExtension(outDir) {
