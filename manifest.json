@@ -3,7 +3,7 @@
   "name": "Screen Shake Stress Reliever",
   "author": "Michael Frye",
   "description": "Adds physics to HTML elements in the current tab for fun.",
-  "version": "1.0",
+  "version": "1.1",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
