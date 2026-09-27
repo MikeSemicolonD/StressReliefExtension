@@ -1,93 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Screen Shake Stress Reliever - Settings</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Screen Shake Stress Reliever settings</title>
+  <link rel="icon" href="images/icon32.png">
   <link rel="stylesheet" href="settings.css">
 </head>
 <body>
-  <div class="settings-container">
-    <h2>Physics Settings</h2>
-    <p class="section-note">Default behavior is a top-down view (no gravity). Raise gravity if you want elements to fall.</p>
+  <main class="window">
+    <!-- The shake squiggles from the extension icon -->
+    <svg class="squiggle squiggle-left" viewBox="0 0 52 90" aria-hidden="true">
+      <path d="M16 4c-10 8 10 14 0 22s10 14 0 22 10 14 0 22 10 14 0 16"/>
+      <path d="M38 16c-8 6 8 11 0 17s8 11 0 17 8 11 0 17"/>
+    </svg>
+    <svg class="squiggle squiggle-right" viewBox="0 0 100 46" aria-hidden="true">
+      <path d="M4 14c8-10 14 10 22 0s14 10 22 0 14 10 22 0 10 8 16 0"/>
+      <path d="M18 34c7-8 12 8 19 0s12 8 19 0 12 8 19 0"/>
+    </svg>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Gravity
-        <span class="setting-value" id="gravityValue">0</span>
-      </label>
-      <input type="range" class="slider" id="gravity" min="0" max="2" step="0.1" value="0">
-    </div>
+    <header class="titlebar">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <h1>Settings</h1>
+    </header>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Air Friction (how fast thrown items slow down)
-        <span class="setting-value" id="frictionAirValue">0.02</span>
-      </label>
-      <input type="range" class="slider" id="frictionAir" min="0" max="0.1" step="0.005" value="0.02">
-    </div>
+    <div class="content">
+      <p class="intro">Changes save as you go and apply to open tabs right away.</p>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Bounce (Restitution)
-        <span class="setting-value" id="restitutionValue">0.5</span>
-      </label>
-      <input type="range" class="slider" id="restitution" min="0" max="1" step="0.1" value="0.5">
-    </div>
+      <section class="group movement" aria-labelledby="movement-title">
+        <h2 id="movement-title">How pieces move</h2>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Surface Friction
-        <span class="setting-value" id="frictionValue">0.1</span>
-      </label>
-      <input type="range" class="slider" id="friction" min="0" max="1" step="0.1" value="0.1">
-    </div>
+        <div class="setting">
+          <label for="gravity">Gravity</label>
+          <output id="gravityValue" for="gravity">0</output>
+          <input type="range" class="slider" id="gravity" min="0" max="2" step="0.1" value="0" aria-describedby="gravity-hint">
+          <p class="hint" id="gravity-hint">At 0 the page stays a flat tabletop. Raise it to make pieces fall.</p>
+        </div>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Density
-        <span class="setting-value" id="densityValue">0.001</span>
-      </label>
-      <input type="range" class="slider" id="density" min="0.001" max="0.01" step="0.001" value="0.001">
-    </div>
+        <div class="setting">
+          <label for="frictionAir">Air drag</label>
+          <output id="frictionAirValue" for="frictionAir">0.02</output>
+          <input type="range" class="slider" id="frictionAir" min="0" max="0.1" step="0.005" value="0.02" aria-describedby="frictionAir-hint">
+          <p class="hint" id="frictionAir-hint">How quickly thrown pieces slow down.</p>
+        </div>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Drag Stiffness
-        <span class="setting-value" id="stiffnessValue">0.2</span>
-      </label>
-      <input type="range" class="slider" id="stiffness" min="0.1" max="1" step="0.1" value="0.2">
-    </div>
+        <div class="setting">
+          <label for="restitution">Bounce</label>
+          <output id="restitutionValue" for="restitution">0.5</output>
+          <input type="range" class="slider" id="restitution" min="0" max="1" step="0.1" value="0.5" aria-describedby="restitution-hint">
+          <p class="hint" id="restitution-hint">How much pieces bounce off each other and the edges of the window.</p>
+        </div>
 
-    <h2>Shake Detection Settings</h2>
-    <p class="section-note">A swing is one push of the window in a direction before you reverse it. Lower the distance or required swings if shaking doesn't trigger physics.</p>
-    <div class="setting-group">
-      <label class="setting-label">
-        Swing Distance (px)
-        <span class="setting-value" id="shakeDistanceValue">40</span>
-      </label>
-      <input type="range" class="slider" id="shakeDistance" min="10" max="150" step="5" value="40">
-    </div>
+        <div class="setting">
+          <label for="friction">Grip</label>
+          <output id="frictionValue" for="friction">0.1</output>
+          <input type="range" class="slider" id="friction" min="0" max="1" step="0.1" value="0.1" aria-describedby="friction-hint">
+          <p class="hint" id="friction-hint">How much pieces catch on each other when they slide past.</p>
+        </div>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Required Swings
-        <span class="setting-value" id="requiredShakesValue">4</span>
-      </label>
-      <input type="range" class="slider" id="requiredShakes" min="2" max="10" step="1" value="4">
-    </div>
+        <div class="setting">
+          <label for="density">Weight</label>
+          <output id="densityValue" for="density">0.001</output>
+          <input type="range" class="slider" id="density" min="0.001" max="0.01" step="0.001" value="0.001" aria-describedby="density-hint">
+          <p class="hint" id="density-hint">Heavier pieces are harder to fling and hit harder.</p>
+        </div>
 
-    <div class="setting-group">
-      <label class="setting-label">
-        Shake Time Window (ms)
-        <span class="setting-value" id="timeWindowValue">1500</span>
-      </label>
-      <input type="range" class="slider" id="timeWindow" min="500" max="3000" step="100" value="1500">
-    </div>
+        <div class="setting">
+          <label for="stiffness">Hold</label>
+          <output id="stiffnessValue" for="stiffness">0.2</output>
+          <input type="range" class="slider" id="stiffness" min="0.1" max="1" step="0.1" value="0.2" aria-describedby="stiffness-hint">
+          <p class="hint" id="stiffness-hint">How tightly a piece follows your pointer while you drag it.</p>
+        </div>
+      </section>
 
-    <div class="button-group">
-      <p class="info-text">Grab the window by its title bar and shake it to start, or click the extension icon. While physics is on, moving the window sloshes everything around. Press Esc or click the icon again to put the page back.</p>
-      <button class="reset-button" id="resetSettings">Reset All Settings</button>
+      <section class="group shaking" aria-labelledby="shaking-title">
+        <h2 id="shaking-title">Shaking the window</h2>
+
+        <div class="setting">
+          <label for="shakeDistance">Swing distance</label>
+          <output id="shakeDistanceValue" for="shakeDistance">40 px</output>
+          <input type="range" class="slider" id="shakeDistance" min="10" max="150" step="5" value="40" data-unit="px" aria-describedby="shakeDistance-hint">
+          <p class="hint" id="shakeDistance-hint">How far the window has to move before you reverse it.</p>
+        </div>
+
+        <div class="setting">
+          <label for="requiredShakes">Swings needed</label>
+          <output id="requiredShakesValue" for="requiredShakes">4</output>
+          <input type="range" class="slider" id="requiredShakes" min="2" max="10" step="1" value="4" aria-describedby="requiredShakes-hint">
+          <p class="hint" id="requiredShakes-hint">How many back-and-forths it takes to start.</p>
+        </div>
+
+        <div class="setting">
+          <label for="timeWindow">Time to shake</label>
+          <output id="timeWindowValue" for="timeWindow">1500 ms</output>
+          <input type="range" class="slider" id="timeWindow" min="500" max="3000" step="100" value="1500" data-unit="ms" aria-describedby="timeWindow-hint">
+          <p class="hint" id="timeWindow-hint">Those swings have to happen within this long.</p>
+        </div>
+
+        <p class="note">Shaking doesn't start it? Lower the swing distance or the swings needed.</p>
+      </section>
+
+      <aside class="tip">
+        <p>Grab the window by its title bar and shake it, or click the extension icon. While it's on, moving the window sloshes everything around. Press <kbd>Esc</kbd> or click the icon again to put the page back.</p>
+      </aside>
+
+      <button type="button" class="reset" id="resetSettings">Reset to defaults</button>
     </div>
-  </div>
+  </main>
   <script src="defaults.js"></script>
   <script src="settings.js"></script>
 </body>

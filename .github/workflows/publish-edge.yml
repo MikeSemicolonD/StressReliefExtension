@@ -50,7 +50,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release download "$TAG" --pattern '*.zip' --dir dist
+        run: gh release download "$TAG" --pattern '*-chrome.zip' --dir dist
 
       # Both calls are asynchronous: each returns an operation ID in the
       # Location header, polled until it succeeds or fails.

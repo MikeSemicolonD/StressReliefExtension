@@ -226,6 +226,34 @@
       const item = items.find(i => i.body === body);
       if (item) overlay.appendChild(item.clone);
     });
+
+    // Matter only looks for a body to grab on its next step, at wherever the
+    // pointer is by then; a quick flick can already have left a thin line of
+    // text. Grab at the press itself instead (these listeners run after
+    // Matter's own, so mouse.position is the press position).
+    canvas.addEventListener('mousedown', grabAtPointer);
+    canvas.addEventListener('touchstart', grabAtPointer);
+  }
+
+  // Same as MouseConstraint's own grab, but immediate. Picks the topmost
+  // piece under the pointer.
+  function grabAtPointer() {
+    const { mouse, constraint } = mouseConstraint;
+    if (mouseConstraint.body) return;
+    const hits = new Set(Matter.Query.point(items.map(i => i.body), mouse.position));
+    let item = null;
+    for (const clone of overlay.children) {
+      const candidate = items.find(i => i.clone === clone);
+      if (candidate && hits.has(candidate.body)) item = candidate;
+    }
+    if (!item) return;
+    const { body } = item;
+    constraint.pointA = mouse.position;
+    constraint.bodyB = mouseConstraint.body = body;
+    constraint.pointB = { x: mouse.position.x - body.position.x, y: mouse.position.y - body.position.y };
+    constraint.angleB = body.angle;
+    Matter.Sleeping.set(body, false);
+    Matter.Events.trigger(mouseConstraint, 'startdrag', { mouse, body });
   }
 
   function sizeCanvas() {

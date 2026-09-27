@@ -1,6 +1,6 @@
 /.playwright-mcp
-/dist
-/pkg
+/build
 /node_modules
 /test-results
 /playwright-report
+/workflow-runs

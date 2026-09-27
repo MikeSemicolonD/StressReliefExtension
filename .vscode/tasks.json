@@ -1,0 +1,30 @@
+{
+  // Build the extension for each browser (see scripts/package.js).
+  // Ctrl+Shift+B runs "Build: All".
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build: Chrome",
+      "detail": "Package into build/chrome (load it, or the repo folder, unpacked in Chrome or Edge)",
+      "type": "npm",
+      "script": "build:chrome",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: Firefox",
+      "detail": "Package into build/firefox (load its manifest.json via about:debugging)",
+      "type": "npm",
+      "script": "build:firefox",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: All",
+      "detail": "Package for Chrome and Firefox",
+      "dependsOn": ["Build: Chrome", "Build: Firefox"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}
