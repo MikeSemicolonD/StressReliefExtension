@@ -316,3 +316,86 @@ test.describe('page with nothing to throw', () => {
     await expect.poll(() => extension.badgeText()).toBe('');
   });
 });
+
+test.describe('slow connection', () => {
+  const SVG = "<svg xmlns='http://www.w3.org/2000/svg' width='160' height='120'><rect width='160' height='120' fill='#6a6'/></svg>";
+
+  // Holds back slow.svg until release() is called; returns release
+  async function holdImage(page) {
+    let release;
+    const released = new Promise(r => { release = r; });
+    await page.route('**/slow.svg', async route => {
+      await released;
+      await route.fulfill({ contentType: 'image/svg+xml', body: SVG }).catch(() => {});
+    });
+    return release;
+  }
+
+  test('physics works while the page is still loading, and the image arrives in its piece', async ({ page, extension }) => {
+    const release = await holdImage(page);
+    await page.goto('http://physics.test/slow.html', { waitUntil: 'domcontentloaded' });
+    await expect.poll(() => extension.message({ action: 'getPhysicsState' }).catch(() => null))
+      .toMatchObject({ isEnabled: false });
+    expect(await page.evaluate(() => document.readyState)).not.toBe('complete');
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+
+    await extension.start();
+    const image = page.locator('.physics-overlay img');
+    await expect(image).toHaveCount(1);
+    release();
+    await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth)).toBe(160);
+
+    await extension.stop();
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('physics can be turned off before the page finishes loading', async ({ page, extension }) => {
+    const release = await holdImage(page);
+    await page.goto('http://physics.test/slow.html', { waitUntil: 'domcontentloaded' });
+    await expect.poll(() => extension.message({ action: 'getPhysicsState' }).catch(() => null))
+      .toMatchObject({ isEnabled: false });
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await extension.stop();
+    release();
+    await page.waitForLoadState('load');
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+    await expect(page.locator('img.slow')).toBeVisible();
+  });
+});
+
+test.describe('scaled page', () => {
+  test.beforeEach(async ({ extension }) => {
+    await extension.open('scaled.html');
+  });
+
+  // Content shrunk with `scale` or a transform (its own or an ancestor's)
+  // keeps that size in its piece
+  test('pieces look exactly like the page they replace', async ({ extension }) => {
+    await extension.setSettings({ hideRestoreButton: true });
+    const before = await extension.screenshot();
+    await extension.start();
+    const after = await extension.screenshot();
+    expect(await extension.diffRatio(before, after)).toBeLessThan(MAX_SPAWN_DIFF);
+  });
+
+  test('images land exactly where they were, at the same size', async ({ page, extension }) => {
+    const boxes = (root) => page.locator(`${root} img`).evaluateAll(imgs => Object.fromEntries(imgs.map(img => {
+      const r = img.getBoundingClientRect();
+      return [img.alt, [r.left, r.top, r.width, r.height].map(v => Math.round(v))];
+    })));
+    const before = await boxes('body');
+    await extension.start();
+    const after = await boxes('.physics-overlay');
+    for (const [alt, box] of Object.entries(before)) {
+      after[alt].forEach((v, i) => expect(Math.abs(v - box[i]), `${alt} [${i}]`).toBeLessThanOrEqual(1));
+    }
+  });
+
+  test('Esc restores the page exactly', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await extension.stop();
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+});

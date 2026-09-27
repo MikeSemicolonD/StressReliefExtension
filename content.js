@@ -187,14 +187,11 @@
     // Anything that slipped fully out of view (thrown out through a wall it
     // was ghosting) comes back just inside the nearest edge.
     const { width: vw, height: vh } = viewport;
-    for (const { body, w, h } of items) {
-      const b = body.bounds;
+    for (const item of items) {
+      const b = item.body.bounds;
       if (b.max.x > 0 && b.min.x < vw && b.max.y > 0 && b.min.y < vh) continue;
-      Matter.Body.setPosition(body, {
-        x: clamp(body.position.x, w / 2, Math.max(w / 2, vw - w / 2)),
-        y: clamp(body.position.y, h / 2, Math.max(h / 2, vh - h / 2))
-      });
-      Matter.Body.setVelocity(body, { x: 0, y: 0 });
+      Matter.Body.setPosition(item.body, insidePosition(item, vw, vh));
+      Matter.Body.setVelocity(item.body, { x: 0, y: 0 });
     }
   }
 
@@ -291,6 +288,16 @@
     Matter.Composite.add(world, walls);
   }
 
+  // The nearest position that keeps a piece's box (as drawn) inside the viewport
+  function insidePosition({ body, w, h, scale }, vw, vh) {
+    const hw = w * scale.x / 2;
+    const hh = h * scale.y / 2;
+    return {
+      x: clamp(body.position.x, hw, Math.max(hw, vw - hw)),
+      y: clamp(body.position.y, hh, Math.max(hh, vh - hh))
+    };
+  }
+
   function clamp(v, min, max) {
     return Math.min(max, Math.max(min, v));
   }
@@ -302,11 +309,10 @@
     buildWalls();
     // Pull back anything the shrinking viewport left outside the new walls
     const { width, height } = viewportSize();
-    for (const { body, w, h } of items) {
-      const x = clamp(body.position.x, w / 2, Math.max(w / 2, width - w / 2));
-      const y = clamp(body.position.y, h / 2, Math.max(h / 2, height - h / 2));
-      if (x !== body.position.x || y !== body.position.y) {
-        Matter.Body.setPosition(body, { x, y });
+    for (const item of items) {
+      const { x, y } = insidePosition(item, width, height);
+      if (x !== item.body.position.x || y !== item.body.position.y) {
+        Matter.Body.setPosition(item.body, { x, y });
       }
     }
   });
@@ -856,13 +862,47 @@
     const content = range.getBoundingClientRect();
     if (!content.width || content.width >= rect.width - 1) return rect;
 
-    // A styled box (background, border) is visible at its full size
+    // A styled box (background, border) is visible at its full size. Flex
+    // and grid items are placed by the container, not by text flow: in a
+    // narrower copy they'd move (and the content rect includes their
+    // relative offsets, which the copy would apply again).
     const cs = window.getComputedStyle(el);
-    if (!isPlainBox(cs)) return rect;
+    if (!isPlainBox(cs) || /flex|grid/.test(cs.display)) return rect;
     const left = Math.max(rect.left, content.left - parseFloat(cs.paddingLeft) - parseFloat(cs.borderLeftWidth));
     // +1px slack so subpixel rounding can't wrap the longest line
     const right = Math.min(rect.right, content.right + parseFloat(cs.paddingRight) + parseFloat(cs.borderRightWidth) + 1);
     return { left, top: rect.top, width: right - left, height: rect.height };
+  }
+
+  // How much an element is drawn scaled on screen: its own `scale` and
+  // `transform` times every ancestor's. Measured rects are in screen pixels
+  // but copied styles (font sizes, widths) aren't, so a piece is built in the
+  // original's own units and scaled by this (see pieceTransform). Rotation
+  // doesn't change the length of a matrix's axes, so it doesn't count.
+  let scaleCache = new Map(); // element -> { x, y }, reset each spawn
+
+  function screenScale(el) {
+    if (!el || el === document.documentElement) return { x: 1, y: 1 };
+    let s = scaleCache.get(el);
+    if (s) return s;
+    const parent = screenScale(composedParent(el));
+    const cs = window.getComputedStyle(el);
+    let x = parent.x;
+    let y = parent.y;
+    if (cs.scale && cs.scale !== 'none') {
+      const [sx, sy = sx] = cs.scale.split(' ').map(parseFloat);
+      x *= sx;
+      y *= sy;
+    }
+    if (cs.transform && cs.transform !== 'none') {
+      const m = new DOMMatrixReadOnly(cs.transform);
+      x *= Math.hypot(m.a, m.b);
+      y *= Math.hypot(m.c, m.d);
+    }
+    // Absorb floating-point noise, so unscaled pieces stay pixel-exact
+    s = { x: Math.abs(x - 1) < 1e-3 ? 1 : x, y: Math.abs(y - 1) < 1e-3 ? 1 : y };
+    scaleCache.set(el, s);
+    return s;
   }
 
   // --- Line splitting -----------------------------------------------------------
@@ -1018,6 +1058,9 @@
     }
 
     const lines = PhysicsLib.groupLines(tokens, lineHeight);
+    // Tokens are measured on screen; the piece is laid out in the block's
+    // own (unscaled) units and scaled back by its transform
+    const scale = screenScale(block);
 
     const styles = new Map();
     const pieces = [];
@@ -1032,21 +1075,24 @@
       // The piece's box is padded vertically: its compositing layer (from
       // will-change) clips glyph ink, and descenders hang below the tight
       // line box. The physics body still uses the exact line size.
-      const pad = Math.ceil(h * 0.3);
+      const pad = Math.ceil(h / scale.y * 0.3);
       const wrap = document.createElement('div');
       wrap.style.cssText = 'all:initial;display:block;';
+      // Screen position within the line -> the piece's own units
+      const localX = (x) => (x - l.left) / scale.x;
+      const localY = (y) => (y - l.top) / scale.y;
       for (const t of l.tokens) {
         let node;
-        let left = t.rect.left;
+        let left;
         if (t.atom) {
           // Size by the untransformed layout box and center on the measured
           // one, so a copied transform (a rotated chevron) applies once, not twice.
-          const aw = t.atom.offsetWidth ?? t.rect.width;
-          const ah = t.atom.offsetHeight ?? t.rect.height;
+          const aw = t.atom.offsetWidth ?? t.rect.width / scale.x;
+          const ah = t.atom.offsetHeight ?? t.rect.height / scale.y;
           node = freezeClone(t.atom);
           pin(node, aw, ah);
-          left = t.rect.left + (t.rect.width - aw) / 2;
-          node.style.top = `${t.rect.top + (t.rect.height - ah) / 2 - l.top + pad}px`;
+          left = localX(t.rect.left + t.rect.width / 2) - aw / 2;
+          node.style.top = `${localY(t.rect.top + t.rect.height / 2) - ah / 2 + pad}px`;
         } else {
           // Composed parent: text directly in a shadow root has no parentElement,
           // and slotted text inherits its styles through the slot
@@ -1065,11 +1111,13 @@
           // baseline to pixels the same way. Chrome floors the leading above
           // the glyphs to whole pixels. (`normal` line height: use the glyph
           // box itself.)
-          const lineHeight = Number.isFinite(style.lineHeight) ? style.lineHeight : t.rect.height;
-          const leadingAbove = Math.floor((lineHeight - t.rect.height) / 2);
+          const glyphHeight = t.rect.height / scale.y;
+          const lineHeight = Number.isFinite(style.lineHeight) ? style.lineHeight : glyphHeight;
+          const leadingAbove = Math.floor((lineHeight - glyphHeight) / 2);
           node.style.lineHeight = `${lineHeight}px`;
           node.textContent = t.text;
-          node.style.top = `${t.rect.top - leadingAbove - l.top + pad}px`;
+          node.style.top = `${localY(t.rect.top) - leadingAbove + pad}px`;
+          left = localX(t.rect.left);
           if (t.outside) {
             // A zero-width list item at the content edge: the browser draws
             // its marker just outside it, exactly where the original's was
@@ -1080,15 +1128,15 @@
               width: '0px'
             });
             node.textContent = '\u200b';
-            left = t.contentLeft;
+            left = localX(t.contentLeft);
           }
         }
-        node.style.left = `${left - l.left}px`;
+        node.style.left = `${left}px`;
         wrap.appendChild(node);
       }
-      pin(wrap, w, h + pad * 2);
+      pin(wrap, w / scale.x, h / scale.y + pad * 2);
       markPiece(wrap);
-      pieces.push({ node: wrap, pad, rect: { left: l.left, top: l.top, width: w, height: h } });
+      pieces.push({ node: wrap, pad, scale, rect: { left: l.left, top: l.top, width: w, height: h } });
     }
     return pieces;
   }
@@ -1097,22 +1145,28 @@
 
   // An empty copy of a styled box: its background, border and shadow, but
   // none of the contents, which are thrown as pieces of their own.
-  function makeShell(el, rect) {
+  function makeShell(el, w, h) {
     const shell = shallowCopy(el);
     copyComputedStyles(el, shell);
-    pin(shell, rect.width, rect.height);
+    pin(shell, w, h);
     markPiece(shell);
     return shell;
   }
 
+  // rect is on screen; a whole piece is built at its unscaled size (see
+  // screenScale)
   function piecesFor(el, kind, rect) {
     switch (kind) {
       case 'split': return splitLines(el);
       case 'loose': return splitLines(el, true);
-      case 'shell': return [{ node: makeShell(el, rect), rect }];
+      case 'shell': {
+        const scale = screenScale(el);
+        return [{ node: makeShell(el, rect.width / scale.x, rect.height / scale.y), rect, scale }];
+      }
       default: {
         const box = pieceRect(el, rect);
-        return [{ node: makeClone(el, box.width, box.height), rect: box }];
+        const scale = screenScale(el);
+        return [{ node: makeClone(el, box.width / scale.x, box.height / scale.y), rect: box, scale }];
       }
     }
   }
@@ -1202,6 +1256,7 @@
   }
 
   function spawnClones() {
+    scaleCache = new Map();
     const selected = selectElements()
       .map(({ el, kind, order }) => ({ el, kind, order, rect: kind === 'shell' ? el.getBoundingClientRect() : visualRect(el) }))
       // Smallest first -- when capped, keep granular pieces over big chunks
@@ -1230,7 +1285,7 @@
     const hiddenText = [];
     for (const { el, kind, pieces, anchor } of planned) {
       hideOriginal(el, kind, hiddenText);
-      for (const { node, rect: r, pad = 0 } of pieces) {
+      for (const { node, rect: r, pad = 0, scale = { x: 1, y: 1 } } of pieces) {
         overlay.appendChild(node);
         const body = Matter.Bodies.rectangle(
           r.left + r.width / 2,
@@ -1247,17 +1302,22 @@
         );
         body.collisionFilter.ghosts = new Set();
         Matter.Composite.add(world, body);
-        // w/h are the DOM box (centered on the body), including any padding.
+        // w/h are the DOM box (centered on the body), including any padding,
+        // in the piece's own units (scaled on screen by `scale`).
         // The box's sub-pixel offset goes into left/top rather than the
         // transform: a fractional translation stops Chrome snapping borders
         // to pixels, so crisp 1px lines would render blurred. At spawn the
         // transform then carries whole pixels only.
-        const h = r.height + pad * 2;
-        const fx = r.left - Math.floor(r.left);
-        const fy = (r.top - pad) - Math.floor(r.top - pad);
+        const w = r.width / scale.x;
+        const h = r.height / scale.y + pad * 2;
+        // Where the unscaled box's corner goes (r.left, r.top - pad unscaled)
+        const left = r.left + (r.width - w) / 2;
+        const top = r.top + (r.height - h) / 2;
+        const fx = left - Math.floor(left);
+        const fy = top - Math.floor(top);
         node.style.left = `${fx}px`;
         node.style.top = `${fy}px`;
-        items.push({ clone: node, body, w: r.width, h, fx, fy, homeX: body.position.x, homeY: body.position.y, el, anchor });
+        items.push({ clone: node, body, w, h, fx, fy, scale, homeX: body.position.x, homeY: body.position.y, el, anchor });
       }
     }
 
@@ -1293,9 +1353,11 @@
     return Math.abs(v - rounded) < 0.01 ? rounded : v;
   }
 
-  // The transform that puts a piece's center at (x, y), turned by `angle`
-  function pieceTransform({ w, h, fx, fy }, x, y, angle) {
-    return `translate(${snapToPixel(x - w / 2 - fx)}px, ${snapToPixel(y - h / 2 - fy)}px) rotate(${angle}rad)`;
+  // The transform that puts a piece's center at (x, y), turned by `angle`,
+  // at the size the page drew it (scaled about its center)
+  function pieceTransform({ w, h, fx, fy, scale }, x, y, angle) {
+    const t = `translate(${snapToPixel(x - w / 2 - fx)}px, ${snapToPixel(y - h / 2 - fy)}px) rotate(${angle}rad)`;
+    return scale.x === 1 && scale.y === 1 ? t : `${t} scale(${scale.x}, ${scale.y})`;
   }
 
   // Transform-only writes: no layout reads, no left/top reflow. Also checks the
