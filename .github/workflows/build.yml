@@ -32,10 +32,7 @@ jobs:
       # scripts/package.js holds the list of shipped files; the e2e tests load
       # the extension from the same list
       - name: Package
-        run: |
-          node scripts/package.js pkg
-          mkdir -p dist
-          (cd pkg && zip -r "../dist/screen-shake-stress-reliever-${{ steps.version.outputs.version }}.zip" .)
+        run: node scripts/package.js pkg
 
       - name: Syntax check
         run: for f in pkg/*.js; do node --check "$f"; done
@@ -61,8 +58,10 @@ jobs:
       - name: Lint for Firefox
         run: npx --yes web-ext@8 lint --source-dir pkg
 
+      # The packaged folder itself: upload-artifact zips it, so downloading the
+      # artifact gives a ready-to-upload extension zip
       - uses: actions/upload-artifact@v4
         with:
           name: extension
-          path: dist/*.zip
+          path: pkg/
           if-no-files-found: error

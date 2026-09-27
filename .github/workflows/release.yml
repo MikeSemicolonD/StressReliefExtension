@@ -49,15 +49,19 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: extension
-          path: dist
+          path: pkg
 
-      # Creates the tag on the pushed commit along with the release
+      # A release asset has to be a single file, so the package is zipped here
+      # (the store workflows download this zip)
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           TAG: ${{ needs.check.outputs.tag }}
-        run: gh release create "$TAG" dist/* --target "$GITHUB_SHA" --title "$TAG" --generate-notes
+        run: |
+          zip_file="$PWD/screen-shake-stress-reliever-${TAG#v}.zip"
+          (cd pkg && zip -r "$zip_file" .)
+          gh release create "$TAG" "$zip_file" --target "$GITHUB_SHA" --title "$TAG" --generate-notes
 
   # Store deployments are reusable workflows (also runnable by hand from the
   # Actions tab to retry one store). They're called directly because a release
