@@ -10,8 +10,6 @@
 
 # Screen Shake Stress Reliever Extension
 
-
-
 Ever get so mad you grab and shake the browser window? Well this is the perfect extension for you!
 
 This was greatly inspired by [Stress Reducers for Windows](https://www.mobygames.com/game/34040/stress-reducers/) made in 2000.
@@ -21,6 +19,8 @@ This was greatly inspired by [Stress Reducers for Windows](https://www.mobygames
 
 ## Usage
 
+![Usage Example GIF](/readme-images/gifs/example.gif)
+
 1. Grab your browser window by its title bar and shake it side to side or click the extension icon
 2. The page's content breaks loose allowing you to drag and throw the pieces around
 3. Keep moving the window while physics is on and everything sloshes around inside it
@@ -28,6 +28,13 @@ This was greatly inspired by [Stress Reducers for Windows](https://www.mobygames
 5. There's also a **Restore Page** button that'll appear when the physics is turned on
 
 To tune the physics and shake settings, right-click the extension icon and choose **Options** (the icon has to be pinned to the toolbar) or **Manage Extension** → **Options**.
+
+<div align="center">
+
+![Physics Options in Settings](/readme-images/PhysicsSettings.PNG)
+![Shake Options in Settings](/readme-images/ShakeSettings.PNG)
+
+</div>
 
 ## License
 
