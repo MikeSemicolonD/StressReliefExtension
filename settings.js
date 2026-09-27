@@ -2,14 +2,27 @@
 // listens to chrome.storage.onChanged and applies them live.
 const DEFAULTS = self.PHYSICS_DEFAULTS;
 
-// Shows a slider's value (with its unit, if any) and fills the track up to
-// the thumb; the fill is a CSS gradient driven by --fill.
+// Units as shown in the value chip and as read by screen readers
+const SPOKEN_UNITS = { px: 'pixels', ms: 'milliseconds' };
+
+// Shows a slider's value (with its unit, if any), gives screen readers the
+// same value with the unit spelled out, and fills the track up to the thumb
+// (a CSS gradient driven by --fill).
 function render(slider) {
   const unit = slider.dataset.unit;
   document.getElementById(`${slider.id}Value`).textContent =
     unit ? `${slider.value} ${unit}` : slider.value;
+  slider.setAttribute('aria-valuetext',
+    unit ? `${slider.value} ${SPOKEN_UNITS[unit] ?? unit}` : slider.value);
   const fraction = (slider.value - slider.min) / (slider.max - slider.min);
   slider.style.setProperty('--fill', `${fraction * 100}%`);
+}
+
+// Announces a message through the page's status region
+function announce(message) {
+  const status = document.getElementById('status');
+  status.textContent = '';
+  requestAnimationFrame(() => { status.textContent = message; });
 }
 
 function showSettings(values) {
@@ -50,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (chrome.runtime.lastError) {
         console.error('Error resetting settings:', chrome.runtime.lastError);
         alert('Couldn\'t reset the settings. Try again.');
+        return;
       }
+      announce('Settings reset to defaults.');
     });
   });
 });

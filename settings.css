@@ -368,6 +368,49 @@ kbd {
   outline-offset: 4px;
 }
 
+/* The focused slider's thumb fills in, so it's clear which knob the arrow
+   keys will move */
+.slider:focus-visible::-webkit-slider-thumb {
+  background: var(--accent);
+}
+
+.slider:focus-visible::-moz-range-thumb {
+  background: var(--accent);
+}
+
+/* Read by screen readers, not shown */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Windows High Contrast and other forced-colour modes: drop the drawn
+   slider (its fill is a background the mode may strip) for the browser's
+   native one, and the heading highlighter behind text */
+@media (forced-colors: active) {
+  .slider,
+  .slider::-webkit-slider-thumb {
+    appearance: auto;
+  }
+
+  .slider {
+    height: auto;
+    background: none;
+    border: 0;
+  }
+
+  h2 {
+    background: none;
+  }
+}
+
 /* --- Narrow windows ---------------------------------------------------- */
 
 @media (max-width: 760px) {

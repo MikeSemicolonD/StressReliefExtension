@@ -50,6 +50,16 @@ class Extension {
     return this.worker.evaluate((s) => chrome.storage.local.set(s), settings);
   }
 
+  getSettings() {
+    return this.worker.evaluate(() => chrome.storage.local.get(null));
+  }
+
+  // Opens the extension's own settings page and waits for saved values to load
+  async openSettings() {
+    await this.page.goto(`chrome-extension://${new URL(this.worker.url()).host}/settings.html`);
+    await expect(this.page.locator('#gravity')).toHaveAttribute('aria-valuetext', /.+/);
+  }
+
   badgeText() {
     return this.worker.evaluate(async () => {
       const [tab] = await chrome.tabs.query({ active: true });
