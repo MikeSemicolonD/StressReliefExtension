@@ -127,6 +127,16 @@ test.describe('article page', () => {
     expect(await page.evaluate(() => window.imageLoads)).toBe(1);
   });
 
+  test('reloading the extension restores the page', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await extension.reload();
+    // The old content script can't reach the extension any more, so it gives
+    // the page back rather than being left running (and shakeable) orphaned
+    await expect(page.locator('.physics-overlay')).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
   test('the toolbar badge shows when physics is on', async ({ extension }) => {
     await extension.start();
     await expect.poll(() => extension.badgeText()).toBe('ON');

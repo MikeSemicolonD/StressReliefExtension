@@ -1278,6 +1278,7 @@
   // window position every frame so sloshing is smooth.
   function renderFrame() {
     pollWindowPosition();
+    if (!isPhysicsEnabled) return; // Orphaned and shut down by the poll
     for (const item of items) {
       const { clone, body, w, h, fx, fy } = item;
       const { x, y } = body.position;
@@ -1385,6 +1386,10 @@
   let lastY = window.screenY;
 
   function pollWindowPosition() {
+    if (!chrome.runtime?.id) {
+      retire();
+      return;
+    }
     const dx = window.screenX - lastX;
     const dy = window.screenY - lastY;
     if (!dx && !dy) return;
@@ -1411,5 +1416,15 @@
     }
   }
 
-  setInterval(pollWindowPosition, CONFIG.POSITION_POLL_MS);
+  const pollTimer = setInterval(pollWindowPosition, CONFIG.POSITION_POLL_MS);
+
+  // After the extension is updated, reloaded or disabled, this script keeps
+  // running in tabs that were already open, but its chrome.* APIs are gone.
+  // Give the page back and stop watching for shakes; the new version takes
+  // over when the tab is reloaded or the toolbar icon injects it.
+  function retire() {
+    clearInterval(pollTimer);
+    setPhysicsEnabled(false);
+    window.__physicsExtensionLoaded = false;
+  }
 })();

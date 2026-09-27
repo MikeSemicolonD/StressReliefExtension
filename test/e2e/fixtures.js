@@ -15,9 +15,27 @@ const FIXTURES = path.resolve(__dirname, '../fixtures');
 const ORIGIN = 'http://physics.test';
 
 class Extension {
-  constructor(page, worker) {
+  constructor(context, page, worker) {
+    this.context = context;
     this.page = page;
     this.worker = worker;
+  }
+
+  // Turns the extension off and on again in chrome://extensions, which leaves
+  // the open tab's content script orphaned just like an update or a reload
+  // does. (chrome.runtime.reload() doesn't bring back an extension loaded
+  // with --load-extension.)
+  async reload() {
+    const manager = await this.context.newPage();
+    await manager.goto('chrome://extensions');
+    const toggle = manager.locator('extensions-item #enableToggle');
+    await toggle.click();
+    await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    const restarted = this.context.waitForEvent('serviceworker');
+    await toggle.click();
+    this.worker = await restarted;
+    await manager.close();
+    await this.page.bringToFront();
   }
 
   // Opens a fixture page and waits until the content script answers
@@ -173,7 +191,7 @@ const test = base.extend({
 
   extension: async ({ context, page }, use) => {
     const worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker');
-    await use(new Extension(page, worker));
+    await use(new Extension(context, page, worker));
   }
 });
 
