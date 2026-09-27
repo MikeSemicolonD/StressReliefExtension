@@ -41,10 +41,10 @@ Right-click the extension icon and choose **Options** to tune the physics and ho
 
 ### Firefox
 
-1. Download or clone this repository to your computer
+1. Download the `-firefox.zip` file from the [latest release](https://github.com/MikeSemicolonD/StressReliefExtension/releases/latest)
 2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
 3. Click "Load Temporary Add-on"
-4. Navigate to the extension folder and select the `manifest.json` file
+4. Select the downloaded zip file
 5. The extension is now installed temporarily (will be removed when Firefox restarts)
 
 ## License

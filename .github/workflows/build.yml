@@ -1,7 +1,8 @@
 name: Build
 
-# Reusable: tests, packages and lints the extension, then uploads the zip as
-# the `extension` artifact. Called by CI (staging / PRs) and Release (main).
+# Reusable: tests, packages and lints the extension, then uploads one package
+# per browser as the `extension-chrome` and `extension-firefox` artifacts.
+# Called by CI (staging / PRs) and Release (main).
 on:
   workflow_call:
     outputs:
@@ -29,10 +30,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # scripts/package.js holds the list of shipped files; the e2e tests load
-      # the extension from the same list
+      # scripts/package.js holds the list of shipped files (the e2e tests load
+      # the extension from the same list). Both packages are Manifest V3; the
+      # Firefox one declares background scripts instead of a service worker.
       - name: Package
-        run: node scripts/package.js pkg
+        run: |
+          node scripts/package.js pkg
+          node scripts/package.js pkg-firefox --firefox
 
       - name: Syntax check
         run: for f in pkg/*.js; do node --check "$f"; done
@@ -53,15 +57,21 @@ jobs:
           path: playwright-report/
           retention-days: 14
 
-      # Two warnings are expected (Firefox ignores background.service_worker;
-      # the Chrome-only chrome.dom call is feature-detected)
+      # One warning is expected: the Chrome-only chrome.dom call, which is
+      # feature-detected
       - name: Lint for Firefox
-        run: npx --yes web-ext@8 lint --source-dir pkg
+        run: npx --yes web-ext@8 lint --source-dir pkg-firefox
 
-      # The packaged folder itself: upload-artifact zips it, so downloading the
-      # artifact gives a ready-to-upload extension zip
+      # The packaged folders themselves: upload-artifact zips them, so
+      # downloading an artifact gives a ready-to-upload extension zip
       - uses: actions/upload-artifact@v4
         with:
-          name: extension
+          name: extension-chrome
           path: pkg/
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-firefox
+          path: pkg-firefox/
           if-no-files-found: error

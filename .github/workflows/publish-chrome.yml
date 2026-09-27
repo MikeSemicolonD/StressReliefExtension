@@ -56,7 +56,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release download "$TAG" --pattern '*.zip' --dir dist
+        run: gh release download "$TAG" --pattern '*-chrome.zip' --dir dist
 
       # Uploads, then publishes (submits for review)
       - name: Upload and publish

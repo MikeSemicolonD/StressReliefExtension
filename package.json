@@ -5,6 +5,7 @@
   "description": "Development tooling for the browser extension (the extension itself has no dependencies)",
   "scripts": {
     "package": "node scripts/package.js pkg",
+    "package:firefox": "node scripts/package.js pkg-firefox --firefox",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "node --test \"test/unit/*.test.js\"",
     "test:e2e": "playwright test"

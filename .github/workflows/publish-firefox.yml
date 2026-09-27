@@ -53,7 +53,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          gh release download "$TAG" --pattern '*.zip' --dir dist
+          gh release download "$TAG" --pattern '*-firefox.zip' --dir dist
           mkdir pkg && unzip -q dist/*.zip -d pkg
 
       # Review of listed versions can take days, so don't wait for it
