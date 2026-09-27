@@ -626,7 +626,9 @@
     if (source.localName.includes('-') || getShadowRoot(source)) return document.createElement('div');
     const copy = document.createElementNS(source.namespaceURI, source.localName);
     for (const attr of source.attributes) {
-      if (copiesAttribute(attr.name)) copy.setAttributeNS(attr.namespaceURI, attr.name, attr.value);
+      // Cloning the Attr keeps its namespace as is: setAttributeNS would throw
+      // on a prefixed name a script set without one (e.g. xmlns:xlink)
+      if (copiesAttribute(attr.name)) copy.setAttributeNode(attr.cloneNode());
     }
     return copy;
   }
@@ -1329,8 +1331,20 @@
 
     if (on) {
       finishRestoring();
-      initPhysics();
-      spawnClones();
+      try {
+        initPhysics();
+        spawnClones();
+      } catch (e) {
+        console.error('Physics: failed to start.', e);
+      }
+      // Nothing to throw (or it broke partway): don't leave the canvas
+      // covering a page that looks untouched but no longer takes clicks
+      if (!items.length) {
+        tearDown();
+        isPhysicsEnabled = false;
+        notifyState();
+        return;
+      }
       renderFrame();
       showRestoreButton();
       document.body.classList.add('physics-mode');

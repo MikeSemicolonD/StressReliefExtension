@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empty fixture</title>
+<style>
+  body { margin: 0; }
+  /* Too big to throw (layout, not content), and there's nothing else */
+  .backdrop { width: 100vw; height: 100vh; background: linear-gradient(135deg, #36c, #c63); }
+</style>
+</head>
+<body>
+  <div class="backdrop"></div>
+  <script>
+    // Listened for on body: a click on anything the extension puts over the
+    // page (attached to <html>) never reaches it
+    window.bodyClicks = 0;
+    document.body.addEventListener('click', () => window.bodyClicks++);
+  </script>
+</body>
+</html>

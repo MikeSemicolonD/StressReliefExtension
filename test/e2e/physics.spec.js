@@ -77,6 +77,38 @@ test.describe('article page', () => {
     return heading;
   }
 
+  test('pieces can still be thrown on a heavily throttled CPU', async ({ page, extension }) => {
+    const cdp = await page.context().newCDPSession(page);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
+    await extension.start();
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const start = await heading.boundingBox();
+    await throwHeading(page);
+    const end = await heading.boundingBox();
+    expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(150);
+    await extension.stop();
+  });
+
+  test('pieces still work after the tab was frozen in the background', async ({ page, extension }) => {
+    // What Chrome does to background tabs: no timers, no animation frames
+    const cdp = await page.context().newCDPSession(page);
+    await extension.start();
+    await cdp.send('Page.setWebLifecycleState', { state: 'frozen' });
+    await page.waitForTimeout(1000);
+    await cdp.send('Page.setWebLifecycleState', { state: 'active' });
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const start = await heading.boundingBox();
+    // Nothing flew off while the simulation caught up on the frozen second
+    expect(await page.locator('.physics-clone').evaluateAll(els => els.every(el => {
+      const r = el.getBoundingClientRect();
+      return r.right > 0 && r.bottom > 0 && r.left < innerWidth && r.top < innerHeight;
+    }))).toBe(true);
+    await throwHeading(page);
+    const end = await heading.boundingBox();
+    expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(150);
+    await extension.stop();
+  });
+
   test('restoring glides the pieces home, then gives the page back exactly', async ({ page, extension }) => {
     const html = await page.evaluate(() => document.documentElement.outerHTML);
     await extension.start();
@@ -266,5 +298,21 @@ test.describe('shadow DOM page', () => {
     await extension.start();
     await extension.stop();
     expect(await snapshot()).toEqual(before);
+  });
+});
+
+test.describe('page with nothing to throw', () => {
+  test.beforeEach(async ({ extension }) => {
+    await extension.open('empty.html');
+  });
+
+  test("physics doesn't turn on or cover the page", async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    expect(await extension.message({ action: 'togglePhysics' })).toMatchObject({ isEnabled: false });
+    await expect(page.locator('.physics-canvas, .physics-overlay')).toHaveCount(0);
+    await page.mouse.click(200, 200);
+    expect(await page.evaluate(() => window.bodyClicks)).toBe(1);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+    await expect.poll(() => extension.badgeText()).toBe('');
   });
 });
