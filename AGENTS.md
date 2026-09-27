@@ -66,7 +66,7 @@ Title-bar drags happen outside the page, so no mouse events arrive. Instead `pol
 
 ## Development
 
-Both browsers get a Manifest V3 build, from one source. `manifest.json` is the Chrome manifest (`background.service_worker`); Firefox's MV3 doesn't support service workers and uses `background.scripts`, which Chrome warns about, so `scripts/package.js --firefox` (`npm run package:firefox`, into `pkg-firefox/`) writes a Firefox manifest with the service worker swapped for scripts. Load the repo folder unpacked in Chrome; in Firefox, load the Firefox build. `npx web-ext lint --source-dir pkg-firefox` checks Firefox compatibility; one warning is expected (the Chrome-only `chrome.dom` call, which is feature-detected).
+Both browsers get a Manifest V3 build, from one source. `manifest.json` is the Chrome manifest (`background.service_worker`); Firefox's MV3 doesn't support service workers and uses `background.scripts`, which Chrome warns about, so `scripts/package.js --firefox` writes a Firefox manifest with the service worker swapped for scripts. Load the repo folder unpacked in Chrome; in Firefox, load the Firefox build. Builds: `npm run build:chrome` / `npm run build:firefox` (or the VS Code tasks "Build: Chrome", "Build: Firefox", "Build: All", the default build task) write `build/chrome/` and `build/firefox/` (git-ignored). `npx web-ext lint --source-dir build/firefox` checks Firefox compatibility; one warning is expected (the Chrome-only `chrome.dom` call, which is feature-detected).
 
 Tests: `npm install`, `npx playwright install chromium`, then `npm test`.
 - `test/unit` (Node's test runner) covers the pure logic in `lib.js`: shake detection, line grouping, list-marker text. Keep DOM-free logic there so it stays unit-testable.
@@ -75,7 +75,7 @@ Tests: `npm install`, `npx playwright install chromium`, then `npm test`.
 
 Branches and CI: work goes to `staging` (CI: `ci.yml` → reusable `build.yml`, which packages a Chrome and a Firefox build via `scripts/package.js`, syntax-checks, runs the unit and browser tests, lints the Firefox build, and uploads both as artifacts), then to `main` via pull request. Every push to `main` runs `release.yml`, which releases only when `manifest.json`'s version has no `v<version>` tag yet: it creates the GitHub release with a `-chrome.zip` and a `-firefox.zip`, then calls `publish-firefox.yml`, `publish-chrome.yml` and `publish-edge.yml` directly (a release made with `GITHUB_TOKEN` can't trigger other workflows). Store workflows skip themselves until their secrets/variables exist. Add any new runtime file to the list in `scripts/package.js`.
 
-Load unpacked from `chrome://extensions/` (Developer mode) using the repo folder, or in Firefox run `npm run package:firefox` and load `pkg-firefox/manifest.json` via `about:debugging#/runtime/this-firefox` → Load Temporary Add-on. After editing, reload the extension and refresh the target tab.
+Load unpacked from `chrome://extensions/` (Developer mode) using the repo folder, or in Firefox run `npm run build:firefox` and load `build/firefox/manifest.json` via `about:debugging#/runtime/this-firefox` → Load Temporary Add-on. After editing, reload the extension and refresh the target tab.
 
 Icons: `images/icon*.png` are exported from `design/icon.svg` (48, 128) and `design/icon-small.svg` (16, 32; simplified so it stays legible in the toolbar). Edit the SVGs and re-export the PNGs at those sizes with any SVG tool. The settings page bundles the Fredoka font (`fonts/`, OFL) rather than loading it remotely.
 

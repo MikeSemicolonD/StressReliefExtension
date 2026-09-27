@@ -1,7 +1,5 @@
 /.playwright-mcp
-/dist
-/pkg
-/pkg-firefox
+/build
 /node_modules
 /test-results
 /playwright-report

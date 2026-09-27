@@ -35,11 +35,11 @@ jobs:
       # Firefox one declares background scripts instead of a service worker.
       - name: Package
         run: |
-          node scripts/package.js pkg
-          node scripts/package.js pkg-firefox --firefox
+          npm run build:chrome
+          npm run build:firefox
 
       - name: Syntax check
-        run: for f in pkg/*.js; do node --check "$f"; done
+        run: for f in build/chrome/*.js; do node --check "$f"; done
 
       - name: Unit tests
         run: npm run test:unit
@@ -60,18 +60,18 @@ jobs:
       # One warning is expected: the Chrome-only chrome.dom call, which is
       # feature-detected
       - name: Lint for Firefox
-        run: npx --yes web-ext@8 lint --source-dir pkg-firefox
+        run: npx --yes web-ext@8 lint --source-dir build/firefox
 
       # The packaged folders themselves: upload-artifact zips them, so
       # downloading an artifact gives a ready-to-upload extension zip
       - uses: actions/upload-artifact@v4
         with:
           name: extension-chrome
-          path: pkg/
+          path: build/chrome/
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v4
         with:
           name: extension-firefox
-          path: pkg-firefox/
+          path: build/firefox/
           if-no-files-found: error

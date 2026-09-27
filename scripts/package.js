@@ -1,7 +1,8 @@
 // Copies the files that ship in the extension into a directory, for one
-// browser. This is the single list of runtime files: CI packages from it and
-// the e2e tests load the extension from it, so a file missing here fails the
-// tests.
+// browser (npm run build:chrome / build:firefox write build/chrome and
+// build/firefox). This is the single list of runtime files: CI packages from
+// it and the e2e tests load the extension from it, so a file missing here
+// fails the tests.
 //
 //   node scripts/package.js [outDir] [--firefox]
 //
@@ -54,7 +55,7 @@ module.exports = { FILES, packageExtension };
 if (require.main === module) {
   const args = process.argv.slice(2);
   const browser = args.includes('--firefox') ? 'firefox' : 'chrome';
-  const outDir = path.resolve(args.find(a => !a.startsWith('--')) || 'pkg');
+  const outDir = path.resolve(args.find(a => !a.startsWith('--')) || `build/${browser}`);
   packageExtension(outDir, browser);
   console.log(`Packaged ${FILES.length} entries for ${browser} into ${outDir}`);
 }
