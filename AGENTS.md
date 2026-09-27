@@ -77,6 +77,8 @@ Branches and CI: work goes to `staging` (CI: `ci.yml` → reusable `build.yml`, 
 
 Load unpacked from `chrome://extensions/` (Developer mode), or in Firefox via `about:debugging#/runtime/this-firefox` → Load Temporary Add-on → `manifest.json`. After editing, reload the extension and refresh the target tab.
 
+Icons: `images/icon*.png` are rendered from `design/icon.svg` (48, 128) and `design/icon-small.svg` (16, 32; simplified so it stays legible in the toolbar) with `node scripts/render-icons.js`. Edit the SVGs, not the PNGs. The settings page bundles the Fredoka font (`fonts/`, OFL) rather than loading it remotely.
+
 `matter.min.js` (0.20.0) is the library actually loaded; `matter.js` is the unminified copy for reference only.
 
 ## Development and releasing

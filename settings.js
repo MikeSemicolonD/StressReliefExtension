@@ -2,17 +2,28 @@
 // listens to chrome.storage.onChanged and applies them live.
 const DEFAULTS = self.PHYSICS_DEFAULTS;
 
+// Shows a slider's value (with its unit, if any) and fills the track up to
+// the thumb; the fill is a CSS gradient driven by --fill.
+function render(slider) {
+  const unit = slider.dataset.unit;
+  document.getElementById(`${slider.id}Value`).textContent =
+    unit ? `${slider.value} ${unit}` : slider.value;
+  const fraction = (slider.value - slider.min) / (slider.max - slider.min);
+  slider.style.setProperty('--fill', `${fraction * 100}%`);
+}
+
 function showSettings(values) {
   for (const [key, value] of Object.entries(values)) {
     const slider = document.getElementById(key);
-    const valueDisplay = document.getElementById(`${key}Value`);
-    if (!slider || !valueDisplay) continue;
+    if (!slider) continue;
     slider.value = value;
-    valueDisplay.textContent = value;
+    render(slider);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  for (const slider of document.querySelectorAll('.slider')) render(slider);
+
   chrome.storage.local.get(DEFAULTS, (settings) => {
     if (chrome.runtime.lastError) {
       console.error('Error loading settings:', chrome.runtime.lastError);
@@ -22,10 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   for (const slider of document.querySelectorAll('.slider')) {
-    slider.addEventListener('input', (e) => {
-      const value = parseFloat(e.target.value);
-      document.getElementById(`${e.target.id}Value`).textContent = value;
-      chrome.storage.local.set({ [e.target.id]: value }, () => {
+    slider.addEventListener('input', () => {
+      render(slider);
+      chrome.storage.local.set({ [slider.id]: parseFloat(slider.value) }, () => {
         if (chrome.runtime.lastError) {
           console.error('Error saving settings:', chrome.runtime.lastError);
         }
@@ -34,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.getElementById('resetSettings').addEventListener('click', () => {
-    if (!confirm('Are you sure you want to reset all settings to their default values?')) return;
+    if (!confirm('Reset all settings to their defaults?')) return;
     showSettings(DEFAULTS);
     chrome.storage.local.set(DEFAULTS, () => {
       if (chrome.runtime.lastError) {
         console.error('Error resetting settings:', chrome.runtime.lastError);
-        alert('Failed to reset settings. Please try again.');
+        alert('Couldn\'t reset the settings. Try again.');
       }
     });
   });
