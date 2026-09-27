@@ -77,7 +77,7 @@ test.describe('settings page', () => {
   });
 
   test('the Restore page button switch toggles with the keyboard and saves', async ({ page, extension }) => {
-    const toggle = page.getByRole('switch', { name: 'Hide the Restore page button' });
+    const toggle = page.getByRole('switch', { name: 'Hide Restore page button' });
     await expect(toggle).not.toBeChecked();
     await toggle.focus();
     await page.keyboard.press('Space');

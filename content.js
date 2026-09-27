@@ -614,13 +614,28 @@
 
   // Custom elements and shadow hosts are copied as plain divs: a real copy
   // would be upgraded by the page's component definition and run its code.
+  // Other elements are created fresh with the source's attributes, minus
+  // those a copy must not carry (see copiesAttribute).
   function shallowCopy(source) {
     if (source.localName.includes('-') || getShadowRoot(source)) return document.createElement('div');
-    return source.cloneNode(false);
+    const copy = document.createElementNS(source.namespaceURI, source.localName);
+    for (const attr of source.attributes) {
+      if (copiesAttribute(attr.name)) copy.setAttributeNS(attr.namespaceURI, attr.name, attr.value);
+    }
+    return copy;
   }
 
-  // cloneNode copies attributes, not live state: a select would show its
-  // first option and inputs their default values.
+  // Duplicate ids confuse page scripts, a copied radio button sharing a name
+  // with the original would uncheck it, and inline event handlers (onload,
+  // onerror, ...) would rerun the page's code when a copy loads, e.g.
+  // double-counting analytics. They're left off at creation: removing a
+  // handler afterwards doesn't cancel a load event already queued for it.
+  function copiesAttribute(name) {
+    return name !== 'id' && name !== 'name' && !name.startsWith('on');
+  }
+
+  // Attributes aren't live state: a copied select would show its first
+  // option and inputs their default values.
   function copyFormState(source, clone) {
     if (source instanceof HTMLSelectElement) {
       clone.selectedIndex = source.selectedIndex;
@@ -748,15 +763,6 @@
     return true;
   }
 
-  // Duplicate ids confuse page scripts, and a cloned radio button sharing a
-  // name with the original would uncheck it.
-  function stripIdentity(clone) {
-    for (const node of [clone, ...clone.querySelectorAll('[id], [name]')]) {
-      node.removeAttribute('id');
-      node.removeAttribute('name');
-    }
-  }
-
   // Overrides for copied computed styles that would fight the physics layout
   const PINNED_STYLES = {
     position: 'absolute',
@@ -791,7 +797,6 @@
 
   function makeClone(el, w, h) {
     const clone = freezeClone(el);
-    stripIdentity(clone);
     pin(clone, w, h);
     keepCellAlignment(el, clone);
     markPiece(clone);
@@ -1073,7 +1078,6 @@
         node.style.left = `${left - l.left}px`;
         wrap.appendChild(node);
       }
-      stripIdentity(wrap);
       pin(wrap, w, h + pad * 2);
       markPiece(wrap);
       pieces.push({ node: wrap, pad, rect: { left: l.left, top: l.top, width: w, height: h } });
@@ -1088,7 +1092,6 @@
   function makeShell(el, rect) {
     const shell = shallowCopy(el);
     copyComputedStyles(el, shell);
-    stripIdentity(shell);
     pin(shell, rect.width, rect.height);
     markPiece(shell);
     return shell;
@@ -1290,105 +1293,14 @@
 
   // --- Restore button -----------------------------------------------------------
 
-  // A visible way out while physics is on: Esc and the toolbar icon aren't
-  // discoverable, least of all when a shake turned physics on by accident.
-  // Rendered in a shadow root so page CSS can't restyle it, above the physics
-  // canvas (same z-index, later in the DOM), and never a throwable piece. The
-  // first time, a note under it explains what happened.
-  const RESTORE_CSS = `
-    :host { all: initial; }
-    .wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    }
-    button {
-      all: initial;
-      box-sizing: border-box;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      font: 600 15px/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      color: #000;
-      background: #f2665e;
-      border: 2.5px solid #000;
-      border-radius: 10px;
-      box-shadow: 3px 3px 0 #000;
-      cursor: pointer;
-    }
-    button:hover { background: #e24f47; }
-    button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #000; }
-    button:focus-visible { outline: 3px solid #2f6fe4; outline-offset: 3px; }
-    kbd {
-      padding: 0 5px;
-      font-family: inherit;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 1.4;
-      background: #fff;
-      border: 2px solid #000;
-      border-radius: 4px;
-    }
-    .note {
-      box-sizing: border-box;
-      max-width: 270px;
-      margin: 0;
-      padding: 10px 12px;
-      font-size: 14px;
-      line-height: 1.45;
-      color: #2b2b35;
-      background: #fff1b8;
-      border: 2.5px solid #000;
-      border-radius: 6px;
-      box-shadow: 3px 3px 0 #000;
-    }
-  `;
-
-  let restoreHost = null;
-
+  // The on-page "Restore page" button (restore-button.js), unless hidden in
+  // the settings
   function showRestoreButton() {
-    if (restoreHost || settings.hideRestoreButton) return;
-    restoreHost = document.createElement('div');
-    restoreHost.setAttribute('data-physics-restore', '');
-    restoreHost.style.cssText = 'all: initial; position: fixed; top: 16px; right: 16px; z-index: 2147483647;';
-    const root = restoreHost.attachShadow({ mode: 'open' });
-
-    const style = document.createElement('style');
-    style.textContent = RESTORE_CSS;
-    const wrap = document.createElement('div');
-    wrap.className = 'wrap';
-    const button = document.createElement('button');
-    button.type = 'button';
-    const key = document.createElement('kbd');
-    key.textContent = 'Esc';
-    button.append('Restore page', key);
-    button.addEventListener('click', () => setPhysicsEnabled(false));
-    wrap.append(button);
-    root.append(style, wrap);
-    document.documentElement.appendChild(restoreHost);
-
-    showRestoreHintOnce(wrap);
-  }
-
-  function showRestoreHintOnce(wrap) {
-    chrome.storage.local.get({ restoreHintSeen: false }, ({ restoreHintSeen }) => {
-      if (chrome.runtime.lastError || restoreHintSeen || !wrap.isConnected) return;
-      const note = document.createElement('p');
-      note.className = 'note';
-      note.setAttribute('role', 'status');
-      note.textContent = 'Shaking your browser window turns this on. ' +
-        'Press Restore page or Esc to put everything back.';
-      wrap.append(note);
-      chrome.storage.local.set({ restoreHintSeen: true });
-    });
+    if (!settings.hideRestoreButton) PhysicsRestoreButton.show(() => setPhysicsEnabled(false));
   }
 
   function removeRestoreButton() {
-    restoreHost?.remove();
-    restoreHost = null;
+    PhysicsRestoreButton.hide();
   }
 
   function setPhysicsEnabled(on) {

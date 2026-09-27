@@ -102,12 +102,29 @@ test.describe('article page', () => {
     await expect(note).toHaveCount(0);
   });
 
+  test('the Restore page button is labelled for screen readers', async ({ page, extension }) => {
+    await extension.start();
+    const button = page.getByRole('button', { name: 'Restore page', exact: true });
+    await expect(button).toHaveAttribute('aria-keyshortcuts', 'Escape');
+    // After the first time, starting is still announced (without the note)
+    await extension.stop();
+    await extension.start();
+    await expect(page.getByRole('status').filter({ hasText: 'Physics is on' })).toHaveCount(1);
+  });
+
   test('the Restore page button can be hidden, even while physics is on', async ({ page, extension }) => {
     await extension.start();
     const button = page.getByRole('button', { name: 'Restore page' });
     await expect(button).toBeVisible();
     await extension.setSettings({ hideRestoreButton: true });
     await expect(button).toHaveCount(0);
+  });
+
+  test("copies don't rerun the page's inline event handlers", async ({ page, extension }) => {
+    await expect.poll(() => page.evaluate(() => window.imageLoads)).toBe(1);
+    await extension.start();
+    await page.waitForTimeout(200);
+    expect(await page.evaluate(() => window.imageLoads)).toBe(1);
   });
 
   test('the toolbar badge shows when physics is on', async ({ extension }) => {
