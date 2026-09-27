@@ -2,7 +2,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { createShakeDetector, groupLines, markerText } = require('../../lib.js');
 
-const SETTINGS = { shakeDistance: 40, requiredShakes: 4, timeWindow: 1500 };
+const SETTINGS = { shakeDistance: 40, minShakeSpeed: 300, requiredShakes: 4, timeWindow: 1500 };
 
 // Moves the window back and forth: `swings` legs of `distance` px along x,
 // each split into `steps` polls `stepMs` apart. Returns the times at which
@@ -40,6 +40,29 @@ test('shake: vertical shaking counts too', () => {
 test('shake: legs shorter than shakeDistance are ignored', () => {
   const detector = createShakeDetector(() => SETTINGS);
   assert.equal(shakeWindow(detector, { swings: 10, distance: 30 }).length, 0);
+});
+
+test('shake: slow swings are ignored, even within timeWindow', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  // 60px legs taking 450ms each (~133 px/s): the 4 swings fit in 1500ms,
+  // but it's the window being moved around, not shaken
+  assert.equal(shakeWindow(detector, { swings: 5, stepMs: 150 }).length, 0);
+});
+
+test('shake: long fast swings count', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  assert.equal(shakeWindow(detector, { swings: 5, distance: 200, steps: 4 }).length, 1);
+});
+
+test('shake: a pause mid-swing slows it below minShakeSpeed', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  // 3 quick legs (2 swings); the reversal at 500ms makes the 3rd swing
+  assert.deepEqual(shakeWindow(detector, { swings: 3 }), []);
+  assert.equal(detector.move(-30, 0, 500), false);
+  // The 4th leg stops for 400ms: 60px over 450ms (~133 px/s), so reversing
+  // it doesn't make the 4th swing
+  assert.equal(detector.move(-30, 0, 900), false);
+  assert.equal(detector.move(60, 0, 950), false);
 });
 
 test('shake: swings spread beyond timeWindow do not add up', () => {

@@ -16,7 +16,6 @@
     "storage"
   ],
   "action": {
-    "default_title": "Toggle Physics (Right-click for Settings)",
     "default_icon": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",

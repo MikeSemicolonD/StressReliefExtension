@@ -3,7 +3,7 @@
 const DEFAULTS = self.PHYSICS_DEFAULTS;
 
 // Units as read by screen readers
-const SPOKEN_UNITS = { px: 'pixels', ms: 'milliseconds' };
+const SPOKEN_UNITS = { px: 'pixels', 'px/s': 'pixels per second', ms: 'milliseconds' };
 
 // Each setting has a slider and a number field (id + "Value") kept in sync
 function fieldFor(slider) {
