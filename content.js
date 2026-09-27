@@ -26,6 +26,11 @@
     // After physics is turned off, ignore shakes for this long so the tail of
     // a shake doesn't immediately turn it back on.
     SHAKE_COOLDOWN: 1500,
+    // Restoring glides each piece home over this long, scaled by how far it
+    // has to go (instant with prefers-reduced-motion)
+    RESTORE_MIN_MS: 250,
+    RESTORE_MAX_MS: 600,
+    RESTORE_MS_PER_PX: 0.4,
     // How often the window position is checked while physics is off. A timer
     // rather than requestAnimationFrame, which would keep every idle tab
     // rendering 60 frames a second.
@@ -80,10 +85,11 @@
 
   let engine, runner, world, mouseConstraint, canvas, overlay, frameId;
   let walls = [];
-  let items = []; // { clone, body, w, h }
+  let items = []; // { clone, body, w, h, fx, fy, homeX, homeY, el, anchor }
   let ghostPairs = []; // [bodyA, bodyB] that ignore each other until apart
   let viewport = { width: 0, height: 0 };
   let isPhysicsEnabled = false;
+  let restoreTimer = null; // Set while the pieces glide home
   const settings = { ...DEFAULTS };
 
   // --- Settings ---------------------------------------------------------------
@@ -109,6 +115,10 @@
   // Updates the live world in place so thrown items keep their positions.
   function applySettings(changed) {
     Object.assign(settings, changed);
+    if ('hideRestoreButton' in changed && isPhysicsEnabled) {
+      if (settings.hideRestoreButton) removeRestoreButton();
+      else showRestoreButton();
+    }
     if (!engine) return;
 
     engine.gravity.y = settings.gravity;
@@ -286,7 +296,7 @@
   }
 
   window.addEventListener('resize', () => {
-    if (!engine) return;
+    if (!engine || !isPhysicsEnabled) return;
     viewport = viewportSize();
     sizeCanvas();
     buildWalls();
@@ -610,13 +620,28 @@
 
   // Custom elements and shadow hosts are copied as plain divs: a real copy
   // would be upgraded by the page's component definition and run its code.
+  // Other elements are created fresh with the source's attributes, minus
+  // those a copy must not carry (see copiesAttribute).
   function shallowCopy(source) {
     if (source.localName.includes('-') || getShadowRoot(source)) return document.createElement('div');
-    return source.cloneNode(false);
+    const copy = document.createElementNS(source.namespaceURI, source.localName);
+    for (const attr of source.attributes) {
+      if (copiesAttribute(attr.name)) copy.setAttributeNS(attr.namespaceURI, attr.name, attr.value);
+    }
+    return copy;
   }
 
-  // cloneNode copies attributes, not live state: a select would show its
-  // first option and inputs their default values.
+  // Duplicate ids confuse page scripts, a copied radio button sharing a name
+  // with the original would uncheck it, and inline event handlers (onload,
+  // onerror, ...) would rerun the page's code when a copy loads, e.g.
+  // double-counting analytics. They're left off at creation: removing a
+  // handler afterwards doesn't cancel a load event already queued for it.
+  function copiesAttribute(name) {
+    return name !== 'id' && name !== 'name' && !name.startsWith('on');
+  }
+
+  // Attributes aren't live state: a copied select would show its first
+  // option and inputs their default values.
   function copyFormState(source, clone) {
     if (source instanceof HTMLSelectElement) {
       clone.selectedIndex = source.selectedIndex;
@@ -744,15 +769,6 @@
     return true;
   }
 
-  // Duplicate ids confuse page scripts, and a cloned radio button sharing a
-  // name with the original would uncheck it.
-  function stripIdentity(clone) {
-    for (const node of [clone, ...clone.querySelectorAll('[id], [name]')]) {
-      node.removeAttribute('id');
-      node.removeAttribute('name');
-    }
-  }
-
   // Overrides for copied computed styles that would fight the physics layout
   const PINNED_STYLES = {
     position: 'absolute',
@@ -787,7 +803,6 @@
 
   function makeClone(el, w, h) {
     const clone = freezeClone(el);
-    stripIdentity(clone);
     pin(clone, w, h);
     keepCellAlignment(el, clone);
     markPiece(clone);
@@ -1069,7 +1084,6 @@
         node.style.left = `${left - l.left}px`;
         wrap.appendChild(node);
       }
-      stripIdentity(wrap);
       pin(wrap, w, h + pad * 2);
       markPiece(wrap);
       pieces.push({ node: wrap, pad, rect: { left: l.left, top: l.top, width: w, height: h } });
@@ -1084,7 +1098,6 @@
   function makeShell(el, rect) {
     const shell = shallowCopy(el);
     copyComputedStyles(el, shell);
-    stripIdentity(shell);
     pin(shell, rect.width, rect.height);
     markPiece(shell);
     return shell;
@@ -1169,6 +1182,15 @@
       el.setAttribute('style', style ?? '');
       if (style === null) el.removeAttribute('style');
     }
+    // A page's `transition: all` would fade a box's background and border
+    // back in (hiding sets transition: none for the same reason); jump them
+    // to the end so the page is back as it was at once. getAnimations()
+    // flushes styles, which is what starts those transitions.
+    for (const el of hiddenStyles.keys()) {
+      for (const animation of el.getAnimations()) {
+        if (animation instanceof CSSTransition) animation.finish();
+      }
+    }
     hiddenStyles = new Map();
     if (window.CSS?.highlights) CSS.highlights.delete(CONFIG.HIDDEN_TEXT_HIGHLIGHT);
     for (const root of highlightRoots) {
@@ -1194,7 +1216,9 @@
       // All of an element's pieces or none: hiding the original with only
       // some of its lines spawned would make the rest vanish.
       if (!pieces.length || count + pieces.length > CONFIG.MAX_PHYSICS_BODIES) continue;
-      planned.push({ el, kind, order, pieces });
+      // Where the original is now, to find it again when restoring (the page
+      // may have scrolled by then)
+      planned.push({ el, kind, order, pieces, anchor: el.getBoundingClientRect() });
       count += pieces.length;
     }
 
@@ -1202,7 +1226,7 @@
     // a shell comes before (under) the pieces that were inside it.
     planned.sort((a, b) => a.order - b.order);
     const hiddenText = [];
-    for (const { el, kind, pieces } of planned) {
+    for (const { el, kind, pieces, anchor } of planned) {
       hideOriginal(el, kind, hiddenText);
       for (const { node, rect: r, pad = 0 } of pieces) {
         overlay.appendChild(node);
@@ -1231,7 +1255,7 @@
         const fy = (r.top - pad) - Math.floor(r.top - pad);
         node.style.left = `${fx}px`;
         node.style.top = `${fy}px`;
-        items.push({ clone: node, body, w: r.width, h, fx, fy });
+        items.push({ clone: node, body, w: r.width, h, fx, fy, homeX: body.position.x, homeY: body.position.y, el, anchor });
       }
     }
 
@@ -1267,16 +1291,19 @@
     return Math.abs(v - rounded) < 0.01 ? rounded : v;
   }
 
+  // The transform that puts a piece's center at (x, y), turned by `angle`
+  function pieceTransform({ w, h, fx, fy }, x, y, angle) {
+    return `translate(${snapToPixel(x - w / 2 - fx)}px, ${snapToPixel(y - h / 2 - fy)}px) rotate(${angle}rad)`;
+  }
+
   // Transform-only writes: no layout reads, no left/top reflow. Also checks the
   // window position every frame so sloshing is smooth.
   function renderFrame() {
     pollWindowPosition();
+    if (!isPhysicsEnabled) return; // Orphaned and shut down by the poll
     for (const item of items) {
-      const { clone, body, w, h, fx, fy } = item;
-      const { x, y } = body.position;
-      const tx = snapToPixel(x - w / 2 - fx);
-      const ty = snapToPixel(y - h / 2 - fy);
-      clone.style.transform = `translate(${tx}px, ${ty}px) rotate(${body.angle}rad)`;
+      const { x, y } = item.body.position;
+      item.clone.style.transform = pieceTransform(item, x, y, item.body.angle);
       updateLayer(item);
     }
     frameId = requestAnimationFrame(renderFrame);
@@ -1284,27 +1311,98 @@
 
   // --- Toggle + teardown --------------------------------------------------------
 
-  function setPhysicsEnabled(on) {
+  // --- Restore button -----------------------------------------------------------
+
+  // The on-page "Restore page" button (restore-button.js), unless hidden in
+  // the settings
+  function showRestoreButton() {
+    if (!settings.hideRestoreButton) PhysicsRestoreButton.show(() => setPhysicsEnabled(false));
+  }
+
+  function removeRestoreButton() {
+    PhysicsRestoreButton.hide();
+  }
+
+  function setPhysicsEnabled(on, { animate = true } = {}) {
     if (on === isPhysicsEnabled || !document.body) return;
     isPhysicsEnabled = on;
 
     if (on) {
+      finishRestoring();
       initPhysics();
       spawnClones();
       renderFrame();
+      showRestoreButton();
       document.body.classList.add('physics-mode');
       document.addEventListener('contextmenu', preventDefault, true);
       document.addEventListener('keydown', onKeyDown, true);
     } else {
-      tearDown();
+      if (animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) glideHome();
+      else tearDown();
       shakeDetector.cooldown(performance.now() + CONFIG.SHAKE_COOLDOWN);
     }
 
     notifyState();
   }
 
+  // Stops the simulation and animates every piece back to its original, then
+  // tears down. The pieces look exactly like the page at home, so the swap
+  // back to the real page doesn't show.
+  function glideHome() {
+    cancelAnimationFrame(frameId);
+    Matter.Runner.stop(runner);
+    canvas.remove(); // Nothing left to grab; the page is usable again
+    removeRestoreButton();
+
+    // Reads first: where each original is now, relative to when it spawned.
+    // One layout for all of them (nothing has been written yet).
+    const shifts = new Map();
+    for (const { el, anchor } of items) {
+      if (shifts.has(el)) continue;
+      const now = el.getBoundingClientRect();
+      // Gone from the layout since (display: none): go back to where it was
+      shifts.set(el, now.width || now.height
+        ? { x: now.left - anchor.left, y: now.top - anchor.top }
+        : { x: 0, y: 0 });
+    }
+
+    // Unwind rotation the short way (a piece that spun 3.5 turns turns back
+    // half a turn), committing that angle before the transition starts from it
+    for (const item of items) {
+      const { x, y } = item.body.position;
+      const a = item.body.angle % (2 * Math.PI);
+      item.angle = a > Math.PI ? a - 2 * Math.PI : a < -Math.PI ? a + 2 * Math.PI : a;
+      item.clone.style.transform = pieceTransform(item, x, y, item.angle);
+      item.clone.style.willChange = 'transform';
+    }
+    getComputedStyle(overlay).transform; // Style flush: starts the transitions from here
+
+    let longest = 0;
+    for (const item of items) {
+      const shift = shifts.get(item.el);
+      const x = item.homeX + shift.x;
+      const y = item.homeY + shift.y;
+      const { position } = item.body;
+      const distance = Math.hypot(x - position.x, y - position.y) + Math.abs(item.angle) * Math.max(item.w, item.h) / 2;
+      const ms = clamp(CONFIG.RESTORE_MIN_MS + distance * CONFIG.RESTORE_MS_PER_PX, CONFIG.RESTORE_MIN_MS, CONFIG.RESTORE_MAX_MS);
+      longest = Math.max(longest, ms);
+      item.clone.style.transition = `transform ${ms}ms cubic-bezier(0.2, 0.8, 0.3, 1)`;
+      item.clone.style.transform = pieceTransform(item, x, y, 0);
+    }
+    restoreTimer = setTimeout(finishRestoring, longest + 50);
+  }
+
+  // Ends a glide home now (if one is running)
+  function finishRestoring() {
+    if (!restoreTimer) return;
+    clearTimeout(restoreTimer);
+    restoreTimer = null;
+    tearDown();
+  }
+
   function tearDown() {
     cancelAnimationFrame(frameId);
+    removeRestoreButton();
     restoreOriginals();
     items = [];
     walls = [];
@@ -1330,7 +1428,8 @@
   function onKeyDown(e) {
     if (e.key === 'Escape') {
       preventDefault(e);
-      setPhysicsEnabled(false);
+      if (restoreTimer) finishRestoring();
+      else setPhysicsEnabled(false);
     }
   }
 
@@ -1364,6 +1463,10 @@
   let lastY = window.screenY;
 
   function pollWindowPosition() {
+    if (!chrome.runtime?.id) {
+      retire();
+      return;
+    }
     const dx = window.screenX - lastX;
     const dy = window.screenY - lastY;
     if (!dx && !dy) return;
@@ -1390,5 +1493,16 @@
     }
   }
 
-  setInterval(pollWindowPosition, CONFIG.POSITION_POLL_MS);
+  const pollTimer = setInterval(pollWindowPosition, CONFIG.POSITION_POLL_MS);
+
+  // After the extension is updated, reloaded or disabled, this script keeps
+  // running in tabs that were already open, but its chrome.* APIs are gone.
+  // Give the page back and stop watching for shakes; the new version takes
+  // over when the tab is reloaded or the toolbar icon injects it.
+  function retire() {
+    clearInterval(pollTimer);
+    setPhysicsEnabled(false, { animate: false });
+    finishRestoring();
+    window.__physicsExtensionLoaded = false;
+  }
 })();

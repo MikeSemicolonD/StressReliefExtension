@@ -21,6 +21,7 @@ const FILES = [
   'content.js',
   'defaults.js',
   'lib.js',
+  'restore-button.js',
   'matter.min.js',
   'settings.html',
   'settings.js',

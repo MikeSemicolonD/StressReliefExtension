@@ -5,34 +5,46 @@
   // Dragging the window by its title bar happens outside the page, so no mouse
   // events arrive; content.js feeds this the window's position changes. A
   // "swing" is a run of movement in one direction, at least `shakeDistance`
-  // long, that then reverses. `requiredShakes` swings within `timeWindow` ms
-  // make a shake. `getSettings` is read on every call so changes apply live.
+  // long and averaging at least `minShakeSpeed` px/s (so slowly moving the
+  // window around doesn't count), that then reverses. `requiredShakes` swings
+  // within `timeWindow` ms make a shake. `getSettings` is read on every call
+  // so changes apply live.
   function createShakeDetector(getSettings) {
     const axes = {
-      x: { dir: 0, travel: 0, lastMove: -Infinity },
-      y: { dir: 0, travel: 0, lastMove: -Infinity }
+      x: { dir: 0, travel: 0, legStart: 0, lastMove: -Infinity },
+      y: { dir: 0, travel: 0, legStart: 0, lastMove: -Infinity }
     };
     let swings = [];
     let cooldownUntil = -Infinity;
 
-    // Returns true when this movement ends a long enough leg by reversing
+    // Returns true when this movement ends a long and fast enough leg by
+    // reversing
     function track(axis, d, now, s) {
       if (!d) return false;
+      const prev = axis.lastMove;
+      axis.lastMove = now;
       // A long pause starts a fresh leg rather than extending a stale one
-      if (now - axis.lastMove > s.timeWindow) {
+      const fresh = now - prev > s.timeWindow;
+      if (fresh) {
         axis.dir = 0;
         axis.travel = 0;
       }
-      axis.lastMove = now;
 
       const dir = Math.sign(d);
       if (dir === axis.dir) {
         axis.travel += Math.abs(d);
         return false;
       }
-      const swung = axis.travel >= s.shakeDistance;
+      // The leg ended at the previous poll
+      const seconds = (prev - axis.legStart) / 1000;
+      const swung = axis.travel >= s.shakeDistance &&
+        axis.travel >= s.minShakeSpeed * seconds;
       axis.dir = dir;
       axis.travel = Math.abs(d);
+      // This movement happened since the previous poll, so the new leg starts
+      // there. After a pause that poll is stale, so the leg is timed from now
+      // (missing its first interval, which only makes it read a little fast).
+      axis.legStart = fresh ? now : prev;
       return swung;
     }
 

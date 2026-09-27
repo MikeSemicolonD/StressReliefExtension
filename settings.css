@@ -23,11 +23,21 @@
   --lavender-soft: #ece6fd;
   --mint: #9fe0b0;
   --mint-soft: #e1f6e7;
+  /* pressed slider knobs */
+  --lavender-strong: #8a72ea;
+  --mint-strong: #43b766;
   /* heading highlighter strokes */
   --lavender-mark: var(--lavender);
   --mint-mark: var(--mint);
+  /* hovered knobs and value chips: halfway between mark and strong, with
+     the text colour that stays readable on it */
+  --lavender-hover: #a28cee;
+  --mint-hover: #71cc8b;
+  --on-lavender-hover: var(--text);
+  --on-mint-hover: var(--text);
   --red: #f2665e;
   --red-pressed: #e24f47;
+  --red-soft: #fde1df;
   --yellow: #f7c548;
   --green: #5cc77a;
   --note: #fff1b8;
@@ -54,7 +64,13 @@
     --mint-soft: #26443a;
     --lavender-mark: #5b4a9e;
     --mint-mark: #2f7a4c;
+    /* the lavender midpoint nudged darker, and dark text on the mint one,
+       so chip text keeps 4.5:1 contrast */
+    --lavender-hover: #6a57b8;
+    --mint-hover: #399859;
+    --on-mint-hover: #0f1a13;
     --red-pressed: #ff7c74;
+    --red-soft: #4a2c2e;
     --note: #4a4322;
     --focus: #8fb4ff;
     color-scheme: dark;
@@ -145,6 +161,52 @@ h1 {
   transform: rotate(4deg);
 }
 
+/* The squiggles jitter like hand-drawn shake lines: a stepped "line boil"
+   between a few offset poses, the two lines of each pair out of step. Side
+   squiggles shake sideways, the bottom ones up and down. They shake harder
+   while a slider is being dragged. */
+.squiggle path {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: 0.9s steps(1) infinite;
+}
+
+.squiggle-left path {
+  animation-name: shake-sideways;
+}
+
+.squiggle-right path {
+  animation-name: shake-up-down;
+}
+
+.squiggle path:nth-child(2) {
+  animation-delay: -0.45s;
+}
+
+.window:has(.slider:active) .squiggle path {
+  animation-duration: 0.3s;
+}
+
+@keyframes shake-sideways {
+  0%   { transform: translateX(0) rotate(0deg); }
+  25%  { transform: translateX(-2px) rotate(-3deg); }
+  50%  { transform: translateX(1.5px) rotate(2deg); }
+  75%  { transform: translateX(-1px) rotate(-1deg); }
+}
+
+@keyframes shake-up-down {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(1.5px) rotate(2deg); }
+  50%  { transform: translateY(-2px) rotate(-2deg); }
+  75%  { transform: translateY(1px) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .squiggle path {
+    animation: none;
+  }
+}
+
 .content {
   padding: 24px 32px 32px;
 }
@@ -159,13 +221,25 @@ h1 {
 .movement {
   --accent: var(--lavender);
   --accent-soft: var(--lavender-soft);
+  --accent-strong: var(--lavender-strong);
   --accent-mark: var(--lavender-mark);
+  --accent-hover: var(--lavender-hover);
+  --on-accent-hover: var(--on-lavender-hover);
 }
 
 .shaking {
   --accent: var(--mint);
   --accent-soft: var(--mint-soft);
+  --accent-strong: var(--mint-strong);
   --accent-mark: var(--mint-mark);
+  --accent-hover: var(--mint-hover);
+  --on-accent-hover: var(--on-mint-hover);
+}
+
+/* Red, like the Restore page button itself */
+.controls {
+  --accent: var(--red);
+  --accent-soft: var(--red-soft);
 }
 
 .group + .group {
@@ -177,8 +251,6 @@ h2 {
   margin: 0 0 18px;
   padding: 0 4px;
   font: 600 22px/1.25 var(--display);
-  /* highlighter stroke in the section's colour */
-  background: linear-gradient(transparent 58%, var(--accent-mark) 58%, var(--accent-mark) 92%, transparent 92%);
 }
 
 /* --- A setting: label and value on one row, slider and hint below ------- */
@@ -198,15 +270,53 @@ h2 {
   font: 500 16px/1.3 var(--display);
 }
 
-.setting output {
-  min-width: 4.5em;
+/* The value chip: an editable number field, with its unit beside it */
+.value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
   padding: 1px 10px;
   font: 500 14px/1.5 var(--display);
-  font-variant-numeric: tabular-nums;
-  text-align: center;
+  color: var(--text);
   background: var(--accent-soft);
   border: 2px solid var(--line);
   border-radius: 999px;
+  transition: background-color 0.12s ease-out;
+}
+
+.value:hover {
+  color: var(--on-accent-hover);
+  background: var(--accent-hover);
+}
+
+.value:focus-within {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.value-input {
+  width: 4.5ch;
+  padding: 0;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: inherit;
+  background: none;
+  border: 0;
+  outline: none;
+  /* No spinner arrows (up/down keys still step the value) */
+  appearance: textfield;
+}
+
+.value-input::-webkit-inner-spin-button,
+.value-input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.value:not(:has(.unit)) .value-input {
+  width: 5ch;
+  text-align: center;
 }
 
 .setting .slider,
@@ -266,8 +376,114 @@ h2 {
   border-radius: 999px 0 0 999px;
 }
 
+.slider::-webkit-slider-thumb {
+  transition: background-color 0.12s ease-out;
+}
+
+.slider::-moz-range-thumb {
+  transition: background-color 0.12s ease-out;
+}
+
+/* Hovering the knob fills it with the section colour; pressed, a deeper
+   shade */
+.slider::-webkit-slider-thumb:hover {
+  background: var(--accent-hover);
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--accent-hover);
+}
+
 .slider:active::-webkit-slider-thumb {
+  background: var(--accent-strong);
+}
+
+.slider:active::-moz-range-thumb {
+  background: var(--accent-strong);
+}
+
+/* (Separate rules: a selector list mixing -webkit- and -moz- pseudo-elements
+   is invalid in both browsers, so neither would apply it.) */
+@media (prefers-reduced-motion: reduce) {
+  .slider::-webkit-slider-thumb {
+    transition: none;
+  }
+
+  .slider::-moz-range-thumb {
+    transition: none;
+  }
+
+  .value {
+    transition: none;
+  }
+}
+
+/* --- Switches: a real checkbox laid over a drawn track --------------------- */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 28px;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switch-track {
+  position: absolute;
+  inset: 0;
+  background: var(--track);
+  border: 2.5px solid var(--line);
+  border-radius: 999px;
+  pointer-events: none;
+  transition: background-color 0.12s ease-out;
+}
+
+/* The track's inside is 43x23px; the knob is 19px across including its
+   border, leaving a 2px gap all round (and 20px to travel) */
+.switch-track::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  background: var(--window);
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  transition: transform 0.12s ease-out;
+}
+
+.switch input:hover + .switch-track {
   background: var(--accent-soft);
+}
+
+.switch input:checked + .switch-track {
+  background: var(--accent);
+}
+
+.switch input:checked + .switch-track::before {
+  transform: translateX(20px);
+}
+
+.switch input:focus-visible + .switch-track {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch-track,
+  .switch-track::before {
+    transition: none;
+  }
 }
 
 /* --- Tip and reset ------------------------------------------------------- */
@@ -280,6 +496,7 @@ h2 {
   border-radius: 6px;
   box-shadow: 4px 4px 0 var(--shadow);
   transform: rotate(-0.6deg);
+  text-align: center;
 }
 
 .tip p {
@@ -295,6 +512,8 @@ kbd {
 }
 
 .reset {
+  display: block;
+  margin: 0 auto;
   padding: 10px 22px;
   font: 600 16px/1.2 var(--display);
   color: #000000;
@@ -320,6 +539,49 @@ kbd {
 .reset:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 4px;
+}
+
+/* The focused slider's thumb fills in, so it's clear which knob the arrow
+   keys will move */
+.slider:focus-visible::-webkit-slider-thumb {
+  background: var(--accent);
+}
+
+.slider:focus-visible::-moz-range-thumb {
+  background: var(--accent);
+}
+
+/* Read by screen readers, not shown */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Windows High Contrast and other forced-colour modes: drop the drawn
+   slider (its fill is a background the mode may strip) for the browser's
+   native one, and the heading highlighter behind text */
+@media (forced-colors: active) {
+  .slider {
+    appearance: auto;
+    height: auto;
+    background: none;
+    border: 0;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: auto;
+  }
+
+  h2 {
+    background: none;
+  }
 }
 
 /* --- Narrow windows ---------------------------------------------------- */

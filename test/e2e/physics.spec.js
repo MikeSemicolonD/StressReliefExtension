@@ -11,6 +11,8 @@ test.describe('article page', () => {
   });
 
   test('pieces look exactly like the page they replace', async ({ extension }) => {
+    // The Restore page button is meant to cover part of the page
+    await extension.setSettings({ hideRestoreButton: true });
     const before = await extension.screenshot();
     await extension.start();
     const after = await extension.screenshot();
@@ -58,6 +60,76 @@ test.describe('article page', () => {
     expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(150);
   });
 
+  // Throws the heading clone down and to the right; returns its locator
+  async function throwHeading(page) {
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const box = await heading.boundingBox();
+    const x = box.x + box.width / 2;
+    const y = box.y + box.height / 2;
+    await page.mouse.move(x, y);
+    await page.mouse.down();
+    for (let i = 1; i <= 10; i++) {
+      await page.mouse.move(x + 30 * i, y + 25 * i);
+      await page.waitForTimeout(16);
+    }
+    await page.mouse.up();
+    await page.waitForTimeout(200);
+    return heading;
+  }
+
+  test('restoring glides the pieces home, then gives the page back exactly', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    const home = await page.locator('.physics-clone', { hasText: 'Article fixture' }).evaluate(el => el.style.transform);
+    const heading = await throwHeading(page);
+    await page.keyboard.press('Escape');
+    // Still in flight: the pieces are on screen, heading for where they started
+    await expect(page.locator('.physics-overlay')).toHaveCount(1);
+    expect(await heading.evaluate(el => el.style.transform)).toBe(home);
+    await expect.poll(() => extension.badgeText()).toBe('');
+    await expect(page.locator('.physics-overlay')).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('restoring again mid-flight finishes at once', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await throwHeading(page);
+    await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape');
+    expect(await page.locator('.physics-overlay').count()).toBe(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('turning physics on mid-flight starts again from the restored page', async ({ page, extension }) => {
+    await extension.start();
+    const count = await page.locator('.physics-clone').count();
+    await throwHeading(page);
+    await page.keyboard.press('Escape');
+    await extension.start();
+    await expect(page.locator('.physics-overlay')).toHaveCount(1);
+    await expect(page.locator('.physics-clone')).toHaveCount(count);
+  });
+
+  test('with reduced motion, restoring is instant', async ({ page, extension }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await extension.start();
+    await throwHeading(page);
+    await page.keyboard.press('Escape');
+    expect(await page.locator('.physics-overlay').count()).toBe(0);
+  });
+
+  test('pieces glide to where the page has scrolled to', async ({ page, extension }) => {
+    await page.evaluate(() => { document.body.style.paddingBottom = '2000px'; });
+    await extension.start();
+    const heading = page.locator('.physics-clone', { hasText: 'Article fixture' });
+    const home = await heading.evaluate(el => el.style.transform);
+    await page.evaluate(() => window.scrollBy(0, 50));
+    await page.keyboard.press('Escape');
+    const [, x, y] = home.match(/translate\(([-\d.]+)px, ([-\d.]+)px\)/).map(Number);
+    expect(await heading.evaluate(el => el.style.transform)).toBe(`translate(${x}px, ${y - 50}px) rotate(0rad)`);
+  });
+
   test('settings apply live without respawning', async ({ page, extension }) => {
     await extension.start();
     const pieces = page.locator('.physics-clone');
@@ -80,6 +152,59 @@ test.describe('article page', () => {
     expect(await overlay.locator('input:not([type=checkbox])').evaluate(el => el.value)).toBe('typed by the user');
     expect(await overlay.locator('select').evaluate(el => el.value)).toBe('Three');
     expect(await overlay.locator('input[type=checkbox]').evaluate(el => el.checked)).toBe(true);
+  });
+
+  test('the Restore page button restores the page', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await page.getByRole('button', { name: 'Restore page' }).click();
+    await expect(page.locator('.physics-overlay')).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
+  });
+
+  test('the first time, a note explains how physics got turned on', async ({ page, extension }) => {
+    const note = page.getByRole('status').filter({ hasText: 'Shaking your browser window' });
+    await extension.start();
+    await expect(note).toBeVisible();
+    await extension.stop();
+    await extension.start();
+    await expect(page.getByRole('button', { name: 'Restore page' })).toBeVisible();
+    await expect(note).toHaveCount(0);
+  });
+
+  test('the Restore page button is labelled for screen readers', async ({ page, extension }) => {
+    await extension.start();
+    const button = page.getByRole('button', { name: 'Restore page', exact: true });
+    await expect(button).toHaveAttribute('aria-keyshortcuts', 'Escape');
+    // After the first time, starting is still announced (without the note)
+    await extension.stop();
+    await extension.start();
+    await expect(page.getByRole('status').filter({ hasText: 'Physics is on' })).toHaveCount(1);
+  });
+
+  test('the Restore page button can be hidden, even while physics is on', async ({ page, extension }) => {
+    await extension.start();
+    const button = page.getByRole('button', { name: 'Restore page' });
+    await expect(button).toBeVisible();
+    await extension.setSettings({ hideRestoreButton: true });
+    await expect(button).toHaveCount(0);
+  });
+
+  test("copies don't rerun the page's inline event handlers", async ({ page, extension }) => {
+    await expect.poll(() => page.evaluate(() => window.imageLoads)).toBe(1);
+    await extension.start();
+    await page.waitForTimeout(200);
+    expect(await page.evaluate(() => window.imageLoads)).toBe(1);
+  });
+
+  test('reloading the extension restores the page', async ({ page, extension }) => {
+    const html = await page.evaluate(() => document.documentElement.outerHTML);
+    await extension.start();
+    await extension.reload();
+    // The old content script can't reach the extension any more, so it gives
+    // the page back rather than being left running (and shakeable) orphaned
+    await expect(page.locator('.physics-overlay')).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.outerHTML)).toBe(html);
   });
 
   test('the toolbar badge shows when physics is on', async ({ extension }) => {
@@ -114,6 +239,8 @@ test.describe('shadow DOM page', () => {
   });
 
   test('pieces look exactly like the page they replace', async ({ extension }) => {
+    // The Restore page button is meant to cover part of the page
+    await extension.setSettings({ hideRestoreButton: true });
     const before = await extension.screenshot();
     await extension.start();
     const after = await extension.screenshot();

@@ -11,9 +11,3 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yml
-
-  # Tests go here once they exist, e.g.:
-  # test:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps: ...

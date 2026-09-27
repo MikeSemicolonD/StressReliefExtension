@@ -1,6 +1,6 @@
 {
   // Build the extension for each browser (see scripts/package.js).
-  // Ctrl+Shift+B runs "Build: All".
+  // Ctrl+Shift+B runs "Build: All"; "Run Test Task" defaults to "Test: All".
   "version": "2.0.0",
   "tasks": [
     {
@@ -24,6 +24,47 @@
       "detail": "Package for Chrome and Firefox",
       "dependsOn": ["Build: Chrome", "Build: Firefox"],
       "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: All",
+      "detail": "Unit tests, then the Playwright e2e tests",
+      "type": "npm",
+      "script": "test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: E2E",
+      "detail": "Every Playwright spec in test/e2e",
+      "type": "npm",
+      "script": "test:e2e",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: E2E Current File",
+      "detail": "Run the open spec file (matched by file name)",
+      "type": "shell",
+      "command": "npx playwright test ${fileBasename}",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: E2E Current File (headed)",
+      "detail": "Run the open spec file with a visible browser",
+      "type": "shell",
+      "command": "npx playwright test ${fileBasename} --headed --workers=1",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: E2E UI Mode",
+      "detail": "Open Playwright's UI to pick, watch and debug tests",
+      "type": "shell",
+      "command": "npx playwright test --ui",
+      "group": "test",
+      "isBackground": true,
       "problemMatcher": []
     }
   ]
