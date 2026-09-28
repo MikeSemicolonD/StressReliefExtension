@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "bg"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Антистрес: разклати екрана"
+  },
+  "extDescription": {
+    "message": "Добавя физика към HTML елементите в текущия раздел – просто за забавление."
+  },
+  "badgeOn": {
+    "message": "ВКЛ"
+  },
+  "restorePage": {
+    "message": "Върни страницата"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физиката е включена. Натиснете Escape или бутона „Върни страницата“, за да я изключите."
+  },
+  "physicsOnNote": {
+    "message": "Разклащането на прозореца на браузъра включва физиката. Натиснете „Върни страницата“ или Esc, за да я изключите."
+  },
+  "settingsPageTitle": {
+    "message": "Антистрес: разклати екрана – настройки"
+  },
+  "settingsHeading": {
+    "message": "Настройки"
+  },
+  "physicsSettings": {
+    "message": "Настройки на физиката"
+  },
+  "gravity": {
+    "message": "Гравитация"
+  },
+  "gravityHint": {
+    "message": "При 0 страницата остава плоска като маса. Увеличете я, за да падат парчетата."
+  },
+  "airDrag": {
+    "message": "Забавяне"
+  },
+  "airDragHint": {
+    "message": "Колко бързо се забавят хвърлените парчета."
+  },
+  "bounce": {
+    "message": "Отскачане"
+  },
+  "bounceHint": {
+    "message": "Колко силно парчетата отскачат едно от друго и от краищата на прозореца."
+  },
+  "friction": {
+    "message": "Триене"
+  },
+  "frictionHint": {
+    "message": "Колко се „закачат“ парчетата, когато се плъзгат едно покрай друго."
+  },
+  "weight": {
+    "message": "Тегло"
+  },
+  "weightHint": {
+    "message": "Колко тежки са парчетата."
+  },
+  "dragStrength": {
+    "message": "Сила на захвата"
+  },
+  "dragStrengthHint": {
+    "message": "Колко плътно парчето следва курсора."
+  },
+  "shakeSettings": {
+    "message": "Настройки за разклащане"
+  },
+  "shakeDistance": {
+    "message": "Мин. размах на разклащане"
+  },
+  "shakeDistanceField": {
+    "message": "Минимален размах на разклащане в пиксели"
+  },
+  "shakeDistanceHint": {
+    "message": "Колко далеч трябва да се премести прозорецът, преди да смени посоката, за да се брои за едно разклащане."
+  },
+  "shakeSpeed": {
+    "message": "Мин. скорост на разклащане"
+  },
+  "shakeSpeedField": {
+    "message": "Минимална скорост на разклащане в пиксели в секунда"
+  },
+  "shakeSpeedHint": {
+    "message": "Колко бързо трябва да се движи прозорецът, за да се брои разклащането. Бавните движения не се броят."
+  },
+  "shakesNeeded": {
+    "message": "Брой разклащания"
+  },
+  "shakesNeededHint": {
+    "message": "Колко разклащания са нужни за старт."
+  },
+  "timeToShake": {
+    "message": "Време за разклащане"
+  },
+  "timeToShakeField": {
+    "message": "Време за разклащане в милисекунди"
+  },
+  "timeToShakeHint": {
+    "message": "За колко време трябва да се направят $count$ разклащания, за да се включи физиката.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Скриване на бутона „Върни страницата“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Скрива бутона „Върни страницата“, който се появява в горния десен ъгъл, когато физиката е включена."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "$value$ пиксела",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ пиксела в секунда",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ милисекунди",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Хванете</strong> прозореца за заглавната лента и <strong><i>го разклатете</i></strong> ИЛИ <strong>кликнете</strong> върху иконата на разширението."
+  },
+  "tipRestore": {
+    "message": "<strong>Натиснете</strong> <kbd>Esc</kbd>, <strong>кликнете</strong> върху бутона „<i>Върни страницата</i>“ ИЛИ <strong>кликнете</strong> върху иконата на разширението, за да възстановите страницата."
+  },
+  "resetSettings": {
+    "message": "Нулиране на настройките"
+  },
+  "resetConfirm": {
+    "message": "Да се върнат ли всички настройки към стандартните им стойности?"
+  },
+  "resetFailed": {
+    "message": "Настройките не можаха да бъдат нулирани. Опитайте отново."
+  },
+  "resetDone": {
+    "message": "Настройките са върнати към стандартните стойности."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "nl"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Stress wegschudden"
+  },
+  "extDescription": {
+    "message": "Voegt voor de lol natuurkunde toe aan HTML-elementen op het huidige tabblad."
+  },
+  "badgeOn": {
+    "message": "AAN"
+  },
+  "restorePage": {
+    "message": "Pagina herstellen"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Natuurkunde staat aan. Druk op Escape of op Pagina herstellen om het uit te zetten."
+  },
+  "physicsOnNote": {
+    "message": "Door je browservenster te schudden, zet je de natuurkunde aan. Druk op Pagina herstellen of Esc om het uit te zetten."
+  },
+  "settingsPageTitle": {
+    "message": "Instellingen van Stress wegschudden"
+  },
+  "settingsHeading": {
+    "message": "Instellingen"
+  },
+  "physicsSettings": {
+    "message": "Natuurkunde-instellingen"
+  },
+  "gravity": {
+    "message": "Zwaartekracht"
+  },
+  "gravityHint": {
+    "message": "Bij 0 blijft de pagina een plat tafelblad. Zet hoger om de stukken te laten vallen."
+  },
+  "airDrag": {
+    "message": "Luchtweerstand"
+  },
+  "airDragHint": {
+    "message": "Hoe snel gegooide stukken afremmen."
+  },
+  "bounce": {
+    "message": "Stuiteren"
+  },
+  "bounceHint": {
+    "message": "Hoeveel de stukken van elkaar en van de randen van het venster afstuiteren."
+  },
+  "friction": {
+    "message": "Wrijving"
+  },
+  "frictionHint": {
+    "message": "Hoeveel de stukken 'haken' als ze langs elkaar schuiven."
+  },
+  "weight": {
+    "message": "Gewicht"
+  },
+  "weightHint": {
+    "message": "Hoe zwaar de stukken zijn."
+  },
+  "dragStrength": {
+    "message": "Sleepkracht"
+  },
+  "dragStrengthHint": {
+    "message": "Hoe strak een stuk je aanwijzer volgt."
+  },
+  "shakeSettings": {
+    "message": "Schudinstellingen"
+  },
+  "shakeDistance": {
+    "message": "Minimale schudafstand"
+  },
+  "shakeDistanceField": {
+    "message": "Minimale schudafstand in pixels"
+  },
+  "shakeDistanceHint": {
+    "message": "Hoe ver het venster moet bewegen voordat het van richting verandert om als één schudbeweging te tellen."
+  },
+  "shakeSpeed": {
+    "message": "Minimale schudsnelheid"
+  },
+  "shakeSpeedField": {
+    "message": "Minimale schudsnelheid in pixels per seconde"
+  },
+  "shakeSpeedHint": {
+    "message": "Hoe snel het venster moet bewegen om als schudbeweging te tellen, zodat langzame bewegingen niets activeren."
+  },
+  "shakesNeeded": {
+    "message": "Aantal schudbewegingen"
+  },
+  "shakesNeededHint": {
+    "message": "Hoe vaak je moet schudden om te starten."
+  },
+  "timeToShake": {
+    "message": "Schudtijd"
+  },
+  "timeToShakeField": {
+    "message": "Schudtijd in milliseconden"
+  },
+  "timeToShakeHint": {
+    "message": "Hoe snel de $count$ schudbewegingen moeten gebeuren om de natuurkunde te starten.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Knop Pagina herstellen verbergen"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Verbergt de knop Pagina herstellen die rechtsboven verschijnt als de natuurkunde aan staat."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixels",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixels per seconde",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milliseconden",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Pak</strong> het venster bij de titelbalk en <strong><i>schud ermee</i></strong>, OF <strong>klik</strong> op het extensiepictogram."
+  },
+  "tipRestore": {
+    "message": "<strong>Druk</strong> op <kbd>Esc</kbd>, <strong>klik</strong> op de knop <i>Pagina herstellen</i> OF <strong>klik</strong> op het extensiepictogram om de pagina te herstellen."
+  },
+  "resetSettings": {
+    "message": "Terugzetten naar standaard"
+  },
+  "resetConfirm": {
+    "message": "Alle instellingen terugzetten naar de standaardwaarden?"
+  },
+  "resetFailed": {
+    "message": "Kan de instellingen niet terugzetten. Probeer het opnieuw."
+  },
+  "resetDone": {
+    "message": "Instellingen teruggezet naar de standaardwaarden."
+  }
+}

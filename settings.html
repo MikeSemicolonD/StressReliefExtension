@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- The text is filled in from _locales/<language>/messages.json by
+     settings.js (data-i18n* attributes) -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Screen Shake Stress Reliever settings</title>
+  <title data-i18n="settingsPageTitle"></title>
   <link rel="icon" href="images/icon32.png">
   <link rel="stylesheet" href="settings.css">
 </head>
@@ -20,106 +22,106 @@
     </svg>
 
     <header class="titlebar">
-      <h1>Settings</h1>
+      <h1 data-i18n="settingsHeading"></h1>
     </header>
 
     <div class="content">
 
       <section class="group movement" aria-labelledby="movement-title">
-        <h2 id="movement-title">Physics Settings</h2>
+        <h2 id="movement-title" data-i18n="physicsSettings"></h2>
 
         <div class="setting">
-          <label for="gravity">Gravity</label>
-          <span class="value"><input type="number" class="value-input" id="gravityValue" min="0" max="2" step="0.1" value="0" aria-label="Gravity"></span>
+          <label for="gravity" data-i18n="gravity"></label>
+          <span class="value"><input type="number" class="value-input" id="gravityValue" min="0" max="2" step="0.1" value="0" data-i18n-aria-label="gravity"></span>
           <input type="range" class="slider" id="gravity" min="0" max="2" step="0.1" value="0" aria-describedby="gravity-hint">
-          <p class="hint" id="gravity-hint">At 0 the page stays a flat tabletop. Raise it to make pieces fall.</p>
+          <p class="hint" id="gravity-hint" data-i18n="gravityHint"></p>
         </div>
 
         <div class="setting">
-          <label for="frictionAir">Air drag</label>
-          <span class="value"><input type="number" class="value-input" id="frictionAirValue" min="0" max="0.1" step="0.005" value="0.02" aria-label="Air drag"></span>
+          <label for="frictionAir" data-i18n="airDrag"></label>
+          <span class="value"><input type="number" class="value-input" id="frictionAirValue" min="0" max="0.1" step="0.005" value="0.02" data-i18n-aria-label="airDrag"></span>
           <input type="range" class="slider" id="frictionAir" min="0" max="0.1" step="0.005" value="0.02" aria-describedby="frictionAir-hint">
-          <p class="hint" id="frictionAir-hint">How quickly thrown pieces slow down.</p>
+          <p class="hint" id="frictionAir-hint" data-i18n="airDragHint"></p>
         </div>
 
         <div class="setting">
-          <label for="restitution">Bounce</label>
-          <span class="value"><input type="number" class="value-input" id="restitutionValue" min="0" max="1" step="0.1" value="0.5" aria-label="Bounce"></span>
+          <label for="restitution" data-i18n="bounce"></label>
+          <span class="value"><input type="number" class="value-input" id="restitutionValue" min="0" max="1" step="0.1" value="0.5" data-i18n-aria-label="bounce"></span>
           <input type="range" class="slider" id="restitution" min="0" max="1" step="0.1" value="0.5" aria-describedby="restitution-hint">
-          <p class="hint" id="restitution-hint">How much pieces bounce off each other and the edges of the window.</p>
+          <p class="hint" id="restitution-hint" data-i18n="bounceHint"></p>
         </div>
 
         <div class="setting">
-          <label for="friction">Friction</label>
-          <span class="value"><input type="number" class="value-input" id="frictionValue" min="0" max="1" step="0.1" value="0.1" aria-label="Friction"></span>
+          <label for="friction" data-i18n="friction"></label>
+          <span class="value"><input type="number" class="value-input" id="frictionValue" min="0" max="1" step="0.1" value="0.1" data-i18n-aria-label="friction"></span>
           <input type="range" class="slider" id="friction" min="0" max="1" step="0.1" value="0.1" aria-describedby="friction-hint">
-          <p class="hint" id="friction-hint">How much pieces 'catch' when they slide past each other.</p>
+          <p class="hint" id="friction-hint" data-i18n="frictionHint"></p>
         </div>
 
         <div class="setting">
-          <label for="density">Weight</label>
-          <span class="value"><input type="number" class="value-input" id="densityValue" min="0.001" max="0.01" step="0.001" value="0.001" aria-label="Weight"></span>
+          <label for="density" data-i18n="weight"></label>
+          <span class="value"><input type="number" class="value-input" id="densityValue" min="0.001" max="0.01" step="0.001" value="0.001" data-i18n-aria-label="weight"></span>
           <input type="range" class="slider" id="density" min="0.001" max="0.01" step="0.001" value="0.001" aria-describedby="density-hint">
-          <p class="hint" id="density-hint">How heavy the pieces are.</p>
+          <p class="hint" id="density-hint" data-i18n="weightHint"></p>
         </div>
 
         <div class="setting">
-          <label for="stiffness">Drag Strength</label>
-          <span class="value"><input type="number" class="value-input" id="stiffnessValue" min="0.1" max="1" step="0.1" value="0.2" aria-label="Drag Strength"></span>
+          <label for="stiffness" data-i18n="dragStrength"></label>
+          <span class="value"><input type="number" class="value-input" id="stiffnessValue" min="0.1" max="1" step="0.1" value="0.2" data-i18n-aria-label="dragStrength"></span>
           <input type="range" class="slider" id="stiffness" min="0.1" max="1" step="0.1" value="0.2" aria-describedby="stiffness-hint">
-          <p class="hint" id="stiffness-hint">How tightly a piece follows your pointer.</p>
+          <p class="hint" id="stiffness-hint" data-i18n="dragStrengthHint"></p>
         </div>
       </section>
 
       <section class="group shaking" aria-labelledby="shaking-title">
-        <h2 id="shaking-title">Shake Settings</h2>
+        <h2 id="shaking-title" data-i18n="shakeSettings"></h2>
 
         <div class="setting">
-          <label for="shakeDistance">Minimum shake distance</label>
-          <span class="value"><input type="number" class="value-input" id="shakeDistanceValue" min="10" max="150" step="5" value="40" aria-label="Minimum shake distance in pixels"><span class="unit" aria-hidden="true">px</span></span>
+          <label for="shakeDistance" data-i18n="shakeDistance"></label>
+          <span class="value"><input type="number" class="value-input" id="shakeDistanceValue" min="10" max="150" step="5" value="40" data-i18n-aria-label="shakeDistanceField"><span class="unit" aria-hidden="true" data-i18n="unitPx"></span></span>
           <input type="range" class="slider" id="shakeDistance" min="10" max="150" step="5" value="40" data-unit="px" aria-describedby="shakeDistance-hint">
-          <p class="hint" id="shakeDistance-hint">How far the window has to move before changing direction to count as one shake.</p>
+          <p class="hint" id="shakeDistance-hint" data-i18n="shakeDistanceHint"></p>
         </div>
 
         <div class="setting">
-          <label for="minShakeSpeed">Minimum shake speed</label>
-          <span class="value"><input type="number" class="value-input" id="minShakeSpeedValue" min="100" max="1000" step="50" value="150" aria-label="Minimum shake speed in pixels per second"><span class="unit" aria-hidden="true">px/s</span></span>
+          <label for="minShakeSpeed" data-i18n="shakeSpeed"></label>
+          <span class="value"><input type="number" class="value-input" id="minShakeSpeedValue" min="100" max="1000" step="50" value="150" data-i18n-aria-label="shakeSpeedField"><span class="unit" aria-hidden="true" data-i18n="unitPxPerSecond"></span></span>
           <input type="range" class="slider" id="minShakeSpeed" min="100" max="1000" step="50" value="150" data-unit="px/s" aria-describedby="minShakeSpeed-hint">
-          <p class="hint" id="minShakeSpeed-hint">How fast the window has to move for a shake to count, so slow moves don't set it off.</p>
+          <p class="hint" id="minShakeSpeed-hint" data-i18n="shakeSpeedHint"></p>
         </div>
 
         <div class="setting">
-          <label for="requiredShakes">Shakes needed</label>
-          <span class="value"><input type="number" class="value-input" id="requiredShakesValue" min="2" max="10" step="1" value="4" aria-label="Shakes needed"></span>
+          <label for="requiredShakes" data-i18n="shakesNeeded"></label>
+          <span class="value"><input type="number" class="value-input" id="requiredShakesValue" min="2" max="10" step="1" value="4" data-i18n-aria-label="shakesNeeded"></span>
           <input type="range" class="slider" id="requiredShakes" min="2" max="10" step="1" value="4" aria-describedby="requiredShakes-hint">
-          <p class="hint" id="requiredShakes-hint">How many shakes it takes to start.</p>
+          <p class="hint" id="requiredShakes-hint" data-i18n="shakesNeededHint"></p>
         </div>
 
         <div class="setting">
-          <label for="timeWindow">Time to shake</label>
-          <span class="value"><input type="number" class="value-input" id="timeWindowValue" min="500" max="3000" step="100" value="1500" aria-label="Time to shake in milliseconds"><span class="unit" aria-hidden="true">ms</span></span>
+          <label for="timeWindow" data-i18n="timeToShake"></label>
+          <span class="value"><input type="number" class="value-input" id="timeWindowValue" min="500" max="3000" step="100" value="1500" data-i18n-aria-label="timeToShakeField"><span class="unit" aria-hidden="true" data-i18n="unitMs"></span></span>
           <input type="range" class="slider" id="timeWindow" min="500" max="3000" step="100" value="1500" data-unit="ms" aria-describedby="timeWindow-hint">
-          <p class="hint" id="timeWindow-hint">How quick the <span data-value-of="requiredShakes">4</span> shakes have to happen to trigger the physics.</p>
+          <p class="hint" id="timeWindow-hint" data-i18n="timeToShakeHint"><span data-value-of="requiredShakes">4</span></p>
         </div>
 
         <div class="setting">
-          <label for="hideRestoreButton">Hide Restore page button</label>
+          <label for="hideRestoreButton" data-i18n="hideRestoreButton"></label>
           <span class="switch">
             <input type="checkbox" id="hideRestoreButton" role="switch" aria-describedby="hideRestoreButton-hint">
             <span class="switch-track" aria-hidden="true"></span>
           </span>
-          <p class="hint" id="hideRestoreButton-hint">Hides the restore page button that appears in the top-right corner when physics is on.</p>
+          <p class="hint" id="hideRestoreButton-hint" data-i18n="hideRestoreButtonHint"></p>
         </div>
 
       </section>
 
       <aside class="tip">
-        <p><strong>Grab</strong> the window by its title bar and <strong><i>shake it</i></strong>, OR <strong>click</strong> the extension icon.</p>
+        <p data-i18n-html="tipStart"></p>
         <br/>
-        <p><strong>Press</strong> <kbd>Esc</kbd>, <strong>click</strong> the <i>Restore page</i> button, OR <strong>click</strong> the extension icon to restore the page.</p>
+        <p data-i18n-html="tipRestore"></p>
       </aside>
 
-      <button type="button" class="reset" id="resetSettings">Reset to defaults</button>
+      <button type="button" class="reset" id="resetSettings" data-i18n="resetSettings"></button>
       <p class="visually-hidden" role="status" id="status"></p>
     </div>
   </main>

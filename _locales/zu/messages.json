@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "zu"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Nyakazisa Isikrini Uphumule"
+  },
+  "extDescription": {
+    "message": "Yengeza i-physics ezintweni ze-HTML kuthebhu yamanje ukuze uzijabulise."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Buyisela ikhasi"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "I-physics ivuliwe. Cindezela u-Escape noma okuthi \"Buyisela ikhasi\" ukuze uyivale."
+  },
+  "physicsOnNote": {
+    "message": "Ukunyakazisa iwindi lesiphequluli sakho kuvula i-physics. Cindezela okuthi \"Buyisela ikhasi\" noma u-Esc ukuze uyivale."
+  },
+  "settingsPageTitle": {
+    "message": "Amasethingi we-Nyakazisa Isikrini Uphumule"
+  },
+  "settingsHeading": {
+    "message": "Amasethingi"
+  },
+  "physicsSettings": {
+    "message": "Amasethingi e-Physics"
+  },
+  "gravity": {
+    "message": "Ukudonsela phansi"
+  },
+  "gravityHint": {
+    "message": "Ku-0 ikhasi lihlala liyitafula eliyisicaba. Kwenyuse ukuze izingcezu ziwe."
+  },
+  "airDrag": {
+    "message": "Ukumelana komoya"
+  },
+  "airDragHint": {
+    "message": "Ukuthi izingcezu eziphonswe zehlisa ijubane ngokushesha kangakanani."
+  },
+  "bounce": {
+    "message": "Ukugxuma"
+  },
+  "bounceHint": {
+    "message": "Ukuthi izingcezu zigxuma kangakanani uma zishayisana noma zishaya imiphetho yewindi."
+  },
+  "friction": {
+    "message": "Ukuhuzuka"
+  },
+  "frictionHint": {
+    "message": "Ukuthi izingcezu 'zibambeka' kangakanani uma zishelela zidlulana."
+  },
+  "weight": {
+    "message": "Isisindo"
+  },
+  "weightHint": {
+    "message": "Ukuthi izingcezu zisinda kangakanani."
+  },
+  "dragStrength": {
+    "message": "Amandla okudonsa"
+  },
+  "dragStrengthHint": {
+    "message": "Ukuthi ucezu lulandela isikhombi sakho eduze kangakanani."
+  },
+  "shakeSettings": {
+    "message": "Amasethingi okunyakazisa"
+  },
+  "shakeDistance": {
+    "message": "Ibanga elincane lokunyakazisa"
+  },
+  "shakeDistanceField": {
+    "message": "Ibanga elincane lokunyakazisa ngamaphikseli"
+  },
+  "shakeDistanceHint": {
+    "message": "Ukuthi iwindi kufanele lihambe ibanga elingakanani ngaphambi kokushintsha indlela ukuze kubalwe njengokunyakazisa okukodwa."
+  },
+  "shakeSpeed": {
+    "message": "Ijubane elincane lokunyakazisa"
+  },
+  "shakeSpeedField": {
+    "message": "Ijubane elincane lokunyakazisa ngamaphikseli ngomzuzwana"
+  },
+  "shakeSpeedHint": {
+    "message": "Ukuthi iwindi kufanele lihambe ngokushesha kangakanani ukuze ukunyakazisa kubalwe, ukuze ukuhamba kancane kungakuqalisi."
+  },
+  "shakesNeeded": {
+    "message": "Ukunyakazisa okudingekayo"
+  },
+  "shakesNeededHint": {
+    "message": "Ukuthi kudingeka ukunyakazisa okungaki ukuze kuqale."
+  },
+  "timeToShake": {
+    "message": "Isikhathi sokunyakazisa"
+  },
+  "timeToShakeField": {
+    "message": "Isikhathi sokunyakazisa ngama-millisecond"
+  },
+  "timeToShakeHint": {
+    "message": "Ukuthi ukunyakazisa okungu-$count$ kufanele kwenzeke ngokushesha kangakanani ukuze kuqale i-physics.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Fihla inkinobho ethi \"Buyisela ikhasi\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Ifihla inkinobho ethi \"Buyisela ikhasi\" evela ekhoneni eliphezulu kwesokudla uma i-physics ivuliwe."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "amaphikseli angu-$value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "amaphikseli angu-$value$ ngomzuzwana",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "ama-millisecond angu-$value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Bamba</strong> iwindi ngebha yesihloko bese <strong><i>ulinyakazisa</i></strong>, NOMA <strong>uchofoze</strong> isithonjana sesandiso."
+  },
+  "tipRestore": {
+    "message": "<strong>Cindezela</strong> u-<kbd>Esc</kbd>, <strong>uchofoze</strong> inkinobho ethi <i>Buyisela ikhasi</i>, NOMA <strong>uchofoze</strong> isithonjana sesandiso ukuze ubuyisele ikhasi."
+  },
+  "resetSettings": {
+    "message": "Setha kabusha kokuzenzakalelayo"
+  },
+  "resetConfirm": {
+    "message": "Setha kabusha wonke amasethingi kokuzenzakalelayo?"
+  },
+  "resetFailed": {
+    "message": "Ayikwazanga ukusetha kabusha amasethingi. Zama futhi."
+  },
+  "resetDone": {
+    "message": "Amasethingi asethwe kabusha kokuzenzakalelayo."
+  }
+}

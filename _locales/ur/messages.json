@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "ur"
+  },
+  "direction": {
+    "message": "rtl"
+  },
+  "extName": {
+    "message": "اسکرین ہلائیں، دباؤ بھگائیں"
+  },
+  "extDescription": {
+    "message": "تفریح کے لیے موجودہ صفحے کے مواد کو ایسے ٹکڑوں میں بدل دیتا ہے جنہیں آپ اِدھر اُدھر پھینک سکتے ہیں۔"
+  },
+  "badgeOn": {
+    "message": "آن"
+  },
+  "restorePage": {
+    "message": "صفحہ بحال کریں"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "فزکس آن ہے۔ اسے بند کرنے کے لیے ایسکیپ کلید یا \"صفحہ بحال کریں\" دبائیں۔"
+  },
+  "physicsOnNote": {
+    "message": "براؤزر ونڈو ہلانے سے فزکس آن ہو جاتی ہے۔ اسے بند کرنے کے لیے \"صفحہ بحال کریں\" یا Esc دبائیں۔"
+  },
+  "settingsPageTitle": {
+    "message": "اسکرین ہلائیں، دباؤ بھگائیں - ترتیبات"
+  },
+  "settingsHeading": {
+    "message": "ترتیبات"
+  },
+  "physicsSettings": {
+    "message": "فزکس کی ترتیبات"
+  },
+  "gravity": {
+    "message": "کشش ثقل"
+  },
+  "gravityHint": {
+    "message": "0 پر صفحہ ایک ہموار میز کی طرح رہتا ہے۔ ٹکڑوں کو نیچے گرانے کے لیے اسے بڑھائیں۔"
+  },
+  "airDrag": {
+    "message": "ہوا کی رکاوٹ"
+  },
+  "airDragHint": {
+    "message": "پھینکے گئے ٹکڑے کتنی جلدی رفتار کھوتے ہیں۔"
+  },
+  "bounce": {
+    "message": "اچھال"
+  },
+  "bounceHint": {
+    "message": "ٹکڑے ایک دوسرے سے اور ونڈو کے کناروں سے کتنا اچھلتے ہیں۔"
+  },
+  "friction": {
+    "message": "رگڑ"
+  },
+  "frictionHint": {
+    "message": "ایک دوسرے کے پاس سے پھسلتے وقت ٹکڑے کتنا \"اٹکتے\" ہیں۔"
+  },
+  "weight": {
+    "message": "وزن"
+  },
+  "weightHint": {
+    "message": "ٹکڑے کتنے بھاری ہیں۔"
+  },
+  "dragStrength": {
+    "message": "کھینچنے کی قوت"
+  },
+  "dragStrengthHint": {
+    "message": "کھینچتے وقت ٹکڑا کتنی مضبوطی سے آپ کے پوائنٹر کے ساتھ چلتا ہے۔"
+  },
+  "shakeSettings": {
+    "message": "ہلانے کی ترتیبات"
+  },
+  "shakeDistance": {
+    "message": "ہلانے کا کم از کم فاصلہ"
+  },
+  "shakeDistanceField": {
+    "message": "ہلانے کا کم از کم فاصلہ پکسلز میں"
+  },
+  "shakeDistanceHint": {
+    "message": "سمت بدلنے سے پہلے ونڈو کو کتنا حرکت کرنی ہوگی تاکہ اسے ایک بار ہلانا شمار کیا جائے۔"
+  },
+  "shakeSpeed": {
+    "message": "ہلانے کی کم از کم رفتار"
+  },
+  "shakeSpeedField": {
+    "message": "ہلانے کی کم از کم رفتار پکسلز فی سیکنڈ میں"
+  },
+  "shakeSpeedHint": {
+    "message": "ہلانا شمار ہونے کے لیے ونڈو کو کتنی تیزی سے حرکت کرنی ہوگی، تاکہ آہستہ حرکت سے یہ آن نہ ہو۔"
+  },
+  "shakesNeeded": {
+    "message": "مطلوبہ جھٹکے"
+  },
+  "shakesNeededHint": {
+    "message": "شروع کرنے کے لیے کتنے جھٹکے درکار ہیں۔"
+  },
+  "timeToShake": {
+    "message": "ہلانے کا وقت"
+  },
+  "timeToShakeField": {
+    "message": "ہلانے کا وقت ملی سیکنڈز میں"
+  },
+  "timeToShakeHint": {
+    "message": "فزکس آن کرنے کے لیے $count$ جھٹکے کتنے وقت کے اندر لگنے چاہئیں۔",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"صفحہ بحال کریں\" بٹن چھپائیں"
+  },
+  "hideRestoreButtonHint": {
+    "message": "فزکس آن ہونے پر اوپر بائیں کونے میں ظاہر ہونے والا \"صفحہ بحال کریں\" بٹن چھپا دیتا ہے۔"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ پکسل",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ پکسل فی سیکنڈ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ملی سیکنڈ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "ونڈو کو اس کی ٹائٹل بار سے <strong>پکڑیں</strong> اور <strong><i>اسے ہلائیں</i></strong>، یا ایکسٹینشن آئیکن پر <strong>کلک کریں</strong>۔"
+  },
+  "tipRestore": {
+    "message": "صفحہ بحال کرنے کے لیے <kbd>Esc</kbd> <strong>دبائیں</strong>، <i>\"صفحہ بحال کریں\"</i> بٹن پر <strong>کلک کریں</strong>، یا ایکسٹینشن آئیکن پر <strong>کلک کریں</strong>۔"
+  },
+  "resetSettings": {
+    "message": "ڈیفالٹ پر ری سیٹ کریں"
+  },
+  "resetConfirm": {
+    "message": "تمام ترتیبات کو ڈیفالٹ پر ری سیٹ کریں؟"
+  },
+  "resetFailed": {
+    "message": "ترتیبات ری سیٹ نہیں ہو سکیں۔ دوبارہ کوشش کریں۔"
+  },
+  "resetDone": {
+    "message": "ترتیبات ڈیفالٹ پر ری سیٹ ہو گئیں۔"
+  }
+}

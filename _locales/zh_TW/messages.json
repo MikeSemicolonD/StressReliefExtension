@@ -1,0 +1,162 @@
+{
+  "locale": {
+    "message": "zh_TW"
+  },
+  "direction": { "message": "ltr" },
+  "extName": {
+    "message": "搖晃螢幕紓壓"
+  },
+  "extDescription": {
+    "message": "為目前分頁中的 HTML 元素加上物理效果，好玩又紓壓。"
+  },
+  "badgeOn": {
+    "message": "開"
+  },
+  "restorePage": {
+    "message": "還原網頁"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "物理效果已開啟。按下 Esc 鍵或「還原網頁」即可關閉。"
+  },
+  "physicsOnNote": {
+    "message": "搖晃瀏覽器視窗開啟了物理效果。按下「還原網頁」或 Esc 鍵即可關閉。"
+  },
+  "settingsPageTitle": {
+    "message": "搖晃螢幕紓壓設定"
+  },
+  "settingsHeading": {
+    "message": "設定"
+  },
+  "physicsSettings": {
+    "message": "物理設定"
+  },
+  "gravity": {
+    "message": "重力"
+  },
+  "gravityHint": {
+    "message": "設為 0 時，網頁就像平放的桌面。調高後碎片會往下掉。"
+  },
+  "airDrag": {
+    "message": "空氣阻力"
+  },
+  "airDragHint": {
+    "message": "丟出去的碎片減速有多快。"
+  },
+  "bounce": {
+    "message": "彈性"
+  },
+  "bounceHint": {
+    "message": "碎片互相碰撞或撞到視窗邊緣時的反彈程度。"
+  },
+  "friction": {
+    "message": "摩擦力"
+  },
+  "frictionHint": {
+    "message": "碎片互相滑過時有多容易「卡住」。"
+  },
+  "weight": {
+    "message": "重量"
+  },
+  "weightHint": {
+    "message": "碎片有多重。"
+  },
+  "dragStrength": {
+    "message": "拖曳力道"
+  },
+  "dragStrengthHint": {
+    "message": "碎片跟著游標移動的緊密程度。"
+  },
+  "shakeSettings": {
+    "message": "搖晃設定"
+  },
+  "shakeDistance": {
+    "message": "最小搖晃距離"
+  },
+  "shakeDistanceField": {
+    "message": "最小搖晃距離（像素）"
+  },
+  "shakeDistanceHint": {
+    "message": "視窗移動多遠後再換方向，才算搖晃一次。"
+  },
+  "shakeSpeed": {
+    "message": "最低搖晃速度"
+  },
+  "shakeSpeedField": {
+    "message": "最低搖晃速度（每秒像素數）"
+  },
+  "shakeSpeedHint": {
+    "message": "視窗移動要多快才算搖晃，慢慢移動不會觸發。"
+  },
+  "shakesNeeded": {
+    "message": "所需搖晃次數"
+  },
+  "shakesNeededHint": {
+    "message": "要搖晃幾次才會啟動。"
+  },
+  "timeToShake": {
+    "message": "搖晃時限"
+  },
+  "timeToShakeField": {
+    "message": "搖晃時限（毫秒）"
+  },
+  "timeToShakeHint": {
+    "message": "必須在多少時間內搖晃 $count$ 次才會觸發物理效果。",
+    "placeholders": {
+      "count": { "content": "$1", "example": "4" }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "隱藏「還原網頁」按鈕"
+  },
+  "hideRestoreButtonHint": {
+    "message": "隱藏物理效果開啟時顯示在右上角的「還原網頁」按鈕。"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/秒"
+  },
+  "unitMs": {
+    "message": "毫秒"
+  },
+  "valuePx": {
+    "message": "$value$ 像素",
+    "placeholders": {
+      "value": { "content": "$1", "example": "40" }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "每秒 $value$ 像素",
+    "placeholders": {
+      "value": { "content": "$1", "example": "150" }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ 毫秒",
+    "placeholders": {
+      "value": { "content": "$1", "example": "1500" }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>抓住</strong>視窗的標題列<strong><i>搖一搖</i></strong>，或<strong>按一下</strong>擴充功能圖示。"
+  },
+  "tipRestore": {
+    "message": "<strong>按下</strong> <kbd>Esc</kbd> 鍵、<strong>按一下</strong>「<i>還原網頁</i>」按鈕，或<strong>按一下</strong>擴充功能圖示，即可還原網頁。"
+  },
+  "resetSettings": {
+    "message": "還原為預設值"
+  },
+  "resetConfirm": {
+    "message": "要將所有設定還原為預設值嗎？"
+  },
+  "resetFailed": {
+    "message": "無法還原設定，請再試一次。"
+  },
+  "resetDone": {
+    "message": "已將設定還原為預設值。"
+  }
+}

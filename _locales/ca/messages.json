@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "ca"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Sacsejada antiestrès"
+  },
+  "extDescription": {
+    "message": "Afegeix física als elements HTML de la pestanya actual, per divertir-se."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Restaura la pàgina"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "La física està activada. Prem Escape o «Restaura la pàgina» per desactivar-la."
+  },
+  "physicsOnNote": {
+    "message": "En sacsejar la finestra del navegador s'activa la física. Prem «Restaura la pàgina» o Esc per desactivar-la."
+  },
+  "settingsPageTitle": {
+    "message": "Configuració de Sacsejada antiestrès"
+  },
+  "settingsHeading": {
+    "message": "Configuració"
+  },
+  "physicsSettings": {
+    "message": "Física"
+  },
+  "gravity": {
+    "message": "Gravetat"
+  },
+  "gravityHint": {
+    "message": "A 0, la pàgina és com una taula plana. Apuja-la perquè les peces caiguin."
+  },
+  "airDrag": {
+    "message": "Resistència de l'aire"
+  },
+  "airDragHint": {
+    "message": "Com de ràpid s'alenteixen les peces llançades."
+  },
+  "bounce": {
+    "message": "Rebot"
+  },
+  "bounceHint": {
+    "message": "Quant reboten les peces entre elles i contra les vores de la finestra."
+  },
+  "friction": {
+    "message": "Fregament"
+  },
+  "frictionHint": {
+    "message": "Quant s'«enganxen» les peces quan llisquen les unes contra les altres."
+  },
+  "weight": {
+    "message": "Pes"
+  },
+  "weightHint": {
+    "message": "Quant pesen les peces."
+  },
+  "dragStrength": {
+    "message": "Força d'agafada"
+  },
+  "dragStrengthHint": {
+    "message": "Amb quina fermesa una peça segueix el punter."
+  },
+  "shakeSettings": {
+    "message": "Sacsejada"
+  },
+  "shakeDistance": {
+    "message": "Distància mínima"
+  },
+  "shakeDistanceField": {
+    "message": "Distància mínima de la sacsejada en píxels"
+  },
+  "shakeDistanceHint": {
+    "message": "Quant s'ha de moure la finestra abans de canviar de direcció perquè compti com una sacsejada."
+  },
+  "shakeSpeed": {
+    "message": "Velocitat mínima"
+  },
+  "shakeSpeedField": {
+    "message": "Velocitat mínima de la sacsejada en píxels per segon"
+  },
+  "shakeSpeedHint": {
+    "message": "Com de ràpid s'ha de moure la finestra perquè la sacsejada compti; així els moviments lents no l'activen."
+  },
+  "shakesNeeded": {
+    "message": "Sacsejades necessàries"
+  },
+  "shakesNeededHint": {
+    "message": "Quantes sacsejades calen per començar."
+  },
+  "timeToShake": {
+    "message": "Temps per sacsejar"
+  },
+  "timeToShakeField": {
+    "message": "Temps per sacsejar en mil·lisegons"
+  },
+  "timeToShakeHint": {
+    "message": "En quant de temps s'han de fer les $count$ sacsejades per activar la física.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Amaga el botó «Restaura la pàgina»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Amaga el botó «Restaura la pàgina» que apareix a l'extrem superior dret quan la física està activada."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ píxels",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ píxels per segon",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ mil·lisegons",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Agafa</strong> la finestra per la barra de títol i <strong><i>sacseja-la</i></strong>, O <strong>fes clic</strong> a la icona de l'extensió."
+  },
+  "tipRestore": {
+    "message": "<strong>Prem</strong> <kbd>Esc</kbd>, <strong>fes clic</strong> al botó <i>Restaura la pàgina</i> O <strong>fes clic</strong> a la icona de l'extensió per restaurar la pàgina."
+  },
+  "resetSettings": {
+    "message": "Restableix els valors predeterminats"
+  },
+  "resetConfirm": {
+    "message": "Vols restablir tota la configuració als valors predeterminats?"
+  },
+  "resetFailed": {
+    "message": "No s'ha pogut restablir la configuració. Torna-ho a provar."
+  },
+  "resetDone": {
+    "message": "S'ha restablert la configuració als valors predeterminats."
+  }
+}

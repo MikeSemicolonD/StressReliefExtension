@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "th"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "เขย่าจอคลายเครียด"
+  },
+  "extDescription": {
+    "message": "เพิ่มฟิสิกส์ให้องค์ประกอบ HTML ในแท็บปัจจุบันเพื่อความสนุก"
+  },
+  "badgeOn": {
+    "message": "เปิด"
+  },
+  "restorePage": {
+    "message": "คืนค่าหน้าเว็บ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ฟิสิกส์เปิดอยู่ กดปุ่ม Escape หรือปุ่ม \"คืนค่าหน้าเว็บ\" เพื่อปิด"
+  },
+  "physicsOnNote": {
+    "message": "การเขย่าหน้าต่างเบราว์เซอร์จะเปิดฟิสิกส์ กด \"คืนค่าหน้าเว็บ\" หรือ Esc เพื่อปิด"
+  },
+  "settingsPageTitle": {
+    "message": "การตั้งค่า เขย่าจอคลายเครียด"
+  },
+  "settingsHeading": {
+    "message": "การตั้งค่า"
+  },
+  "physicsSettings": {
+    "message": "การตั้งค่าฟิสิกส์"
+  },
+  "gravity": {
+    "message": "แรงโน้มถ่วง"
+  },
+  "gravityHint": {
+    "message": "ที่ 0 หน้าเว็บจะแบนราบเหมือนพื้นโต๊ะ เพิ่มค่าเพื่อให้ชิ้นส่วนตกลงมา"
+  },
+  "airDrag": {
+    "message": "แรงต้านอากาศ"
+  },
+  "airDragHint": {
+    "message": "ชิ้นส่วนที่ขว้างออกไปจะช้าลงเร็วแค่ไหน"
+  },
+  "bounce": {
+    "message": "การเด้ง"
+  },
+  "bounceHint": {
+    "message": "ชิ้นส่วนเด้งกระทบกันและกระทบขอบหน้าต่างมากแค่ไหน"
+  },
+  "friction": {
+    "message": "แรงเสียดทาน"
+  },
+  "frictionHint": {
+    "message": "ชิ้นส่วน \"ติด\" กันมากแค่ไหนเมื่อไถลผ่านกัน"
+  },
+  "weight": {
+    "message": "น้ำหนัก"
+  },
+  "weightHint": {
+    "message": "ชิ้นส่วนหนักแค่ไหน"
+  },
+  "dragStrength": {
+    "message": "แรงลาก"
+  },
+  "dragStrengthHint": {
+    "message": "ชิ้นส่วนเกาะตามตัวชี้ของคุณแน่นแค่ไหน"
+  },
+  "shakeSettings": {
+    "message": "การตั้งค่าการเขย่า"
+  },
+  "shakeDistance": {
+    "message": "ระยะเขย่าขั้นต่ำ"
+  },
+  "shakeDistanceField": {
+    "message": "ระยะเขย่าขั้นต่ำเป็นพิกเซล"
+  },
+  "shakeDistanceHint": {
+    "message": "หน้าต่างต้องเลื่อนไปไกลแค่ไหนก่อนเปลี่ยนทิศ จึงจะนับเป็นการเขย่าหนึ่งครั้ง"
+  },
+  "shakeSpeed": {
+    "message": "ความเร็วเขย่าขั้นต่ำ"
+  },
+  "shakeSpeedField": {
+    "message": "ความเร็วเขย่าขั้นต่ำเป็นพิกเซลต่อวินาที"
+  },
+  "shakeSpeedHint": {
+    "message": "หน้าต่างต้องเลื่อนเร็วแค่ไหนจึงจะนับเป็นการเขย่า การเลื่อนช้าๆ จะได้ไม่ทำให้ทำงาน"
+  },
+  "shakesNeeded": {
+    "message": "จำนวนครั้งที่ต้องเขย่า"
+  },
+  "shakesNeededHint": {
+    "message": "ต้องเขย่ากี่ครั้งจึงจะเริ่ม"
+  },
+  "timeToShake": {
+    "message": "เวลาในการเขย่า"
+  },
+  "timeToShakeField": {
+    "message": "เวลาในการเขย่าเป็นมิลลิวินาที"
+  },
+  "timeToShakeHint": {
+    "message": "ต้องเขย่าให้ครบ $count$ ครั้งภายในเวลาเท่าไรจึงจะเริ่มฟิสิกส์",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "ซ่อนปุ่ม \"คืนค่าหน้าเว็บ\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "ซ่อนปุ่ม \"คืนค่าหน้าเว็บ\" ที่แสดงที่มุมขวาบนเมื่อฟิสิกส์เปิดอยู่"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ พิกเซล",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ พิกเซลต่อวินาที",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ มิลลิวินาที",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>จับ</strong>แถบชื่อของหน้าต่างแล้ว<strong><i>เขย่าเลย</i></strong> หรือ<strong>คลิก</strong>ไอคอนส่วนขยาย"
+  },
+  "tipRestore": {
+    "message": "<strong>กด</strong> <kbd>Esc</kbd> <strong>คลิก</strong>ปุ่ม <i>คืนค่าหน้าเว็บ</i> หรือ<strong>คลิก</strong>ไอคอนส่วนขยายเพื่อคืนค่าหน้าเว็บ"
+  },
+  "resetSettings": {
+    "message": "รีเซ็ตเป็นค่าเริ่มต้น"
+  },
+  "resetConfirm": {
+    "message": "รีเซ็ตการตั้งค่าทั้งหมดเป็นค่าเริ่มต้นใช่ไหม"
+  },
+  "resetFailed": {
+    "message": "รีเซ็ตการตั้งค่าไม่ได้ โปรดลองอีกครั้ง"
+  },
+  "resetDone": {
+    "message": "รีเซ็ตการตั้งค่าเป็นค่าเริ่มต้นแล้ว"
+  }
+}

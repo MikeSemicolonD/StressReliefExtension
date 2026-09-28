@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "hi"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "स्क्रीन हिलाओ, तनाव भगाओ"
+  },
+  "extDescription": {
+    "message": "मज़े के लिए मौजूदा टैब के HTML एलिमेंट में फ़िज़िक्स जोड़ता है।"
+  },
+  "badgeOn": {
+    "message": "चालू"
+  },
+  "restorePage": {
+    "message": "पेज वापस लाएं"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "फ़िज़िक्स चालू है। इसे बंद करने के लिए एस्केप दबाएं या \"पेज वापस लाएं\" पर क्लिक करें।"
+  },
+  "physicsOnNote": {
+    "message": "ब्राउज़र विंडो हिलाने से फ़िज़िक्स चालू हो जाती है। इसे बंद करने के लिए \"पेज वापस लाएं\" पर क्लिक करें या Esc दबाएं।"
+  },
+  "settingsPageTitle": {
+    "message": "स्क्रीन हिलाओ, तनाव भगाओ – सेटिंग"
+  },
+  "settingsHeading": {
+    "message": "सेटिंग"
+  },
+  "physicsSettings": {
+    "message": "फ़िज़िक्स सेटिंग"
+  },
+  "gravity": {
+    "message": "गुरुत्वाकर्षण"
+  },
+  "gravityHint": {
+    "message": "0 पर पेज एक सपाट मेज़ जैसा रहता है। टुकड़ों को नीचे गिराने के लिए इसे बढ़ाएं।"
+  },
+  "airDrag": {
+    "message": "हवा की रुकावट"
+  },
+  "airDragHint": {
+    "message": "फेंके गए टुकड़े कितनी जल्दी धीमे पड़ते हैं।"
+  },
+  "bounce": {
+    "message": "उछाल"
+  },
+  "bounceHint": {
+    "message": "टुकड़े एक-दूसरे से और विंडो के किनारों से टकराकर कितना उछलते हैं।"
+  },
+  "friction": {
+    "message": "घर्षण"
+  },
+  "frictionHint": {
+    "message": "एक-दूसरे के पास से फिसलते समय टुकड़े कितना 'अटकते' हैं।"
+  },
+  "weight": {
+    "message": "वज़न"
+  },
+  "weightHint": {
+    "message": "टुकड़े कितने भारी हैं।"
+  },
+  "dragStrength": {
+    "message": "खींचने की ताकत"
+  },
+  "dragStrengthHint": {
+    "message": "टुकड़ा आपके पॉइंटर के पीछे कितनी मज़बूती से चलता है।"
+  },
+  "shakeSettings": {
+    "message": "हिलाने की सेटिंग"
+  },
+  "shakeDistance": {
+    "message": "हिलाने की कम से कम दूरी"
+  },
+  "shakeDistanceField": {
+    "message": "हिलाने की कम से कम दूरी, पिक्सल में"
+  },
+  "shakeDistanceHint": {
+    "message": "एक बार हिलाना गिना जाए, इसके लिए दिशा बदलने से पहले विंडो को कितनी दूर जाना होगा।"
+  },
+  "shakeSpeed": {
+    "message": "हिलाने की कम से कम रफ़्तार"
+  },
+  "shakeSpeedField": {
+    "message": "हिलाने की कम से कम रफ़्तार, पिक्सल प्रति सेकंड में"
+  },
+  "shakeSpeedHint": {
+    "message": "हिलाना गिना जाए, इसके लिए विंडो को कितनी तेज़ी से चलना होगा, ताकि धीरे-धीरे खिसकाने से यह चालू न हो।"
+  },
+  "shakesNeeded": {
+    "message": "कितनी बार हिलाना है"
+  },
+  "shakesNeededHint": {
+    "message": "शुरू करने के लिए कितनी बार हिलाना होगा।"
+  },
+  "timeToShake": {
+    "message": "हिलाने का समय"
+  },
+  "timeToShakeField": {
+    "message": "हिलाने का समय, मिलीसेकंड में"
+  },
+  "timeToShakeHint": {
+    "message": "फ़िज़िक्स चालू करने के लिए $count$ बार कितनी जल्दी हिलाना होगा।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"पेज वापस लाएं\" बटन छिपाएं"
+  },
+  "hideRestoreButtonHint": {
+    "message": "फ़िज़िक्स चालू होने पर ऊपर दाएं कोने में दिखने वाला \"पेज वापस लाएं\" बटन छिपाता है।"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ पिक्सल",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ पिक्सल प्रति सेकंड",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ मिलीसेकंड",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "विंडो को उसके टाइटल बार से <strong>पकड़ें</strong> और <strong><i>हिलाएं</i></strong>, या एक्सटेंशन आइकॉन पर <strong>क्लिक करें</strong>।"
+  },
+  "tipRestore": {
+    "message": "पेज को वापस लाने के लिए <kbd>Esc</kbd> <strong>दबाएं</strong>, <i>पेज वापस लाएं</i> बटन पर <strong>क्लिक करें</strong>, या एक्सटेंशन आइकॉन पर <strong>क्लिक करें</strong>।"
+  },
+  "resetSettings": {
+    "message": "डिफ़ॉल्ट पर रीसेट करें"
+  },
+  "resetConfirm": {
+    "message": "सभी सेटिंग डिफ़ॉल्ट पर रीसेट करें?"
+  },
+  "resetFailed": {
+    "message": "सेटिंग रीसेट नहीं हो सकीं। फिर से कोशिश करें।"
+  },
+  "resetDone": {
+    "message": "सेटिंग डिफ़ॉल्ट पर रीसेट हो गईं।"
+  }
+}

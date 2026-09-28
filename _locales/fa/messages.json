@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "fa"
+  },
+  "direction": {
+    "message": "rtl"
+  },
+  "extName": {
+    "message": "تکان بده، آروم شو"
+  },
+  "extDescription": {
+    "message": "برای سرگرمی، محتوای صفحهٔ فعلی را به قطعه‌هایی فیزیکی تبدیل می‌کند که می‌توانید پرتابشان کنید."
+  },
+  "badgeOn": {
+    "message": "روشن"
+  },
+  "restorePage": {
+    "message": "بازگرداندن صفحه"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "فیزیک روشن است. برای خاموش کردنش، کلید اسکیپ یا دکمهٔ «بازگرداندن صفحه» را بزنید."
+  },
+  "physicsOnNote": {
+    "message": "تکان دادن پنجرهٔ مرورگر فیزیک را روشن می‌کند. برای خاموش کردنش، «بازگرداندن صفحه» یا Esc را بزنید."
+  },
+  "settingsPageTitle": {
+    "message": "تنظیمات «تکان بده، آروم شو»"
+  },
+  "settingsHeading": {
+    "message": "تنظیمات"
+  },
+  "physicsSettings": {
+    "message": "تنظیمات فیزیک"
+  },
+  "gravity": {
+    "message": "گرانش"
+  },
+  "gravityHint": {
+    "message": "روی 0 صفحه مثل یک میز صاف می‌ماند. بیشترش کنید تا قطعه‌ها بیفتند."
+  },
+  "airDrag": {
+    "message": "مقاومت هوا"
+  },
+  "airDragHint": {
+    "message": "قطعه‌های پرتاب‌شده با چه سرعتی کُند می‌شوند."
+  },
+  "bounce": {
+    "message": "جهش"
+  },
+  "bounceHint": {
+    "message": "قطعه‌ها چقدر از هم و از لبه‌های پنجره برمی‌جهند."
+  },
+  "friction": {
+    "message": "اصطکاک"
+  },
+  "frictionHint": {
+    "message": "قطعه‌ها وقتی از کنار هم سُر می‌خورند چقدر به هم «گیر» می‌کنند."
+  },
+  "weight": {
+    "message": "وزن"
+  },
+  "weightHint": {
+    "message": "قطعه‌ها چقدر سنگین‌اند."
+  },
+  "dragStrength": {
+    "message": "قدرت کشیدن"
+  },
+  "dragStrengthHint": {
+    "message": "قطعه چقدر محکم دنبال نشانگر شما می‌آید."
+  },
+  "shakeSettings": {
+    "message": "تنظیمات تکان"
+  },
+  "shakeDistance": {
+    "message": "حداقل فاصلهٔ تکان"
+  },
+  "shakeDistanceField": {
+    "message": "حداقل فاصلهٔ تکان به پیکسل"
+  },
+  "shakeDistanceHint": {
+    "message": "پنجره پیش از تغییر جهت چقدر باید جابه‌جا شود تا یک تکان حساب شود."
+  },
+  "shakeSpeed": {
+    "message": "حداقل سرعت تکان"
+  },
+  "shakeSpeedField": {
+    "message": "حداقل سرعت تکان به پیکسل بر ثانیه"
+  },
+  "shakeSpeedHint": {
+    "message": "پنجره با چه سرعتی باید حرکت کند تا تکان حساب شود، تا جابه‌جایی‌های آهسته فعالش نکنند."
+  },
+  "shakesNeeded": {
+    "message": "تعداد تکان‌ها"
+  },
+  "shakesNeededHint": {
+    "message": "برای شروع چند تکان لازم است."
+  },
+  "timeToShake": {
+    "message": "زمان تکان"
+  },
+  "timeToShakeField": {
+    "message": "زمان تکان به میلی‌ثانیه"
+  },
+  "timeToShakeHint": {
+    "message": "$count$ تکان باید در چه مدتی انجام شود تا فیزیک فعال شود.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "پنهان کردن دکمهٔ «بازگرداندن صفحه»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "دکمهٔ «بازگرداندن صفحه» را که وقتی فیزیک روشن است در گوشهٔ بالا سمت چپ ظاهر می‌شود پنهان می‌کند."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ پیکسل",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ پیکسل بر ثانیه",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ میلی‌ثانیه",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "پنجره را از نوار عنوانش <strong>بگیرید</strong> و <strong><i>تکانش بدهید</i></strong>، یا روی نماد افزونه <strong>کلیک کنید</strong>."
+  },
+  "tipRestore": {
+    "message": "برای بازگرداندن صفحه، <kbd>Esc</kbd> را <strong>بزنید</strong>، روی دکمهٔ <i>«بازگرداندن صفحه»</i> <strong>کلیک کنید</strong>، یا روی نماد افزونه <strong>کلیک کنید</strong>."
+  },
+  "resetSettings": {
+    "message": "بازنشانی به پیش‌فرض"
+  },
+  "resetConfirm": {
+    "message": "همهٔ تنظیمات به پیش‌فرض بازنشانی شوند؟"
+  },
+  "resetFailed": {
+    "message": "تنظیمات بازنشانی نشد. دوباره امتحان کنید."
+  },
+  "resetDone": {
+    "message": "تنظیمات به پیش‌فرض بازنشانی شد."
+  }
+}

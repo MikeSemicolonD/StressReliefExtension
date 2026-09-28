@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "ky"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Антистресс: экранды силкит"
+  },
+  "extDescription": {
+    "message": "Көңүл ачуу үчүн учурдагы өтмөктөгү HTML элементтерине физика кошот."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Баракты кайтаруу"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физика күйүк. Өчүрүү үчүн Escape баскычын же «Баракты кайтаруу» баскычын басыңыз."
+  },
+  "physicsOnNote": {
+    "message": "Серепчинин терезесин силкисеңиз, физика күйөт. Өчүрүү үчүн «Баракты кайтаруу» же Esc баскычын басыңыз."
+  },
+  "settingsPageTitle": {
+    "message": "Антистресс: экранды силкит – жөндөөлөр"
+  },
+  "settingsHeading": {
+    "message": "Жөндөөлөр"
+  },
+  "physicsSettings": {
+    "message": "Физика жөндөөлөрү"
+  },
+  "gravity": {
+    "message": "Тартылуу"
+  },
+  "gravityHint": {
+    "message": "0 болгондо барак үстөлдөй жалпак бойдон калат. Бөлүктөр түшүшү үчүн жогорулатыңыз."
+  },
+  "airDrag": {
+    "message": "Абанын каршылыгы"
+  },
+  "airDragHint": {
+    "message": "Ыргытылган бөлүктөр канчалык тез жайлайт."
+  },
+  "bounce": {
+    "message": "Секирүү"
+  },
+  "bounceHint": {
+    "message": "Бөлүктөр бири-биринен жана терезенин четтеринен канчалык катуу секирет."
+  },
+  "friction": {
+    "message": "Сүрүлүү"
+  },
+  "frictionHint": {
+    "message": "Бөлүктөр бири-биринин жанынан жылганда канчалык «илинет»."
+  },
+  "weight": {
+    "message": "Салмак"
+  },
+  "weightHint": {
+    "message": "Бөлүктөр канчалык оор."
+  },
+  "dragStrength": {
+    "message": "Кармоо күчү"
+  },
+  "dragStrengthHint": {
+    "message": "Бөлүк курсордун артынан канчалык так ээрчийт."
+  },
+  "shakeSettings": {
+    "message": "Силкүү жөндөөлөрү"
+  },
+  "shakeDistance": {
+    "message": "Эң аз силкүү аралыгы"
+  },
+  "shakeDistanceField": {
+    "message": "Эң аз силкүү аралыгы, пиксель менен"
+  },
+  "shakeDistanceHint": {
+    "message": "Бир силкүү деп эсептелиши үчүн терезе багытын өзгөртөрдөн мурун канча алыс жылышы керек."
+  },
+  "shakeSpeed": {
+    "message": "Эң аз силкүү ылдамдыгы"
+  },
+  "shakeSpeedField": {
+    "message": "Эң аз силкүү ылдамдыгы, секундасына пиксель менен"
+  },
+  "shakeSpeedHint": {
+    "message": "Силкүү эсептелиши үчүн терезе канчалык тез жылышы керек. Жай кыймылдар эсептелбейт."
+  },
+  "shakesNeeded": {
+    "message": "Силкүү саны"
+  },
+  "shakesNeededHint": {
+    "message": "Иштетүү үчүн канча жолу силкүү керек."
+  },
+  "timeToShake": {
+    "message": "Силкүүгө убакыт"
+  },
+  "timeToShakeField": {
+    "message": "Силкүүгө убакыт, миллисекунд менен"
+  },
+  "timeToShakeHint": {
+    "message": "Физика күйүшү үчүн $count$ силкүү канчалык тез аткарылышы керек.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "«Баракты кайтаруу» баскычын жашыруу"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Физика күйүк турганда жогорку оң бурчта пайда болгон «Баракты кайтаруу» баскычын жашырат."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "$value$ пиксель",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "секундасына $value$ пиксель",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ миллисекунд",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "Терезени аталыш тилкесинен <strong>кармап</strong>, <strong><i>силкиңиз</i></strong> ЖЕ кеңейтүүнүн сүрөтчөсүн <strong>басыңыз</strong>."
+  },
+  "tipRestore": {
+    "message": "Баракты калыбына келтирүү үчүн <kbd>Esc</kbd> баскычын <strong>басыңыз</strong>, «<i>Баракты кайтаруу</i>» баскычын <strong>басыңыз</strong> ЖЕ кеңейтүүнүн сүрөтчөсүн <strong>басыңыз</strong>."
+  },
+  "resetSettings": {
+    "message": "Демейки маанилерге кайтаруу"
+  },
+  "resetConfirm": {
+    "message": "Бардык жөндөөлөрдү демейки маанилерге кайтарасызбы?"
+  },
+  "resetFailed": {
+    "message": "Жөндөөлөрдү кайтаруу мүмкүн болгон жок. Кайра аракет кылыңыз."
+  },
+  "resetDone": {
+    "message": "Жөндөөлөр демейки маанилерге кайтарылды."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "as"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "স্ক্ৰীন জোকাৰা, চাপ আঁতৰোৱা"
+  },
+  "extDescription": {
+    "message": "আমোদৰ বাবে বৰ্তমানৰ টেবৰ HTML উপাদানবোৰত ফিজিক্স যোগ কৰে।"
+  },
+  "badgeOn": {
+    "message": "অন"
+  },
+  "restorePage": {
+    "message": "পৃষ্ঠা পুনঃস্থাপন কৰক"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ফিজিক্স অন আছে। এইটো অফ কৰিবলৈ এস্কেপ টিপক অথবা \"পৃষ্ঠা পুনঃস্থাপন কৰক\"ত ক্লিক কৰক।"
+  },
+  "physicsOnNote": {
+    "message": "ব্ৰাউজাৰ ৱিণ্ড' জোকাৰিলে ফিজিক্স অন হয়। এইটো অফ কৰিবলৈ \"পৃষ্ঠা পুনঃস্থাপন কৰক\"ত ক্লিক কৰক অথবা Esc টিপক।"
+  },
+  "settingsPageTitle": {
+    "message": "স্ক্ৰীন জোকাৰা, চাপ আঁতৰোৱা – ছেটিং"
+  },
+  "settingsHeading": {
+    "message": "ছেটিং"
+  },
+  "physicsSettings": {
+    "message": "ফিজিক্স ছেটিং"
+  },
+  "gravity": {
+    "message": "মাধ্যাকৰ্ষণ"
+  },
+  "gravityHint": {
+    "message": "0ত পৃষ্ঠাখন এখন সমতল মেজৰ দৰে থাকে। টুকুৰাবোৰ তললৈ পেলাবলৈ ইয়াক বঢ়াওক।"
+  },
+  "airDrag": {
+    "message": "বতাহৰ বাধা"
+  },
+  "airDragHint": {
+    "message": "দলিওৱা টুকুৰাবোৰ কিমান সোনকালে লেহেমীয়া হয়।"
+  },
+  "bounce": {
+    "message": "উফৰা"
+  },
+  "bounceHint": {
+    "message": "টুকুৰাবোৰ ইটোৱে সিটোৰ লগত আৰু ৱিণ্ড'ৰ কাষত খুন্দা খাই কিমান উফৰে।"
+  },
+  "friction": {
+    "message": "ঘৰ্ষণ"
+  },
+  "frictionHint": {
+    "message": "ইটোৱে সিটোৰ কাষেৰে পিছলি যাওঁতে টুকুৰাবোৰ কিমান 'লাগি ধৰে'।"
+  },
+  "weight": {
+    "message": "ওজন"
+  },
+  "weightHint": {
+    "message": "টুকুৰাবোৰ কিমান গধুৰ।"
+  },
+  "dragStrength": {
+    "message": "টনাৰ শক্তি"
+  },
+  "dragStrengthHint": {
+    "message": "টুকুৰাটোৱে আপোনাৰ পইণ্টাৰ কিমান দৃঢ়ভাৱে অনুসৰণ কৰে।"
+  },
+  "shakeSettings": {
+    "message": "জোকৰাৰ ছেটিং"
+  },
+  "shakeDistance": {
+    "message": "জোকৰাৰ ন্যূনতম দূৰত্ব"
+  },
+  "shakeDistanceField": {
+    "message": "জোকৰাৰ ন্যূনতম দূৰত্ব, পিক্সেলত"
+  },
+  "shakeDistanceHint": {
+    "message": "এবাৰ জোকৰা বুলি গণ্য হ'বলৈ দিশ সলনি কৰাৰ আগতে ৱিণ্ড'খন কিমান দূৰ যাব লাগিব।"
+  },
+  "shakeSpeed": {
+    "message": "জোকৰাৰ ন্যূনতম বেগ"
+  },
+  "shakeSpeedField": {
+    "message": "জোকৰাৰ ন্যূনতম বেগ, পিক্সেল প্ৰতি ছেকেণ্ডত"
+  },
+  "shakeSpeedHint": {
+    "message": "জোকৰা বুলি গণ্য হ'বলৈ ৱিণ্ড'খন কিমান খৰকৈ যাব লাগিব, যাতে লাহে লাহে লৰালে ই অন নহয়।"
+  },
+  "shakesNeeded": {
+    "message": "কিমানবাৰ জোকাৰিব লাগে"
+  },
+  "shakesNeededHint": {
+    "message": "আৰম্ভ কৰিবলৈ কিমানবাৰ জোকাৰিব লাগে।"
+  },
+  "timeToShake": {
+    "message": "জোকৰাৰ সময়"
+  },
+  "timeToShakeField": {
+    "message": "জোকৰাৰ সময়, মিলিছেকেণ্ডত"
+  },
+  "timeToShakeHint": {
+    "message": "ফিজিক্স অন কৰিবলৈ $count$ বাৰ কিমান সোনকালে জোকাৰিব লাগিব।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"পৃষ্ঠা পুনঃস্থাপন কৰক\" বুটাম লুকুৱাওক"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ফিজিক্স অন হৈ থাকোঁতে ওপৰৰ সোঁফালৰ চুকত দেখা দিয়া \"পৃষ্ঠা পুনঃস্থাপন কৰক\" বুটামটো লুকুৱায়।"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ পিক্সেল",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ পিক্সেল প্ৰতি ছেকেণ্ড",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ মিলিছেকেণ্ড",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "ৱিণ্ড'খন ইয়াৰ শিৰোনাম বাৰত <strong>ধৰক</strong> আৰু <strong><i>জোকাৰক</i></strong>, অথবা এক্সটেনশ্বনৰ আইকনত <strong>ক্লিক কৰক</strong>।"
+  },
+  "tipRestore": {
+    "message": "পৃষ্ঠা পুনঃস্থাপন কৰিবলৈ <kbd>Esc</kbd> <strong>টিপক</strong>, <i>পৃষ্ঠা পুনঃস্থাপন কৰক</i> বুটামত <strong>ক্লিক কৰক</strong>, অথবা এক্সটেনশ্বনৰ আইকনত <strong>ক্লিক কৰক</strong>।"
+  },
+  "resetSettings": {
+    "message": "ডিফ'ল্টলৈ ৰিছেট কৰক"
+  },
+  "resetConfirm": {
+    "message": "আটাইবোৰ ছেটিং ডিফ'ল্টলৈ ৰিছেট কৰিবনে?"
+  },
+  "resetFailed": {
+    "message": "ছেটিং ৰিছেট কৰিব পৰা নগ'ল। পুনৰ চেষ্টা কৰক।"
+  },
+  "resetDone": {
+    "message": "ছেটিং ডিফ'ল্টলৈ ৰিছেট কৰা হ'ল।"
+  }
+}

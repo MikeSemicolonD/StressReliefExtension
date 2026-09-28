@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "it"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Scossa antistress"
+  },
+  "extDescription": {
+    "message": "Aggiunge la fisica agli elementi HTML della scheda attuale, per divertimento."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Ripristina pagina"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "La fisica è attiva. Premi Esc o \"Ripristina pagina\" per disattivarla."
+  },
+  "physicsOnNote": {
+    "message": "Scuotendo la finestra del browser si attiva la fisica. Premi \"Ripristina pagina\" o Esc per disattivarla."
+  },
+  "settingsPageTitle": {
+    "message": "Impostazioni di Scossa antistress"
+  },
+  "settingsHeading": {
+    "message": "Impostazioni"
+  },
+  "physicsSettings": {
+    "message": "Fisica"
+  },
+  "gravity": {
+    "message": "Gravità"
+  },
+  "gravityHint": {
+    "message": "A 0 la pagina resta un tavolo piatto. Alzala per far cadere i pezzi."
+  },
+  "airDrag": {
+    "message": "Resistenza dell'aria"
+  },
+  "airDragHint": {
+    "message": "Quanto in fretta rallentano i pezzi lanciati."
+  },
+  "bounce": {
+    "message": "Rimbalzo"
+  },
+  "bounceHint": {
+    "message": "Quanto rimbalzano i pezzi tra loro e sui bordi della finestra."
+  },
+  "friction": {
+    "message": "Attrito"
+  },
+  "frictionHint": {
+    "message": "Quanto i pezzi fanno \"presa\" quando scivolano l'uno sull'altro."
+  },
+  "weight": {
+    "message": "Peso"
+  },
+  "weightHint": {
+    "message": "Quanto pesano i pezzi."
+  },
+  "dragStrength": {
+    "message": "Forza di presa"
+  },
+  "dragStrengthHint": {
+    "message": "Quanto fedelmente un pezzo segue il puntatore."
+  },
+  "shakeSettings": {
+    "message": "Scossa"
+  },
+  "shakeDistance": {
+    "message": "Distanza minima"
+  },
+  "shakeDistanceField": {
+    "message": "Distanza minima della scossa in pixel"
+  },
+  "shakeDistanceHint": {
+    "message": "Quanto deve spostarsi la finestra prima di cambiare direzione perché conti come una scossa."
+  },
+  "shakeSpeed": {
+    "message": "Velocità minima"
+  },
+  "shakeSpeedField": {
+    "message": "Velocità minima della scossa in pixel al secondo"
+  },
+  "shakeSpeedHint": {
+    "message": "Quanto velocemente deve muoversi la finestra perché la scossa conti, così i movimenti lenti non la attivano."
+  },
+  "shakesNeeded": {
+    "message": "Scosse necessarie"
+  },
+  "shakesNeededHint": {
+    "message": "Quante scosse servono per iniziare."
+  },
+  "timeToShake": {
+    "message": "Tempo per scuotere"
+  },
+  "timeToShakeField": {
+    "message": "Tempo per scuotere in millisecondi"
+  },
+  "timeToShakeHint": {
+    "message": "Entro quanto tempo devono avvenire le $count$ scosse per attivare la fisica.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Nascondi il pulsante \"Ripristina pagina\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Nasconde il pulsante \"Ripristina pagina\" che compare nell'angolo in alto a destra quando la fisica è attiva."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixel al secondo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisecondi",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Afferra</strong> la finestra dalla barra del titolo e <strong><i>scuotila</i></strong>, OPPURE <strong>fai clic</strong> sull'icona dell'estensione."
+  },
+  "tipRestore": {
+    "message": "<strong>Premi</strong> <kbd>Esc</kbd>, <strong>fai clic</strong> sul pulsante <i>Ripristina pagina</i> OPPURE <strong>fai clic</strong> sull'icona dell'estensione per ripristinare la pagina."
+  },
+  "resetSettings": {
+    "message": "Ripristina predefiniti"
+  },
+  "resetConfirm": {
+    "message": "Ripristinare tutte le impostazioni ai valori predefiniti?"
+  },
+  "resetFailed": {
+    "message": "Impossibile ripristinare le impostazioni. Riprova."
+  },
+  "resetDone": {
+    "message": "Impostazioni ripristinate ai valori predefiniti."
+  }
+}

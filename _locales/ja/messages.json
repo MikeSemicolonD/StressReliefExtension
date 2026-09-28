@@ -1,0 +1,162 @@
+{
+  "locale": {
+    "message": "ja"
+  },
+  "direction": { "message": "ltr" },
+  "extName": {
+    "message": "画面シェイクでストレス解消"
+  },
+  "extDescription": {
+    "message": "現在のタブの HTML 要素に物理演算を加えて遊べます。"
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "ページを元に戻す"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "物理演算がオンになりました。オフにするには、エスケープキーか「ページを元に戻す」を押してください。"
+  },
+  "physicsOnNote": {
+    "message": "ブラウザのウィンドウを揺らしたので物理演算がオンになりました。オフにするには「ページを元に戻す」か Esc キーを押してください。"
+  },
+  "settingsPageTitle": {
+    "message": "画面シェイクでストレス解消の設定"
+  },
+  "settingsHeading": {
+    "message": "設定"
+  },
+  "physicsSettings": {
+    "message": "物理演算の設定"
+  },
+  "gravity": {
+    "message": "重力"
+  },
+  "gravityHint": {
+    "message": "0 ならページは平らなテーブルのまま。上げるとピースが落ちるようになります。"
+  },
+  "airDrag": {
+    "message": "空気抵抗"
+  },
+  "airDragHint": {
+    "message": "投げたピースがどれだけ早く減速するか。"
+  },
+  "bounce": {
+    "message": "跳ね返り"
+  },
+  "bounceHint": {
+    "message": "ピース同士やウィンドウの端にぶつかったときの跳ね返りの強さ。"
+  },
+  "friction": {
+    "message": "摩擦"
+  },
+  "frictionHint": {
+    "message": "ピース同士がこすれ合うときの引っかかりやすさ。"
+  },
+  "weight": {
+    "message": "重さ"
+  },
+  "weightHint": {
+    "message": "ピースの重さ。"
+  },
+  "dragStrength": {
+    "message": "ドラッグの強さ"
+  },
+  "dragStrengthHint": {
+    "message": "つかんだピースがポインタにどれだけぴったり付いてくるか。"
+  },
+  "shakeSettings": {
+    "message": "シェイクの設定"
+  },
+  "shakeDistance": {
+    "message": "最小シェイク距離"
+  },
+  "shakeDistanceField": {
+    "message": "最小シェイク距離（ピクセル）"
+  },
+  "shakeDistanceHint": {
+    "message": "1 回のシェイクと数えるには、向きを変える前にウィンドウがどれだけ動く必要があるか。"
+  },
+  "shakeSpeed": {
+    "message": "最小シェイク速度"
+  },
+  "shakeSpeedField": {
+    "message": "最小シェイク速度（ピクセル毎秒）"
+  },
+  "shakeSpeedHint": {
+    "message": "シェイクと数えるのに必要なウィンドウの速さ。ゆっくり動かしただけでは反応しません。"
+  },
+  "shakesNeeded": {
+    "message": "必要なシェイク回数"
+  },
+  "shakesNeededHint": {
+    "message": "何回シェイクすると始まるか。"
+  },
+  "timeToShake": {
+    "message": "シェイクの制限時間"
+  },
+  "timeToShakeField": {
+    "message": "シェイクの制限時間（ミリ秒）"
+  },
+  "timeToShakeHint": {
+    "message": "物理演算を起動するには、$count$ 回のシェイクをこの時間内に行う必要があります。",
+    "placeholders": {
+      "count": { "content": "$1", "example": "4" }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "「ページを元に戻す」ボタンを非表示"
+  },
+  "hideRestoreButtonHint": {
+    "message": "物理演算がオンのときに右上に表示される「ページを元に戻す」ボタンを非表示にします。"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/秒"
+  },
+  "unitMs": {
+    "message": "ミリ秒"
+  },
+  "valuePx": {
+    "message": "$value$ ピクセル",
+    "placeholders": {
+      "value": { "content": "$1", "example": "40" }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "毎秒 $value$ ピクセル",
+    "placeholders": {
+      "value": { "content": "$1", "example": "150" }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ミリ秒",
+    "placeholders": {
+      "value": { "content": "$1", "example": "1500" }
+    }
+  },
+  "tipStart": {
+    "message": "ウィンドウのタイトルバーを<strong>つかんで</strong><strong><i>揺らす</i></strong>か、拡張機能のアイコンを<strong>クリック</strong>します。"
+  },
+  "tipRestore": {
+    "message": "<kbd>Esc</kbd> キーを<strong>押す</strong>か、「<i>ページを元に戻す</i>」ボタンを<strong>クリック</strong>するか、拡張機能のアイコンを<strong>クリック</strong>すると、ページが元に戻ります。"
+  },
+  "resetSettings": {
+    "message": "デフォルトに戻す"
+  },
+  "resetConfirm": {
+    "message": "すべての設定をデフォルトに戻しますか？"
+  },
+  "resetFailed": {
+    "message": "設定をリセットできませんでした。もう一度お試しください。"
+  },
+  "resetDone": {
+    "message": "設定をデフォルトに戻しました。"
+  }
+}

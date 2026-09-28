@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Screen Shake Stress Reliever",
+  "name": "__MSG_extName__",
   "author": "Michael Frye",
-  "description": "Adds physics to HTML elements in the current tab for fun.",
-  "version": "1.1.1",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "version": "1.2",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",

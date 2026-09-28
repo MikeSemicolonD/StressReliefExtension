@@ -21,6 +21,18 @@ test.describe('settings page', () => {
     });
   }
 
+  test('all of its text is filled in from the translations', async ({ page }) => {
+    const empty = await page.evaluate(() =>
+      [...document.querySelectorAll('[data-i18n], [data-i18n-html]')]
+        .filter(el => !el.textContent.trim())
+        .map(el => el.dataset.i18n ?? el.dataset.i18nHtml));
+    expect(empty).toEqual([]);
+    await expect(page).toHaveTitle('Screen Shake Stress Reliever settings');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+    await expect(page.locator('#timeWindow-hint')).toHaveText('How quick the 4 shakes have to happen to trigger the physics.');
+    await expect(page.locator('.tip kbd')).toHaveText('Esc');
+  });
+
   test('Tab reaches each number field and its slider, the switch, then the reset button', async ({ page }) => {
     // Reading order: the field sits on the label's row, the slider below it
     const expected = [...SLIDERS.flatMap(id => [`${id}Value`, id]), 'hideRestoreButton', 'resetSettings'];

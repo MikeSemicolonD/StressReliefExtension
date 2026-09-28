@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "km"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "អង្រួនអេក្រង់បំបាត់ស្ត្រេស"
+  },
+  "extDescription": {
+    "message": "បន្ថែមរូបវិទ្យាទៅធាតុ HTML ក្នុងផ្ទាំងបច្ចុប្បន្ន ដើម្បីភាពសប្បាយ។"
+  },
+  "badgeOn": {
+    "message": "បើក"
+  },
+  "restorePage": {
+    "message": "ស្ដារទំព័រ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "រូបវិទ្យាបានបើក។ ចុចគ្រាប់ចុច Escape ឬ \"ស្ដារទំព័រ\" ដើម្បីបិទ។"
+  },
+  "physicsOnNote": {
+    "message": "ការអង្រួនវិនដូកម្មវិធីរុករករបស់អ្នក នឹងបើករូបវិទ្យា។ ចុច \"ស្ដារទំព័រ\" ឬ Esc ដើម្បីបិទ។"
+  },
+  "settingsPageTitle": {
+    "message": "ការកំណត់ អង្រួនអេក្រង់បំបាត់ស្ត្រេស"
+  },
+  "settingsHeading": {
+    "message": "ការកំណត់"
+  },
+  "physicsSettings": {
+    "message": "ការកំណត់រូបវិទ្យា"
+  },
+  "gravity": {
+    "message": "ទំនាញ"
+  },
+  "gravityHint": {
+    "message": "នៅ 0 ទំព័រនៅរាបស្មើដូចផ្ទៃតុ។ បង្កើនវា ដើម្បីឱ្យបំណែកធ្លាក់ចុះ។"
+  },
+  "airDrag": {
+    "message": "កម្លាំងទប់ខ្យល់"
+  },
+  "airDragHint": {
+    "message": "បំណែកដែលបោះចេញ យឺតវិញលឿនប៉ុណ្ណា។"
+  },
+  "bounce": {
+    "message": "ការលោត"
+  },
+  "bounceHint": {
+    "message": "បំណែកលោតប៉ះគ្នា និងប៉ះគែមវិនដូខ្លាំងប៉ុណ្ណា។"
+  },
+  "friction": {
+    "message": "ការកកិត"
+  },
+  "frictionHint": {
+    "message": "បំណែក \"ជាប់\" គ្នាខ្លាំងប៉ុណ្ណា ពេលរអិលកាត់គ្នា។"
+  },
+  "weight": {
+    "message": "ទម្ងន់"
+  },
+  "weightHint": {
+    "message": "បំណែកធ្ងន់ប៉ុណ្ណា។"
+  },
+  "dragStrength": {
+    "message": "កម្លាំងអូស"
+  },
+  "dragStrengthHint": {
+    "message": "បំណែកតាមទស្សន៍ទ្រនិចរបស់អ្នកជាប់ប៉ុណ្ណា។"
+  },
+  "shakeSettings": {
+    "message": "ការកំណត់ការអង្រួន"
+  },
+  "shakeDistance": {
+    "message": "ចម្ងាយអង្រួនអប្បបរមា"
+  },
+  "shakeDistanceField": {
+    "message": "ចម្ងាយអង្រួនអប្បបរមាគិតជាភីកសែល"
+  },
+  "shakeDistanceHint": {
+    "message": "វិនដូត្រូវផ្លាស់ទីឆ្ងាយប៉ុណ្ណាមុនប្ដូរទិស ទើបរាប់ជាការអង្រួនមួយដង។"
+  },
+  "shakeSpeed": {
+    "message": "ល្បឿនអង្រួនអប្បបរមា"
+  },
+  "shakeSpeedField": {
+    "message": "ល្បឿនអង្រួនអប្បបរមាគិតជាភីកសែលក្នុងមួយវិនាទី"
+  },
+  "shakeSpeedHint": {
+    "message": "វិនដូត្រូវផ្លាស់ទីលឿនប៉ុណ្ណា ទើបរាប់ជាការអង្រួន ដើម្បីកុំឱ្យការផ្លាស់ទីយឺតៗបើកវា។"
+  },
+  "shakesNeeded": {
+    "message": "ចំនួនដងអង្រួន"
+  },
+  "shakesNeededHint": {
+    "message": "ត្រូវអង្រួនប៉ុន្មានដង ទើបចាប់ផ្ដើម។"
+  },
+  "timeToShake": {
+    "message": "រយៈពេលអង្រួន"
+  },
+  "timeToShakeField": {
+    "message": "រយៈពេលអង្រួនគិតជាមិល្លីវិនាទី"
+  },
+  "timeToShakeHint": {
+    "message": "ការអង្រួន $count$ ដងត្រូវកើតឡើងលឿនប៉ុណ្ណា ទើបបើករូបវិទ្យា។",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "លាក់ប៊ូតុង \"ស្ដារទំព័រ\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "លាក់ប៊ូតុង \"ស្ដារទំព័រ\" ដែលបង្ហាញនៅជ្រុងខាងលើផ្នែកខាងស្ដាំ ពេលរូបវិទ្យាបើក។"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ភីកសែល",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ ភីកសែលក្នុងមួយវិនាទី",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ មិល្លីវិនាទី",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>ចាប់</strong>របារចំណងជើងនៃវិនដូ ហើយ<strong><i>អង្រួនវា</i></strong> ឬ<strong>ចុច</strong>រូបតំណាងកម្មវិធីបន្ថែម។"
+  },
+  "tipRestore": {
+    "message": "<strong>ចុច</strong> <kbd>Esc</kbd>, <strong>ចុច</strong>ប៊ូតុង <i>ស្ដារទំព័រ</i> ឬ<strong>ចុច</strong>រូបតំណាងកម្មវិធីបន្ថែម ដើម្បីស្ដារទំព័រ។"
+  },
+  "resetSettings": {
+    "message": "កំណត់ទៅលំនាំដើមវិញ"
+  },
+  "resetConfirm": {
+    "message": "កំណត់ការកំណត់ទាំងអស់ទៅលំនាំដើមវិញឬ?"
+  },
+  "resetFailed": {
+    "message": "មិនអាចកំណត់ការកំណត់ឡើងវិញបានទេ។ សូមព្យាយាមម្ដងទៀត។"
+  },
+  "resetDone": {
+    "message": "ការកំណត់ត្រូវបានកំណត់ទៅលំនាំដើមវិញ។"
+  }
+}

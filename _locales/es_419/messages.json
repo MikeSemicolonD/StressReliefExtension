@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "es_419"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Sacudida antiestrés"
+  },
+  "extDescription": {
+    "message": "Agrega física a los elementos HTML de la pestaña actual, solo por diversión."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Restaurar página"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "La física está activada. Presiona Escape o \"Restaurar página\" para desactivarla."
+  },
+  "physicsOnNote": {
+    "message": "Al sacudir la ventana del navegador se activa la física. Presiona \"Restaurar página\" o Esc para desactivarla."
+  },
+  "settingsPageTitle": {
+    "message": "Configuración de Sacudida antiestrés"
+  },
+  "settingsHeading": {
+    "message": "Configuración"
+  },
+  "physicsSettings": {
+    "message": "Física"
+  },
+  "gravity": {
+    "message": "Gravedad"
+  },
+  "gravityHint": {
+    "message": "En 0, la página es como una mesa plana. Súbela para que las piezas caigan."
+  },
+  "airDrag": {
+    "message": "Resistencia del aire"
+  },
+  "airDragHint": {
+    "message": "Lo rápido que se frenan las piezas lanzadas."
+  },
+  "bounce": {
+    "message": "Rebote"
+  },
+  "bounceHint": {
+    "message": "Cuánto rebotan las piezas entre sí y contra los bordes de la ventana."
+  },
+  "friction": {
+    "message": "Fricción"
+  },
+  "frictionHint": {
+    "message": "Cuánto se \"traban\" las piezas al deslizarse unas contra otras."
+  },
+  "weight": {
+    "message": "Peso"
+  },
+  "weightHint": {
+    "message": "Lo que pesan las piezas."
+  },
+  "dragStrength": {
+    "message": "Fuerza de agarre"
+  },
+  "dragStrengthHint": {
+    "message": "Con qué firmeza sigue una pieza al puntero."
+  },
+  "shakeSettings": {
+    "message": "Sacudida"
+  },
+  "shakeDistance": {
+    "message": "Distancia mínima"
+  },
+  "shakeDistanceField": {
+    "message": "Distancia mínima de sacudida en píxeles"
+  },
+  "shakeDistanceHint": {
+    "message": "Cuánto tiene que moverse la ventana antes de cambiar de dirección para contar como una sacudida."
+  },
+  "shakeSpeed": {
+    "message": "Velocidad mínima"
+  },
+  "shakeSpeedField": {
+    "message": "Velocidad mínima de sacudida en píxeles por segundo"
+  },
+  "shakeSpeedHint": {
+    "message": "Lo rápido que tiene que moverse la ventana para que cuente la sacudida, así los movimientos lentos no la activan."
+  },
+  "shakesNeeded": {
+    "message": "Sacudidas necesarias"
+  },
+  "shakesNeededHint": {
+    "message": "Cuántas sacudidas hacen falta para empezar."
+  },
+  "timeToShake": {
+    "message": "Tiempo para sacudir"
+  },
+  "timeToShakeField": {
+    "message": "Tiempo para sacudir en milisegundos"
+  },
+  "timeToShakeHint": {
+    "message": "En cuánto tiempo tienen que producirse las $count$ sacudidas para activar la física.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ocultar el botón \"Restaurar página\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Oculta el botón \"Restaurar página\" que aparece en la esquina superior derecha cuando la física está activada."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ píxeles",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ píxeles por segundo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisegundos",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Toma</strong> la ventana por la barra de título y <strong><i>sacúdela</i></strong>, O <strong>haz clic</strong> en el ícono de la extensión."
+  },
+  "tipRestore": {
+    "message": "<strong>Presiona</strong> <kbd>Esc</kbd>, <strong>haz clic</strong> en el botón <i>Restaurar página</i> O <strong>haz clic</strong> en el ícono de la extensión para restaurar la página."
+  },
+  "resetSettings": {
+    "message": "Restablecer valores predeterminados"
+  },
+  "resetConfirm": {
+    "message": "¿Quieres restablecer toda la configuración a los valores predeterminados?"
+  },
+  "resetFailed": {
+    "message": "No se pudo restablecer la configuración. Vuelve a intentarlo."
+  },
+  "resetDone": {
+    "message": "Se restableció la configuración a los valores predeterminados."
+  }
+}

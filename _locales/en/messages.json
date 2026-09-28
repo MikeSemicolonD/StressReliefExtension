@@ -1,0 +1,223 @@
+{
+  "locale": {
+    "message": "en",
+    "description": "The code of this translation's language (e.g. de, pt_BR), used as the settings page's lang attribute. Not shown."
+  },
+  "direction": {
+    "message": "ltr",
+    "description": "This translation's text direction: ltr (left to right) or rtl (right to left). Not shown."
+  },
+
+  "extName": {
+    "message": "Screen Shake Stress Reliever",
+    "description": "Extension name, shown in the browser and the extension stores. Translate it so it reads naturally and stays short."
+  },
+  "extDescription": {
+    "message": "Adds physics to HTML elements in the current tab for fun.",
+    "description": "Extension description, shown in the browser and the extension stores."
+  },
+
+  "badgeOn": {
+    "message": "ON",
+    "description": "Badge on the toolbar icon while physics is on. At most 4 characters; it has very little room."
+  },
+
+  "restorePage": {
+    "message": "Restore page",
+    "description": "Button shown on the page while physics is on; clicking it puts the page back to normal. Also used in other messages below, so keep them consistent."
+  },
+  "escKey": {
+    "message": "Esc",
+    "description": "Label of the Escape key, as printed on keyboards. Shown as a key hint next to the Restore page button."
+  },
+  "physicsOnStatus": {
+    "message": "Physics is on. Press Escape or Restore page to turn it off.",
+    "description": "Read aloud by screen readers when physics turns on (not shown)."
+  },
+  "physicsOnNote": {
+    "message": "Shaking your browser window turns on physics. Press Restore page or Esc to turn it off.",
+    "description": "Note shown under the Restore page button the first time physics turns on, explaining what happened."
+  },
+
+  "settingsPageTitle": {
+    "message": "Screen Shake Stress Reliever settings",
+    "description": "Browser tab title of the settings page."
+  },
+  "settingsHeading": {
+    "message": "Settings",
+    "description": "Main heading of the settings page."
+  },
+
+  "physicsSettings": {
+    "message": "Physics Settings",
+    "description": "Heading of the settings group that controls how pieces move."
+  },
+  "gravity": {
+    "message": "Gravity",
+    "description": "Setting name."
+  },
+  "gravityHint": {
+    "message": "At 0 the page stays a flat tabletop. Raise it to make pieces fall.",
+    "description": "Explains the Gravity setting."
+  },
+  "airDrag": {
+    "message": "Air drag",
+    "description": "Setting name: air resistance on moving pieces."
+  },
+  "airDragHint": {
+    "message": "How quickly thrown pieces slow down.",
+    "description": "Explains the Air drag setting."
+  },
+  "bounce": {
+    "message": "Bounce",
+    "description": "Setting name: how bouncy pieces are."
+  },
+  "bounceHint": {
+    "message": "How much pieces bounce off each other and the edges of the window.",
+    "description": "Explains the Bounce setting."
+  },
+  "friction": {
+    "message": "Friction",
+    "description": "Setting name."
+  },
+  "frictionHint": {
+    "message": "How much pieces 'catch' when they slide past each other.",
+    "description": "Explains the Friction setting."
+  },
+  "weight": {
+    "message": "Weight",
+    "description": "Setting name: how heavy pieces are."
+  },
+  "weightHint": {
+    "message": "How heavy the pieces are.",
+    "description": "Explains the Weight setting."
+  },
+  "dragStrength": {
+    "message": "Drag Strength",
+    "description": "Setting name: how firmly a grabbed piece follows the mouse pointer."
+  },
+  "dragStrengthHint": {
+    "message": "How tightly a piece follows your pointer.",
+    "description": "Explains the Drag Strength setting."
+  },
+
+  "shakeSettings": {
+    "message": "Shake Settings",
+    "description": "Heading of the settings group that controls what counts as shaking the browser window."
+  },
+  "shakeDistance": {
+    "message": "Minimum shake distance",
+    "description": "Setting name, measured in pixels."
+  },
+  "shakeDistanceField": {
+    "message": "Minimum shake distance in pixels",
+    "description": "Screen reader name of the Minimum shake distance number field."
+  },
+  "shakeDistanceHint": {
+    "message": "How far the window has to move before changing direction to count as one shake.",
+    "description": "Explains the Minimum shake distance setting."
+  },
+  "shakeSpeed": {
+    "message": "Minimum shake speed",
+    "description": "Setting name, measured in pixels per second."
+  },
+  "shakeSpeedField": {
+    "message": "Minimum shake speed in pixels per second",
+    "description": "Screen reader name of the Minimum shake speed number field."
+  },
+  "shakeSpeedHint": {
+    "message": "How fast the window has to move for a shake to count, so slow moves don't set it off.",
+    "description": "Explains the Minimum shake speed setting."
+  },
+  "shakesNeeded": {
+    "message": "Shakes needed",
+    "description": "Setting name: how many shakes turn physics on."
+  },
+  "shakesNeededHint": {
+    "message": "How many shakes it takes to start.",
+    "description": "Explains the Shakes needed setting."
+  },
+  "timeToShake": {
+    "message": "Time to shake",
+    "description": "Setting name, measured in milliseconds."
+  },
+  "timeToShakeField": {
+    "message": "Time to shake in milliseconds",
+    "description": "Screen reader name of the Time to shake number field."
+  },
+  "timeToShakeHint": {
+    "message": "How quick the $count$ shakes have to happen to trigger the physics.",
+    "description": "Explains the Time to shake setting. $count$ is the current Shakes needed value (2 to 10) and updates as it changes.",
+    "placeholders": {
+      "count": { "content": "$1", "example": "4" }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Hide Restore page button",
+    "description": "Setting name (an on/off switch)."
+  },
+  "hideRestoreButtonHint": {
+    "message": "Hides the restore page button that appears in the top-right corner when physics is on.",
+    "description": "Explains the Hide Restore page button setting. In right-to-left languages the button is in the top-left corner instead, so say top-left there."
+  },
+
+  "unitPx": {
+    "message": "px",
+    "description": "Abbreviation for pixels, shown after a number."
+  },
+  "unitPxPerSecond": {
+    "message": "px/s",
+    "description": "Abbreviation for pixels per second, shown after a number."
+  },
+  "unitMs": {
+    "message": "ms",
+    "description": "Abbreviation for milliseconds, shown after a number."
+  },
+  "valuePx": {
+    "message": "$value$ pixels",
+    "description": "A setting's value as read aloud by screen readers.",
+    "placeholders": {
+      "value": { "content": "$1", "example": "40" }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixels per second",
+    "description": "A setting's value as read aloud by screen readers.",
+    "placeholders": {
+      "value": { "content": "$1", "example": "150" }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milliseconds",
+    "description": "A setting's value as read aloud by screen readers.",
+    "placeholders": {
+      "value": { "content": "$1", "example": "1500" }
+    }
+  },
+
+  "tipStart": {
+    "message": "<strong>Grab</strong> the window by its title bar and <strong><i>shake it</i></strong>, OR <strong>click</strong> the extension icon.",
+    "description": "Tip on the settings page: how to turn physics on. May contain only the tags <strong>, <i> and <kbd>."
+  },
+  "tipRestore": {
+    "message": "<strong>Press</strong> <kbd>Esc</kbd>, <strong>click</strong> the <i>Restore page</i> button, OR <strong>click</strong> the extension icon to restore the page.",
+    "description": "Tip on the settings page: how to turn physics off. May contain only the tags <strong>, <i> and <kbd>."
+  },
+
+  "resetSettings": {
+    "message": "Reset to defaults",
+    "description": "Button that puts every setting back to its default."
+  },
+  "resetConfirm": {
+    "message": "Reset all settings to their defaults?",
+    "description": "Confirmation dialog after clicking Reset to defaults."
+  },
+  "resetFailed": {
+    "message": "Couldn't reset the settings. Try again.",
+    "description": "Error dialog if resetting the settings failed."
+  },
+  "resetDone": {
+    "message": "Settings reset to defaults.",
+    "description": "Read aloud by screen readers after the settings are reset (not shown)."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "fi"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Ravistele stressi pois"
+  },
+  "extDescription": {
+    "message": "Lisää fysiikan nykyisen välilehden HTML-elementteihin ihan huvin vuoksi."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Palauta sivu"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fysiikka on päällä. Poista se käytöstä painamalla Escape tai ”Palauta sivu”."
+  },
+  "physicsOnNote": {
+    "message": "Selainikkunan ravistelu laittaa fysiikan päälle. Poista se käytöstä painamalla ”Palauta sivu” tai Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Ravistele stressi pois – asetukset"
+  },
+  "settingsHeading": {
+    "message": "Asetukset"
+  },
+  "physicsSettings": {
+    "message": "Fysiikka-asetukset"
+  },
+  "gravity": {
+    "message": "Painovoima"
+  },
+  "gravityHint": {
+    "message": "Arvolla 0 sivu pysyy tasaisena pöytänä. Nosta sitä, niin palat putoavat."
+  },
+  "airDrag": {
+    "message": "Ilmanvastus"
+  },
+  "airDragHint": {
+    "message": "Kuinka nopeasti heitetyt palat hidastuvat."
+  },
+  "bounce": {
+    "message": "Kimmoisuus"
+  },
+  "bounceHint": {
+    "message": "Kuinka paljon palat kimpoavat toisistaan ja ikkunan reunoista."
+  },
+  "friction": {
+    "message": "Kitka"
+  },
+  "frictionHint": {
+    "message": "Kuinka paljon palat ”tarttuvat”, kun ne liukuvat toistensa ohi."
+  },
+  "weight": {
+    "message": "Paino"
+  },
+  "weightHint": {
+    "message": "Kuinka painavia palat ovat."
+  },
+  "dragStrength": {
+    "message": "Vedon voimakkuus"
+  },
+  "dragStrengthHint": {
+    "message": "Kuinka tiukasti pala seuraa osoitinta."
+  },
+  "shakeSettings": {
+    "message": "Ravisteluasetukset"
+  },
+  "shakeDistance": {
+    "message": "Ravistuksen vähimmäismatka"
+  },
+  "shakeDistanceField": {
+    "message": "Ravistuksen vähimmäismatka pikseleinä"
+  },
+  "shakeDistanceHint": {
+    "message": "Kuinka pitkälle ikkunan täytyy liikkua ennen suunnanvaihtoa, jotta se lasketaan yhdeksi ravistukseksi."
+  },
+  "shakeSpeed": {
+    "message": "Ravistuksen vähimmäisnopeus"
+  },
+  "shakeSpeedField": {
+    "message": "Ravistuksen vähimmäisnopeus pikseleinä sekunnissa"
+  },
+  "shakeSpeedHint": {
+    "message": "Kuinka nopeasti ikkunan täytyy liikkua, jotta ravistus lasketaan. Näin hitaat siirrot eivät laukaise sitä."
+  },
+  "shakesNeeded": {
+    "message": "Tarvittavat ravistukset"
+  },
+  "shakesNeededHint": {
+    "message": "Montako ravistusta käynnistykseen tarvitaan."
+  },
+  "timeToShake": {
+    "message": "Ravisteluaika"
+  },
+  "timeToShakeField": {
+    "message": "Ravisteluaika millisekunteina"
+  },
+  "timeToShakeHint": {
+    "message": "Kuinka nopeasti $count$ ravistusta pitää tehdä, jotta fysiikka käynnistyy.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Piilota ”Palauta sivu” -painike"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Piilottaa ”Palauta sivu” -painikkeen, joka näkyy oikeassa yläkulmassa, kun fysiikka on päällä."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pikseliä",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pikseliä sekunnissa",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekuntia",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Tartu</strong> ikkunaan otsikkopalkista ja <strong><i>ravista sitä</i></strong> TAI <strong>klikkaa</strong> laajennuksen kuvaketta."
+  },
+  "tipRestore": {
+    "message": "<strong>Paina</strong> <kbd>Esc</kbd>, <strong>klikkaa</strong> <i>Palauta sivu</i> -painiketta TAI <strong>klikkaa</strong> laajennuksen kuvaketta, niin sivu palautuu."
+  },
+  "resetSettings": {
+    "message": "Palauta oletukset"
+  },
+  "resetConfirm": {
+    "message": "Palautetaanko kaikki asetukset oletuksiin?"
+  },
+  "resetFailed": {
+    "message": "Asetusten palauttaminen epäonnistui. Yritä uudelleen."
+  },
+  "resetDone": {
+    "message": "Asetukset palautettu oletuksiin."
+  }
+}

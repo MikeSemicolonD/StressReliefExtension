@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "te"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "స్క్రీన్ షేక్ ఒత్తిడి నివారిణి"
+  },
+  "extDescription": {
+    "message": "సరదా కోసం, ప్రస్తుత ట్యాబ్‌లోని HTML ఎలిమెంట్‌లకు ఫిజిక్స్‌ను జోడిస్తుంది."
+  },
+  "badgeOn": {
+    "message": "ఆన్"
+  },
+  "restorePage": {
+    "message": "పేజీని పునరుద్ధరించు"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ఫిజిక్స్ ఆన్‌లో ఉంది. దాన్ని ఆఫ్ చేయడానికి ఎస్కేప్ కీని లేదా \"పేజీని పునరుద్ధరించు\"ను నొక్కండి."
+  },
+  "physicsOnNote": {
+    "message": "మీ బ్రౌజర్ విండోను షేక్ చేస్తే ఫిజిక్స్ ఆన్ అవుతుంది. దాన్ని ఆఫ్ చేయడానికి \"పేజీని పునరుద్ధరించు\"ను లేదా Escను నొక్కండి."
+  },
+  "settingsPageTitle": {
+    "message": "స్క్రీన్ షేక్ ఒత్తిడి నివారిణి సెట్టింగ్‌లు"
+  },
+  "settingsHeading": {
+    "message": "సెట్టింగ్‌లు"
+  },
+  "physicsSettings": {
+    "message": "ఫిజిక్స్ సెట్టింగ్‌లు"
+  },
+  "gravity": {
+    "message": "గురుత్వాకర్షణ"
+  },
+  "gravityHint": {
+    "message": "0 వద్ద పేజీ చదునైన బల్లలా ఉంటుంది. ముక్కలు కింద పడాలంటే దీన్ని పెంచండి."
+  },
+  "airDrag": {
+    "message": "గాలి నిరోధం"
+  },
+  "airDragHint": {
+    "message": "విసిరిన ముక్కలు ఎంత త్వరగా నెమ్మదిస్తాయి."
+  },
+  "bounce": {
+    "message": "బౌన్స్"
+  },
+  "bounceHint": {
+    "message": "ముక్కలు ఒకదానికొకటి, విండో అంచులకు తగిలి ఎంతగా ఎగిరిపడతాయి."
+  },
+  "friction": {
+    "message": "ఘర్షణ"
+  },
+  "frictionHint": {
+    "message": "ముక్కలు ఒకదాని పక్కగా మరొకటి జారేటప్పుడు ఎంతగా 'పట్టుకుంటాయి'."
+  },
+  "weight": {
+    "message": "బరువు"
+  },
+  "weightHint": {
+    "message": "ముక్కలు ఎంత బరువుగా ఉంటాయి."
+  },
+  "dragStrength": {
+    "message": "లాగే బలం"
+  },
+  "dragStrengthHint": {
+    "message": "ఒక ముక్క మీ పాయింటర్‌ను ఎంత దగ్గరగా అనుసరిస్తుంది."
+  },
+  "shakeSettings": {
+    "message": "షేక్ సెట్టింగ్‌లు"
+  },
+  "shakeDistance": {
+    "message": "కనీస షేక్ దూరం"
+  },
+  "shakeDistanceField": {
+    "message": "కనీస షేక్ దూరం, పిక్సెల్‌లలో"
+  },
+  "shakeDistanceHint": {
+    "message": "ఒక షేక్‌గా లెక్కించాలంటే, దిశ మారే ముందు విండో ఎంత దూరం కదలాలి."
+  },
+  "shakeSpeed": {
+    "message": "కనీస షేక్ వేగం"
+  },
+  "shakeSpeedField": {
+    "message": "కనీస షేక్ వేగం, సెకనుకు పిక్సెల్‌లలో"
+  },
+  "shakeSpeedHint": {
+    "message": "షేక్‌గా లెక్కించాలంటే విండో ఎంత వేగంగా కదలాలి, దీనివల్ల నెమ్మదిగా కదిలిస్తే ఫిజిక్స్ ఆన్ అవ్వదు."
+  },
+  "shakesNeeded": {
+    "message": "అవసరమైన షేక్‌లు"
+  },
+  "shakesNeededHint": {
+    "message": "ప్రారంభించడానికి ఎన్ని షేక్‌లు కావాలి."
+  },
+  "timeToShake": {
+    "message": "షేక్ చేయడానికి సమయం"
+  },
+  "timeToShakeField": {
+    "message": "షేక్ చేయడానికి సమయం, మిల్లీసెకన్లలో"
+  },
+  "timeToShakeHint": {
+    "message": "ఫిజిక్స్ ఆన్ అవ్వాలంటే $count$ షేక్‌లు ఎంత త్వరగా జరగాలి.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"పేజీని పునరుద్ధరించు\" బటన్‌ను దాచు"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ఫిజిక్స్ ఆన్‌లో ఉన్నప్పుడు ఎగువ కుడి మూలలో కనిపించే \"పేజీని పునరుద్ధరించు\" బటన్‌ను దాచుతుంది."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ పిక్సెల్‌లు",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "సెకనుకు $value$ పిక్సెల్‌లు",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ మిల్లీసెకన్లు",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "విండోను దాని టైటిల్ బార్ వద్ద <strong>పట్టుకుని</strong> <strong><i>షేక్ చేయండి</i></strong>, లేదా ఎక్స్‌టెన్షన్ చిహ్నాన్ని <strong>క్లిక్ చేయండి</strong>."
+  },
+  "tipRestore": {
+    "message": "పేజీని పునరుద్ధరించడానికి <kbd>Esc</kbd>ను <strong>నొక్కండి</strong>, <i>పేజీని పునరుద్ధరించు</i> బటన్‌ను <strong>క్లిక్ చేయండి</strong>, లేదా ఎక్స్‌టెన్షన్ చిహ్నాన్ని <strong>క్లిక్ చేయండి</strong>."
+  },
+  "resetSettings": {
+    "message": "డిఫాల్ట్‌లకు రీసెట్ చేయండి"
+  },
+  "resetConfirm": {
+    "message": "అన్ని సెట్టింగ్‌లను డిఫాల్ట్‌లకు రీసెట్ చేయాలా?"
+  },
+  "resetFailed": {
+    "message": "సెట్టింగ్‌లను రీసెట్ చేయడం సాధ్యపడలేదు. మళ్లీ ప్రయత్నించండి."
+  },
+  "resetDone": {
+    "message": "సెట్టింగ్‌లు డిఫాల్ట్‌లకు రీసెట్ చేయబడ్డాయి."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "be"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Антыстрэс: страсяні экран"
+  },
+  "extDescription": {
+    "message": "Дадае фізіку HTML-элементам на бягучай укладцы – проста дзеля забавы."
+  },
+  "badgeOn": {
+    "message": "УКЛ"
+  },
+  "restorePage": {
+    "message": "Вярнуць старонку"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Фізіка ўключана. Каб выключыць яе, націсніце Escape або кнопку «Вярнуць старонку»."
+  },
+  "physicsOnNote": {
+    "message": "Калі страсянуць акно браўзера, уключаецца фізіка. Каб выключыць яе, націсніце «Вярнуць старонку» або Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Антыстрэс: страсяні экран – налады"
+  },
+  "settingsHeading": {
+    "message": "Налады"
+  },
+  "physicsSettings": {
+    "message": "Налады фізікі"
+  },
+  "gravity": {
+    "message": "Гравітацыя"
+  },
+  "gravityHint": {
+    "message": "Пры 0 старонка застаецца плоскай, як стол. Павялічце, каб кавалачкі падалі."
+  },
+  "airDrag": {
+    "message": "Тармажэнне"
+  },
+  "airDragHint": {
+    "message": "Як хутка запавольваюцца кінутыя кавалачкі."
+  },
+  "bounce": {
+    "message": "Адскок"
+  },
+  "bounceHint": {
+    "message": "Наколькі моцна кавалачкі адскокваюць адзін ад аднаго і ад краёў акна."
+  },
+  "friction": {
+    "message": "Трэнне"
+  },
+  "frictionHint": {
+    "message": "Наколькі кавалачкі «чапляюцца», калі слізгаюць адзін міма аднаго."
+  },
+  "weight": {
+    "message": "Вага"
+  },
+  "weightHint": {
+    "message": "Наколькі цяжкія кавалачкі."
+  },
+  "dragStrength": {
+    "message": "Сіла захопу"
+  },
+  "dragStrengthHint": {
+    "message": "Наколькі шчыльна кавалачак ідзе за паказальнікам."
+  },
+  "shakeSettings": {
+    "message": "Налады страсання"
+  },
+  "shakeDistance": {
+    "message": "Мін. размах страсання"
+  },
+  "shakeDistanceField": {
+    "message": "Мінімальны размах страсання ў пікселях"
+  },
+  "shakeDistanceHint": {
+    "message": "Наколькі далёка акно павінна зрушыцца перад зменай кірунку, каб залічылася адно страсанне."
+  },
+  "shakeSpeed": {
+    "message": "Мін. хуткасць страсання"
+  },
+  "shakeSpeedField": {
+    "message": "Мінімальная хуткасць страсання ў пікселях за секунду"
+  },
+  "shakeSpeedHint": {
+    "message": "Як хутка павінна рухацца акно, каб страсанне залічылася. Павольныя рухі не лічацца."
+  },
+  "shakesNeeded": {
+    "message": "Колькасць страсанняў"
+  },
+  "shakesNeededHint": {
+    "message": "Колькі страсанняў трэба для запуску."
+  },
+  "timeToShake": {
+    "message": "Час на страсанне"
+  },
+  "timeToShakeField": {
+    "message": "Час на страсанне ў мілісекундах"
+  },
+  "timeToShakeHint": {
+    "message": "За гэты час трэба паспець зрабіць усе страсанні ($count$), каб уключылася фізіка.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Схаваць кнопку «Вярнуць старонку»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Хавае кнопку «Вярнуць старонку», якая з’яўляецца ў правым верхнім куце, калі фізіка ўключана."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "пікселяў: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "пікселяў за секунду: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "мілісекунд: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Вазьміце</strong> акно за радок загалоўка і <strong><i>страсяніце</i></strong> яго АБО <strong>націсніце</strong> значок пашырэння."
+  },
+  "tipRestore": {
+    "message": "<strong>Націсніце</strong> <kbd>Esc</kbd>, <strong>націсніце</strong> кнопку «<i>Вярнуць старонку</i>» АБО <strong>націсніце</strong> значок пашырэння, каб вярнуць старонку."
+  },
+  "resetSettings": {
+    "message": "Скінуць налады"
+  },
+  "resetConfirm": {
+    "message": "Скінуць усе налады да стандартных?"
+  },
+  "resetFailed": {
+    "message": "Не ўдалося скінуць налады. Паспрабуйце яшчэ раз."
+  },
+  "resetDone": {
+    "message": "Налады скінуты да стандартных."
+  }
+}

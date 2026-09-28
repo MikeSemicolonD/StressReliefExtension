@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "sv"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Skaka bort stressen"
+  },
+  "extDescription": {
+    "message": "Lägger till fysik i HTML-element på den aktuella fliken – bara för skojs skull."
+  },
+  "badgeOn": {
+    "message": "PÅ"
+  },
+  "restorePage": {
+    "message": "Återställ sidan"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fysiken är på. Tryck på Escape eller ”Återställ sidan” för att stänga av den."
+  },
+  "physicsOnNote": {
+    "message": "När du skakar webbläsarfönstret slås fysiken på. Tryck på ”Återställ sidan” eller Esc för att stänga av den."
+  },
+  "settingsPageTitle": {
+    "message": "Inställningar för Skaka bort stressen"
+  },
+  "settingsHeading": {
+    "message": "Inställningar"
+  },
+  "physicsSettings": {
+    "message": "Fysikinställningar"
+  },
+  "gravity": {
+    "message": "Tyngdkraft"
+  },
+  "gravityHint": {
+    "message": "Vid 0 förblir sidan en platt bordsskiva. Höj värdet så faller bitarna."
+  },
+  "airDrag": {
+    "message": "Luftmotstånd"
+  },
+  "airDragHint": {
+    "message": "Hur snabbt kastade bitar saktar in."
+  },
+  "bounce": {
+    "message": "Studs"
+  },
+  "bounceHint": {
+    "message": "Hur mycket bitarna studsar mot varandra och fönstrets kanter."
+  },
+  "friction": {
+    "message": "Friktion"
+  },
+  "frictionHint": {
+    "message": "Hur mycket bitarna ”hakar i” när de glider förbi varandra."
+  },
+  "weight": {
+    "message": "Vikt"
+  },
+  "weightHint": {
+    "message": "Hur tunga bitarna är."
+  },
+  "dragStrength": {
+    "message": "Dragstyrka"
+  },
+  "dragStrengthHint": {
+    "message": "Hur nära en bit följer pekaren."
+  },
+  "shakeSettings": {
+    "message": "Skakinställningar"
+  },
+  "shakeDistance": {
+    "message": "Minsta skakavstånd"
+  },
+  "shakeDistanceField": {
+    "message": "Minsta skakavstånd i pixlar"
+  },
+  "shakeDistanceHint": {
+    "message": "Hur långt fönstret måste flytta sig innan det byter riktning för att räknas som en skakning."
+  },
+  "shakeSpeed": {
+    "message": "Minsta skakhastighet"
+  },
+  "shakeSpeedField": {
+    "message": "Minsta skakhastighet i pixlar per sekund"
+  },
+  "shakeSpeedHint": {
+    "message": "Hur snabbt fönstret måste flytta sig för att en skakning ska räknas, så att långsamma rörelser inte utlöser något."
+  },
+  "shakesNeeded": {
+    "message": "Antal skakningar"
+  },
+  "shakesNeededHint": {
+    "message": "Hur många skakningar som krävs för att starta."
+  },
+  "timeToShake": {
+    "message": "Skaktid"
+  },
+  "timeToShakeField": {
+    "message": "Skaktid i millisekunder"
+  },
+  "timeToShakeHint": {
+    "message": "Hur snabbt de $count$ skakningarna måste ske för att fysiken ska starta.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Dölj knappen ”Återställ sidan”"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Döljer knappen ”Återställ sidan” som visas uppe till höger när fysiken är på."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixlar",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixlar per sekund",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekunder",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Ta tag</strong> i fönstrets namnlist och <strong><i>skaka det</i></strong>, ELLER <strong>klicka</strong> på tilläggets ikon."
+  },
+  "tipRestore": {
+    "message": "<strong>Tryck</strong> på <kbd>Esc</kbd>, <strong>klicka</strong> på knappen <i>Återställ sidan</i>, ELLER <strong>klicka</strong> på tilläggets ikon för att återställa sidan."
+  },
+  "resetSettings": {
+    "message": "Återställ standardvärden"
+  },
+  "resetConfirm": {
+    "message": "Vill du återställa alla inställningar till standardvärdena?"
+  },
+  "resetFailed": {
+    "message": "Det gick inte att återställa inställningarna. Försök igen."
+  },
+  "resetDone": {
+    "message": "Inställningarna har återställts till standardvärdena."
+  }
+}

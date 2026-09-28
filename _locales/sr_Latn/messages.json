@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "sr_Latn"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Antistres: protresite ekran"
+  },
+  "extDescription": {
+    "message": "Za zabavu dodaje fiziku HTML elementima na aktuelnoj kartici."
+  },
+  "badgeOn": {
+    "message": "UKLJ"
+  },
+  "restorePage": {
+    "message": "Vrati stranicu"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika je uključena. Isključite je tasterom Escape ili dugmetom „Vrati stranicu“."
+  },
+  "physicsOnNote": {
+    "message": "Protresanje prozora pregledača uključuje fiziku. Isključite je dugmetom „Vrati stranicu“ ili tasterom Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistres: protresite ekran – podešavanja"
+  },
+  "settingsHeading": {
+    "message": "Podešavanja"
+  },
+  "physicsSettings": {
+    "message": "Podešavanja fizike"
+  },
+  "gravity": {
+    "message": "Gravitacija"
+  },
+  "gravityHint": {
+    "message": "Na 0 stranica ostaje ravna kao sto. Povećajte je da bi komadići padali."
+  },
+  "airDrag": {
+    "message": "Otpor vazduha"
+  },
+  "airDragHint": {
+    "message": "Koliko brzo bačeni komadići usporavaju."
+  },
+  "bounce": {
+    "message": "Odskakivanje"
+  },
+  "bounceHint": {
+    "message": "Koliko komadići odskaču jedan od drugog i od ivica prozora."
+  },
+  "friction": {
+    "message": "Trenje"
+  },
+  "frictionHint": {
+    "message": "Koliko komadići „zapinju“ kada klize jedan pored drugog."
+  },
+  "weight": {
+    "message": "Težina"
+  },
+  "weightHint": {
+    "message": "Koliko su komadići teški."
+  },
+  "dragStrength": {
+    "message": "Jačina hvata"
+  },
+  "dragStrengthHint": {
+    "message": "Koliko čvrsto komadić prati pokazivač."
+  },
+  "shakeSettings": {
+    "message": "Podešavanja protresanja"
+  },
+  "shakeDistance": {
+    "message": "Najmanja dužina zamaha"
+  },
+  "shakeDistanceField": {
+    "message": "Najmanja dužina zamaha u pikselima"
+  },
+  "shakeDistanceHint": {
+    "message": "Koliko daleko prozor mora da se pomeri pre promene smera da bi se to računalo kao jedan zamah."
+  },
+  "shakeSpeed": {
+    "message": "Najmanja brzina zamaha"
+  },
+  "shakeSpeedField": {
+    "message": "Najmanja brzina zamaha u pikselima u sekundi"
+  },
+  "shakeSpeedHint": {
+    "message": "Koliko brzo prozor mora da se kreće da bi se zamah računao, pa ga spori pokreti ne aktiviraju."
+  },
+  "shakesNeeded": {
+    "message": "Broj zamaha"
+  },
+  "shakesNeededHint": {
+    "message": "Koliko je zamaha potrebno za pokretanje."
+  },
+  "timeToShake": {
+    "message": "Vreme za protresanje"
+  },
+  "timeToShakeField": {
+    "message": "Vreme za protresanje u milisekundama"
+  },
+  "timeToShakeHint": {
+    "message": "Koliko brzo morate da protresete prozor $count$ puta da bi se uključila fizika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Sakrij dugme „Vrati stranicu“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Sakriva dugme „Vrati stranicu“ koje se pojavljuje u gornjem desnom uglu kada je fizika uključena."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksela",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksela u sekundi",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekundi",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Uhvatite</strong> prozor za naslovnu traku i <strong><i>protresite ga</i></strong> ILI <strong>kliknite</strong> na ikonu dodatka."
+  },
+  "tipRestore": {
+    "message": "<strong>Pritisnite</strong> <kbd>Esc</kbd>, <strong>kliknite</strong> na dugme <i>Vrati stranicu</i> ILI <strong>kliknite</strong> na ikonu dodatka da biste vratili stranicu."
+  },
+  "resetSettings": {
+    "message": "Vrati podrazumevano"
+  },
+  "resetConfirm": {
+    "message": "Želite li da vratite sva podešavanja na podrazumevane vrednosti?"
+  },
+  "resetFailed": {
+    "message": "Vraćanje podešavanja nije uspelo. Pokušajte ponovo."
+  },
+  "resetDone": {
+    "message": "Podešavanja su vraćena na podrazumevane vrednosti."
+  }
+}

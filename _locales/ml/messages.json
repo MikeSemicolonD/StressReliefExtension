@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "ml"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "സ്ക്രീൻ കുലുക്കി സ്ട്രെസ് അകറ്റാം"
+  },
+  "extDescription": {
+    "message": "രസത്തിനായി, നിലവിലെ ടാബിലെ HTML ഘടകങ്ങൾക്ക് ഫിസിക്സ് ചേർക്കുന്നു."
+  },
+  "badgeOn": {
+    "message": "ഓൺ"
+  },
+  "restorePage": {
+    "message": "പേജ് പുനഃസ്ഥാപിക്കുക"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ഫിസിക്സ് ഓണാണ്. ഇത് ഓഫാക്കാൻ എസ്കേപ്പ് കീ അല്ലെങ്കിൽ \"പേജ് പുനഃസ്ഥാപിക്കുക\" അമർത്തുക."
+  },
+  "physicsOnNote": {
+    "message": "ബ്രൗസർ വിൻഡോ കുലുക്കിയാൽ ഫിസിക്സ് ഓണാകും. ഇത് ഓഫാക്കാൻ \"പേജ് പുനഃസ്ഥാപിക്കുക\" അല്ലെങ്കിൽ Esc അമർത്തുക."
+  },
+  "settingsPageTitle": {
+    "message": "സ്ക്രീൻ കുലുക്കി സ്ട്രെസ് അകറ്റാം - ക്രമീകരണം"
+  },
+  "settingsHeading": {
+    "message": "ക്രമീകരണം"
+  },
+  "physicsSettings": {
+    "message": "ഫിസിക്സ് ക്രമീകരണം"
+  },
+  "gravity": {
+    "message": "ഗുരുത്വാകർഷണം"
+  },
+  "gravityHint": {
+    "message": "0-ൽ പേജ് ഒരു പരന്ന മേശ പോലെ തുടരും. കഷണങ്ങൾ താഴേക്ക് വീഴാൻ ഇത് കൂട്ടുക."
+  },
+  "airDrag": {
+    "message": "വായു പ്രതിരോധം"
+  },
+  "airDragHint": {
+    "message": "എറിഞ്ഞ കഷണങ്ങളുടെ വേഗത എത്ര പെട്ടെന്ന് കുറയുന്നു."
+  },
+  "bounce": {
+    "message": "ബൗൺസ്"
+  },
+  "bounceHint": {
+    "message": "കഷണങ്ങൾ പരസ്പരവും വിൻഡോയുടെ അരികുകളിലും തട്ടി എത്രത്തോളം തെറിക്കുന്നു."
+  },
+  "friction": {
+    "message": "ഘർഷണം"
+  },
+  "frictionHint": {
+    "message": "കഷണങ്ങൾ പരസ്പരം ഉരസി നീങ്ങുമ്പോൾ എത്രത്തോളം 'പിടിക്കുന്നു'."
+  },
+  "weight": {
+    "message": "ഭാരം"
+  },
+  "weightHint": {
+    "message": "കഷണങ്ങൾക്ക് എത്ര ഭാരമുണ്ട്."
+  },
+  "dragStrength": {
+    "message": "വലിക്കൽ ശക്തി"
+  },
+  "dragStrengthHint": {
+    "message": "ഒരു കഷണം നിങ്ങളുടെ പോയിന്ററിനെ എത്ര കൃത്യമായി പിന്തുടരുന്നു."
+  },
+  "shakeSettings": {
+    "message": "കുലുക്കൽ ക്രമീകരണം"
+  },
+  "shakeDistance": {
+    "message": "കുറഞ്ഞ കുലുക്കൽ ദൂരം"
+  },
+  "shakeDistanceField": {
+    "message": "കുറഞ്ഞ കുലുക്കൽ ദൂരം, പിക്സലിൽ"
+  },
+  "shakeDistanceHint": {
+    "message": "ഒരു കുലുക്കലായി കണക്കാക്കാൻ, ദിശ മാറുന്നതിന് മുമ്പ് വിൻഡോ എത്ര ദൂരം നീങ്ങണം."
+  },
+  "shakeSpeed": {
+    "message": "കുറഞ്ഞ കുലുക്കൽ വേഗത"
+  },
+  "shakeSpeedField": {
+    "message": "കുറഞ്ഞ കുലുക്കൽ വേഗത, സെക്കൻഡിൽ ഇത്ര പിക്സൽ"
+  },
+  "shakeSpeedHint": {
+    "message": "കുലുക്കലായി കണക്കാക്കാൻ വിൻഡോ എത്ര വേഗത്തിൽ നീങ്ങണം; പതുക്കെയുള്ള നീക്കങ്ങൾ ഇത് ഓണാക്കില്ല."
+  },
+  "shakesNeeded": {
+    "message": "വേണ്ട കുലുക്കലുകൾ"
+  },
+  "shakesNeededHint": {
+    "message": "തുടങ്ങാൻ എത്ര കുലുക്കലുകൾ വേണം."
+  },
+  "timeToShake": {
+    "message": "കുലുക്കാനുള്ള സമയം"
+  },
+  "timeToShakeField": {
+    "message": "കുലുക്കാനുള്ള സമയം, മില്ലിസെക്കൻഡിൽ"
+  },
+  "timeToShakeHint": {
+    "message": "ഫിസിക്സ് ഓണാകാൻ $count$ കുലുക്കലുകൾ എത്ര വേഗത്തിൽ നടക്കണം.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"പേജ് പുനഃസ്ഥാപിക്കുക\" ബട്ടൺ മറയ്ക്കുക"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ഫിസിക്സ് ഓണായിരിക്കുമ്പോൾ മുകളിൽ വലത് മൂലയിൽ കാണുന്ന \"പേജ് പുനഃസ്ഥാപിക്കുക\" ബട്ടൺ മറയ്ക്കുന്നു."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ പിക്സൽ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "സെക്കൻഡിൽ $value$ പിക്സൽ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ മില്ലിസെക്കൻഡ്",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "വിൻഡോയുടെ ടൈറ്റിൽ ബാറിൽ <strong>പിടിച്ച്</strong> <strong><i>കുലുക്കുക</i></strong>, അല്ലെങ്കിൽ വിപുലീകരണ ഐക്കണിൽ <strong>ക്ലിക്ക് ചെയ്യുക</strong>."
+  },
+  "tipRestore": {
+    "message": "പേജ് പുനഃസ്ഥാപിക്കാൻ <kbd>Esc</kbd> <strong>അമർത്തുക</strong>, <i>പേജ് പുനഃസ്ഥാപിക്കുക</i> ബട്ടണിൽ <strong>ക്ലിക്ക് ചെയ്യുക</strong>, അല്ലെങ്കിൽ വിപുലീകരണ ഐക്കണിൽ <strong>ക്ലിക്ക് ചെയ്യുക</strong>."
+  },
+  "resetSettings": {
+    "message": "ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യുക"
+  },
+  "resetConfirm": {
+    "message": "എല്ലാ ക്രമീകരണവും ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യണോ?"
+  },
+  "resetFailed": {
+    "message": "ക്രമീകരണം റീസെറ്റ് ചെയ്യാനായില്ല. വീണ്ടും ശ്രമിക്കുക."
+  },
+  "resetDone": {
+    "message": "ക്രമീകരണം ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്തു."
+  }
+}

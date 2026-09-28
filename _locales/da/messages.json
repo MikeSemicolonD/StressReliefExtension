@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "da"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Ryst stressen væk"
+  },
+  "extDescription": {
+    "message": "Tilføjer fysik til HTML-elementer på den aktuelle fane – bare for sjov."
+  },
+  "badgeOn": {
+    "message": "TIL"
+  },
+  "restorePage": {
+    "message": "Gendan side"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fysik er slået til. Tryk på Escape eller »Gendan side« for at slå det fra."
+  },
+  "physicsOnNote": {
+    "message": "Når du ryster browservinduet, slås fysik til. Tryk på »Gendan side« eller Esc for at slå det fra."
+  },
+  "settingsPageTitle": {
+    "message": "Indstillinger for Ryst stressen væk"
+  },
+  "settingsHeading": {
+    "message": "Indstillinger"
+  },
+  "physicsSettings": {
+    "message": "Fysikindstillinger"
+  },
+  "gravity": {
+    "message": "Tyngdekraft"
+  },
+  "gravityHint": {
+    "message": "Ved 0 forbliver siden en flad bordplade. Skru op for at få brikkerne til at falde."
+  },
+  "airDrag": {
+    "message": "Luftmodstand"
+  },
+  "airDragHint": {
+    "message": "Hvor hurtigt kastede brikker bremser op."
+  },
+  "bounce": {
+    "message": "Hoppekraft"
+  },
+  "bounceHint": {
+    "message": "Hvor meget brikkerne preller af mod hinanden og vinduets kanter."
+  },
+  "friction": {
+    "message": "Friktion"
+  },
+  "frictionHint": {
+    "message": "Hvor meget brikkerne 'hænger fast', når de glider forbi hinanden."
+  },
+  "weight": {
+    "message": "Vægt"
+  },
+  "weightHint": {
+    "message": "Hvor tunge brikkerne er."
+  },
+  "dragStrength": {
+    "message": "Trækkraft"
+  },
+  "dragStrengthHint": {
+    "message": "Hvor tæt en brik følger din markør."
+  },
+  "shakeSettings": {
+    "message": "Rysteindstillinger"
+  },
+  "shakeDistance": {
+    "message": "Mindste rysteafstand"
+  },
+  "shakeDistanceField": {
+    "message": "Mindste rysteafstand i pixels"
+  },
+  "shakeDistanceHint": {
+    "message": "Hvor langt vinduet skal flytte sig, før det skifter retning, for at det tæller som én rystelse."
+  },
+  "shakeSpeed": {
+    "message": "Mindste rystehastighed"
+  },
+  "shakeSpeedField": {
+    "message": "Mindste rystehastighed i pixels pr. sekund"
+  },
+  "shakeSpeedHint": {
+    "message": "Hvor hurtigt vinduet skal flytte sig, for at en rystelse tæller, så langsomme flytninger ikke udløser noget."
+  },
+  "shakesNeeded": {
+    "message": "Antal rystelser"
+  },
+  "shakesNeededHint": {
+    "message": "Hvor mange rystelser der skal til for at starte."
+  },
+  "timeToShake": {
+    "message": "Rystetid"
+  },
+  "timeToShakeField": {
+    "message": "Rystetid i millisekunder"
+  },
+  "timeToShakeHint": {
+    "message": "Hvor hurtigt de $count$ rystelser skal ske for at slå fysik til.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Skjul knappen »Gendan side«"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Skjuler knappen »Gendan side«, der vises øverst til højre, når fysik er slået til."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixels",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixels pr. sekund",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekunder",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Tag fat</strong> i vinduets titellinje og <strong><i>ryst det</i></strong>, ELLER <strong>klik</strong> på udvidelsens ikon."
+  },
+  "tipRestore": {
+    "message": "<strong>Tryk</strong> på <kbd>Esc</kbd>, <strong>klik</strong> på knappen <i>Gendan side</i>, ELLER <strong>klik</strong> på udvidelsens ikon for at gendanne siden."
+  },
+  "resetSettings": {
+    "message": "Nulstil til standard"
+  },
+  "resetConfirm": {
+    "message": "Vil du nulstille alle indstillinger til standard?"
+  },
+  "resetFailed": {
+    "message": "Indstillingerne kunne ikke nulstilles. Prøv igen."
+  },
+  "resetDone": {
+    "message": "Indstillingerne er nulstillet til standard."
+  }
+}

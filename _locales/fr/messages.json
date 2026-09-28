@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "fr"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Secousse antistress"
+  },
+  "extDescription": {
+    "message": "Ajoute de la physique aux éléments HTML de l'onglet actuel, pour s'amuser."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Restaurer la page"
+  },
+  "escKey": {
+    "message": "Échap"
+  },
+  "physicsOnStatus": {
+    "message": "La physique est activée. Appuyez sur Échap ou sur « Restaurer la page » pour la désactiver."
+  },
+  "physicsOnNote": {
+    "message": "Secouer la fenêtre du navigateur active la physique. Appuyez sur « Restaurer la page » ou sur Échap pour la désactiver."
+  },
+  "settingsPageTitle": {
+    "message": "Paramètres de Secousse antistress"
+  },
+  "settingsHeading": {
+    "message": "Paramètres"
+  },
+  "physicsSettings": {
+    "message": "Physique"
+  },
+  "gravity": {
+    "message": "Gravité"
+  },
+  "gravityHint": {
+    "message": "À 0, la page reste comme une table bien à plat. Augmentez-la pour faire tomber les morceaux."
+  },
+  "airDrag": {
+    "message": "Résistance de l'air"
+  },
+  "airDragHint": {
+    "message": "La vitesse à laquelle les morceaux lancés ralentissent."
+  },
+  "bounce": {
+    "message": "Rebond"
+  },
+  "bounceHint": {
+    "message": "À quel point les morceaux rebondissent entre eux et sur les bords de la fenêtre."
+  },
+  "friction": {
+    "message": "Frottement"
+  },
+  "frictionHint": {
+    "message": "À quel point les morceaux « accrochent » en glissant les uns contre les autres."
+  },
+  "weight": {
+    "message": "Poids"
+  },
+  "weightHint": {
+    "message": "Le poids des morceaux."
+  },
+  "dragStrength": {
+    "message": "Force de prise"
+  },
+  "dragStrengthHint": {
+    "message": "À quel point un morceau suit fidèlement votre pointeur."
+  },
+  "shakeSettings": {
+    "message": "Secousse"
+  },
+  "shakeDistance": {
+    "message": "Distance minimale"
+  },
+  "shakeDistanceField": {
+    "message": "Distance minimale de secousse en pixels"
+  },
+  "shakeDistanceHint": {
+    "message": "La distance que doit parcourir la fenêtre avant de changer de sens pour compter comme une secousse."
+  },
+  "shakeSpeed": {
+    "message": "Vitesse minimale"
+  },
+  "shakeSpeedField": {
+    "message": "Vitesse minimale de secousse en pixels par seconde"
+  },
+  "shakeSpeedHint": {
+    "message": "La vitesse à laquelle la fenêtre doit bouger pour qu'une secousse compte, afin que les mouvements lents ne la déclenchent pas."
+  },
+  "shakesNeeded": {
+    "message": "Secousses requises"
+  },
+  "shakesNeededHint": {
+    "message": "Le nombre de secousses nécessaires pour démarrer."
+  },
+  "timeToShake": {
+    "message": "Délai de secousse"
+  },
+  "timeToShakeField": {
+    "message": "Délai de secousse en millisecondes"
+  },
+  "timeToShakeHint": {
+    "message": "Le temps imparti pour effectuer les $count$ secousses qui déclenchent la physique.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Masquer le bouton « Restaurer la page »"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Masque le bouton « Restaurer la page » qui apparaît en haut à droite quand la physique est activée."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixels",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixels par seconde",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisecondes",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Attrapez</strong> la fenêtre par sa barre de titre et <strong><i>secouez-la</i></strong>, OU <strong>cliquez</strong> sur l'icône de l'extension."
+  },
+  "tipRestore": {
+    "message": "<strong>Appuyez</strong> sur <kbd>Échap</kbd>, <strong>cliquez</strong> sur le bouton <i>Restaurer la page</i> OU <strong>cliquez</strong> sur l'icône de l'extension pour restaurer la page."
+  },
+  "resetSettings": {
+    "message": "Rétablir les valeurs par défaut"
+  },
+  "resetConfirm": {
+    "message": "Rétablir tous les paramètres à leurs valeurs par défaut ?"
+  },
+  "resetFailed": {
+    "message": "Impossible de rétablir les paramètres. Réessayez."
+  },
+  "resetDone": {
+    "message": "Paramètres rétablis à leurs valeurs par défaut."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "lv"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Antistress: sakratiet ekrānu"
+  },
+  "extDescription": {
+    "message": "Izklaidei pievieno fiziku HTML elementiem pašreizējā cilnē."
+  },
+  "badgeOn": {
+    "message": "IESL"
+  },
+  "restorePage": {
+    "message": "Atjaunot lapu"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika ir ieslēgta. Lai to izslēgtu, nospiediet Escape vai pogu “Atjaunot lapu”."
+  },
+  "physicsOnNote": {
+    "message": "Sakratot pārlūka logu, ieslēdzas fizika. Lai to izslēgtu, nospiediet pogu “Atjaunot lapu” vai Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistress: sakratiet ekrānu — iestatījumi"
+  },
+  "settingsHeading": {
+    "message": "Iestatījumi"
+  },
+  "physicsSettings": {
+    "message": "Fizikas iestatījumi"
+  },
+  "gravity": {
+    "message": "Gravitācija"
+  },
+  "gravityHint": {
+    "message": "Pie 0 lapa paliek plakana kā galds. Palieliniet, lai gabaliņi kristu."
+  },
+  "airDrag": {
+    "message": "Gaisa pretestība"
+  },
+  "airDragHint": {
+    "message": "Cik ātri mestie gabaliņi palēninās."
+  },
+  "bounce": {
+    "message": "Atlēkšana"
+  },
+  "bounceHint": {
+    "message": "Cik stipri gabaliņi atlec cits no cita un no loga malām."
+  },
+  "friction": {
+    "message": "Berze"
+  },
+  "frictionHint": {
+    "message": "Cik stipri gabaliņi “ķeras”, slīdot garām cits citam."
+  },
+  "weight": {
+    "message": "Svars"
+  },
+  "weightHint": {
+    "message": "Cik smagi ir gabaliņi."
+  },
+  "dragStrength": {
+    "message": "Satvēriena stiprums"
+  },
+  "dragStrengthHint": {
+    "message": "Cik cieši gabaliņš seko rādītājam."
+  },
+  "shakeSettings": {
+    "message": "Kratīšanas iestatījumi"
+  },
+  "shakeDistance": {
+    "message": "Minimālais kratiena attālums"
+  },
+  "shakeDistanceField": {
+    "message": "Minimālais kratiena attālums pikseļos"
+  },
+  "shakeDistanceHint": {
+    "message": "Cik tālu logam jāpārvietojas, pirms tas maina virzienu, lai to ieskaitītu kā vienu kratienu."
+  },
+  "shakeSpeed": {
+    "message": "Minimālais kratiena ātrums"
+  },
+  "shakeSpeedField": {
+    "message": "Minimālais kratiena ātrums pikseļos sekundē"
+  },
+  "shakeSpeedHint": {
+    "message": "Cik ātri logam jākustas, lai kratiens tiktu ieskaitīts, — tā lēnas kustības to neiedarbinās."
+  },
+  "shakesNeeded": {
+    "message": "Kratienu skaits"
+  },
+  "shakesNeededHint": {
+    "message": "Cik kratienu vajag, lai sāktu."
+  },
+  "timeToShake": {
+    "message": "Laiks kratīšanai"
+  },
+  "timeToShakeField": {
+    "message": "Laiks kratīšanai milisekundēs"
+  },
+  "timeToShakeHint": {
+    "message": "Cik ātri logs jāsakrata $count$ reizes, lai ieslēgtos fizika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Paslēpt pogu “Atjaunot lapu”"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Paslēpj pogu “Atjaunot lapu”, kas parādās augšējā labajā stūrī, kad ir ieslēgta fizika."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pikseļi",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pikseļi sekundē",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekundes",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Satveriet</strong> logu aiz virsrakstjoslas un <strong><i>sakratiet to</i></strong> VAI <strong>noklikšķiniet</strong> uz paplašinājuma ikonas."
+  },
+  "tipRestore": {
+    "message": "<strong>Nospiediet</strong> <kbd>Esc</kbd>, <strong>noklikšķiniet</strong> uz pogas <i>Atjaunot lapu</i> VAI <strong>noklikšķiniet</strong> uz paplašinājuma ikonas, lai atjaunotu lapu."
+  },
+  "resetSettings": {
+    "message": "Atiestatīt noklusējumus"
+  },
+  "resetConfirm": {
+    "message": "Vai atiestatīt visus iestatījumus uz noklusējuma vērtībām?"
+  },
+  "resetFailed": {
+    "message": "Neizdevās atiestatīt iestatījumus. Mēģiniet vēlreiz."
+  },
+  "resetDone": {
+    "message": "Iestatījumi ir atiestatīti uz noklusējuma vērtībām."
+  }
+}

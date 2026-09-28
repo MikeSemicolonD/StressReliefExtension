@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "kn"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "ಸ್ಕ್ರೀನ್ ಶೇಕ್ ಒತ್ತಡ ನಿವಾರಕ"
+  },
+  "extDescription": {
+    "message": "ಮೋಜಿಗಾಗಿ, ಪ್ರಸ್ತುತ ಟ್ಯಾಬ್‌ನಲ್ಲಿರುವ HTML ಅಂಶಗಳಿಗೆ ಫಿಸಿಕ್ಸ್ ಸೇರಿಸುತ್ತದೆ."
+  },
+  "badgeOn": {
+    "message": "ಆನ್"
+  },
+  "restorePage": {
+    "message": "ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ಫಿಸಿಕ್ಸ್ ಆನ್ ಆಗಿದೆ. ಅದನ್ನು ಆಫ್ ಮಾಡಲು ಎಸ್ಕೇಪ್ ಕೀ ಅಥವಾ \"ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ\" ಒತ್ತಿ."
+  },
+  "physicsOnNote": {
+    "message": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ವಿಂಡೋವನ್ನು ಅಲುಗಾಡಿಸಿದರೆ ಫಿಸಿಕ್ಸ್ ಆನ್ ಆಗುತ್ತದೆ. ಅದನ್ನು ಆಫ್ ಮಾಡಲು \"ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ\" ಅಥವಾ Esc ಒತ್ತಿ."
+  },
+  "settingsPageTitle": {
+    "message": "ಸ್ಕ್ರೀನ್ ಶೇಕ್ ಒತ್ತಡ ನಿವಾರಕ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "settingsHeading": {
+    "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "physicsSettings": {
+    "message": "ಫಿಸಿಕ್ಸ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "gravity": {
+    "message": "ಗುರುತ್ವ"
+  },
+  "gravityHint": {
+    "message": "0 ನಲ್ಲಿ ಪುಟವು ಸಮತಟ್ಟಾದ ಮೇಜಿನಂತೆ ಇರುತ್ತದೆ. ತುಣುಕುಗಳು ಕೆಳಗೆ ಬೀಳಲು ಇದನ್ನು ಹೆಚ್ಚಿಸಿ."
+  },
+  "airDrag": {
+    "message": "ಗಾಳಿಯ ತಡೆ"
+  },
+  "airDragHint": {
+    "message": "ಎಸೆದ ತುಣುಕುಗಳು ಎಷ್ಟು ಬೇಗ ನಿಧಾನವಾಗುತ್ತವೆ."
+  },
+  "bounce": {
+    "message": "ಪುಟಿತ"
+  },
+  "bounceHint": {
+    "message": "ತುಣುಕುಗಳು ಒಂದಕ್ಕೊಂದು ಮತ್ತು ವಿಂಡೋದ ಅಂಚುಗಳಿಗೆ ತಾಗಿ ಎಷ್ಟು ಪುಟಿಯುತ್ತವೆ."
+  },
+  "friction": {
+    "message": "ಘರ್ಷಣೆ"
+  },
+  "frictionHint": {
+    "message": "ತುಣುಕುಗಳು ಒಂದರ ಪಕ್ಕದಲ್ಲಿ ಇನ್ನೊಂದು ಜಾರುವಾಗ ಎಷ್ಟು 'ಸಿಕ್ಕಿಕೊಳ್ಳುತ್ತವೆ'."
+  },
+  "weight": {
+    "message": "ತೂಕ"
+  },
+  "weightHint": {
+    "message": "ತುಣುಕುಗಳು ಎಷ್ಟು ಭಾರವಾಗಿವೆ."
+  },
+  "dragStrength": {
+    "message": "ಎಳೆತದ ಬಲ"
+  },
+  "dragStrengthHint": {
+    "message": "ತುಣುಕು ನಿಮ್ಮ ಪಾಯಿಂಟರ್ ಅನ್ನು ಎಷ್ಟು ಬಿಗಿಯಾಗಿ ಹಿಂಬಾಲಿಸುತ್ತದೆ."
+  },
+  "shakeSettings": {
+    "message": "ಅಲುಗಾಟದ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "shakeDistance": {
+    "message": "ಕನಿಷ್ಠ ಅಲುಗಾಟದ ದೂರ"
+  },
+  "shakeDistanceField": {
+    "message": "ಕನಿಷ್ಠ ಅಲುಗಾಟದ ದೂರ, ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ"
+  },
+  "shakeDistanceHint": {
+    "message": "ಒಂದು ಅಲುಗಾಟ ಎಂದು ಎಣಿಸಲು, ದಿಕ್ಕು ಬದಲಿಸುವ ಮೊದಲು ವಿಂಡೋ ಎಷ್ಟು ದೂರ ಚಲಿಸಬೇಕು."
+  },
+  "shakeSpeed": {
+    "message": "ಕನಿಷ್ಠ ಅಲುಗಾಟದ ವೇಗ"
+  },
+  "shakeSpeedField": {
+    "message": "ಕನಿಷ್ಠ ಅಲುಗಾಟದ ವೇಗ, ಸೆಕೆಂಡಿಗೆ ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ"
+  },
+  "shakeSpeedHint": {
+    "message": "ಅಲುಗಾಟ ಎಣಿಕೆಯಾಗಲು ವಿಂಡೋ ಎಷ್ಟು ವೇಗವಾಗಿ ಚಲಿಸಬೇಕು, ಹೀಗಾಗಿ ನಿಧಾನ ಚಲನೆಗಳು ಇದನ್ನು ಆನ್ ಮಾಡುವುದಿಲ್ಲ."
+  },
+  "shakesNeeded": {
+    "message": "ಬೇಕಾದ ಅಲುಗಾಟಗಳು"
+  },
+  "shakesNeededHint": {
+    "message": "ಪ್ರಾರಂಭಿಸಲು ಎಷ್ಟು ಅಲುಗಾಟಗಳು ಬೇಕು."
+  },
+  "timeToShake": {
+    "message": "ಅಲುಗಾಡಿಸಲು ಸಮಯ"
+  },
+  "timeToShakeField": {
+    "message": "ಅಲುಗಾಡಿಸಲು ಸಮಯ, ಮಿಲಿಸೆಕೆಂಡ್‌ಗಳಲ್ಲಿ"
+  },
+  "timeToShakeHint": {
+    "message": "ಫಿಸಿಕ್ಸ್ ಆನ್ ಆಗಲು $count$ ಅಲುಗಾಟಗಳು ಎಷ್ಟು ಬೇಗ ಆಗಬೇಕು.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ\" ಬಟನ್ ಮರೆಮಾಡಿ"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ಫಿಸಿಕ್ಸ್ ಆನ್ ಆಗಿರುವಾಗ ಮೇಲಿನ ಬಲ ಮೂಲೆಯಲ್ಲಿ ಕಾಣಿಸುವ \"ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ\" ಬಟನ್ ಅನ್ನು ಮರೆಮಾಡುತ್ತದೆ."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ಪಿಕ್ಸೆಲ್‌ಗಳು",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "ಸೆಕೆಂಡಿಗೆ $value$ ಪಿಕ್ಸೆಲ್‌ಗಳು",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ಮಿಲಿಸೆಕೆಂಡ್‌ಗಳು",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "ವಿಂಡೋವನ್ನು ಅದರ ಶೀರ್ಷಿಕೆ ಪಟ್ಟಿಯಿಂದ <strong>ಹಿಡಿದು</strong> <strong><i>ಅಲುಗಾಡಿಸಿ</i></strong>, ಅಥವಾ ವಿಸ್ತರಣೆಯ ಐಕಾನ್ ಅನ್ನು <strong>ಕ್ಲಿಕ್ ಮಾಡಿ</strong>."
+  },
+  "tipRestore": {
+    "message": "ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಲು <kbd>Esc</kbd> <strong>ಒತ್ತಿ</strong>, <i>ಪುಟವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ</i> ಬಟನ್ ಅನ್ನು <strong>ಕ್ಲಿಕ್ ಮಾಡಿ</strong>, ಅಥವಾ ವಿಸ್ತರಣೆಯ ಐಕಾನ್ ಅನ್ನು <strong>ಕ್ಲಿಕ್ ಮಾಡಿ</strong>."
+  },
+  "resetSettings": {
+    "message": "ಡೀಫಾಲ್ಟ್‌ಗಳಿಗೆ ಮರುಹೊಂದಿಸಿ"
+  },
+  "resetConfirm": {
+    "message": "ಎಲ್ಲಾ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಡೀಫಾಲ್ಟ್‌ಗಳಿಗೆ ಮರುಹೊಂದಿಸಬೇಕೇ?"
+  },
+  "resetFailed": {
+    "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮರುಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+  },
+  "resetDone": {
+    "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಡೀಫಾಲ್ಟ್‌ಗಳಿಗೆ ಮರುಹೊಂದಿಸಲಾಗಿದೆ."
+  }
+}

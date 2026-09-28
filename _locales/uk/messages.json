@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "uk"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Антистрес: струсни екран"
+  },
+  "extDescription": {
+    "message": "Додає фізику HTML-елементам у поточній вкладці – просто для розваги."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Повернути сторінку"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Фізику ввімкнено. Щоб вимкнути її, натисніть Escape або кнопку «Повернути сторінку»."
+  },
+  "physicsOnNote": {
+    "message": "Якщо струснути вікно браузера, вмикається фізика. Щоб вимкнути її, натисніть «Повернути сторінку» або Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Антистрес: струсни екран – налаштування"
+  },
+  "settingsHeading": {
+    "message": "Налаштування"
+  },
+  "physicsSettings": {
+    "message": "Налаштування фізики"
+  },
+  "gravity": {
+    "message": "Гравітація"
+  },
+  "gravityHint": {
+    "message": "При 0 сторінка лишається пласкою, як стіл. Збільште, щоб шматочки падали."
+  },
+  "airDrag": {
+    "message": "Гальмування"
+  },
+  "airDragHint": {
+    "message": "Як швидко сповільнюються кинуті шматочки."
+  },
+  "bounce": {
+    "message": "Відскок"
+  },
+  "bounceHint": {
+    "message": "Наскільки сильно шматочки відскакують один від одного й від країв вікна."
+  },
+  "friction": {
+    "message": "Тертя"
+  },
+  "frictionHint": {
+    "message": "Наскільки шматочки «чіпляються», коли ковзають один повз одного."
+  },
+  "weight": {
+    "message": "Вага"
+  },
+  "weightHint": {
+    "message": "Наскільки важкі шматочки."
+  },
+  "dragStrength": {
+    "message": "Сила захоплення"
+  },
+  "dragStrengthHint": {
+    "message": "Наскільки щільно шматочок іде за вказівником."
+  },
+  "shakeSettings": {
+    "message": "Налаштування струсу"
+  },
+  "shakeDistance": {
+    "message": "Мін. розмах струсу"
+  },
+  "shakeDistanceField": {
+    "message": "Мінімальний розмах струсу в пікселях"
+  },
+  "shakeDistanceHint": {
+    "message": "Наскільки далеко вікно має зсунутися перед зміною напрямку, щоб зарахувався один струс."
+  },
+  "shakeSpeed": {
+    "message": "Мін. швидкість струсу"
+  },
+  "shakeSpeedField": {
+    "message": "Мінімальна швидкість струсу в пікселях за секунду"
+  },
+  "shakeSpeedHint": {
+    "message": "Як швидко має рухатися вікно, щоб струс зарахувався. Повільні рухи не рахуються."
+  },
+  "shakesNeeded": {
+    "message": "Кількість струсів"
+  },
+  "shakesNeededHint": {
+    "message": "Скільки струсів потрібно для запуску."
+  },
+  "timeToShake": {
+    "message": "Час на струс"
+  },
+  "timeToShakeField": {
+    "message": "Час на струс у мілісекундах"
+  },
+  "timeToShakeHint": {
+    "message": "За цей час треба встигнути зробити всі струси ($count$), щоб увімкнулася фізика.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Сховати кнопку «Повернути сторінку»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Ховає кнопку «Повернути сторінку», яка з’являється в правому верхньому куті, коли фізику ввімкнено."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "пікселів: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "пікселів за секунду: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "мілісекунд: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Візьміть</strong> вікно за рядок заголовка й <strong><i>струсніть</i></strong> його АБО <strong>натисніть</strong> значок розширення."
+  },
+  "tipRestore": {
+    "message": "<strong>Натисніть</strong> <kbd>Esc</kbd>, <strong>натисніть</strong> кнопку «<i>Повернути сторінку</i>» АБО <strong>натисніть</strong> значок розширення, щоб повернути сторінку."
+  },
+  "resetSettings": {
+    "message": "Скинути налаштування"
+  },
+  "resetConfirm": {
+    "message": "Скинути всі налаштування до стандартних?"
+  },
+  "resetFailed": {
+    "message": "Не вдалося скинути налаштування. Спробуйте ще раз."
+  },
+  "resetDone": {
+    "message": "Налаштування скинуто до стандартних."
+  }
+}

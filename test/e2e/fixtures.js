@@ -158,6 +158,10 @@ class Extension {
 }
 
 const test = base.extend({
+  // The browser's UI language, which the extension's text follows. Most
+  // tests match English text; test.use({ lang }) runs others in a translation.
+  lang: ['en-US', { option: true }],
+
   // Packaged once per worker, so tests run exactly the files that ship
   extensionDir: [async ({}, use, workerInfo) => {
     const dir = path.join(os.tmpdir(), `physics-extension-${process.pid}-${workerInfo.workerIndex}`);
@@ -166,7 +170,7 @@ const test = base.extend({
     fs.rmSync(dir, { recursive: true, force: true });
   }, { scope: 'worker' }],
 
-  context: async ({ extensionDir }, use) => {
+  context: async ({ extensionDir, lang }, use) => {
     const context = await chromium.launchPersistentContext('', {
       channel: 'chromium', // extensions need full Chromium, not the headless shell
       viewport: { width: 1280, height: 800 },
@@ -176,7 +180,8 @@ const test = base.extend({
         // Pieces live on GPU layers, where Chrome draws text with grayscale
         // antialiasing instead of subpixel (LCD). Use grayscale everywhere so
         // spawn screenshots compare what a person would actually notice.
-        '--disable-lcd-text'
+        '--disable-lcd-text',
+        `--lang=${lang}`
       ]
     });
     await context.route(`${ORIGIN}/**`, route =>

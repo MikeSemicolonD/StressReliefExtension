@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "cs"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Antistres: zatřeste obrazovkou"
+  },
+  "extDescription": {
+    "message": "Pro zábavu přidá fyziku prvkům HTML na aktuální kartě."
+  },
+  "badgeOn": {
+    "message": "ZAP"
+  },
+  "restorePage": {
+    "message": "Obnovit stránku"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fyzika je zapnutá. Vypnete ji klávesou Escape nebo tlačítkem „Obnovit stránku“."
+  },
+  "physicsOnNote": {
+    "message": "Zatřesením okna prohlížeče se zapíná fyzika. Vypnete ji tlačítkem „Obnovit stránku“ nebo klávesou Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistres: zatřeste obrazovkou – nastavení"
+  },
+  "settingsHeading": {
+    "message": "Nastavení"
+  },
+  "physicsSettings": {
+    "message": "Nastavení fyziky"
+  },
+  "gravity": {
+    "message": "Gravitace"
+  },
+  "gravityHint": {
+    "message": "Při 0 zůstane stránka jako plochý stůl. Zvyšte ji a kousky začnou padat."
+  },
+  "airDrag": {
+    "message": "Odpor vzduchu"
+  },
+  "airDragHint": {
+    "message": "Jak rychle hozené kousky zpomalí."
+  },
+  "bounce": {
+    "message": "Odraz"
+  },
+  "bounceHint": {
+    "message": "Jak moc se kousky odrážejí od sebe navzájem a od okrajů okna."
+  },
+  "friction": {
+    "message": "Tření"
+  },
+  "frictionHint": {
+    "message": "Jak moc se kousky „zadrhávají“, když kloužou kolem sebe."
+  },
+  "weight": {
+    "message": "Váha"
+  },
+  "weightHint": {
+    "message": "Jak těžké kousky jsou."
+  },
+  "dragStrength": {
+    "message": "Síla úchopu"
+  },
+  "dragStrengthHint": {
+    "message": "Jak těsně kousek sleduje ukazatel."
+  },
+  "shakeSettings": {
+    "message": "Nastavení třesení"
+  },
+  "shakeDistance": {
+    "message": "Minimální dráha zatřesení"
+  },
+  "shakeDistanceField": {
+    "message": "Minimální dráha zatřesení v pixelech"
+  },
+  "shakeDistanceHint": {
+    "message": "Jak daleko se okno musí posunout, než změní směr, aby se to počítalo jako jedno zatřesení."
+  },
+  "shakeSpeed": {
+    "message": "Minimální rychlost zatřesení"
+  },
+  "shakeSpeedField": {
+    "message": "Minimální rychlost zatřesení v pixelech za sekundu"
+  },
+  "shakeSpeedHint": {
+    "message": "Jak rychle se okno musí pohybovat, aby se zatřesení počítalo – pomalé pohyby ho tak nespustí."
+  },
+  "shakesNeeded": {
+    "message": "Počet zatřesení"
+  },
+  "shakesNeededHint": {
+    "message": "Kolik zatřesení je potřeba ke spuštění."
+  },
+  "timeToShake": {
+    "message": "Čas na zatřesení"
+  },
+  "timeToShakeField": {
+    "message": "Čas na zatřesení v milisekundách"
+  },
+  "timeToShakeHint": {
+    "message": "Za jak dlouho musíte oknem zatřást $count$krát, aby se spustila fyzika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Skrýt tlačítko „Obnovit stránku“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Skryje tlačítko „Obnovit stránku“, které se při zapnuté fyzice zobrazuje v pravém horním rohu."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixelů",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixelů za sekundu",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekund",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Uchopte</strong> okno za záhlaví a <strong><i>zatřeste jím</i></strong> NEBO <strong>klikněte</strong> na ikonu rozšíření."
+  },
+  "tipRestore": {
+    "message": "<strong>Stiskněte</strong> <kbd>Esc</kbd>, <strong>klikněte</strong> na tlačítko <i>Obnovit stránku</i> NEBO <strong>klikněte</strong> na ikonu rozšíření a stránka se obnoví."
+  },
+  "resetSettings": {
+    "message": "Obnovit výchozí"
+  },
+  "resetConfirm": {
+    "message": "Obnovit všechna nastavení na výchozí hodnoty?"
+  },
+  "resetFailed": {
+    "message": "Nastavení se nepodařilo obnovit. Zkuste to znovu."
+  },
+  "resetDone": {
+    "message": "Nastavení byla obnovena na výchozí hodnoty."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "fil"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Alog-Screen Pantanggal ng Stress"
+  },
+  "extDescription": {
+    "message": "Nagdadagdag ng physics sa mga HTML element sa kasalukuyang tab para sa katuwaan."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "I-restore ang page"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Naka-on ang physics. Pindutin ang Escape o ang \"I-restore ang page\" para i-off ito."
+  },
+  "physicsOnNote": {
+    "message": "Naka-on ang physics dahil inalog mo ang window ng browser. Pindutin ang \"I-restore ang page\" o Esc para i-off ito."
+  },
+  "settingsPageTitle": {
+    "message": "Mga setting ng Alog-Screen Pantanggal ng Stress"
+  },
+  "settingsHeading": {
+    "message": "Mga Setting"
+  },
+  "physicsSettings": {
+    "message": "Mga Setting ng Physics"
+  },
+  "gravity": {
+    "message": "Gravity"
+  },
+  "gravityHint": {
+    "message": "Sa 0, nananatiling patag na parang mesa ang page. Taasan ito para mahulog ang mga piraso."
+  },
+  "airDrag": {
+    "message": "Pigil ng hangin"
+  },
+  "airDragHint": {
+    "message": "Kung gaano kabilis bumabagal ang mga ibinatong piraso."
+  },
+  "bounce": {
+    "message": "Talbog"
+  },
+  "bounceHint": {
+    "message": "Kung gaano tumatalbog ang mga piraso sa isa't isa at sa mga gilid ng window."
+  },
+  "friction": {
+    "message": "Kapit"
+  },
+  "frictionHint": {
+    "message": "Kung gaano \"sumasabit\" ang mga piraso kapag dumudulas sila sa isa't isa."
+  },
+  "weight": {
+    "message": "Bigat"
+  },
+  "weightHint": {
+    "message": "Kung gaano kabigat ang mga piraso."
+  },
+  "dragStrength": {
+    "message": "Lakas ng Hila"
+  },
+  "dragStrengthHint": {
+    "message": "Kung gaano kahigpit sumusunod ang piraso sa iyong pointer."
+  },
+  "shakeSettings": {
+    "message": "Mga Setting ng Pag-alog"
+  },
+  "shakeDistance": {
+    "message": "Minimum na layo ng alog"
+  },
+  "shakeDistanceField": {
+    "message": "Minimum na layo ng alog sa pixel"
+  },
+  "shakeDistanceHint": {
+    "message": "Kung gaano kalayo dapat gumalaw ang window bago magbago ng direksyon para mabilang na isang alog."
+  },
+  "shakeSpeed": {
+    "message": "Minimum na bilis ng alog"
+  },
+  "shakeSpeedField": {
+    "message": "Minimum na bilis ng alog sa pixel bawat segundo"
+  },
+  "shakeSpeedHint": {
+    "message": "Kung gaano kabilis dapat gumalaw ang window para mabilang na alog, para hindi ito ma-trigger ng mabagal na paggalaw."
+  },
+  "shakesNeeded": {
+    "message": "Bilang ng alog"
+  },
+  "shakesNeededHint": {
+    "message": "Ilang alog ang kailangan para magsimula."
+  },
+  "timeToShake": {
+    "message": "Oras ng pag-alog"
+  },
+  "timeToShakeField": {
+    "message": "Oras ng pag-alog sa millisecond"
+  },
+  "timeToShakeHint": {
+    "message": "Kung gaano kabilis dapat mangyari ang $count$ alog para ma-trigger ang physics.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Itago ang button na \"I-restore ang page\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Itinatago ang button na \"I-restore ang page\" na lumalabas sa kanang itaas na sulok kapag naka-on ang physics."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixel bawat segundo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisecond",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Hawakan</strong> ang window sa title bar nito at <strong><i>alugin ito</i></strong>, O <strong>i-click</strong> ang icon ng extension."
+  },
+  "tipRestore": {
+    "message": "<strong>Pindutin</strong> ang <kbd>Esc</kbd>, <strong>i-click</strong> ang button na <i>I-restore ang page</i>, O <strong>i-click</strong> ang icon ng extension para i-restore ang page."
+  },
+  "resetSettings": {
+    "message": "I-reset sa mga default"
+  },
+  "resetConfirm": {
+    "message": "I-reset ang lahat ng setting sa mga default?"
+  },
+  "resetFailed": {
+    "message": "Hindi ma-reset ang mga setting. Subukan ulit."
+  },
+  "resetDone": {
+    "message": "Na-reset sa mga default ang mga setting."
+  }
+}

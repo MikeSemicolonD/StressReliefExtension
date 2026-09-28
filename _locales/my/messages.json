@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "my"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "မျက်နှာပြင်လှုပ် စိတ်ဖိစီးမှုပြေ"
+  },
+  "extDescription": {
+    "message": "လက်ရှိတဘ်ရှိ HTML အစိတ်အပိုင်းများကို ပျော်စရာအတွက် ရူပဗေဒ ထည့်ပေးသည်။"
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "စာမျက်နှာ ပြန်ယူရန်"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ရူပဗေဒ ဖွင့်ထားသည်။ ပိတ်ရန် Escape ခလုတ် သို့မဟုတ် \"စာမျက်နှာ ပြန်ယူရန်\" ကို နှိပ်ပါ။"
+  },
+  "physicsOnNote": {
+    "message": "ဘရောင်ဇာဝင်းဒိုးကို လှုပ်လိုက်သဖြင့် ရူပဗေဒ ဖွင့်သွားသည်။ ပိတ်ရန် \"စာမျက်နှာ ပြန်ယူရန်\" သို့မဟုတ် Esc ကို နှိပ်ပါ။"
+  },
+  "settingsPageTitle": {
+    "message": "မျက်နှာပြင်လှုပ် စိတ်ဖိစီးမှုပြေ ဆက်တင်များ"
+  },
+  "settingsHeading": {
+    "message": "ဆက်တင်များ"
+  },
+  "physicsSettings": {
+    "message": "ရူပဗေဒ ဆက်တင်များ"
+  },
+  "gravity": {
+    "message": "ဆွဲငင်အား"
+  },
+  "gravityHint": {
+    "message": "0 တွင် စာမျက်နှာသည် စားပွဲပြင်ကဲ့သို့ ပြားနေမည်။ အပိုင်းများ ပြုတ်ကျစေရန် မြှင့်ပါ။"
+  },
+  "airDrag": {
+    "message": "လေခုခံအား"
+  },
+  "airDragHint": {
+    "message": "ပစ်လိုက်သော အပိုင်းများ မည်မျှ မြန်မြန် နှေးသွားမည်နည်း။"
+  },
+  "bounce": {
+    "message": "ခုန်ပြန်မှု"
+  },
+  "bounceHint": {
+    "message": "အပိုင်းများ အချင်းချင်းနှင့် ဝင်းဒိုးအစွန်းများမှ မည်မျှ ခုန်ပြန်မည်နည်း။"
+  },
+  "friction": {
+    "message": "ပွတ်တိုက်အား"
+  },
+  "frictionHint": {
+    "message": "အပိုင်းများ တစ်ခုနှင့်တစ်ခု ချော်ဖြတ်သွားစဉ် မည်မျှ \"ငြိ\" မည်နည်း။"
+  },
+  "weight": {
+    "message": "အလေးချိန်"
+  },
+  "weightHint": {
+    "message": "အပိုင်းများ မည်မျှ လေးသနည်း။"
+  },
+  "dragStrength": {
+    "message": "ဆွဲအား"
+  },
+  "dragStrengthHint": {
+    "message": "အပိုင်းတစ်ခုသည် သင့်ညွှန်တံနောက်သို့ မည်မျှ ကပ်လိုက်မည်နည်း။"
+  },
+  "shakeSettings": {
+    "message": "လှုပ်ခြင်း ဆက်တင်များ"
+  },
+  "shakeDistance": {
+    "message": "အနည်းဆုံး လှုပ်အကွာအဝေး"
+  },
+  "shakeDistanceField": {
+    "message": "ပစ်ဆယ်ဖြင့် အနည်းဆုံး လှုပ်အကွာအဝေး"
+  },
+  "shakeDistanceHint": {
+    "message": "လှုပ်တစ်ချက်အဖြစ် ရေတွက်ရန် ဦးတည်ရာမပြောင်းမီ ဝင်းဒိုး မည်မျှ ရွေ့ရမည်နည်း။"
+  },
+  "shakeSpeed": {
+    "message": "အနည်းဆုံး လှုပ်နှုန်း"
+  },
+  "shakeSpeedField": {
+    "message": "တစ်စက္ကန့်လျှင် ပစ်ဆယ်ဖြင့် အနည်းဆုံး လှုပ်နှုန်း"
+  },
+  "shakeSpeedHint": {
+    "message": "လှုပ်ချက်အဖြစ် ရေတွက်ရန် ဝင်းဒိုး မည်မျှ မြန်မြန် ရွေ့ရမည်နည်း။ ဖြည်းဖြည်းရွှေ့ရုံဖြင့် မစတင်စေရန် ဖြစ်သည်။"
+  },
+  "shakesNeeded": {
+    "message": "လိုအပ်သော လှုပ်အကြိမ်"
+  },
+  "shakesNeededHint": {
+    "message": "စတင်ရန် အကြိမ်မည်မျှ လှုပ်ရမည်နည်း။"
+  },
+  "timeToShake": {
+    "message": "လှုပ်ရန် အချိန်"
+  },
+  "timeToShakeField": {
+    "message": "မီလီစက္ကန့်ဖြင့် လှုပ်ရန် အချိန်"
+  },
+  "timeToShakeHint": {
+    "message": "ရူပဗေဒ စတင်ရန် လှုပ်ချက် $count$ ကြိမ်ကို မည်မျှ မြန်မြန် လှုပ်ရမည်နည်း။",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"စာမျက်နှာ ပြန်ယူရန်\" ခလုတ်ကို ဖျောက်ရန်"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ရူပဗေဒ ဖွင့်ထားစဉ် ညာဘက်အပေါ်ထောင့်တွင် ပေါ်လာသော \"စာမျက်နှာ ပြန်ယူရန်\" ခလုတ်ကို ဖျောက်ထားသည်။"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ပစ်ဆယ်",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "တစ်စက္ကန့်လျှင် $value$ ပစ်ဆယ်",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ မီလီစက္ကန့်",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "ဝင်းဒိုးကို ခေါင်းစဉ်ဘားမှ <strong>ကိုင်</strong>ပြီး <strong><i>လှုပ်ပါ</i></strong>၊ သို့မဟုတ် တိုးချဲ့မှု သင်္ကေတကို <strong>နှိပ်ပါ</strong>။"
+  },
+  "tipRestore": {
+    "message": "စာမျက်နှာကို ပြန်ယူရန် <kbd>Esc</kbd> ကို <strong>နှိပ်ပါ</strong>၊ <i>စာမျက်နှာ ပြန်ယူရန်</i> ခလုတ်ကို <strong>နှိပ်ပါ</strong>၊ သို့မဟုတ် တိုးချဲ့မှု သင်္ကေတကို <strong>နှိပ်ပါ</strong>။"
+  },
+  "resetSettings": {
+    "message": "မူလအတိုင်း ပြန်ထားရန်"
+  },
+  "resetConfirm": {
+    "message": "ဆက်တင်အားလုံးကို မူလအတိုင်း ပြန်ထားမလား။"
+  },
+  "resetFailed": {
+    "message": "ဆက်တင်များကို ပြန်မထားနိုင်ပါ။ ထပ်စမ်းကြည့်ပါ။"
+  },
+  "resetDone": {
+    "message": "ဆက်တင်များကို မူလအတိုင်း ပြန်ထားပြီးပါပြီ။"
+  }
+}

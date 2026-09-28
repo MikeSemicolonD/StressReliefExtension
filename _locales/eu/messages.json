@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "eu"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Astindu estresa"
+  },
+  "extDescription": {
+    "message": "Fisika gehitzen die uneko fitxako HTML elementuei, ondo pasatzeko."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Leheneratu orria"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fisika aktibatuta dago. Desaktibatzeko, sakatu Escape edo «Leheneratu orria»."
+  },
+  "physicsOnNote": {
+    "message": "Arakatzailearen leihoa astinduz gero, fisika aktibatzen da. Desaktibatzeko, sakatu «Leheneratu orria» edo Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Astindu estresa – ezarpenak"
+  },
+  "settingsHeading": {
+    "message": "Ezarpenak"
+  },
+  "physicsSettings": {
+    "message": "Fisikaren ezarpenak"
+  },
+  "gravity": {
+    "message": "Grabitatea"
+  },
+  "gravityHint": {
+    "message": "0 balioarekin, orria mahai lau bat da. Igo ezazu zatiak eror daitezen."
+  },
+  "airDrag": {
+    "message": "Airearen erresistentzia"
+  },
+  "airDragHint": {
+    "message": "Jaurtitako zatiak zein azkar moteltzen diren."
+  },
+  "bounce": {
+    "message": "Errebotea"
+  },
+  "bounceHint": {
+    "message": "Zatiek elkarren artean eta leihoaren ertzetan zenbat errebotatzen duten."
+  },
+  "friction": {
+    "message": "Marruskadura"
+  },
+  "frictionHint": {
+    "message": "Zatiak elkarren ondotik irristatzean zenbat «trabatzen» diren."
+  },
+  "weight": {
+    "message": "Pisua"
+  },
+  "weightHint": {
+    "message": "Zatiak zein astunak diren."
+  },
+  "dragStrength": {
+    "message": "Arrastatze-indarra"
+  },
+  "dragStrengthHint": {
+    "message": "Zati batek erakuslea zein estu jarraitzen duen."
+  },
+  "shakeSettings": {
+    "message": "Astintzearen ezarpenak"
+  },
+  "shakeDistance": {
+    "message": "Astintze-distantzia minimoa"
+  },
+  "shakeDistanceField": {
+    "message": "Astintze-distantzia minimoa, pixeletan"
+  },
+  "shakeDistanceHint": {
+    "message": "Leihoak zenbat mugitu behar duen norabidez aldatu aurretik, astinaldi bat bezala zenbatzeko."
+  },
+  "shakeSpeed": {
+    "message": "Astintze-abiadura minimoa"
+  },
+  "shakeSpeedField": {
+    "message": "Astintze-abiadura minimoa, pixel segundoko"
+  },
+  "shakeSpeedHint": {
+    "message": "Leihoak zein azkar mugitu behar duen astinaldia zenbatzeko; horrela, mugimendu motelek ez dute aktibatzen."
+  },
+  "shakesNeeded": {
+    "message": "Behar diren astinaldiak"
+  },
+  "shakesNeededHint": {
+    "message": "Hasteko zenbat astinaldi behar diren."
+  },
+  "timeToShake": {
+    "message": "Astintzeko denbora"
+  },
+  "timeToShakeField": {
+    "message": "Astintzeko denbora, milisegundotan"
+  },
+  "timeToShakeHint": {
+    "message": "$count$ astinaldiak zein azkar egin behar diren fisika abiarazteko.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ezkutatu «Leheneratu orria» botoia"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Fisika aktibatuta dagoenean goiko eskuineko izkinan agertzen den «Leheneratu orria» botoia ezkutatzen du."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixel segundoko",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisegundo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Heldu</strong> leihoari titulu-barratik eta <strong><i>astindu ezazu</i></strong>, EDO <strong>egin klik</strong> luzapenaren ikonoan."
+  },
+  "tipRestore": {
+    "message": "Orria leheneratzeko, <strong>sakatu</strong> <kbd>Esc</kbd>, <strong>egin klik</strong> <i>Leheneratu orria</i> botoian, EDO <strong>egin klik</strong> luzapenaren ikonoan."
+  },
+  "resetSettings": {
+    "message": "Berrezarri balio lehenetsiak"
+  },
+  "resetConfirm": {
+    "message": "Ezarpen guztiak balio lehenetsietara berrezarri nahi dituzu?"
+  },
+  "resetFailed": {
+    "message": "Ezin izan dira ezarpenak berrezarri. Saiatu berriro."
+  },
+  "resetDone": {
+    "message": "Ezarpenak balio lehenetsietara berrezarri dira."
+  }
+}

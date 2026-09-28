@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "pl"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Antystres: potrząśnij ekranem"
+  },
+  "extDescription": {
+    "message": "Dodaje fizykę do elementów HTML w bieżącej karcie – dla zabawy."
+  },
+  "badgeOn": {
+    "message": "WŁ"
+  },
+  "restorePage": {
+    "message": "Przywróć stronę"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizyka włączona. Naciśnij Escape lub „Przywróć stronę”, aby ją wyłączyć."
+  },
+  "physicsOnNote": {
+    "message": "Potrząśnięcie oknem przeglądarki włącza fizykę. Naciśnij „Przywróć stronę” lub Esc, aby ją wyłączyć."
+  },
+  "settingsPageTitle": {
+    "message": "Antystres: potrząśnij ekranem – ustawienia"
+  },
+  "settingsHeading": {
+    "message": "Ustawienia"
+  },
+  "physicsSettings": {
+    "message": "Ustawienia fizyki"
+  },
+  "gravity": {
+    "message": "Grawitacja"
+  },
+  "gravityHint": {
+    "message": "Przy 0 strona zostaje płaskim blatem. Zwiększ, aby elementy spadały."
+  },
+  "airDrag": {
+    "message": "Opór powietrza"
+  },
+  "airDragHint": {
+    "message": "Jak szybko rzucone elementy zwalniają."
+  },
+  "bounce": {
+    "message": "Odbijanie"
+  },
+  "bounceHint": {
+    "message": "Jak mocno elementy odbijają się od siebie i od krawędzi okna."
+  },
+  "friction": {
+    "message": "Tarcie"
+  },
+  "frictionHint": {
+    "message": "Jak mocno elementy „zaczepiają” o siebie, gdy się o siebie ocierają."
+  },
+  "weight": {
+    "message": "Ciężar"
+  },
+  "weightHint": {
+    "message": "Jak ciężkie są elementy."
+  },
+  "dragStrength": {
+    "message": "Siła chwytu"
+  },
+  "dragStrengthHint": {
+    "message": "Jak ściśle element podąża za wskaźnikiem."
+  },
+  "shakeSettings": {
+    "message": "Ustawienia potrząsania"
+  },
+  "shakeDistance": {
+    "message": "Minimalny zasięg potrząśnięcia"
+  },
+  "shakeDistanceField": {
+    "message": "Minimalny zasięg potrząśnięcia w pikselach"
+  },
+  "shakeDistanceHint": {
+    "message": "Jak daleko okno musi się przesunąć przed zmianą kierunku, aby liczyło się to jako jedno potrząśnięcie."
+  },
+  "shakeSpeed": {
+    "message": "Minimalna prędkość potrząśnięcia"
+  },
+  "shakeSpeedField": {
+    "message": "Minimalna prędkość potrząśnięcia w pikselach na sekundę"
+  },
+  "shakeSpeedHint": {
+    "message": "Jak szybko okno musi się poruszać, aby potrząśnięcie się liczyło – dzięki temu wolne ruchy go nie uruchomią."
+  },
+  "shakesNeeded": {
+    "message": "Liczba potrząśnięć"
+  },
+  "shakesNeededHint": {
+    "message": "Ile potrząśnięć potrzeba, aby zacząć."
+  },
+  "timeToShake": {
+    "message": "Czas na potrząśnięcia"
+  },
+  "timeToShakeField": {
+    "message": "Czas na potrząśnięcia w milisekundach"
+  },
+  "timeToShakeHint": {
+    "message": "W jakim czasie trzeba potrząsnąć oknem $count$ razy, aby włączyć fizykę.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ukryj przycisk „Przywróć stronę”"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Ukrywa przycisk „Przywróć stronę”, który pojawia się w prawym górnym rogu, gdy fizyka jest włączona."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pikseli",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pikseli na sekundę",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekund",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Chwyć</strong> okno za pasek tytułu i <strong><i>potrząśnij nim</i></strong> ALBO <strong>kliknij</strong> ikonę rozszerzenia."
+  },
+  "tipRestore": {
+    "message": "<strong>Naciśnij</strong> <kbd>Esc</kbd>, <strong>kliknij</strong> przycisk <i>Przywróć stronę</i> ALBO <strong>kliknij</strong> ikonę rozszerzenia, aby przywrócić stronę."
+  },
+  "resetSettings": {
+    "message": "Przywróć domyślne"
+  },
+  "resetConfirm": {
+    "message": "Przywrócić wszystkie ustawienia domyślne?"
+  },
+  "resetFailed": {
+    "message": "Nie udało się przywrócić ustawień. Spróbuj ponownie."
+  },
+  "resetDone": {
+    "message": "Przywrócono ustawienia domyślne."
+  }
+}

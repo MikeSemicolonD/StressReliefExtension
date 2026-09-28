@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "az"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Ekranı silkələ, stresi at"
+  },
+  "extDescription": {
+    "message": "Əyləncə üçün cari tabdakı HTML elementlərinə fizika əlavə edir."
+  },
+  "badgeOn": {
+    "message": "AÇIQ"
+  },
+  "restorePage": {
+    "message": "Səhifəni bərpa et"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika aktivdir. Söndürmək üçün Escape düyməsini və ya “Səhifəni bərpa et” düyməsini basın."
+  },
+  "physicsOnNote": {
+    "message": "Brauzer pəncərəsini silkələmək fizikanı aktiv edir. Söndürmək üçün “Səhifəni bərpa et” düyməsini və ya Esc düyməsini basın."
+  },
+  "settingsPageTitle": {
+    "message": "Ekranı silkələ, stresi at – ayarlar"
+  },
+  "settingsHeading": {
+    "message": "Ayarlar"
+  },
+  "physicsSettings": {
+    "message": "Fizika ayarları"
+  },
+  "gravity": {
+    "message": "Cazibə"
+  },
+  "gravityHint": {
+    "message": "0-da səhifə düz masa kimi qalır. Hissələrin düşməsi üçün artırın."
+  },
+  "airDrag": {
+    "message": "Hava müqaviməti"
+  },
+  "airDragHint": {
+    "message": "Atılan hissələr nə qədər tez yavaşıyır."
+  },
+  "bounce": {
+    "message": "Sıçrama"
+  },
+  "bounceHint": {
+    "message": "Hissələr bir-birindən və pəncərənin kənarlarından nə qədər sıçrayır."
+  },
+  "friction": {
+    "message": "Sürtünmə"
+  },
+  "frictionHint": {
+    "message": "Hissələr bir-birinin yanından sürüşəndə nə qədər “ilişir”."
+  },
+  "weight": {
+    "message": "Çəki"
+  },
+  "weightHint": {
+    "message": "Hissələr nə qədər ağırdır."
+  },
+  "dragStrength": {
+    "message": "Sürükləmə gücü"
+  },
+  "dragStrengthHint": {
+    "message": "Hissə göstəricini nə qədər sıx izləyir."
+  },
+  "shakeSettings": {
+    "message": "Silkələmə ayarları"
+  },
+  "shakeDistance": {
+    "message": "Minimum silkələmə məsafəsi"
+  },
+  "shakeDistanceField": {
+    "message": "Minimum silkələmə məsafəsi, pikseldə"
+  },
+  "shakeDistanceHint": {
+    "message": "Bir silkələmə sayılması üçün pəncərə istiqamətini dəyişməzdən əvvəl nə qədər hərəkət etməlidir."
+  },
+  "shakeSpeed": {
+    "message": "Minimum silkələmə sürəti"
+  },
+  "shakeSpeedField": {
+    "message": "Minimum silkələmə sürəti, saniyədə piksellə"
+  },
+  "shakeSpeedHint": {
+    "message": "Silkələmənin sayılması üçün pəncərə nə qədər sürətlə hərəkət etməlidir; belə ki, yavaş hərəkətlər onu işə salmır."
+  },
+  "shakesNeeded": {
+    "message": "Lazım olan silkələmələr"
+  },
+  "shakesNeededHint": {
+    "message": "Başlamaq üçün neçə silkələmə lazımdır."
+  },
+  "timeToShake": {
+    "message": "Silkələmə vaxtı"
+  },
+  "timeToShakeField": {
+    "message": "Silkələmə vaxtı, millisaniyələrlə"
+  },
+  "timeToShakeHint": {
+    "message": "Fizikanın işə düşməsi üçün $count$ silkələmə nə qədər tez olmalıdır.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "“Səhifəni bərpa et” düyməsini gizlət"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Fizika aktiv olanda yuxarı sağ küncdə görünən “Səhifəni bərpa et” düyməsini gizlədir."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/san"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "saniyədə $value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisaniyə",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "Pəncərəni başlıq panelindən <strong>tutun</strong> və <strong><i>silkələyin</i></strong>, VƏ YA artırmanın ikonasına <strong>klikləyin</strong>."
+  },
+  "tipRestore": {
+    "message": "Səhifəni bərpa etmək üçün <kbd>Esc</kbd> düyməsini <strong>basın</strong>, <i>Səhifəni bərpa et</i> düyməsinə <strong>klikləyin</strong>, VƏ YA artırmanın ikonasına <strong>klikləyin</strong>."
+  },
+  "resetSettings": {
+    "message": "Defolta sıfırla"
+  },
+  "resetConfirm": {
+    "message": "Bütün ayarlar defolt dəyərlərə sıfırlansın?"
+  },
+  "resetFailed": {
+    "message": "Ayarları sıfırlamaq alınmadı. Yenidən cəhd edin."
+  },
+  "resetDone": {
+    "message": "Ayarlar defolt dəyərlərə sıfırlandı."
+  }
+}

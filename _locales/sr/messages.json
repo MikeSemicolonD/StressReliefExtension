@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "sr"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Антистрес: протреси екран"
+  },
+  "extDescription": {
+    "message": "Додаје физику HTML елементима на актуелној картици – само из забаве."
+  },
+  "badgeOn": {
+    "message": "УКЉ"
+  },
+  "restorePage": {
+    "message": "Врати страницу"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физика је укључена. Притисните Escape или дугме „Врати страницу“ да бисте је искључили."
+  },
+  "physicsOnNote": {
+    "message": "Тресење прозора прегледача укључује физику. Притисните „Врати страницу“ или Esc да бисте је искључили."
+  },
+  "settingsPageTitle": {
+    "message": "Антистрес: протреси екран – подешавања"
+  },
+  "settingsHeading": {
+    "message": "Подешавања"
+  },
+  "physicsSettings": {
+    "message": "Подешавања физике"
+  },
+  "gravity": {
+    "message": "Гравитација"
+  },
+  "gravityHint": {
+    "message": "На 0 страница остаје равна као сто. Повећајте је да би комадићи падали."
+  },
+  "airDrag": {
+    "message": "Успоравање"
+  },
+  "airDragHint": {
+    "message": "Колико брзо бачени комадићи успоравају."
+  },
+  "bounce": {
+    "message": "Одскакање"
+  },
+  "bounceHint": {
+    "message": "Колико јако комадићи одскачу један од другог и од ивица прозора."
+  },
+  "friction": {
+    "message": "Трење"
+  },
+  "frictionHint": {
+    "message": "Колико се комадићи „закаче“ док клизе један поред другог."
+  },
+  "weight": {
+    "message": "Тежина"
+  },
+  "weightHint": {
+    "message": "Колико су комадићи тешки."
+  },
+  "dragStrength": {
+    "message": "Јачина хвата"
+  },
+  "dragStrengthHint": {
+    "message": "Колико чврсто комадић прати показивач."
+  },
+  "shakeSettings": {
+    "message": "Подешавања тресења"
+  },
+  "shakeDistance": {
+    "message": "Мин. раздаљина тресења"
+  },
+  "shakeDistanceField": {
+    "message": "Минимална раздаљина тресења у пикселима"
+  },
+  "shakeDistanceHint": {
+    "message": "Колико далеко прозор мора да се помери пре промене смера да би се рачунало као једно тресење."
+  },
+  "shakeSpeed": {
+    "message": "Мин. брзина тресења"
+  },
+  "shakeSpeedField": {
+    "message": "Минимална брзина тресења у пикселима у секунди"
+  },
+  "shakeSpeedHint": {
+    "message": "Колико брзо прозор мора да се креће да би се тресење рачунало. Спори покрети се не рачунају."
+  },
+  "shakesNeeded": {
+    "message": "Број тресења"
+  },
+  "shakesNeededHint": {
+    "message": "Колико тресења треба за покретање."
+  },
+  "timeToShake": {
+    "message": "Време за тресење"
+  },
+  "timeToShakeField": {
+    "message": "Време за тресење у милисекундама"
+  },
+  "timeToShakeHint": {
+    "message": "За колико времена мора да се обави $count$ тресења да би се укључила физика.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Сакриј дугме „Врати страницу“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Скрива дугме „Врати страницу“ које се појављује у горњем десном углу када је физика укључена."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "$value$ пиксела",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ пиксела у секунди",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ милисекунди",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Ухватите</strong> прозор за насловну траку и <strong><i>протресите га</i></strong> ИЛИ <strong>кликните</strong> на икону додатка."
+  },
+  "tipRestore": {
+    "message": "<strong>Притисните</strong> <kbd>Esc</kbd>, <strong>кликните</strong> на дугме „<i>Врати страницу</i>“ ИЛИ <strong>кликните</strong> на икону додатка да бисте вратили страницу."
+  },
+  "resetSettings": {
+    "message": "Ресетуј подешавања"
+  },
+  "resetConfirm": {
+    "message": "Желите ли да вратите сва подешавања на подразумеване вредности?"
+  },
+  "resetFailed": {
+    "message": "Ресетовање подешавања није успело. Покушајте поново."
+  },
+  "resetDone": {
+    "message": "Подешавања су враћена на подразумеване вредности."
+  }
+}

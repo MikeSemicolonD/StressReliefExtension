@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "kk"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Антистресс: экранды сілкіт"
+  },
+  "extDescription": {
+    "message": "Көңіл көтеру үшін ағымдағы қойындыдағы HTML элементтеріне физика қосады."
+  },
+  "badgeOn": {
+    "message": "ҚОС"
+  },
+  "restorePage": {
+    "message": "Бетті қайтару"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физика қосулы. Өшіру үшін Escape пернесін немесе «Бетті қайтару» түймесін басыңыз."
+  },
+  "physicsOnNote": {
+    "message": "Браузер терезесін сілкісеңіз, физика қосылады. Өшіру үшін «Бетті қайтару» түймесін немесе Esc пернесін басыңыз."
+  },
+  "settingsPageTitle": {
+    "message": "Антистресс: экранды сілкіт – параметрлер"
+  },
+  "settingsHeading": {
+    "message": "Параметрлер"
+  },
+  "physicsSettings": {
+    "message": "Физика параметрлері"
+  },
+  "gravity": {
+    "message": "Тартылыс"
+  },
+  "gravityHint": {
+    "message": "0 болғанда бет үстел сияқты тегіс қалады. Бөліктер құлауы үшін мәнді арттырыңыз."
+  },
+  "airDrag": {
+    "message": "Ауа кедергісі"
+  },
+  "airDragHint": {
+    "message": "Лақтырылған бөліктер қаншалықты тез баяулайды."
+  },
+  "bounce": {
+    "message": "Серпілу"
+  },
+  "bounceHint": {
+    "message": "Бөліктер бір-бірінен және терезе жиектерінен қаншалықты қатты серпіледі."
+  },
+  "friction": {
+    "message": "Үйкеліс"
+  },
+  "frictionHint": {
+    "message": "Бөліктер бір-бірінің жанынан сырғанағанда қаншалықты «ілінеді»."
+  },
+  "weight": {
+    "message": "Салмақ"
+  },
+  "weightHint": {
+    "message": "Бөліктер қаншалықты ауыр."
+  },
+  "dragStrength": {
+    "message": "Ұстау күші"
+  },
+  "dragStrengthHint": {
+    "message": "Бөлік меңзердің соңынан қаншалықты дәл ереді."
+  },
+  "shakeSettings": {
+    "message": "Сілку параметрлері"
+  },
+  "shakeDistance": {
+    "message": "Ең аз сілку қашықтығы"
+  },
+  "shakeDistanceField": {
+    "message": "Ең аз сілку қашықтығы, пиксельмен"
+  },
+  "shakeDistanceHint": {
+    "message": "Бір сілку болып саналу үшін терезе бағытын өзгертпес бұрын қаншалықты алыс жылжуы керек."
+  },
+  "shakeSpeed": {
+    "message": "Ең аз сілку жылдамдығы"
+  },
+  "shakeSpeedField": {
+    "message": "Ең аз сілку жылдамдығы, секундына пиксельмен"
+  },
+  "shakeSpeedHint": {
+    "message": "Сілку саналуы үшін терезе қаншалықты жылдам қозғалуы керек. Баяу қозғалыстар есептелмейді."
+  },
+  "shakesNeeded": {
+    "message": "Сілку саны"
+  },
+  "shakesNeededHint": {
+    "message": "Іске қосу үшін неше рет сілку керек."
+  },
+  "timeToShake": {
+    "message": "Сілкуге берілетін уақыт"
+  },
+  "timeToShakeField": {
+    "message": "Сілкуге берілетін уақыт, миллисекундпен"
+  },
+  "timeToShakeHint": {
+    "message": "Физика қосылуы үшін $count$ сілку қаншалықты тез жасалуы керек.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "«Бетті қайтару» түймесін жасыру"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Физика қосулы кезде жоғарғы оң жақ бұрышта пайда болатын «Бетті қайтару» түймесін жасырады."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "$value$ пиксель",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "секундына $value$ пиксель",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ миллисекунд",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "Терезені тақырып жолағынан <strong>ұстап</strong>, <strong><i>сілкіңіз</i></strong> НЕМЕСЕ кеңейтім белгішесін <strong>басыңыз</strong>."
+  },
+  "tipRestore": {
+    "message": "Бетті қалпына келтіру үшін <kbd>Esc</kbd> пернесін <strong>басыңыз</strong>, «<i>Бетті қайтару</i>» түймесін <strong>басыңыз</strong> НЕМЕСЕ кеңейтім белгішесін <strong>басыңыз</strong>."
+  },
+  "resetSettings": {
+    "message": "Әдепкі мәндерге қайтару"
+  },
+  "resetConfirm": {
+    "message": "Барлық параметрді әдепкі мәндерге қайтару керек пе?"
+  },
+  "resetFailed": {
+    "message": "Параметрлерді қайтару мүмкін болмады. Қайталап көріңіз."
+  },
+  "resetDone": {
+    "message": "Параметрлер әдепкі мәндерге қайтарылды."
+  }
+}

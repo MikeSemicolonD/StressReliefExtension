@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "pt_BR"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Chacoalhada antiestresse"
+  },
+  "extDescription": {
+    "message": "Adiciona física aos elementos HTML da guia atual, só por diversão."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Restaurar página"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "A física está ativada. Pressione Esc ou \"Restaurar página\" para desativá-la."
+  },
+  "physicsOnNote": {
+    "message": "Chacoalhar a janela do navegador ativa a física. Pressione \"Restaurar página\" ou Esc para desativá-la."
+  },
+  "settingsPageTitle": {
+    "message": "Configurações da Chacoalhada antiestresse"
+  },
+  "settingsHeading": {
+    "message": "Configurações"
+  },
+  "physicsSettings": {
+    "message": "Física"
+  },
+  "gravity": {
+    "message": "Gravidade"
+  },
+  "gravityHint": {
+    "message": "Em 0, a página fica como uma mesa plana. Aumente para as peças caírem."
+  },
+  "airDrag": {
+    "message": "Resistência do ar"
+  },
+  "airDragHint": {
+    "message": "A rapidez com que as peças arremessadas perdem velocidade."
+  },
+  "bounce": {
+    "message": "Quique"
+  },
+  "bounceHint": {
+    "message": "Quanto as peças quicam umas nas outras e nas bordas da janela."
+  },
+  "friction": {
+    "message": "Atrito"
+  },
+  "frictionHint": {
+    "message": "Quanto as peças \"prendem\" quando deslizam umas nas outras."
+  },
+  "weight": {
+    "message": "Peso"
+  },
+  "weightHint": {
+    "message": "O quanto as peças são pesadas."
+  },
+  "dragStrength": {
+    "message": "Força ao arrastar"
+  },
+  "dragStrengthHint": {
+    "message": "Com que firmeza uma peça acompanha o ponteiro."
+  },
+  "shakeSettings": {
+    "message": "Chacoalhada"
+  },
+  "shakeDistance": {
+    "message": "Distância mínima"
+  },
+  "shakeDistanceField": {
+    "message": "Distância mínima da chacoalhada em pixels"
+  },
+  "shakeDistanceHint": {
+    "message": "Quanto a janela precisa se mover antes de mudar de direção para contar como uma chacoalhada."
+  },
+  "shakeSpeed": {
+    "message": "Velocidade mínima"
+  },
+  "shakeSpeedField": {
+    "message": "Velocidade mínima da chacoalhada em pixels por segundo"
+  },
+  "shakeSpeedHint": {
+    "message": "A velocidade com que a janela precisa se mover para a chacoalhada contar, assim movimentos lentos não a ativam."
+  },
+  "shakesNeeded": {
+    "message": "Chacoalhadas necessárias"
+  },
+  "shakesNeededHint": {
+    "message": "Quantas chacoalhadas são necessárias para começar."
+  },
+  "timeToShake": {
+    "message": "Tempo para chacoalhar"
+  },
+  "timeToShakeField": {
+    "message": "Tempo para chacoalhar em milissegundos"
+  },
+  "timeToShakeHint": {
+    "message": "Em quanto tempo as $count$ chacoalhadas precisam acontecer para ativar a física.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ocultar o botão \"Restaurar página\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Oculta o botão \"Restaurar página\" que aparece no canto superior direito quando a física está ativada."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixels",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixels por segundo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milissegundos",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Segure</strong> a janela pela barra de título e <strong><i>chacoalhe</i></strong>, OU <strong>clique</strong> no ícone da extensão."
+  },
+  "tipRestore": {
+    "message": "<strong>Pressione</strong> <kbd>Esc</kbd>, <strong>clique</strong> no botão <i>Restaurar página</i> OU <strong>clique</strong> no ícone da extensão para restaurar a página."
+  },
+  "resetSettings": {
+    "message": "Restaurar padrões"
+  },
+  "resetConfirm": {
+    "message": "Restaurar todas as configurações para os valores padrão?"
+  },
+  "resetFailed": {
+    "message": "Não foi possível restaurar as configurações. Tente novamente."
+  },
+  "resetDone": {
+    "message": "Configurações restauradas para os valores padrão."
+  }
+}

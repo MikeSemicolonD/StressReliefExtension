@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "pa"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "ਸਕ੍ਰੀਨ ਹਿਲਾਓ, ਤਣਾਅ ਭਜਾਓ"
+  },
+  "extDescription": {
+    "message": "ਮਜ਼ੇ ਲਈ ਮੌਜੂਦਾ ਟੈਬ ਦੇ HTML ਐਲੀਮੈਂਟਾਂ ਵਿੱਚ ਫ਼ਿਜ਼ਿਕਸ ਜੋੜਦੀ ਹੈ।"
+  },
+  "badgeOn": {
+    "message": "ਚਾਲੂ"
+  },
+  "restorePage": {
+    "message": "ਪੰਨਾ ਵਾਪਸ ਲਿਆਓ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ਫ਼ਿਜ਼ਿਕਸ ਚਾਲੂ ਹੈ। ਇਸਨੂੰ ਬੰਦ ਕਰਨ ਲਈ ਐਸਕੇਪ ਦਬਾਓ ਜਾਂ \"ਪੰਨਾ ਵਾਪਸ ਲਿਆਓ\" 'ਤੇ ਕਲਿੱਕ ਕਰੋ।"
+  },
+  "physicsOnNote": {
+    "message": "ਬ੍ਰਾਊਜ਼ਰ ਵਿੰਡੋ ਹਿਲਾਉਣ ਨਾਲ ਫ਼ਿਜ਼ਿਕਸ ਚਾਲੂ ਹੋ ਜਾਂਦਾ ਹੈ। ਇਸਨੂੰ ਬੰਦ ਕਰਨ ਲਈ \"ਪੰਨਾ ਵਾਪਸ ਲਿਆਓ\" 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਜਾਂ Esc ਦਬਾਓ।"
+  },
+  "settingsPageTitle": {
+    "message": "ਸਕ੍ਰੀਨ ਹਿਲਾਓ, ਤਣਾਅ ਭਜਾਓ – ਸੈਟਿੰਗਾਂ"
+  },
+  "settingsHeading": {
+    "message": "ਸੈਟਿੰਗਾਂ"
+  },
+  "physicsSettings": {
+    "message": "ਫ਼ਿਜ਼ਿਕਸ ਸੈਟਿੰਗਾਂ"
+  },
+  "gravity": {
+    "message": "ਗੁਰੂਤਾ ਖਿੱਚ"
+  },
+  "gravityHint": {
+    "message": "0 'ਤੇ ਪੰਨਾ ਇੱਕ ਪੱਧਰੇ ਮੇਜ਼ ਵਾਂਗ ਰਹਿੰਦਾ ਹੈ। ਟੁਕੜਿਆਂ ਨੂੰ ਹੇਠਾਂ ਡੇਗਣ ਲਈ ਇਸਨੂੰ ਵਧਾਓ।"
+  },
+  "airDrag": {
+    "message": "ਹਵਾ ਦੀ ਰੁਕਾਵਟ"
+  },
+  "airDragHint": {
+    "message": "ਸੁੱਟੇ ਗਏ ਟੁਕੜੇ ਕਿੰਨੀ ਜਲਦੀ ਹੌਲੀ ਹੁੰਦੇ ਹਨ।"
+  },
+  "bounce": {
+    "message": "ਉਛਾਲ"
+  },
+  "bounceHint": {
+    "message": "ਟੁਕੜੇ ਇੱਕ-ਦੂਜੇ ਨਾਲ ਅਤੇ ਵਿੰਡੋ ਦੇ ਕਿਨਾਰਿਆਂ ਨਾਲ ਟਕਰਾ ਕੇ ਕਿੰਨਾ ਉਛਲਦੇ ਹਨ।"
+  },
+  "friction": {
+    "message": "ਰਗੜ"
+  },
+  "frictionHint": {
+    "message": "ਇੱਕ-ਦੂਜੇ ਕੋਲੋਂ ਖਿਸਕਦੇ ਸਮੇਂ ਟੁਕੜੇ ਕਿੰਨਾ 'ਅਟਕਦੇ' ਹਨ।"
+  },
+  "weight": {
+    "message": "ਭਾਰ"
+  },
+  "weightHint": {
+    "message": "ਟੁਕੜੇ ਕਿੰਨੇ ਭਾਰੇ ਹਨ।"
+  },
+  "dragStrength": {
+    "message": "ਖਿੱਚਣ ਦੀ ਤਾਕਤ"
+  },
+  "dragStrengthHint": {
+    "message": "ਟੁਕੜਾ ਤੁਹਾਡੇ ਪੁਆਇੰਟਰ ਦੇ ਪਿੱਛੇ ਕਿੰਨੀ ਮਜ਼ਬੂਤੀ ਨਾਲ ਚੱਲਦਾ ਹੈ।"
+  },
+  "shakeSettings": {
+    "message": "ਹਿਲਾਉਣ ਦੀਆਂ ਸੈਟਿੰਗਾਂ"
+  },
+  "shakeDistance": {
+    "message": "ਹਿਲਾਉਣ ਦੀ ਘੱਟੋ-ਘੱਟ ਦੂਰੀ"
+  },
+  "shakeDistanceField": {
+    "message": "ਹਿਲਾਉਣ ਦੀ ਘੱਟੋ-ਘੱਟ ਦੂਰੀ, ਪਿਕਸਲਾਂ ਵਿੱਚ"
+  },
+  "shakeDistanceHint": {
+    "message": "ਇੱਕ ਵਾਰ ਹਿਲਾਉਣਾ ਗਿਣੇ ਜਾਣ ਲਈ ਦਿਸ਼ਾ ਬਦਲਣ ਤੋਂ ਪਹਿਲਾਂ ਵਿੰਡੋ ਨੂੰ ਕਿੰਨੀ ਦੂਰ ਜਾਣਾ ਪਵੇਗਾ।"
+  },
+  "shakeSpeed": {
+    "message": "ਹਿਲਾਉਣ ਦੀ ਘੱਟੋ-ਘੱਟ ਗਤੀ"
+  },
+  "shakeSpeedField": {
+    "message": "ਹਿਲਾਉਣ ਦੀ ਘੱਟੋ-ਘੱਟ ਗਤੀ, ਪਿਕਸਲ ਪ੍ਰਤੀ ਸਕਿੰਟ ਵਿੱਚ"
+  },
+  "shakeSpeedHint": {
+    "message": "ਹਿਲਾਉਣਾ ਗਿਣੇ ਜਾਣ ਲਈ ਵਿੰਡੋ ਨੂੰ ਕਿੰਨੀ ਤੇਜ਼ੀ ਨਾਲ ਚੱਲਣਾ ਪਵੇਗਾ, ਤਾਂ ਜੋ ਹੌਲੀ ਹਿਲਜੁਲ ਨਾਲ ਇਹ ਚਾਲੂ ਨਾ ਹੋਵੇ।"
+  },
+  "shakesNeeded": {
+    "message": "ਕਿੰਨੀ ਵਾਰ ਹਿਲਾਉਣਾ"
+  },
+  "shakesNeededHint": {
+    "message": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿੰਨੀ ਵਾਰ ਹਿਲਾਉਣਾ ਪੈਂਦਾ ਹੈ।"
+  },
+  "timeToShake": {
+    "message": "ਹਿਲਾਉਣ ਦਾ ਸਮਾਂ"
+  },
+  "timeToShakeField": {
+    "message": "ਹਿਲਾਉਣ ਦਾ ਸਮਾਂ, ਮਿਲੀਸਕਿੰਟਾਂ ਵਿੱਚ"
+  },
+  "timeToShakeHint": {
+    "message": "ਫ਼ਿਜ਼ਿਕਸ ਚਾਲੂ ਕਰਨ ਲਈ $count$ ਵਾਰ ਕਿੰਨੀ ਜਲਦੀ ਹਿਲਾਉਣਾ ਪਵੇਗਾ।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"ਪੰਨਾ ਵਾਪਸ ਲਿਆਓ\" ਬਟਨ ਲੁਕਾਓ"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ਫ਼ਿਜ਼ਿਕਸ ਚਾਲੂ ਹੋਣ 'ਤੇ ਉੱਪਰ ਸੱਜੇ ਕੋਨੇ ਵਿੱਚ ਦਿਸਣ ਵਾਲਾ \"ਪੰਨਾ ਵਾਪਸ ਲਿਆਓ\" ਬਟਨ ਲੁਕਾਉਂਦਾ ਹੈ।"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ਪਿਕਸਲ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ ਪਿਕਸਲ ਪ੍ਰਤੀ ਸਕਿੰਟ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ਮਿਲੀਸਕਿੰਟ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "ਵਿੰਡੋ ਨੂੰ ਉਸਦੀ ਸਿਰਲੇਖ ਪੱਟੀ ਤੋਂ <strong>ਫੜੋ</strong> ਅਤੇ <strong><i>ਹਿਲਾਓ</i></strong>, ਜਾਂ ਐਕਸਟੈਂਸ਼ਨ ਪ੍ਰਤੀਕ 'ਤੇ <strong>ਕਲਿੱਕ ਕਰੋ</strong>।"
+  },
+  "tipRestore": {
+    "message": "ਪੰਨਾ ਵਾਪਸ ਲਿਆਉਣ ਲਈ <kbd>Esc</kbd> <strong>ਦਬਾਓ</strong>, <i>ਪੰਨਾ ਵਾਪਸ ਲਿਆਓ</i> ਬਟਨ 'ਤੇ <strong>ਕਲਿੱਕ ਕਰੋ</strong>, ਜਾਂ ਐਕਸਟੈਂਸ਼ਨ ਪ੍ਰਤੀਕ 'ਤੇ <strong>ਕਲਿੱਕ ਕਰੋ</strong>।"
+  },
+  "resetSettings": {
+    "message": "ਪੂਰਵ-ਨਿਰਧਾਰਤ 'ਤੇ ਰੀਸੈੱਟ ਕਰੋ"
+  },
+  "resetConfirm": {
+    "message": "ਕੀ ਸਾਰੀਆਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਪੂਰਵ-ਨਿਰਧਾਰਤ 'ਤੇ ਰੀਸੈੱਟ ਕਰਨਾ ਹੈ?"
+  },
+  "resetFailed": {
+    "message": "ਸੈਟਿੰਗਾਂ ਰੀਸੈੱਟ ਨਹੀਂ ਹੋ ਸਕੀਆਂ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+  },
+  "resetDone": {
+    "message": "ਸੈਟਿੰਗਾਂ ਪੂਰਵ-ਨਿਰਧਾਰਤ 'ਤੇ ਰੀਸੈੱਟ ਹੋ ਗਈਆਂ।"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "cy"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Ysgwyd y Straen i Ffwrdd"
+  },
+  "extDescription": {
+    "message": "Yn ychwanegu ffiseg at elfennau HTML yn y tab cyfredol, er hwyl."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Adfer y dudalen"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Mae ffiseg ymlaen. Pwyswch Escape neu ‘Adfer y dudalen’ i'w diffodd."
+  },
+  "physicsOnNote": {
+    "message": "Mae ysgwyd ffenestr eich porwr yn troi ffiseg ymlaen. Pwyswch ‘Adfer y dudalen’ neu Esc i'w diffodd."
+  },
+  "settingsPageTitle": {
+    "message": "Gosodiadau Ysgwyd y Straen i Ffwrdd"
+  },
+  "settingsHeading": {
+    "message": "Gosodiadau"
+  },
+  "physicsSettings": {
+    "message": "Gosodiadau Ffiseg"
+  },
+  "gravity": {
+    "message": "Disgyrchiant"
+  },
+  "gravityHint": {
+    "message": "Ar 0 mae'r dudalen yn aros fel pen bwrdd gwastad. Codwch y gwerth i wneud i'r darnau gwympo."
+  },
+  "airDrag": {
+    "message": "Llusgiad aer"
+  },
+  "airDragHint": {
+    "message": "Pa mor gyflym mae darnau sydd wedi'u taflu yn arafu."
+  },
+  "bounce": {
+    "message": "Bownsio"
+  },
+  "bounceHint": {
+    "message": "Faint mae'r darnau'n bownsio oddi ar ei gilydd ac oddi ar ymylon y ffenestr."
+  },
+  "friction": {
+    "message": "Ffrithiant"
+  },
+  "frictionHint": {
+    "message": "Faint mae'r darnau'n ‘dal’ wrth lithro heibio i'w gilydd."
+  },
+  "weight": {
+    "message": "Pwysau"
+  },
+  "weightHint": {
+    "message": "Pa mor drwm yw'r darnau."
+  },
+  "dragStrength": {
+    "message": "Cryfder llusgo"
+  },
+  "dragStrengthHint": {
+    "message": "Pa mor dynn mae darn yn dilyn eich pwyntydd."
+  },
+  "shakeSettings": {
+    "message": "Gosodiadau Ysgwyd"
+  },
+  "shakeDistance": {
+    "message": "Pellter ysgwyd lleiaf"
+  },
+  "shakeDistanceField": {
+    "message": "Pellter ysgwyd lleiaf mewn picseli"
+  },
+  "shakeDistanceHint": {
+    "message": "Pa mor bell mae'n rhaid i'r ffenestr symud cyn newid cyfeiriad i gyfrif fel un ysgwyd."
+  },
+  "shakeSpeed": {
+    "message": "Cyflymder ysgwyd lleiaf"
+  },
+  "shakeSpeedField": {
+    "message": "Cyflymder ysgwyd lleiaf mewn picseli yr eiliad"
+  },
+  "shakeSpeedHint": {
+    "message": "Pa mor gyflym mae'n rhaid i'r ffenestr symud i ysgwyd gyfrif, fel nad yw symudiadau araf yn ei gychwyn."
+  },
+  "shakesNeeded": {
+    "message": "Nifer yr ysgwydiadau"
+  },
+  "shakesNeededHint": {
+    "message": "Sawl ysgwyd sydd ei angen i ddechrau."
+  },
+  "timeToShake": {
+    "message": "Amser ysgwyd"
+  },
+  "timeToShakeField": {
+    "message": "Amser ysgwyd mewn milieiliadau"
+  },
+  "timeToShakeHint": {
+    "message": "Pa mor gyflym mae'n rhaid i'r $count$ ysgwyd ddigwydd i gychwyn y ffiseg.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Cuddio'r botwm ‘Adfer y dudalen’"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Yn cuddio'r botwm ‘Adfer y dudalen’ sy'n ymddangos yn y gornel dde uchaf pan fydd ffiseg ymlaen."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/e"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ picsel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ picsel yr eiliad",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milieiliad",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Gafaelwch</strong> yn y ffenestr wrth ei bar teitl a'i <strong><i>hysgwyd</i></strong>, NEU <strong>cliciwch</strong> eicon yr estyniad."
+  },
+  "tipRestore": {
+    "message": "<strong>Pwyswch</strong> <kbd>Esc</kbd>, <strong>cliciwch</strong> y botwm <i>Adfer y dudalen</i>, NEU <strong>cliciwch</strong> eicon yr estyniad i adfer y dudalen."
+  },
+  "resetSettings": {
+    "message": "Ailosod i'r rhagosodiadau"
+  },
+  "resetConfirm": {
+    "message": "Ailosod pob gosodiad i'r rhagosodiadau?"
+  },
+  "resetFailed": {
+    "message": "Methu ailosod y gosodiadau. Rhowch gynnig arall arni."
+  },
+  "resetDone": {
+    "message": "Gosodiadau wedi'u hailosod i'r rhagosodiadau."
+  }
+}

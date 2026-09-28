@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "or"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "ସ୍କ୍ରିନ୍ ଶେକ୍ ଚାପ ନିବାରକ"
+  },
+  "extDescription": {
+    "message": "ମଜା ପାଇଁ ବର୍ତ୍ତମାନର ଟାବ୍‌ରେ ଥିବା HTML ଉପାଦାନଗୁଡ଼ିକରେ ଫିଜିକ୍ସ ଯୋଗ କରେ।"
+  },
+  "badgeOn": {
+    "message": "ଚାଲୁ"
+  },
+  "restorePage": {
+    "message": "ପୃଷ୍ଠା ପୁନଃସ୍ଥାପନ କରନ୍ତୁ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ଫିଜିକ୍ସ ଚାଲୁ ଅଛି। ଏହାକୁ ବନ୍ଦ କରିବାକୁ ଏସ୍କେପ୍ କି କିମ୍ବା \"ପୃଷ୍ଠା ପୁନଃସ୍ଥାପନ କରନ୍ତୁ\" ଦବାନ୍ତୁ।"
+  },
+  "physicsOnNote": {
+    "message": "ଆପଣଙ୍କ ବ୍ରାଉଜର୍ ୱିଣ୍ଡୋକୁ ହଲାଇଲେ ଫିଜିକ୍ସ ଚାଲୁ ହୁଏ। ଏହାକୁ ବନ୍ଦ କରିବାକୁ \"ପୃଷ୍ଠା ପୁନଃସ୍ଥାପନ କରନ୍ତୁ\" କିମ୍ବା Esc ଦବାନ୍ତୁ।"
+  },
+  "settingsPageTitle": {
+    "message": "ସ୍କ୍ରିନ୍ ଶେକ୍ ଚାପ ନିବାରକ ସେଟିଂସ୍"
+  },
+  "settingsHeading": {
+    "message": "ସେଟିଂସ୍"
+  },
+  "physicsSettings": {
+    "message": "ଫିଜିକ୍ସ ସେଟିଂସ୍"
+  },
+  "gravity": {
+    "message": "ମାଧ୍ୟାକର୍ଷଣ"
+  },
+  "gravityHint": {
+    "message": "0ରେ ପୃଷ୍ଠାଟି ଏକ ସମତଳ ଟେବୁଲ୍ ପରି ରହେ। ଖଣ୍ଡଗୁଡ଼ିକ ତଳକୁ ପଡ଼ିବା ପାଇଁ ଏହାକୁ ବଢ଼ାନ୍ତୁ।"
+  },
+  "airDrag": {
+    "message": "ପବନର ବାଧା"
+  },
+  "airDragHint": {
+    "message": "ଫିଙ୍ଗାଯାଇଥିବା ଖଣ୍ଡଗୁଡ଼ିକ କେତେ ଶୀଘ୍ର ଧୀର ହୁଏ।"
+  },
+  "bounce": {
+    "message": "ବାଉନ୍ସ"
+  },
+  "bounceHint": {
+    "message": "ଖଣ୍ଡଗୁଡ଼ିକ ପରସ୍ପର ସହ ଏବଂ ୱିଣ୍ଡୋର ଧାରରେ ବାଜି କେତେ ଡେଇଁପଡ଼ନ୍ତି।"
+  },
+  "friction": {
+    "message": "ଘର୍ଷଣ"
+  },
+  "frictionHint": {
+    "message": "ଖଣ୍ଡଗୁଡ଼ିକ ପରସ୍ପର ପାଖ ଦେଇ ଖସିଲାବେଳେ କେତେ 'ଅଟକନ୍ତି'।"
+  },
+  "weight": {
+    "message": "ଓଜନ"
+  },
+  "weightHint": {
+    "message": "ଖଣ୍ଡଗୁଡ଼ିକ କେତେ ଭାରି।"
+  },
+  "dragStrength": {
+    "message": "ଟାଣିବା ଶକ୍ତି"
+  },
+  "dragStrengthHint": {
+    "message": "ଖଣ୍ଡଟି ଆପଣଙ୍କ ପଏଣ୍ଟରକୁ କେତେ ଘନିଷ୍ଠ ଭାବେ ଅନୁସରଣ କରେ।"
+  },
+  "shakeSettings": {
+    "message": "ହଲାଇବା ସେଟିଂସ୍"
+  },
+  "shakeDistance": {
+    "message": "ସର୍ବନିମ୍ନ ହଲାଇବା ଦୂରତା"
+  },
+  "shakeDistanceField": {
+    "message": "ସର୍ବନିମ୍ନ ହଲାଇବା ଦୂରତା, ପିକ୍ସେଲରେ"
+  },
+  "shakeDistanceHint": {
+    "message": "ଥରେ ହଲାଇବା ଭାବେ ଗଣିବା ପାଇଁ ଦିଗ ବଦଳାଇବା ପୂର୍ବରୁ ୱିଣ୍ଡୋ କେତେ ଦୂର ଘୁଞ୍ଚିବା ଦରକାର।"
+  },
+  "shakeSpeed": {
+    "message": "ସର୍ବନିମ୍ନ ହଲାଇବା ବେଗ"
+  },
+  "shakeSpeedField": {
+    "message": "ସର୍ବନିମ୍ନ ହଲାଇବା ବେଗ, ପ୍ରତି ସେକେଣ୍ଡରେ ପିକ୍ସେଲରେ"
+  },
+  "shakeSpeedHint": {
+    "message": "ହଲାଇବା ଗଣିବା ପାଇଁ ୱିଣ୍ଡୋ କେତେ ଶୀଘ୍ର ଘୁଞ୍ଚିବା ଦରକାର, ଯାହାଫଳରେ ଧୀରେ ଘୁଞ୍ଚାଇଲେ ଏହା ଚାଲୁ ହୁଏ ନାହିଁ।"
+  },
+  "shakesNeeded": {
+    "message": "ଆବଶ୍ୟକ ହଲାଇବା"
+  },
+  "shakesNeededHint": {
+    "message": "ଆରମ୍ଭ କରିବାକୁ କେତେ ଥର ହଲାଇବା ଦରକାର।"
+  },
+  "timeToShake": {
+    "message": "ହଲାଇବା ସମୟ"
+  },
+  "timeToShakeField": {
+    "message": "ହଲାଇବା ସମୟ, ମିଲିସେକେଣ୍ଡରେ"
+  },
+  "timeToShakeHint": {
+    "message": "ଫିଜିକ୍ସ ଚାଲୁ କରିବାକୁ $count$ ଥର ହଲାଇବା କେତେ ଶୀଘ୍ର ହେବା ଦରକାର।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"ପୃଷ୍ଠା ପୁନଃସ୍ଥାପନ କରନ୍ତୁ\" ବଟନ୍ ଲୁଚାନ୍ତୁ"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ଫିଜିକ୍ସ ଚାଲୁ ଥିବାବେଳେ ଉପର ଡାହାଣ କୋଣରେ ଦେଖାଯାଉଥିବା \"ପୃଷ୍ଠା ପୁନଃସ୍ଥାପନ କରନ୍ତୁ\" ବଟନ୍‌କୁ ଲୁଚାଏ।"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ପିକ୍ସେଲ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "ପ୍ରତି ସେକେଣ୍ଡରେ $value$ ପିକ୍ସେଲ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ମିଲିସେକେଣ୍ଡ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "ୱିଣ୍ଡୋକୁ ଏହାର ଟାଇଟେଲ୍ ବାର୍‌ରେ <strong>ଧରି</strong> <strong><i>ହଲାନ୍ତୁ</i></strong>, କିମ୍ବା ଏକ୍ସଟେନସନ୍ ଆଇକନ୍‌ରେ <strong>କ୍ଲିକ୍ କରନ୍ତୁ</strong>।"
+  },
+  "tipRestore": {
+    "message": "ପୃଷ୍ଠାକୁ ପୁନଃସ୍ଥାପନ କରିବାକୁ <kbd>Esc</kbd> <strong>ଦବାନ୍ତୁ</strong>, <i>ପୃଷ୍ଠା ପୁନଃସ୍ଥାପନ କରନ୍ତୁ</i> ବଟନ୍‌ରେ <strong>କ୍ଲିକ୍ କରନ୍ତୁ</strong>, କିମ୍ବା ଏକ୍ସଟେନସନ୍ ଆଇକନ୍‌ରେ <strong>କ୍ଲିକ୍ କରନ୍ତୁ</strong>।"
+  },
+  "resetSettings": {
+    "message": "ଡିଫଲ୍ଟକୁ ରିସେଟ୍ କରନ୍ତୁ"
+  },
+  "resetConfirm": {
+    "message": "ସମସ୍ତ ସେଟିଂସ୍ ଡିଫଲ୍ଟକୁ ରିସେଟ୍ କରିବେ?"
+  },
+  "resetFailed": {
+    "message": "ସେଟିଂସ୍ ରିସେଟ୍ କରାଯାଇପାରିଲା ନାହିଁ। ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।"
+  },
+  "resetDone": {
+    "message": "ସେଟିଂସ୍ ଡିଫଲ୍ଟକୁ ରିସେଟ୍ କରାଗଲା।"
+  }
+}

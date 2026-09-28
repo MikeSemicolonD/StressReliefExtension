@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "id"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Guncang Layar Pereda Stres"
+  },
+  "extDescription": {
+    "message": "Menambahkan fisika ke elemen HTML di tab saat ini, seru-seruan saja."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Pulihkan halaman"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fisika aktif. Tekan Escape atau \"Pulihkan halaman\" untuk menonaktifkannya."
+  },
+  "physicsOnNote": {
+    "message": "Mengguncang jendela browser akan mengaktifkan fisika. Tekan \"Pulihkan halaman\" atau Esc untuk menonaktifkannya."
+  },
+  "settingsPageTitle": {
+    "message": "Setelan Guncang Layar Pereda Stres"
+  },
+  "settingsHeading": {
+    "message": "Setelan"
+  },
+  "physicsSettings": {
+    "message": "Setelan Fisika"
+  },
+  "gravity": {
+    "message": "Gravitasi"
+  },
+  "gravityHint": {
+    "message": "Di angka 0, halaman tetap datar seperti permukaan meja. Naikkan agar potongan jatuh."
+  },
+  "airDrag": {
+    "message": "Hambatan udara"
+  },
+  "airDragHint": {
+    "message": "Seberapa cepat potongan yang dilempar melambat."
+  },
+  "bounce": {
+    "message": "Pantulan"
+  },
+  "bounceHint": {
+    "message": "Seberapa kuat potongan memantul satu sama lain dan dari tepi jendela."
+  },
+  "friction": {
+    "message": "Gesekan"
+  },
+  "frictionHint": {
+    "message": "Seberapa \"tersangkut\" potongan saat bergeser melewati satu sama lain."
+  },
+  "weight": {
+    "message": "Berat"
+  },
+  "weightHint": {
+    "message": "Seberapa berat potongan-potongannya."
+  },
+  "dragStrength": {
+    "message": "Kekuatan Tarik"
+  },
+  "dragStrengthHint": {
+    "message": "Seberapa erat potongan mengikuti penunjuk Anda."
+  },
+  "shakeSettings": {
+    "message": "Setelan Guncangan"
+  },
+  "shakeDistance": {
+    "message": "Jarak guncang minimum"
+  },
+  "shakeDistanceField": {
+    "message": "Jarak guncang minimum dalam piksel"
+  },
+  "shakeDistanceHint": {
+    "message": "Seberapa jauh jendela harus bergerak sebelum berbalik arah agar dihitung sebagai satu guncangan."
+  },
+  "shakeSpeed": {
+    "message": "Kecepatan guncang minimum"
+  },
+  "shakeSpeedField": {
+    "message": "Kecepatan guncang minimum dalam piksel per detik"
+  },
+  "shakeSpeedHint": {
+    "message": "Seberapa cepat jendela harus bergerak agar dihitung sebagai guncangan, jadi gerakan pelan tidak memicunya."
+  },
+  "shakesNeeded": {
+    "message": "Jumlah guncangan"
+  },
+  "shakesNeededHint": {
+    "message": "Berapa kali guncangan yang dibutuhkan untuk memulai."
+  },
+  "timeToShake": {
+    "message": "Waktu guncang"
+  },
+  "timeToShakeField": {
+    "message": "Waktu guncang dalam milidetik"
+  },
+  "timeToShakeHint": {
+    "message": "Seberapa cepat $count$ guncangan harus terjadi untuk memicu fisika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Sembunyikan tombol \"Pulihkan halaman\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Menyembunyikan tombol \"Pulihkan halaman\" yang muncul di pojok kanan atas saat fisika aktif."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksel per detik",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milidetik",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Pegang</strong> jendela di bilah judulnya lalu <strong><i>guncangkan</i></strong>, ATAU <strong>klik</strong> ikon ekstensi."
+  },
+  "tipRestore": {
+    "message": "<strong>Tekan</strong> <kbd>Esc</kbd>, <strong>klik</strong> tombol <i>Pulihkan halaman</i>, ATAU <strong>klik</strong> ikon ekstensi untuk memulihkan halaman."
+  },
+  "resetSettings": {
+    "message": "Setel ulang ke default"
+  },
+  "resetConfirm": {
+    "message": "Setel ulang semua setelan ke default?"
+  },
+  "resetFailed": {
+    "message": "Tidak dapat menyetel ulang setelan. Coba lagi."
+  },
+  "resetDone": {
+    "message": "Setelan telah disetel ulang ke default."
+  }
+}

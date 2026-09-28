@@ -1,0 +1,176 @@
+{
+  "locale": {
+    "message": "ms"
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "extName": {
+    "message": "Goncang Skrin Pelega Stres"
+  },
+  "extDescription": {
+    "message": "Menambah fizik pada elemen HTML dalam tab semasa untuk suka-suka."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Pulihkan halaman"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizik dihidupkan. Tekan Escape atau \"Pulihkan halaman\" untuk mematikannya."
+  },
+  "physicsOnNote": {
+    "message": "Menggoncang tetingkap penyemak imbas anda menghidupkan fizik. Tekan \"Pulihkan halaman\" atau Esc untuk mematikannya."
+  },
+  "settingsPageTitle": {
+    "message": "Tetapan Goncang Skrin Pelega Stres"
+  },
+  "settingsHeading": {
+    "message": "Tetapan"
+  },
+  "physicsSettings": {
+    "message": "Tetapan Fizik"
+  },
+  "gravity": {
+    "message": "Graviti"
+  },
+  "gravityHint": {
+    "message": "Pada 0, halaman kekal rata seperti permukaan meja. Naikkan untuk membuat kepingan jatuh."
+  },
+  "airDrag": {
+    "message": "Rintangan udara"
+  },
+  "airDragHint": {
+    "message": "Seberapa cepat kepingan yang dibaling menjadi perlahan."
+  },
+  "bounce": {
+    "message": "Lantunan"
+  },
+  "bounceHint": {
+    "message": "Seberapa kuat kepingan melantun antara satu sama lain dan dari tepi tetingkap."
+  },
+  "friction": {
+    "message": "Geseran"
+  },
+  "frictionHint": {
+    "message": "Seberapa banyak kepingan \"tersangkut\" apabila menggelongsor melepasi satu sama lain."
+  },
+  "weight": {
+    "message": "Berat"
+  },
+  "weightHint": {
+    "message": "Seberapa berat kepingan itu."
+  },
+  "dragStrength": {
+    "message": "Kekuatan Seret"
+  },
+  "dragStrengthHint": {
+    "message": "Seberapa rapat kepingan mengikut penuding anda."
+  },
+  "shakeSettings": {
+    "message": "Tetapan Goncangan"
+  },
+  "shakeDistance": {
+    "message": "Jarak goncang minimum"
+  },
+  "shakeDistanceField": {
+    "message": "Jarak goncang minimum dalam piksel"
+  },
+  "shakeDistanceHint": {
+    "message": "Sejauh mana tetingkap perlu bergerak sebelum bertukar arah untuk dikira sebagai satu goncangan."
+  },
+  "shakeSpeed": {
+    "message": "Kelajuan goncang minimum"
+  },
+  "shakeSpeedField": {
+    "message": "Kelajuan goncang minimum dalam piksel sesaat"
+  },
+  "shakeSpeedHint": {
+    "message": "Seberapa laju tetingkap perlu bergerak untuk dikira sebagai goncangan, supaya gerakan perlahan tidak mencetuskannya."
+  },
+  "shakesNeeded": {
+    "message": "Goncangan diperlukan"
+  },
+  "shakesNeededHint": {
+    "message": "Berapa kali goncangan diperlukan untuk bermula."
+  },
+  "timeToShake": {
+    "message": "Masa untuk goncang"
+  },
+  "timeToShakeField": {
+    "message": "Masa untuk goncang dalam milisaat"
+  },
+  "timeToShakeHint": {
+    "message": "Seberapa pantas $count$ goncangan perlu berlaku untuk mencetuskan fizik.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Sembunyikan butang \"Pulihkan halaman\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Menyembunyikan butang \"Pulihkan halaman\" yang muncul di penjuru kanan atas apabila fizik dihidupkan."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksel sesaat",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisaat",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Pegang</strong> tetingkap pada bar tajuknya dan <strong><i>goncangkannya</i></strong>, ATAU <strong>klik</strong> ikon sambungan."
+  },
+  "tipRestore": {
+    "message": "<strong>Tekan</strong> <kbd>Esc</kbd>, <strong>klik</strong> butang <i>Pulihkan halaman</i>, ATAU <strong>klik</strong> ikon sambungan untuk memulihkan halaman."
+  },
+  "resetSettings": {
+    "message": "Tetapkan semula kepada lalai"
+  },
+  "resetConfirm": {
+    "message": "Tetapkan semula semua tetapan kepada lalai?"
+  },
+  "resetFailed": {
+    "message": "Tidak dapat menetapkan semula tetapan. Cuba lagi."
+  },
+  "resetDone": {
+    "message": "Tetapan telah ditetapkan semula kepada lalai."
+  }
+}
