@@ -2,6 +2,9 @@
   "locale": {
     "message": "km"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "អង្រួនអេក្រង់បំបាត់ស្ត្រេស"
   },

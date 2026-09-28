@@ -2,6 +2,9 @@
   "locale": {
     "message": "el"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Τίναγμα οθόνης κατά του άγχους"
   },

@@ -2,6 +2,7 @@
   "locale": {
     "message": "ko"
   },
+  "direction": { "message": "ltr" },
   "extName": {
     "message": "화면 흔들기 스트레스 해소"
   },

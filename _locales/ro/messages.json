@@ -2,6 +2,9 @@
   "locale": {
     "message": "ro"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Scuturare antistres"
   },

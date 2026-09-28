@@ -2,6 +2,9 @@
   "locale": {
     "message": "lt"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Antistresas: supurtykite ekraną"
   },

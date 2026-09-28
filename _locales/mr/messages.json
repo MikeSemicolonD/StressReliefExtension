@@ -2,6 +2,9 @@
   "locale": {
     "message": "mr"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "स्क्रीन हलवा, ताण घालवा"
   },

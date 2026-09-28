@@ -2,6 +2,9 @@
   "locale": {
     "message": "bg"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Антистрес: разклати екрана"
   },

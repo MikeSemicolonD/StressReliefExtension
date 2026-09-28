@@ -2,6 +2,7 @@
   "locale": {
     "message": "ja"
   },
+  "direction": { "message": "ltr" },
   "extName": {
     "message": "画面シェイクでストレス解消"
   },

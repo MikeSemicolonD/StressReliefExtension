@@ -2,6 +2,9 @@
   "locale": {
     "message": "kk"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Антистресс: экранды сілкіт"
   },

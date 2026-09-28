@@ -2,6 +2,9 @@
   "locale": {
     "message": "sl"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Antistres: stresite zaslon"
   },

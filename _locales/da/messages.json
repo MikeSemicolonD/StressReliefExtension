@@ -2,6 +2,9 @@
   "locale": {
     "message": "da"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Ryst stressen væk"
   },

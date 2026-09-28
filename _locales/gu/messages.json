@@ -2,6 +2,9 @@
   "locale": {
     "message": "gu"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "સ્ક્રીન હલાવો, તણાવ ભગાવો"
   },

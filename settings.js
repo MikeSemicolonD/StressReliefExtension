@@ -31,7 +31,7 @@ function rebuild(parent) {
 // - data-i18n-aria-label: the aria-label attribute.
 function localize() {
   document.documentElement.lang = msg('locale').replace('_', '-');
-  document.documentElement.dir = msg('@@bidi_dir');
+  document.documentElement.dir = msg('direction');
 
   for (const el of document.querySelectorAll('[data-i18n]')) {
     const slots = [...el.children];

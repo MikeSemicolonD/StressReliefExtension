@@ -2,6 +2,9 @@
   "locale": {
     "message": "as"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "স্ক্ৰীন জোকাৰা, চাপ আঁতৰোৱা"
   },

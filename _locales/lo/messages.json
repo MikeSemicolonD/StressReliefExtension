@@ -2,6 +2,9 @@
   "locale": {
     "message": "lo"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "ສັ່ນຈໍຄາຍຄວາມຄຽດ"
   },

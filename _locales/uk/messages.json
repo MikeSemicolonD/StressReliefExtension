@@ -2,6 +2,9 @@
   "locale": {
     "message": "uk"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Антистрес: струсни екран"
   },

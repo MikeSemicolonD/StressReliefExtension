@@ -2,6 +2,9 @@
   "locale": {
     "message": "af"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Skud jou stres weg"
   },

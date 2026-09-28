@@ -2,6 +2,9 @@
   "locale": {
     "message": "fil"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Alog-Screen Pantanggal ng Stress"
   },

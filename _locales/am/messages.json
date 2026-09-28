@@ -2,6 +2,9 @@
   "locale": {
     "message": "am"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "ነቅንቅና ተዝናና"
   },

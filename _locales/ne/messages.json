@@ -2,6 +2,9 @@
   "locale": {
     "message": "ne"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "स्क्रिन हल्लाऊ, तनाव भगाऊ"
   },

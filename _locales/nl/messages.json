@@ -2,6 +2,9 @@
   "locale": {
     "message": "nl"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Stress wegschudden"
   },

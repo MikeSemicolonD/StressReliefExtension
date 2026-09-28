@@ -2,6 +2,9 @@
   "locale": {
     "message": "or"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "ସ୍କ୍ରିନ୍ ଶେକ୍ ଚାପ ନିବାରକ"
   },

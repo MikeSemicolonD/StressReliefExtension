@@ -2,6 +2,9 @@
   "locale": {
     "message": "es_419"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Sacudida antiestrés"
   },

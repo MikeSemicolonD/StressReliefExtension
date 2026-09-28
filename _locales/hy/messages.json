@@ -2,6 +2,9 @@
   "locale": {
     "message": "hy"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Էկրանի թափահարում սթրեսի դեմ"
   },

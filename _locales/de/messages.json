@@ -2,6 +2,9 @@
   "locale": {
     "message": "de"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Stressabbau durch Schütteln"
   },

@@ -2,6 +2,9 @@
   "locale": {
     "message": "tr"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Ekranı Salla, Stres At"
   },

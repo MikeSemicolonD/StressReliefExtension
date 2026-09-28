@@ -2,6 +2,9 @@
   "locale": {
     "message": "si"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "තිරය සොලවා ආතතිය නිවන්න"
   },

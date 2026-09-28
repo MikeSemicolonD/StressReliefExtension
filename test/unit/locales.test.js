@@ -11,6 +11,9 @@ const ROOT = path.resolve(__dirname, '../..');
 const LOCALES = path.join(ROOT, '_locales');
 const DEFAULT_LOCALE = JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.json'), 'utf8')).default_locale;
 
+// Languages written right to left
+const RTL = new Set(['ar', 'fa', 'he', 'ur']);
+
 // Messages the browser defines itself
 const PREDEFINED = /^@@/;
 
@@ -56,8 +59,9 @@ test('locales: every English message is used', () => {
 for (const locale of fs.readdirSync(LOCALES)) {
   const messages = readMessages(locale);
 
-  test(`locales: ${locale} names its own language`, () => {
+  test(`locales: ${locale} names its own language and direction`, () => {
     assert.equal(messages.locale?.message, locale);
+    assert.equal(messages.direction?.message, RTL.has(locale.split('_')[0]) ? 'rtl' : 'ltr');
   });
 
   test(`locales: ${locale} messages are non-empty`, () => {

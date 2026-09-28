@@ -2,6 +2,9 @@
   "locale": {
     "message": "et"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Ekraaniraputus stressi vastu"
   },

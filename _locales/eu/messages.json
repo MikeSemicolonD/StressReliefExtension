@@ -2,6 +2,9 @@
   "locale": {
     "message": "eu"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Astindu estresa"
   },

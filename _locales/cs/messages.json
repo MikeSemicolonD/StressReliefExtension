@@ -2,6 +2,9 @@
   "locale": {
     "message": "cs"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Antistres: zatřeste obrazovkou"
   },

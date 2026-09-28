@@ -2,6 +2,9 @@
   "locale": {
     "message": "nb"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Rist bort stresset"
   },

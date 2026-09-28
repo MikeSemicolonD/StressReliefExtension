@@ -2,6 +2,9 @@
   "locale": {
     "message": "ar"
   },
+  "direction": {
+    "message": "rtl"
+  },
   "extName": {
     "message": "مُخفِّف التوتر بهزّ الشاشة"
   },

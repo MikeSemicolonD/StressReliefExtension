@@ -2,6 +2,9 @@
   "locale": {
     "message": "sq"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Shkund ekranin, largo stresin"
   },

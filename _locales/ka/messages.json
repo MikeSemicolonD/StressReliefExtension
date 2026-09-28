@@ -2,6 +2,9 @@
   "locale": {
     "message": "ka"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "ეკრანის შენჯღრევა სტრესის წინააღმდეგ"
   },

@@ -2,6 +2,9 @@
   "locale": {
     "message": "be"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Антыстрэс: страсяні экран"
   },

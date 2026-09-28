@@ -2,6 +2,9 @@
   "locale": {
     "message": "pa"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "ਸਕ੍ਰੀਨ ਹਿਲਾਓ, ਤਣਾਅ ਭਜਾਓ"
   },

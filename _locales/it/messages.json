@@ -2,6 +2,9 @@
   "locale": {
     "message": "it"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Scossa antistress"
   },

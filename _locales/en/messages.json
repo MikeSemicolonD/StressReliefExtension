@@ -3,6 +3,10 @@
     "message": "en",
     "description": "The code of this translation's language (e.g. de, pt_BR), used as the settings page's lang attribute. Not shown."
   },
+  "direction": {
+    "message": "ltr",
+    "description": "This translation's text direction: ltr (left to right) or rtl (right to left). Not shown."
+  },
 
   "extName": {
     "message": "Screen Shake Stress Reliever",

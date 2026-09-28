@@ -2,6 +2,9 @@
   "locale": {
     "message": "pl"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Antystres: potrząśnij ekranem"
   },

@@ -2,6 +2,9 @@
   "locale": {
     "message": "fi"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Ravistele stressi pois"
   },

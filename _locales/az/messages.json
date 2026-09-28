@@ -2,6 +2,9 @@
   "locale": {
     "message": "az"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Ekranı silkələ, stresi at"
   },

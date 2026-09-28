@@ -2,6 +2,9 @@
   "locale": {
     "message": "ru"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Антистресс: встряхни экран"
   },

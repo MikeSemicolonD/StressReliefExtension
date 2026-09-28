@@ -2,6 +2,9 @@
   "locale": {
     "message": "sw"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Tikisa Skrini Upunguze Msongo"
   },

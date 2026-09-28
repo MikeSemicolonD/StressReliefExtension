@@ -2,6 +2,9 @@
   "locale": {
     "message": "kn"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "ಸ್ಕ್ರೀನ್ ಶೇಕ್ ಒತ್ತಡ ನಿವಾರಕ"
   },

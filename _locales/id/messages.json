@@ -2,6 +2,9 @@
   "locale": {
     "message": "id"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Guncang Layar Pereda Stres"
   },

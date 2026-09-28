@@ -2,6 +2,9 @@
   "locale": {
     "message": "bn"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "স্ক্রিন ঝাঁকাও, স্ট্রেস তাড়াও"
   },

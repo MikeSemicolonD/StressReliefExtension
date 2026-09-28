@@ -2,6 +2,9 @@
   "locale": {
     "message": "ta"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "திரை குலுக்கல் மன அழுத்த நிவாரணி"
   },

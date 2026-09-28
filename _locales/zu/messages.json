@@ -2,6 +2,9 @@
   "locale": {
     "message": "zu"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Nyakazisa Isikrini Uphumule"
   },

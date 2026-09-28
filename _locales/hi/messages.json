@@ -2,6 +2,9 @@
   "locale": {
     "message": "hi"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "स्क्रीन हिलाओ, तनाव भगाओ"
   },

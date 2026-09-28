@@ -2,6 +2,9 @@
   "locale": {
     "message": "my"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "မျက်နှာပြင်လှုပ် စိတ်ဖိစီးမှုပြေ"
   },

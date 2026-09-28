@@ -2,6 +2,9 @@
   "locale": {
     "message": "cy"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Ysgwyd y Straen i Ffwrdd"
   },

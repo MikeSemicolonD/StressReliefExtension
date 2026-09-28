@@ -83,7 +83,7 @@
     // In the extension's language rather than the page's (lang also picks
     // the right glyphs for CJK text). In right-to-left languages it sits in
     // the top-left corner, the mirror image of top-right.
-    const dir = chrome.i18n.getMessage('@@bidi_dir');
+    const dir = chrome.i18n.getMessage('direction');
     host.lang = chrome.i18n.getMessage('locale').replace('_', '-');
     host.dir = dir;
     host.style.cssText = `all: initial; direction: ${dir}; position: fixed; top: 16px; ` +

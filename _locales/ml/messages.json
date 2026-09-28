@@ -2,6 +2,9 @@
   "locale": {
     "message": "ml"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "സ്ക്രീൻ കുലുക്കി സ്ട്രെസ് അകറ്റാം"
   },

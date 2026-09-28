@@ -2,6 +2,7 @@
   "locale": {
     "message": "zh_CN"
   },
+  "direction": { "message": "ltr" },
   "extName": {
     "message": "摇屏解压"
   },

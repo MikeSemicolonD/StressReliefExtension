@@ -2,6 +2,9 @@
   "locale": {
     "message": "te"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "స్క్రీన్ షేక్ ఒత్తిడి నివారిణి"
   },

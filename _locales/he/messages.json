@@ -2,6 +2,9 @@
   "locale": {
     "message": "he"
   },
+  "direction": {
+    "message": "rtl"
+  },
   "extName": {
     "message": "מנערים ונרגעים"
   },

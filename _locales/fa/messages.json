@@ -2,6 +2,9 @@
   "locale": {
     "message": "fa"
   },
+  "direction": {
+    "message": "rtl"
+  },
   "extName": {
     "message": "تکان بده، آروم شو"
   },

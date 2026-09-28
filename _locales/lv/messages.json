@@ -2,6 +2,9 @@
   "locale": {
     "message": "lv"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Antistress: sakratiet ekrānu"
   },

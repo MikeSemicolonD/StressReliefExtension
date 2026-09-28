@@ -2,6 +2,9 @@
   "locale": {
     "message": "sv"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Skaka bort stressen"
   },

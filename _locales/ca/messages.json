@@ -2,6 +2,9 @@
   "locale": {
     "message": "ca"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Sacsejada antiestrès"
   },

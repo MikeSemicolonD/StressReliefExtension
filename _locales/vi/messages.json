@@ -2,6 +2,9 @@
   "locale": {
     "message": "vi"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Lắc Màn Hình Xả Stress"
   },

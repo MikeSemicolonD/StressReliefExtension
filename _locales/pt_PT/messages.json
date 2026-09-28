@@ -2,6 +2,9 @@
   "locale": {
     "message": "pt_PT"
   },
+  "direction": {
+    "message": "ltr"
+  },
   "extName": {
     "message": "Abanão antistress"
   },
