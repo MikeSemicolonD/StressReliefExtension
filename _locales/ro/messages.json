@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "ro"
+  },
+  "extName": {
+    "message": "Scuturare antistres"
+  },
+  "extDescription": {
+    "message": "Adaugă fizică elementelor HTML din fila curentă, doar pentru distracție."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Restabilește pagina"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizica este activată. Apăsați Escape sau „Restabilește pagina” pentru a o dezactiva."
+  },
+  "physicsOnNote": {
+    "message": "Scuturarea ferestrei browserului activează fizica. Apăsați „Restabilește pagina” sau Esc pentru a o dezactiva."
+  },
+  "settingsPageTitle": {
+    "message": "Setări Scuturare antistres"
+  },
+  "settingsHeading": {
+    "message": "Setări"
+  },
+  "physicsSettings": {
+    "message": "Fizică"
+  },
+  "gravity": {
+    "message": "Gravitație"
+  },
+  "gravityHint": {
+    "message": "La 0, pagina rămâne o masă plată. Măriți valoarea ca piesele să cadă."
+  },
+  "airDrag": {
+    "message": "Rezistența aerului"
+  },
+  "airDragHint": {
+    "message": "Cât de repede încetinesc piesele aruncate."
+  },
+  "bounce": {
+    "message": "Ricoșeu"
+  },
+  "bounceHint": {
+    "message": "Cât de tare ricoșează piesele unele de altele și de marginile ferestrei."
+  },
+  "friction": {
+    "message": "Frecare"
+  },
+  "frictionHint": {
+    "message": "Cât de mult „se agață” piesele când alunecă una pe lângă alta."
+  },
+  "weight": {
+    "message": "Greutate"
+  },
+  "weightHint": {
+    "message": "Cât de grele sunt piesele."
+  },
+  "dragStrength": {
+    "message": "Forța de prindere"
+  },
+  "dragStrengthHint": {
+    "message": "Cât de strâns urmează o piesă cursorul."
+  },
+  "shakeSettings": {
+    "message": "Scuturare"
+  },
+  "shakeDistance": {
+    "message": "Distanța minimă"
+  },
+  "shakeDistanceField": {
+    "message": "Distanța minimă de scuturare în pixeli"
+  },
+  "shakeDistanceHint": {
+    "message": "Cât trebuie să se miște fereastra înainte de a schimba direcția pentru a conta ca o scuturare."
+  },
+  "shakeSpeed": {
+    "message": "Viteza minimă"
+  },
+  "shakeSpeedField": {
+    "message": "Viteza minimă de scuturare în pixeli pe secundă"
+  },
+  "shakeSpeedHint": {
+    "message": "Cât de repede trebuie să se miște fereastra pentru ca scuturarea să conteze, ca mișcările lente să nu o declanșeze."
+  },
+  "shakesNeeded": {
+    "message": "Scuturări necesare"
+  },
+  "shakesNeededHint": {
+    "message": "Câte scuturări sunt necesare pentru pornire."
+  },
+  "timeToShake": {
+    "message": "Timp de scuturare"
+  },
+  "timeToShakeField": {
+    "message": "Timp de scuturare în milisecunde"
+  },
+  "timeToShakeHint": {
+    "message": "În cât timp trebuie să aibă loc cele $count$ scuturări pentru a activa fizica.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ascunde butonul „Restabilește pagina”"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Ascunde butonul „Restabilește pagina” care apare în colțul din dreapta sus când fizica este activată."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixeli",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixeli pe secundă",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisecunde",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Prindeți</strong> fereastra de bara de titlu și <strong><i>scuturați-o</i></strong> SAU <strong>dați clic</strong> pe pictograma extensiei."
+  },
+  "tipRestore": {
+    "message": "<strong>Apăsați</strong> <kbd>Esc</kbd>, <strong>dați clic</strong> pe butonul <i>Restabilește pagina</i> SAU <strong>dați clic</strong> pe pictograma extensiei pentru a restabili pagina."
+  },
+  "resetSettings": {
+    "message": "Resetează la valorile prestabilite"
+  },
+  "resetConfirm": {
+    "message": "Resetați toate setările la valorile prestabilite?"
+  },
+  "resetFailed": {
+    "message": "Setările nu au putut fi resetate. Încercați din nou."
+  },
+  "resetDone": {
+    "message": "Setările au fost resetate la valorile prestabilite."
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "mn"
+  },
+  "extName": {
+    "message": "Стресс тайлагч: дэлгэц сэгсрэх"
+  },
+  "extDescription": {
+    "message": "Зугаацах зорилгоор одоогийн табын HTML элементүүдэд физик нэмнэ."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Хуудсыг сэргээх"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физик асаалттай байна. Унтраахын тулд Escape товч эсвэл «Хуудсыг сэргээх» товчийг дарна уу."
+  },
+  "physicsOnNote": {
+    "message": "Хөтчийн цонхыг сэгсрэхэд физик асна. Унтраахын тулд «Хуудсыг сэргээх» эсвэл Esc товчийг дарна уу."
+  },
+  "settingsPageTitle": {
+    "message": "Стресс тайлагч: дэлгэц сэгсрэх – тохиргоо"
+  },
+  "settingsHeading": {
+    "message": "Тохиргоо"
+  },
+  "physicsSettings": {
+    "message": "Физикийн тохиргоо"
+  },
+  "gravity": {
+    "message": "Таталцал"
+  },
+  "gravityHint": {
+    "message": "0 үед хуудас ширээ шиг хавтгай хэвээр байна. Хэсгүүдийг унагахын тулд нэмэгдүүлнэ үү."
+  },
+  "airDrag": {
+    "message": "Агаарын эсэргүүцэл"
+  },
+  "airDragHint": {
+    "message": "Шидсэн хэсгүүд хэр хурдан удаашрах вэ."
+  },
+  "bounce": {
+    "message": "Ойлт"
+  },
+  "bounceHint": {
+    "message": "Хэсгүүд бие биенээсээ болон цонхны ирмэгээс хэр хүчтэй ойх вэ."
+  },
+  "friction": {
+    "message": "Үрэлт"
+  },
+  "frictionHint": {
+    "message": "Хэсгүүд бие биенийхээ хажуугаар гулсахдаа хэр «зууралдах» вэ."
+  },
+  "weight": {
+    "message": "Жин"
+  },
+  "weightHint": {
+    "message": "Хэсгүүд хэр хүнд байх вэ."
+  },
+  "dragStrength": {
+    "message": "Барих хүч"
+  },
+  "dragStrengthHint": {
+    "message": "Хэсэг заагчийг хэр нягт дагах вэ."
+  },
+  "shakeSettings": {
+    "message": "Сэгсрэлтийн тохиргоо"
+  },
+  "shakeDistance": {
+    "message": "Сэгсрэлтийн доод зай"
+  },
+  "shakeDistanceField": {
+    "message": "Сэгсрэлтийн доод зай, пикселээр"
+  },
+  "shakeDistanceHint": {
+    "message": "Нэг сэгсрэлтэд тооцогдохын тулд цонх чиглэлээ өөрчлөхөөс өмнө хэр хол шилжих ёстой вэ."
+  },
+  "shakeSpeed": {
+    "message": "Сэгсрэлтийн доод хурд"
+  },
+  "shakeSpeedField": {
+    "message": "Сэгсрэлтийн доод хурд, секундэд пикселээр"
+  },
+  "shakeSpeedHint": {
+    "message": "Сэгсрэлт тооцогдохын тулд цонх хэр хурдан хөдлөх ёстой вэ. Удаан хөдөлгөөн тооцогдохгүй."
+  },
+  "shakesNeeded": {
+    "message": "Сэгсрэлтийн тоо"
+  },
+  "shakesNeededHint": {
+    "message": "Эхлүүлэхэд хэдэн удаа сэгсрэх шаардлагатай вэ."
+  },
+  "timeToShake": {
+    "message": "Сэгсрэх хугацаа"
+  },
+  "timeToShakeField": {
+    "message": "Сэгсрэх хугацаа, миллисекундээр"
+  },
+  "timeToShakeHint": {
+    "message": "Физикийг асаахын тулд $count$ сэгсрэлт хэр хурдан хийгдэх ёстой вэ.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "«Хуудсыг сэргээх» товчийг нуух"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Физик асаалттай үед баруун дээд буланд гарч ирдэг «Хуудсыг сэргээх» товчийг нууна."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "$value$ пиксел",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "секундэд $value$ пиксел",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ миллисекунд",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "Цонхыг гарчгийн мөрөөс нь <strong>барьж</strong> <strong><i>сэгсэрнэ үү</i></strong>, ЭСВЭЛ өргөтгөлийн дүрс тэмдгийг <strong>дарна уу</strong>."
+  },
+  "tipRestore": {
+    "message": "Хуудсыг сэргээхийн тулд <kbd>Esc</kbd> товчийг <strong>дарах</strong>, «<i>Хуудсыг сэргээх</i>» товчийг <strong>дарах</strong>, ЭСВЭЛ өргөтгөлийн дүрс тэмдгийг <strong>дарна уу</strong>."
+  },
+  "resetSettings": {
+    "message": "Анхны тохиргоонд буцаах"
+  },
+  "resetConfirm": {
+    "message": "Бүх тохиргоог анхны утгад нь буцаах уу?"
+  },
+  "resetFailed": {
+    "message": "Тохиргоог буцааж чадсангүй. Дахин оролдоно уу."
+  },
+  "resetDone": {
+    "message": "Тохиргоог анхны утгад нь буцаалаа."
+  }
+}

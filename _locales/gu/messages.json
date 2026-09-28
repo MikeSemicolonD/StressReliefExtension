@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "gu"
+  },
+  "extName": {
+    "message": "સ્ક્રીન હલાવો, તણાવ ભગાવો"
+  },
+  "extDescription": {
+    "message": "મજા માટે વર્તમાન ટૅબના HTML એલિમેન્ટમાં ફિઝિક્સ ઉમેરે છે."
+  },
+  "badgeOn": {
+    "message": "ચાલુ"
+  },
+  "restorePage": {
+    "message": "પેજ પાછું લાવો"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ફિઝિક્સ ચાલુ છે. તેને બંધ કરવા માટે એસ્કેપ દબાવો અથવા \"પેજ પાછું લાવો\" પર ક્લિક કરો."
+  },
+  "physicsOnNote": {
+    "message": "બ્રાઉઝર વિન્ડો હલાવવાથી ફિઝિક્સ ચાલુ થાય છે. તેને બંધ કરવા માટે \"પેજ પાછું લાવો\" પર ક્લિક કરો અથવા Esc દબાવો."
+  },
+  "settingsPageTitle": {
+    "message": "સ્ક્રીન હલાવો, તણાવ ભગાવો – સેટિંગ"
+  },
+  "settingsHeading": {
+    "message": "સેટિંગ"
+  },
+  "physicsSettings": {
+    "message": "ફિઝિક્સ સેટિંગ"
+  },
+  "gravity": {
+    "message": "ગુરુત્વાકર્ષણ"
+  },
+  "gravityHint": {
+    "message": "0 પર પેજ સપાટ ટેબલ જેવું રહે છે. ટુકડા નીચે પડે તે માટે તેને વધારો."
+  },
+  "airDrag": {
+    "message": "હવાનો અવરોધ"
+  },
+  "airDragHint": {
+    "message": "ફેંકેલા ટુકડા કેટલી ઝડપથી ધીમા પડે છે."
+  },
+  "bounce": {
+    "message": "ઉછાળ"
+  },
+  "bounceHint": {
+    "message": "ટુકડા એકબીજા સાથે અને વિન્ડોની કિનારીઓ સાથે અથડાઈને કેટલા ઉછળે છે."
+  },
+  "friction": {
+    "message": "ઘર્ષણ"
+  },
+  "frictionHint": {
+    "message": "એકબીજાની પાસેથી સરકતી વખતે ટુકડા કેટલા 'અટકે' છે."
+  },
+  "weight": {
+    "message": "વજન"
+  },
+  "weightHint": {
+    "message": "ટુકડા કેટલા ભારે છે."
+  },
+  "dragStrength": {
+    "message": "ખેંચવાની તાકાત"
+  },
+  "dragStrengthHint": {
+    "message": "ટુકડો તમારા પૉઇન્ટરની પાછળ કેટલી મજબૂતીથી ચાલે છે."
+  },
+  "shakeSettings": {
+    "message": "હલાવવાના સેટિંગ"
+  },
+  "shakeDistance": {
+    "message": "હલાવવાનું ઓછામાં ઓછું અંતર"
+  },
+  "shakeDistanceField": {
+    "message": "હલાવવાનું ઓછામાં ઓછું અંતર, પિક્સેલમાં"
+  },
+  "shakeDistanceHint": {
+    "message": "એક વાર હલાવ્યું ગણાય તે માટે દિશા બદલતાં પહેલાં વિન્ડોએ કેટલું ખસવું પડે."
+  },
+  "shakeSpeed": {
+    "message": "હલાવવાની ઓછામાં ઓછી ઝડપ"
+  },
+  "shakeSpeedField": {
+    "message": "હલાવવાની ઓછામાં ઓછી ઝડપ, પિક્સેલ પ્રતિ સેકન્ડમાં"
+  },
+  "shakeSpeedHint": {
+    "message": "હલાવવું ગણાય તે માટે વિન્ડોએ કેટલી ઝડપથી ખસવું પડે, જેથી ધીમી હિલચાલથી તે ચાલુ ન થાય."
+  },
+  "shakesNeeded": {
+    "message": "કેટલી વાર હલાવવું"
+  },
+  "shakesNeededHint": {
+    "message": "શરૂ કરવા માટે કેટલી વાર હલાવવું પડે."
+  },
+  "timeToShake": {
+    "message": "હલાવવાનો સમય"
+  },
+  "timeToShakeField": {
+    "message": "હલાવવાનો સમય, મિલિસેકન્ડમાં"
+  },
+  "timeToShakeHint": {
+    "message": "ફિઝિક્સ ચાલુ કરવા માટે $count$ વાર કેટલી ઝડપથી હલાવવું પડે.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"પેજ પાછું લાવો\" બટન છુપાવો"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ફિઝિક્સ ચાલુ હોય ત્યારે ઉપર જમણા ખૂણામાં દેખાતું \"પેજ પાછું લાવો\" બટન છુપાવે છે."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ પિક્સેલ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ પિક્સેલ પ્રતિ સેકન્ડ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ મિલિસેકન્ડ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "વિન્ડોને તેના શીર્ષક બારથી <strong>પકડો</strong> અને <strong><i>હલાવો</i></strong>, અથવા એક્સ્ટેંશન આઇકન પર <strong>ક્લિક કરો</strong>."
+  },
+  "tipRestore": {
+    "message": "પેજ પાછું લાવવા માટે <kbd>Esc</kbd> <strong>દબાવો</strong>, <i>પેજ પાછું લાવો</i> બટન પર <strong>ક્લિક કરો</strong>, અથવા એક્સ્ટેંશન આઇકન પર <strong>ક્લિક કરો</strong>."
+  },
+  "resetSettings": {
+    "message": "ડિફૉલ્ટ પર રીસેટ કરો"
+  },
+  "resetConfirm": {
+    "message": "બધા સેટિંગ ડિફૉલ્ટ પર રીસેટ કરીએ?"
+  },
+  "resetFailed": {
+    "message": "સેટિંગ રીસેટ કરી શકાયા નહીં. ફરી પ્રયાસ કરો."
+  },
+  "resetDone": {
+    "message": "સેટિંગ ડિફૉલ્ટ પર રીસેટ થયા."
+  }
+}

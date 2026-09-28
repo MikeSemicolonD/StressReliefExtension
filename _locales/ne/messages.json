@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "ne"
+  },
+  "extName": {
+    "message": "स्क्रिन हल्लाऊ, तनाव भगाऊ"
+  },
+  "extDescription": {
+    "message": "रमाइलोका लागि हालको ट्याबका HTML तत्वहरूमा फिजिक्स थप्छ।"
+  },
+  "badgeOn": {
+    "message": "अन"
+  },
+  "restorePage": {
+    "message": "पृष्ठ फर्काउनुहोस्"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "फिजिक्स अन छ। यसलाई अफ गर्न एस्केप थिच्नुहोस् वा \"पृष्ठ फर्काउनुहोस्\" मा क्लिक गर्नुहोस्।"
+  },
+  "physicsOnNote": {
+    "message": "ब्राउजर विन्डो हल्लाउँदा फिजिक्स अन हुन्छ। यसलाई अफ गर्न \"पृष्ठ फर्काउनुहोस्\" मा क्लिक गर्नुहोस् वा Esc थिच्नुहोस्।"
+  },
+  "settingsPageTitle": {
+    "message": "स्क्रिन हल्लाऊ, तनाव भगाऊ – सेटिङ"
+  },
+  "settingsHeading": {
+    "message": "सेटिङ"
+  },
+  "physicsSettings": {
+    "message": "फिजिक्स सेटिङ"
+  },
+  "gravity": {
+    "message": "गुरुत्वाकर्षण"
+  },
+  "gravityHint": {
+    "message": "0 मा पृष्ठ समतल टेबलजस्तै रहन्छ। टुक्राहरू तल खसाल्न यसलाई बढाउनुहोस्।"
+  },
+  "airDrag": {
+    "message": "हावाको अवरोध"
+  },
+  "airDragHint": {
+    "message": "फ्याँकिएका टुक्राहरू कति छिटो सुस्त हुन्छन्।"
+  },
+  "bounce": {
+    "message": "उछाल"
+  },
+  "bounceHint": {
+    "message": "टुक्राहरू एकअर्कासँग र विन्डोका किनारासँग ठोक्किएर कति उफ्रिन्छन्।"
+  },
+  "friction": {
+    "message": "घर्षण"
+  },
+  "frictionHint": {
+    "message": "एकअर्काको छेउबाट चिप्लिँदा टुक्राहरू कति 'अड्किन्छन्'।"
+  },
+  "weight": {
+    "message": "तौल"
+  },
+  "weightHint": {
+    "message": "टुक्राहरू कति गह्रौँ छन्।"
+  },
+  "dragStrength": {
+    "message": "तान्ने बल"
+  },
+  "dragStrengthHint": {
+    "message": "टुक्राले तपाईंको पोइन्टरलाई कति कसिलोसँग पछ्याउँछ।"
+  },
+  "shakeSettings": {
+    "message": "हल्लाउने सेटिङ"
+  },
+  "shakeDistance": {
+    "message": "हल्लाउने न्यूनतम दूरी"
+  },
+  "shakeDistanceField": {
+    "message": "हल्लाउने न्यूनतम दूरी, पिक्सेलमा"
+  },
+  "shakeDistanceHint": {
+    "message": "एक पटक हल्लाएको गनिन दिशा बदल्नुअघि विन्डो कति टाढा सर्नुपर्छ।"
+  },
+  "shakeSpeed": {
+    "message": "हल्लाउने न्यूनतम गति"
+  },
+  "shakeSpeedField": {
+    "message": "हल्लाउने न्यूनतम गति, पिक्सेल प्रति सेकेन्डमा"
+  },
+  "shakeSpeedHint": {
+    "message": "हल्लाएको गनिन विन्डो कति छिटो सर्नुपर्छ, ताकि बिस्तारै सार्दा यो अन नहोस्।"
+  },
+  "shakesNeeded": {
+    "message": "कति पटक हल्लाउने"
+  },
+  "shakesNeededHint": {
+    "message": "सुरु गर्न कति पटक हल्लाउनुपर्छ।"
+  },
+  "timeToShake": {
+    "message": "हल्लाउने समय"
+  },
+  "timeToShakeField": {
+    "message": "हल्लाउने समय, मिलिसेकेन्डमा"
+  },
+  "timeToShakeHint": {
+    "message": "फिजिक्स अन गर्न $count$ पटक कति छिटो हल्लाउनुपर्छ।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"पृष्ठ फर्काउनुहोस्\" बटन लुकाउनुहोस्"
+  },
+  "hideRestoreButtonHint": {
+    "message": "फिजिक्स अन हुँदा माथि दायाँ कुनामा देखिने \"पृष्ठ फर्काउनुहोस्\" बटन लुकाउँछ।"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ पिक्सेल",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ पिक्सेल प्रति सेकेन्ड",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ मिलिसेकेन्ड",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "विन्डोलाई यसको शीर्षक पट्टीबाट <strong>समात्नुहोस्</strong> र <strong><i>हल्लाउनुहोस्</i></strong>, वा एक्सटेन्सनको आइकनमा <strong>क्लिक गर्नुहोस्</strong>।"
+  },
+  "tipRestore": {
+    "message": "पृष्ठ फर्काउन <kbd>Esc</kbd> <strong>थिच्नुहोस्</strong>, <i>पृष्ठ फर्काउनुहोस्</i> बटनमा <strong>क्लिक गर्नुहोस्</strong>, वा एक्सटेन्सनको आइकनमा <strong>क्लिक गर्नुहोस्</strong>।"
+  },
+  "resetSettings": {
+    "message": "डिफल्टमा रिसेट गर्नुहोस्"
+  },
+  "resetConfirm": {
+    "message": "सबै सेटिङ डिफल्टमा रिसेट गर्ने हो?"
+  },
+  "resetFailed": {
+    "message": "सेटिङ रिसेट गर्न सकिएन। फेरि प्रयास गर्नुहोस्।"
+  },
+  "resetDone": {
+    "message": "सेटिङ डिफल्टमा रिसेट गरियो।"
+  }
+}

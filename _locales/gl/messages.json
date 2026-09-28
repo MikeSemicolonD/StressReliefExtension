@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "gl"
+  },
+  "extName": {
+    "message": "Sacudida antiestrés"
+  },
+  "extDescription": {
+    "message": "Engade física aos elementos HTML da pestana actual, só por diversión."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Restaurar páxina"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "A física está activada. Preme Escape ou \"Restaurar páxina\" para desactivala."
+  },
+  "physicsOnNote": {
+    "message": "Ao sacudir a xanela do navegador actívase a física. Preme \"Restaurar páxina\" ou Esc para desactivala."
+  },
+  "settingsPageTitle": {
+    "message": "Configuración de Sacudida antiestrés"
+  },
+  "settingsHeading": {
+    "message": "Configuración"
+  },
+  "physicsSettings": {
+    "message": "Física"
+  },
+  "gravity": {
+    "message": "Gravidade"
+  },
+  "gravityHint": {
+    "message": "En 0, a páxina é coma unha mesa plana. Súbea para que as pezas caian."
+  },
+  "airDrag": {
+    "message": "Resistencia do aire"
+  },
+  "airDragHint": {
+    "message": "O rápido que se frean as pezas lanzadas."
+  },
+  "bounce": {
+    "message": "Rebote"
+  },
+  "bounceHint": {
+    "message": "Canto rebotan as pezas entre elas e contra os bordos da xanela."
+  },
+  "friction": {
+    "message": "Rozamento"
+  },
+  "frictionHint": {
+    "message": "Canto se \"enganchan\" as pezas ao esvarar unhas contra outras."
+  },
+  "weight": {
+    "message": "Peso"
+  },
+  "weightHint": {
+    "message": "Canto pesan as pezas."
+  },
+  "dragStrength": {
+    "message": "Forza de agarre"
+  },
+  "dragStrengthHint": {
+    "message": "Con que firmeza segue unha peza o punteiro."
+  },
+  "shakeSettings": {
+    "message": "Sacudida"
+  },
+  "shakeDistance": {
+    "message": "Distancia mínima"
+  },
+  "shakeDistanceField": {
+    "message": "Distancia mínima da sacudida en píxeles"
+  },
+  "shakeDistanceHint": {
+    "message": "Canto ten que moverse a xanela antes de cambiar de dirección para contar como unha sacudida."
+  },
+  "shakeSpeed": {
+    "message": "Velocidade mínima"
+  },
+  "shakeSpeedField": {
+    "message": "Velocidade mínima da sacudida en píxeles por segundo"
+  },
+  "shakeSpeedHint": {
+    "message": "O rápido que ten que moverse a xanela para que conte a sacudida, así os movementos lentos non a activan."
+  },
+  "shakesNeeded": {
+    "message": "Sacudidas necesarias"
+  },
+  "shakesNeededHint": {
+    "message": "Cantas sacudidas fan falta para comezar."
+  },
+  "timeToShake": {
+    "message": "Tempo para sacudir"
+  },
+  "timeToShakeField": {
+    "message": "Tempo para sacudir en milisegundos"
+  },
+  "timeToShakeHint": {
+    "message": "En canto tempo teñen que producirse as $count$ sacudidas para activar a física.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ocultar o botón \"Restaurar páxina\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Oculta o botón \"Restaurar páxina\" que aparece na esquina superior dereita cando a física está activada."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ píxeles",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ píxeles por segundo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisegundos",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Colle</strong> a xanela pola barra de título e <strong><i>sacúdea</i></strong>, OU <strong>fai clic</strong> na icona da extensión."
+  },
+  "tipRestore": {
+    "message": "<strong>Preme</strong> <kbd>Esc</kbd>, <strong>fai clic</strong> no botón <i>Restaurar páxina</i> OU <strong>fai clic</strong> na icona da extensión para restaurar a páxina."
+  },
+  "resetSettings": {
+    "message": "Restablecer valores predeterminados"
+  },
+  "resetConfirm": {
+    "message": "Queres restablecer toda a configuración aos valores predeterminados?"
+  },
+  "resetFailed": {
+    "message": "Non se puido restablecer a configuración. Téntao de novo."
+  },
+  "resetDone": {
+    "message": "Restableceuse a configuración aos valores predeterminados."
+  }
+}

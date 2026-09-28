@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "bn"
+  },
+  "extName": {
+    "message": "স্ক্রিন ঝাঁকাও, স্ট্রেস তাড়াও"
+  },
+  "extDescription": {
+    "message": "মজার জন্য বর্তমান ট্যাবের HTML এলিমেন্টে ফিজিক্স যোগ করে।"
+  },
+  "badgeOn": {
+    "message": "চালু"
+  },
+  "restorePage": {
+    "message": "পৃষ্ঠা ফিরিয়ে আনুন"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ফিজিক্স চালু আছে। বন্ধ করতে এস্কেপ টিপুন বা \"পৃষ্ঠা ফিরিয়ে আনুন\"-এ ক্লিক করুন।"
+  },
+  "physicsOnNote": {
+    "message": "ব্রাউজার উইন্ডো ঝাঁকালে ফিজিক্স চালু হয়। বন্ধ করতে \"পৃষ্ঠা ফিরিয়ে আনুন\"-এ ক্লিক করুন বা Esc টিপুন।"
+  },
+  "settingsPageTitle": {
+    "message": "স্ক্রিন ঝাঁকাও, স্ট্রেস তাড়াও – সেটিংস"
+  },
+  "settingsHeading": {
+    "message": "সেটিংস"
+  },
+  "physicsSettings": {
+    "message": "ফিজিক্স সেটিংস"
+  },
+  "gravity": {
+    "message": "মাধ্যাকর্ষণ"
+  },
+  "gravityHint": {
+    "message": "0-তে পৃষ্ঠাটি সমতল টেবিলের মতো থাকে। টুকরোগুলো নিচে ফেলতে এটি বাড়ান।"
+  },
+  "airDrag": {
+    "message": "বাতাসের বাধা"
+  },
+  "airDragHint": {
+    "message": "ছুড়ে দেওয়া টুকরোগুলো কত তাড়াতাড়ি ধীর হয়ে যায়।"
+  },
+  "bounce": {
+    "message": "লাফানো"
+  },
+  "bounceHint": {
+    "message": "টুকরোগুলো একে অপরের সাথে ও উইন্ডোর কিনারায় ধাক্কা খেয়ে কতটা লাফায়।"
+  },
+  "friction": {
+    "message": "ঘর্ষণ"
+  },
+  "frictionHint": {
+    "message": "একে অপরের পাশ দিয়ে পিছলে যাওয়ার সময় টুকরোগুলো কতটা 'আটকে যায়'।"
+  },
+  "weight": {
+    "message": "ওজন"
+  },
+  "weightHint": {
+    "message": "টুকরোগুলো কতটা ভারী।"
+  },
+  "dragStrength": {
+    "message": "টানার জোর"
+  },
+  "dragStrengthHint": {
+    "message": "টুকরোটি আপনার পয়েন্টারকে কতটা শক্তভাবে অনুসরণ করে।"
+  },
+  "shakeSettings": {
+    "message": "ঝাঁকানোর সেটিংস"
+  },
+  "shakeDistance": {
+    "message": "ঝাঁকানোর ন্যূনতম দূরত্ব"
+  },
+  "shakeDistanceField": {
+    "message": "ঝাঁকানোর ন্যূনতম দূরত্ব, পিক্সেলে"
+  },
+  "shakeDistanceHint": {
+    "message": "একবার ঝাঁকানো হিসেবে গোনার জন্য দিক বদলানোর আগে উইন্ডোকে কতটা সরতে হবে।"
+  },
+  "shakeSpeed": {
+    "message": "ঝাঁকানোর ন্যূনতম গতি"
+  },
+  "shakeSpeedField": {
+    "message": "ঝাঁকানোর ন্যূনতম গতি, পিক্সেল প্রতি সেকেন্ডে"
+  },
+  "shakeSpeedHint": {
+    "message": "ঝাঁকানো হিসেবে গোনার জন্য উইন্ডোকে কত দ্রুত সরতে হবে, যাতে ধীরে সরালে এটি চালু না হয়।"
+  },
+  "shakesNeeded": {
+    "message": "কতবার ঝাঁকাতে হবে"
+  },
+  "shakesNeededHint": {
+    "message": "শুরু করতে কতবার ঝাঁকাতে হয়।"
+  },
+  "timeToShake": {
+    "message": "ঝাঁকানোর সময়"
+  },
+  "timeToShakeField": {
+    "message": "ঝাঁকানোর সময়, মিলিসেকেন্ডে"
+  },
+  "timeToShakeHint": {
+    "message": "ফিজিক্স চালু করতে $count$ বার কত তাড়াতাড়ি ঝাঁকাতে হবে।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"পৃষ্ঠা ফিরিয়ে আনুন\" বোতাম লুকান"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ফিজিক্স চালু থাকলে উপরের ডানদিকের কোণে দেখানো \"পৃষ্ঠা ফিরিয়ে আনুন\" বোতামটি লুকিয়ে রাখে।"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ পিক্সেল",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ পিক্সেল প্রতি সেকেন্ড",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ মিলিসেকেন্ড",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "উইন্ডোটি টাইটেল বার ধরে <strong>ধরুন</strong> আর <strong><i>ঝাঁকান</i></strong>, অথবা এক্সটেনশন আইকনে <strong>ক্লিক করুন</strong>।"
+  },
+  "tipRestore": {
+    "message": "পৃষ্ঠা ফিরিয়ে আনতে <kbd>Esc</kbd> <strong>টিপুন</strong>, <i>পৃষ্ঠা ফিরিয়ে আনুন</i> বোতামে <strong>ক্লিক করুন</strong>, অথবা এক্সটেনশন আইকনে <strong>ক্লিক করুন</strong>।"
+  },
+  "resetSettings": {
+    "message": "ডিফল্টে রিসেট করুন"
+  },
+  "resetConfirm": {
+    "message": "সব সেটিংস ডিফল্টে রিসেট করবেন?"
+  },
+  "resetFailed": {
+    "message": "সেটিংস রিসেট করা যায়নি। আবার চেষ্টা করুন।"
+  },
+  "resetDone": {
+    "message": "সেটিংস ডিফল্টে রিসেট করা হয়েছে।"
+  }
+}

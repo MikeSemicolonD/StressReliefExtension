@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "hr"
+  },
+  "extName": {
+    "message": "Antistres: protresite zaslon"
+  },
+  "extDescription": {
+    "message": "Za zabavu dodaje fiziku HTML elementima na trenutačnoj kartici."
+  },
+  "badgeOn": {
+    "message": "UKLJ"
+  },
+  "restorePage": {
+    "message": "Vrati stranicu"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika je uključena. Isključite je tipkom Escape ili gumbom „Vrati stranicu”."
+  },
+  "physicsOnNote": {
+    "message": "Protresanje prozora preglednika uključuje fiziku. Isključite je gumbom „Vrati stranicu” ili tipkom Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistres: protresite zaslon – postavke"
+  },
+  "settingsHeading": {
+    "message": "Postavke"
+  },
+  "physicsSettings": {
+    "message": "Postavke fizike"
+  },
+  "gravity": {
+    "message": "Gravitacija"
+  },
+  "gravityHint": {
+    "message": "Na 0 stranica ostaje ravna poput stola. Povećajte je da bi komadići padali."
+  },
+  "airDrag": {
+    "message": "Otpor zraka"
+  },
+  "airDragHint": {
+    "message": "Koliko brzo bačeni komadići usporavaju."
+  },
+  "bounce": {
+    "message": "Odskakivanje"
+  },
+  "bounceHint": {
+    "message": "Koliko komadići odskaču jedan od drugog i od rubova prozora."
+  },
+  "friction": {
+    "message": "Trenje"
+  },
+  "frictionHint": {
+    "message": "Koliko komadići „zapinju” kad klize jedan pokraj drugog."
+  },
+  "weight": {
+    "message": "Težina"
+  },
+  "weightHint": {
+    "message": "Koliko su komadići teški."
+  },
+  "dragStrength": {
+    "message": "Snaga hvata"
+  },
+  "dragStrengthHint": {
+    "message": "Koliko čvrsto komadić prati pokazivač."
+  },
+  "shakeSettings": {
+    "message": "Postavke protresanja"
+  },
+  "shakeDistance": {
+    "message": "Najmanja duljina zamaha"
+  },
+  "shakeDistanceField": {
+    "message": "Najmanja duljina zamaha u pikselima"
+  },
+  "shakeDistanceHint": {
+    "message": "Koliko se daleko prozor mora pomaknuti prije promjene smjera da bi se to računalo kao jedan zamah."
+  },
+  "shakeSpeed": {
+    "message": "Najmanja brzina zamaha"
+  },
+  "shakeSpeedField": {
+    "message": "Najmanja brzina zamaha u pikselima u sekundi"
+  },
+  "shakeSpeedHint": {
+    "message": "Koliko se brzo prozor mora kretati da bi se zamah računao, pa ga spori pomaci ne pokreću."
+  },
+  "shakesNeeded": {
+    "message": "Broj zamaha"
+  },
+  "shakesNeededHint": {
+    "message": "Koliko je zamaha potrebno za pokretanje."
+  },
+  "timeToShake": {
+    "message": "Vrijeme za protresanje"
+  },
+  "timeToShakeField": {
+    "message": "Vrijeme za protresanje u milisekundama"
+  },
+  "timeToShakeHint": {
+    "message": "Koliko brzo morate protresti prozor $count$ puta da bi se uključila fizika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Sakrij gumb „Vrati stranicu”"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Skriva gumb „Vrati stranicu” koji se pojavljuje u gornjem desnom kutu kad je fizika uključena."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksela",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksela u sekundi",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekundi",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Uhvatite</strong> prozor za naslovnu traku i <strong><i>protresite ga</i></strong> ILI <strong>kliknite</strong> ikonu proširenja."
+  },
+  "tipRestore": {
+    "message": "<strong>Pritisnite</strong> <kbd>Esc</kbd>, <strong>kliknite</strong> gumb <i>Vrati stranicu</i> ILI <strong>kliknite</strong> ikonu proširenja da biste vratili stranicu."
+  },
+  "resetSettings": {
+    "message": "Vrati zadano"
+  },
+  "resetConfirm": {
+    "message": "Vratiti sve postavke na zadane vrijednosti?"
+  },
+  "resetFailed": {
+    "message": "Postavke nije bilo moguće vratiti. Pokušajte ponovno."
+  },
+  "resetDone": {
+    "message": "Postavke su vraćene na zadane vrijednosti."
+  }
+}

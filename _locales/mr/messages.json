@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "mr"
+  },
+  "extName": {
+    "message": "स्क्रीन हलवा, ताण घालवा"
+  },
+  "extDescription": {
+    "message": "मजेसाठी सध्याच्या टॅबमधील HTML घटकांमध्ये फिजिक्स जोडते."
+  },
+  "badgeOn": {
+    "message": "चालू"
+  },
+  "restorePage": {
+    "message": "पेज पूर्ववत करा"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "फिजिक्स सुरू आहे. ते बंद करण्यासाठी एस्केप दाबा किंवा \"पेज पूर्ववत करा\" वर क्लिक करा."
+  },
+  "physicsOnNote": {
+    "message": "ब्राउझर विंडो हलवल्याने फिजिक्स सुरू होते. ते बंद करण्यासाठी \"पेज पूर्ववत करा\" वर क्लिक करा किंवा Esc दाबा."
+  },
+  "settingsPageTitle": {
+    "message": "स्क्रीन हलवा, ताण घालवा – सेटिंग्ज"
+  },
+  "settingsHeading": {
+    "message": "सेटिंग्ज"
+  },
+  "physicsSettings": {
+    "message": "फिजिक्स सेटिंग्ज"
+  },
+  "gravity": {
+    "message": "गुरुत्वाकर्षण"
+  },
+  "gravityHint": {
+    "message": "0 वर पेज सपाट टेबलसारखे राहते. तुकडे खाली पडावेत म्हणून ते वाढवा."
+  },
+  "airDrag": {
+    "message": "हवेचा अडथळा"
+  },
+  "airDragHint": {
+    "message": "फेकलेले तुकडे किती लवकर मंदावतात."
+  },
+  "bounce": {
+    "message": "उसळी"
+  },
+  "bounceHint": {
+    "message": "तुकडे एकमेकांवर आणि विंडोच्या कडांवर आदळून किती उसळतात."
+  },
+  "friction": {
+    "message": "घर्षण"
+  },
+  "frictionHint": {
+    "message": "एकमेकांजवळून घसरताना तुकडे किती 'अडकतात'."
+  },
+  "weight": {
+    "message": "वजन"
+  },
+  "weightHint": {
+    "message": "तुकडे किती जड आहेत."
+  },
+  "dragStrength": {
+    "message": "ओढण्याची ताकद"
+  },
+  "dragStrengthHint": {
+    "message": "तुकडा तुमच्या पॉइंटरमागे किती घट्टपणे येतो."
+  },
+  "shakeSettings": {
+    "message": "हलवण्याची सेटिंग्ज"
+  },
+  "shakeDistance": {
+    "message": "हलवण्याचे किमान अंतर"
+  },
+  "shakeDistanceField": {
+    "message": "हलवण्याचे किमान अंतर, पिक्सेलमध्ये"
+  },
+  "shakeDistanceHint": {
+    "message": "एकदा हलवले असे मोजले जाण्यासाठी दिशा बदलण्यापूर्वी विंडो किती दूर सरकायला हवी."
+  },
+  "shakeSpeed": {
+    "message": "हलवण्याचा किमान वेग"
+  },
+  "shakeSpeedField": {
+    "message": "हलवण्याचा किमान वेग, पिक्सेल प्रति सेकंदमध्ये"
+  },
+  "shakeSpeedHint": {
+    "message": "हलवणे मोजले जाण्यासाठी विंडो किती वेगाने सरकायला हवी, जेणेकरून हळू हालचालींनी ते सुरू होणार नाही."
+  },
+  "shakesNeeded": {
+    "message": "किती वेळा हलवायचे"
+  },
+  "shakesNeededHint": {
+    "message": "सुरू करण्यासाठी किती वेळा हलवावे लागते."
+  },
+  "timeToShake": {
+    "message": "हलवण्याचा वेळ"
+  },
+  "timeToShakeField": {
+    "message": "हलवण्याचा वेळ, मिलिसेकंदमध्ये"
+  },
+  "timeToShakeHint": {
+    "message": "फिजिक्स सुरू होण्यासाठी $count$ वेळा किती पटकन हलवावे लागते.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"पेज पूर्ववत करा\" बटण लपवा"
+  },
+  "hideRestoreButtonHint": {
+    "message": "फिजिक्स सुरू असताना वरच्या उजव्या कोपऱ्यात दिसणारे \"पेज पूर्ववत करा\" बटण लपवते."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ पिक्सेल",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ पिक्सेल प्रति सेकंद",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ मिलिसेकंद",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "विंडो तिच्या टायटल बारने <strong>पकडा</strong> आणि <strong><i>हलवा</i></strong>, किंवा एक्सटेंशन आयकनवर <strong>क्लिक करा</strong>."
+  },
+  "tipRestore": {
+    "message": "पेज पूर्ववत करण्यासाठी <kbd>Esc</kbd> <strong>दाबा</strong>, <i>पेज पूर्ववत करा</i> बटणावर <strong>क्लिक करा</strong>, किंवा एक्सटेंशन आयकनवर <strong>क्लिक करा</strong>."
+  },
+  "resetSettings": {
+    "message": "डीफॉल्टवर रीसेट करा"
+  },
+  "resetConfirm": {
+    "message": "सर्व सेटिंग्ज डीफॉल्टवर रीसेट करायच्या?"
+  },
+  "resetFailed": {
+    "message": "सेटिंग्ज रीसेट करता आल्या नाहीत. पुन्हा प्रयत्न करा."
+  },
+  "resetDone": {
+    "message": "सेटिंग्ज डीफॉल्टवर रीसेट केल्या."
+  }
+}

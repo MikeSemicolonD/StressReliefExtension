@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "he"
+  },
+  "extName": {
+    "message": "מנערים ונרגעים"
+  },
+  "extDescription": {
+    "message": "הופך את תוכן הדף הנוכחי לחלקים פיזיקליים שאפשר לזרוק, סתם בשביל הכיף."
+  },
+  "badgeOn": {
+    "message": "פועל"
+  },
+  "restorePage": {
+    "message": "שחזור הדף"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "הפיזיקה פועלת. כדי לכבות אותה, יש ללחוץ על אסקייפ או על \"שחזור הדף\"."
+  },
+  "physicsOnNote": {
+    "message": "ניעור של חלון הדפדפן מפעיל את הפיזיקה. כדי לכבות אותה, יש ללחוץ על \"שחזור הדף\" או על Esc."
+  },
+  "settingsPageTitle": {
+    "message": "הגדרות \"מנערים ונרגעים\""
+  },
+  "settingsHeading": {
+    "message": "הגדרות"
+  },
+  "physicsSettings": {
+    "message": "הגדרות פיזיקה"
+  },
+  "gravity": {
+    "message": "כוח משיכה"
+  },
+  "gravityHint": {
+    "message": "ב-0 הדף נשאר שטוח כמו שולחן. אפשר להגדיל את הערך כדי שהחלקים ייפלו."
+  },
+  "airDrag": {
+    "message": "התנגדות אוויר"
+  },
+  "airDragHint": {
+    "message": "כמה מהר חלקים שנזרקו מאטים."
+  },
+  "bounce": {
+    "message": "קפיציות"
+  },
+  "bounceHint": {
+    "message": "כמה החלקים קופצים זה מזה ומשולי החלון."
+  },
+  "friction": {
+    "message": "חיכוך"
+  },
+  "frictionHint": {
+    "message": "עד כמה החלקים \"נתפסים\" זה בזה כשהם מחליקים זה לצד זה."
+  },
+  "weight": {
+    "message": "משקל"
+  },
+  "weightHint": {
+    "message": "כמה כבדים החלקים."
+  },
+  "dragStrength": {
+    "message": "עוצמת גרירה"
+  },
+  "dragStrengthHint": {
+    "message": "עד כמה החלק צמוד לסמן כשגוררים אותו."
+  },
+  "shakeSettings": {
+    "message": "הגדרות ניעור"
+  },
+  "shakeDistance": {
+    "message": "מרחק ניעור מינימלי"
+  },
+  "shakeDistanceField": {
+    "message": "מרחק ניעור מינימלי בפיקסלים"
+  },
+  "shakeDistanceHint": {
+    "message": "כמה החלון צריך לזוז לפני שהוא מחליף כיוון כדי שזה ייחשב לניעור אחד."
+  },
+  "shakeSpeed": {
+    "message": "מהירות ניעור מינימלית"
+  },
+  "shakeSpeedField": {
+    "message": "מהירות ניעור מינימלית בפיקסלים לשנייה"
+  },
+  "shakeSpeedHint": {
+    "message": "כמה מהר החלון צריך לזוז כדי שהניעור ייחשב, כך שהזזות איטיות לא יפעילו אותו."
+  },
+  "shakesNeeded": {
+    "message": "מספר ניעורים"
+  },
+  "shakesNeededHint": {
+    "message": "כמה ניעורים צריך כדי להתחיל."
+  },
+  "timeToShake": {
+    "message": "זמן לניעור"
+  },
+  "timeToShakeField": {
+    "message": "זמן לניעור באלפיות שנייה"
+  },
+  "timeToShakeHint": {
+    "message": "תוך כמה זמן צריכים להתבצע $count$ הניעורים כדי להפעיל את הפיזיקה.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "הסתרת הלחצן \"שחזור הדף\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "מסתיר את הלחצן \"שחזור הדף\" שמופיע בפינה השמאלית העליונה כשהפיזיקה פועלת."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ פיקסלים",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ פיקסלים לשנייה",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ אלפיות שנייה",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>תופסים</strong> את החלון בשורת הכותרת ו<strong><i>מנערים אותו</i></strong>, או <strong>לוחצים</strong> על סמל התוסף."
+  },
+  "tipRestore": {
+    "message": "כדי לשחזר את הדף, <strong>לוחצים</strong> על <kbd>Esc</kbd>, <strong>לוחצים</strong> על הלחצן <i>\"שחזור הדף\"</i>, או <strong>לוחצים</strong> על סמל התוסף."
+  },
+  "resetSettings": {
+    "message": "איפוס לברירת המחדל"
+  },
+  "resetConfirm": {
+    "message": "לאפס את כל ההגדרות לברירת המחדל?"
+  },
+  "resetFailed": {
+    "message": "לא הצלחנו לאפס את ההגדרות. אפשר לנסות שוב."
+  },
+  "resetDone": {
+    "message": "ההגדרות אופסו לברירת המחדל."
+  }
+}

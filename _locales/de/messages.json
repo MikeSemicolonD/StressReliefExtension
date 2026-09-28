@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "de"
+  },
+  "extName": {
+    "message": "Stressabbau durch Schütteln"
+  },
+  "extDescription": {
+    "message": "Verleiht HTML-Elementen im aktuellen Tab zum Spaß Physik."
+  },
+  "badgeOn": {
+    "message": "AN"
+  },
+  "restorePage": {
+    "message": "Seite wiederherstellen"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Physik ist an. Drücken Sie Escape oder „Seite wiederherstellen“, um sie auszuschalten."
+  },
+  "physicsOnNote": {
+    "message": "Wenn Sie Ihr Browserfenster schütteln, wird die Physik eingeschaltet. Drücken Sie „Seite wiederherstellen“ oder Esc, um sie auszuschalten."
+  },
+  "settingsPageTitle": {
+    "message": "Einstellungen – Stressabbau durch Schütteln"
+  },
+  "settingsHeading": {
+    "message": "Einstellungen"
+  },
+  "physicsSettings": {
+    "message": "Physik-Einstellungen"
+  },
+  "gravity": {
+    "message": "Schwerkraft"
+  },
+  "gravityHint": {
+    "message": "Bei 0 bleibt die Seite eine flache Tischplatte. Erhöhen Sie den Wert, damit die Teile fallen."
+  },
+  "airDrag": {
+    "message": "Luftwiderstand"
+  },
+  "airDragHint": {
+    "message": "Wie schnell geworfene Teile langsamer werden."
+  },
+  "bounce": {
+    "message": "Sprungkraft"
+  },
+  "bounceHint": {
+    "message": "Wie stark die Teile voneinander und von den Fensterrändern abprallen."
+  },
+  "friction": {
+    "message": "Reibung"
+  },
+  "frictionHint": {
+    "message": "Wie stark die Teile „haken“, wenn sie aneinander vorbeigleiten."
+  },
+  "weight": {
+    "message": "Gewicht"
+  },
+  "weightHint": {
+    "message": "Wie schwer die Teile sind."
+  },
+  "dragStrength": {
+    "message": "Zugkraft"
+  },
+  "dragStrengthHint": {
+    "message": "Wie eng ein Teil Ihrem Zeiger folgt."
+  },
+  "shakeSettings": {
+    "message": "Schüttel-Einstellungen"
+  },
+  "shakeDistance": {
+    "message": "Minimale Schüttelstrecke"
+  },
+  "shakeDistanceField": {
+    "message": "Minimale Schüttelstrecke in Pixeln"
+  },
+  "shakeDistanceHint": {
+    "message": "Wie weit sich das Fenster bewegen muss, bevor es die Richtung wechselt, damit es als eine Schüttelbewegung zählt."
+  },
+  "shakeSpeed": {
+    "message": "Minimales Schütteltempo"
+  },
+  "shakeSpeedField": {
+    "message": "Minimales Schütteltempo in Pixeln pro Sekunde"
+  },
+  "shakeSpeedHint": {
+    "message": "Wie schnell sich das Fenster bewegen muss, damit eine Schüttelbewegung zählt – so lösen langsame Bewegungen nichts aus."
+  },
+  "shakesNeeded": {
+    "message": "Schüttelanzahl"
+  },
+  "shakesNeededHint": {
+    "message": "Wie oft geschüttelt werden muss, damit es losgeht."
+  },
+  "timeToShake": {
+    "message": "Schüttelzeit"
+  },
+  "timeToShakeField": {
+    "message": "Schüttelzeit in Millisekunden"
+  },
+  "timeToShakeHint": {
+    "message": "Wie schnell die $count$ Schüttelbewegungen erfolgen müssen, um die Physik auszulösen.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Schaltfläche „Seite wiederherstellen“ ausblenden"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Blendet die Schaltfläche „Seite wiederherstellen“ aus, die oben rechts erscheint, wenn die Physik an ist."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ Pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ Pixel pro Sekunde",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ Millisekunden",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Greifen</strong> Sie das Fenster an der Titelleiste und <strong><i>schütteln Sie es</i></strong> ODER <strong>klicken</strong> Sie auf das Erweiterungssymbol."
+  },
+  "tipRestore": {
+    "message": "<strong>Drücken</strong> Sie <kbd>Esc</kbd>, <strong>klicken</strong> Sie auf die Schaltfläche <i>Seite wiederherstellen</i> ODER <strong>klicken</strong> Sie auf das Erweiterungssymbol, um die Seite wiederherzustellen."
+  },
+  "resetSettings": {
+    "message": "Auf Standard zurücksetzen"
+  },
+  "resetConfirm": {
+    "message": "Alle Einstellungen auf die Standardwerte zurücksetzen?"
+  },
+  "resetFailed": {
+    "message": "Die Einstellungen konnten nicht zurückgesetzt werden. Versuchen Sie es noch einmal."
+  },
+  "resetDone": {
+    "message": "Einstellungen auf Standardwerte zurückgesetzt."
+  }
+}

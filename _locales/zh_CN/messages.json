@@ -1,0 +1,161 @@
+{
+  "locale": {
+    "message": "zh_CN"
+  },
+  "extName": {
+    "message": "摇屏解压"
+  },
+  "extDescription": {
+    "message": "给当前标签页中的 HTML 元素加上物理效果，好玩又解压。"
+  },
+  "badgeOn": {
+    "message": "开"
+  },
+  "restorePage": {
+    "message": "恢复页面"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "物理效果已开启。按 Esc 键或“恢复页面”即可关闭。"
+  },
+  "physicsOnNote": {
+    "message": "晃动浏览器窗口开启了物理效果。按“恢复页面”或 Esc 键即可关闭。"
+  },
+  "settingsPageTitle": {
+    "message": "摇屏解压设置"
+  },
+  "settingsHeading": {
+    "message": "设置"
+  },
+  "physicsSettings": {
+    "message": "物理设置"
+  },
+  "gravity": {
+    "message": "重力"
+  },
+  "gravityHint": {
+    "message": "为 0 时页面就像一张平放的桌面。调高后碎片会往下掉。"
+  },
+  "airDrag": {
+    "message": "空气阻力"
+  },
+  "airDragHint": {
+    "message": "扔出去的碎片减速有多快。"
+  },
+  "bounce": {
+    "message": "弹性"
+  },
+  "bounceHint": {
+    "message": "碎片互相碰撞或撞到窗口边缘时的反弹程度。"
+  },
+  "friction": {
+    "message": "摩擦力"
+  },
+  "frictionHint": {
+    "message": "碎片互相滑过时有多容易被“卡住”。"
+  },
+  "weight": {
+    "message": "重量"
+  },
+  "weightHint": {
+    "message": "碎片有多重。"
+  },
+  "dragStrength": {
+    "message": "拖动力度"
+  },
+  "dragStrengthHint": {
+    "message": "碎片跟随指针的紧密程度。"
+  },
+  "shakeSettings": {
+    "message": "摇晃设置"
+  },
+  "shakeDistance": {
+    "message": "最小摇晃距离"
+  },
+  "shakeDistanceField": {
+    "message": "最小摇晃距离（像素）"
+  },
+  "shakeDistanceHint": {
+    "message": "窗口移动多远后再换方向，才算摇晃一次。"
+  },
+  "shakeSpeed": {
+    "message": "最低摇晃速度"
+  },
+  "shakeSpeedField": {
+    "message": "最低摇晃速度（像素/秒）"
+  },
+  "shakeSpeedHint": {
+    "message": "窗口移动要多快才算摇晃，慢慢挪动不会触发。"
+  },
+  "shakesNeeded": {
+    "message": "所需摇晃次数"
+  },
+  "shakesNeededHint": {
+    "message": "摇晃几次才会启动。"
+  },
+  "timeToShake": {
+    "message": "摇晃时限"
+  },
+  "timeToShakeField": {
+    "message": "摇晃时限（毫秒）"
+  },
+  "timeToShakeHint": {
+    "message": "需要在多长时间内完成 $count$ 次摇晃才能触发物理效果。",
+    "placeholders": {
+      "count": { "content": "$1", "example": "4" }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "隐藏“恢复页面”按钮"
+  },
+  "hideRestoreButtonHint": {
+    "message": "隐藏物理效果开启时出现在右上角的“恢复页面”按钮。"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/秒"
+  },
+  "unitMs": {
+    "message": "毫秒"
+  },
+  "valuePx": {
+    "message": "$value$ 像素",
+    "placeholders": {
+      "value": { "content": "$1", "example": "40" }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "每秒 $value$ 像素",
+    "placeholders": {
+      "value": { "content": "$1", "example": "150" }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ 毫秒",
+    "placeholders": {
+      "value": { "content": "$1", "example": "1500" }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>抓住</strong>窗口的标题栏<strong><i>摇一摇</i></strong>，或者<strong>点击</strong>扩展程序图标。"
+  },
+  "tipRestore": {
+    "message": "<strong>按</strong> <kbd>Esc</kbd> 键、<strong>点击</strong>“<i>恢复页面</i>”按钮，或者<strong>点击</strong>扩展程序图标，即可恢复页面。"
+  },
+  "resetSettings": {
+    "message": "恢复默认设置"
+  },
+  "resetConfirm": {
+    "message": "要将所有设置恢复为默认值吗？"
+  },
+  "resetFailed": {
+    "message": "无法重置设置，请重试。"
+  },
+  "resetDone": {
+    "message": "已将设置恢复为默认值。"
+  }
+}

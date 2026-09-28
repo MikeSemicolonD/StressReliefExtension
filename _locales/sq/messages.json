@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "sq"
+  },
+  "extName": {
+    "message": "Shkund ekranin, largo stresin"
+  },
+  "extDescription": {
+    "message": "U shton fizikë elementeve HTML në skedën aktuale, për argëtim."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Rikthe faqen"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika është aktive. Shtypni Escape ose «Rikthe faqen» për ta çaktivizuar."
+  },
+  "physicsOnNote": {
+    "message": "Shkundja e dritares së shfletuesit aktivizon fizikën. Shtypni «Rikthe faqen» ose Esc për ta çaktivizuar."
+  },
+  "settingsPageTitle": {
+    "message": "Shkund ekranin, largo stresin – cilësimet"
+  },
+  "settingsHeading": {
+    "message": "Cilësimet"
+  },
+  "physicsSettings": {
+    "message": "Cilësimet e fizikës"
+  },
+  "gravity": {
+    "message": "Graviteti"
+  },
+  "gravityHint": {
+    "message": "Në 0, faqja mbetet si një tavolinë e sheshtë. Rriteni që pjesët të bien."
+  },
+  "airDrag": {
+    "message": "Rezistenca e ajrit"
+  },
+  "airDragHint": {
+    "message": "Sa shpejt ngadalësohen pjesët e hedhura."
+  },
+  "bounce": {
+    "message": "Kërcimi"
+  },
+  "bounceHint": {
+    "message": "Sa kërcejnë pjesët nga njëra-tjetra dhe nga skajet e dritares."
+  },
+  "friction": {
+    "message": "Fërkimi"
+  },
+  "frictionHint": {
+    "message": "Sa «ngecin» pjesët kur rrëshqasin pranë njëra-tjetrës."
+  },
+  "weight": {
+    "message": "Pesha"
+  },
+  "weightHint": {
+    "message": "Sa të rënda janë pjesët."
+  },
+  "dragStrength": {
+    "message": "Forca e tërheqjes"
+  },
+  "dragStrengthHint": {
+    "message": "Sa fort e ndjek një pjesë treguesin tuaj."
+  },
+  "shakeSettings": {
+    "message": "Cilësimet e shkundjes"
+  },
+  "shakeDistance": {
+    "message": "Distanca minimale e shkundjes"
+  },
+  "shakeDistanceField": {
+    "message": "Distanca minimale e shkundjes në piksela"
+  },
+  "shakeDistanceHint": {
+    "message": "Sa larg duhet të lëvizë dritarja para se të ndryshojë drejtim, që të llogaritet si një shkundje."
+  },
+  "shakeSpeed": {
+    "message": "Shpejtësia minimale e shkundjes"
+  },
+  "shakeSpeedField": {
+    "message": "Shpejtësia minimale e shkundjes në piksela për sekondë"
+  },
+  "shakeSpeedHint": {
+    "message": "Sa shpejt duhet të lëvizë dritarja që të llogaritet shkundja, që lëvizjet e ngadalta të mos e aktivizojnë."
+  },
+  "shakesNeeded": {
+    "message": "Shkundje të nevojshme"
+  },
+  "shakesNeededHint": {
+    "message": "Sa shkundje duhen për të nisur."
+  },
+  "timeToShake": {
+    "message": "Koha e shkundjes"
+  },
+  "timeToShakeField": {
+    "message": "Koha e shkundjes në milisekonda"
+  },
+  "timeToShakeHint": {
+    "message": "Brenda sa kohe duhet të bëhen $count$ shkundje për të aktivizuar fizikën.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Fshih butonin «Rikthe faqen»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Fsheh butonin «Rikthe faqen» që shfaqet në këndin lart djathtas kur fizika është aktive."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksela",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksela për sekondë",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekonda",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Kapeni</strong> dritaren nga shiriti i titullit dhe <strong><i>shkundeni</i></strong>, OSE <strong>klikoni</strong> ikonën e shtesës."
+  },
+  "tipRestore": {
+    "message": "<strong>Shtypni</strong> <kbd>Esc</kbd>, <strong>klikoni</strong> butonin <i>Rikthe faqen</i>, OSE <strong>klikoni</strong> ikonën e shtesës për të rikthyer faqen."
+  },
+  "resetSettings": {
+    "message": "Rikthe parazgjedhjet"
+  },
+  "resetConfirm": {
+    "message": "Të rikthehen të gjitha cilësimet te parazgjedhjet?"
+  },
+  "resetFailed": {
+    "message": "Cilësimet nuk u rikthyen dot. Provoni sërish."
+  },
+  "resetDone": {
+    "message": "Cilësimet u rikthyen te parazgjedhjet."
+  }
+}

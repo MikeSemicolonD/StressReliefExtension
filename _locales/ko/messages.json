@@ -1,0 +1,161 @@
+{
+  "locale": {
+    "message": "ko"
+  },
+  "extName": {
+    "message": "화면 흔들기 스트레스 해소"
+  },
+  "extDescription": {
+    "message": "현재 탭의 HTML 요소에 물리 효과를 더해 재미있게 놀 수 있습니다."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "페이지 복원"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "물리 효과가 켜졌습니다. 끄려면 이스케이프 키나 '페이지 복원'을 누르세요."
+  },
+  "physicsOnNote": {
+    "message": "브라우저 창을 흔들어서 물리 효과가 켜졌습니다. 끄려면 '페이지 복원'이나 Esc 키를 누르세요."
+  },
+  "settingsPageTitle": {
+    "message": "화면 흔들기 스트레스 해소 설정"
+  },
+  "settingsHeading": {
+    "message": "설정"
+  },
+  "physicsSettings": {
+    "message": "물리 설정"
+  },
+  "gravity": {
+    "message": "중력"
+  },
+  "gravityHint": {
+    "message": "0이면 페이지가 평평한 탁자처럼 유지됩니다. 높이면 조각이 아래로 떨어집니다."
+  },
+  "airDrag": {
+    "message": "공기 저항"
+  },
+  "airDragHint": {
+    "message": "던진 조각이 얼마나 빨리 느려지는지 정합니다."
+  },
+  "bounce": {
+    "message": "튕김"
+  },
+  "bounceHint": {
+    "message": "조각끼리 또는 창 가장자리에 부딪혔을 때 튕기는 정도입니다."
+  },
+  "friction": {
+    "message": "마찰"
+  },
+  "frictionHint": {
+    "message": "조각끼리 스치며 미끄러질 때 걸리는 정도입니다."
+  },
+  "weight": {
+    "message": "무게"
+  },
+  "weightHint": {
+    "message": "조각이 얼마나 무거운지 정합니다."
+  },
+  "dragStrength": {
+    "message": "끌기 강도"
+  },
+  "dragStrengthHint": {
+    "message": "잡은 조각이 포인터를 얼마나 바짝 따라오는지 정합니다."
+  },
+  "shakeSettings": {
+    "message": "흔들기 설정"
+  },
+  "shakeDistance": {
+    "message": "최소 흔들기 거리"
+  },
+  "shakeDistanceField": {
+    "message": "최소 흔들기 거리(픽셀)"
+  },
+  "shakeDistanceHint": {
+    "message": "창이 방향을 바꾸기 전에 얼마나 움직여야 한 번 흔든 것으로 치는지 정합니다."
+  },
+  "shakeSpeed": {
+    "message": "최소 흔들기 속도"
+  },
+  "shakeSpeedField": {
+    "message": "최소 흔들기 속도(초당 픽셀)"
+  },
+  "shakeSpeedHint": {
+    "message": "흔들기로 인정되려면 창이 얼마나 빨리 움직여야 하는지 정합니다. 천천히 옮기는 것은 무시됩니다."
+  },
+  "shakesNeeded": {
+    "message": "필요한 흔들기 횟수"
+  },
+  "shakesNeededHint": {
+    "message": "몇 번 흔들어야 시작되는지 정합니다."
+  },
+  "timeToShake": {
+    "message": "흔들기 제한 시간"
+  },
+  "timeToShakeField": {
+    "message": "흔들기 제한 시간(밀리초)"
+  },
+  "timeToShakeHint": {
+    "message": "물리 효과를 켜려면 이 시간 안에 $count$번 흔들어야 합니다.",
+    "placeholders": {
+      "count": { "content": "$1", "example": "4" }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "'페이지 복원' 버튼 숨기기"
+  },
+  "hideRestoreButtonHint": {
+    "message": "물리 효과가 켜져 있을 때 오른쪽 상단에 나타나는 '페이지 복원' 버튼을 숨깁니다."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/초"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$픽셀",
+    "placeholders": {
+      "value": { "content": "$1", "example": "40" }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "초당 $value$픽셀",
+    "placeholders": {
+      "value": { "content": "$1", "example": "150" }
+    }
+  },
+  "valueMs": {
+    "message": "$value$밀리초",
+    "placeholders": {
+      "value": { "content": "$1", "example": "1500" }
+    }
+  },
+  "tipStart": {
+    "message": "창의 제목 표시줄을 <strong>잡고</strong> <strong><i>흔들거나</i></strong>, 확장 프로그램 아이콘을 <strong>클릭</strong>하세요."
+  },
+  "tipRestore": {
+    "message": "<kbd>Esc</kbd> 키를 <strong>누르거나</strong>, '<i>페이지 복원</i>' 버튼을 <strong>클릭</strong>하거나, 확장 프로그램 아이콘을 <strong>클릭</strong>하면 페이지가 복원됩니다."
+  },
+  "resetSettings": {
+    "message": "기본값으로 재설정"
+  },
+  "resetConfirm": {
+    "message": "모든 설정을 기본값으로 재설정할까요?"
+  },
+  "resetFailed": {
+    "message": "설정을 재설정하지 못했습니다. 다시 시도해 보세요."
+  },
+  "resetDone": {
+    "message": "설정이 기본값으로 재설정되었습니다."
+  }
+}

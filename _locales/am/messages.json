@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "am"
+  },
+  "extName": {
+    "message": "ነቅንቅና ተዝናና"
+  },
+  "extDescription": {
+    "message": "ለመዝናኛ በአሁኑ ትር ውስጥ ላሉ የHTML አባሎች ፊዚክስ ያክላል።"
+  },
+  "badgeOn": {
+    "message": "በርቷል"
+  },
+  "restorePage": {
+    "message": "ገጹን መልስ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ፊዚክስ በርቷል። ለማጥፋት የኤስኬፕ ቁልፍን ወይም «ገጹን መልስ»ን ይጫኑ።"
+  },
+  "physicsOnNote": {
+    "message": "የአሳሽ መስኮትዎን መነቅነቅ ፊዚክስን ያበራል። ለማጥፋት «ገጹን መልስ»ን ወይም Escን ይጫኑ።"
+  },
+  "settingsPageTitle": {
+    "message": "የነቅንቅና ተዝናና ቅንብሮች"
+  },
+  "settingsHeading": {
+    "message": "ቅንብሮች"
+  },
+  "physicsSettings": {
+    "message": "የፊዚክስ ቅንብሮች"
+  },
+  "gravity": {
+    "message": "የስበት ኃይል"
+  },
+  "gravityHint": {
+    "message": "በ0 ላይ ገጹ እንደ ጠፍጣፋ ጠረጴዛ ይቆያል። ቁርጥራጮቹ እንዲወድቁ ይጨምሩት።"
+  },
+  "airDrag": {
+    "message": "የአየር ተቃውሞ"
+  },
+  "airDragHint": {
+    "message": "የተወረወሩ ቁርጥራጮች ምን ያህል በፍጥነት እንደሚዘገዩ።"
+  },
+  "bounce": {
+    "message": "መንጠር"
+  },
+  "bounceHint": {
+    "message": "ቁርጥራጮቹ እርስ በርሳቸው እና ከመስኮቱ ጠርዞች ጋር ሲጋጩ ምን ያህል እንደሚነጥሩ።"
+  },
+  "friction": {
+    "message": "ሰበቃ"
+  },
+  "frictionHint": {
+    "message": "ቁርጥራጮቹ እርስ በርሳቸው ሲተላለፉ ምን ያህል 'እንደሚያያዙ'።"
+  },
+  "weight": {
+    "message": "ክብደት"
+  },
+  "weightHint": {
+    "message": "ቁርጥራጮቹ ምን ያህል ከባድ እንደሆኑ።"
+  },
+  "dragStrength": {
+    "message": "የመጎተት ጥንካሬ"
+  },
+  "dragStrengthHint": {
+    "message": "ቁርጥራጩ ጠቋሚዎን ምን ያህል በቅርበት እንደሚከተል።"
+  },
+  "shakeSettings": {
+    "message": "የመነቅነቅ ቅንብሮች"
+  },
+  "shakeDistance": {
+    "message": "ዝቅተኛ የመነቅነቅ ርቀት"
+  },
+  "shakeDistanceField": {
+    "message": "ዝቅተኛ የመነቅነቅ ርቀት በፒክሰል"
+  },
+  "shakeDistanceHint": {
+    "message": "እንደ አንድ መነቅነቅ እንዲቆጠር መስኮቱ አቅጣጫ ከመቀየሩ በፊት ምን ያህል መንቀሳቀስ እንዳለበት።"
+  },
+  "shakeSpeed": {
+    "message": "ዝቅተኛ የመነቅነቅ ፍጥነት"
+  },
+  "shakeSpeedField": {
+    "message": "ዝቅተኛ የመነቅነቅ ፍጥነት በፒክሰል በሰከንድ"
+  },
+  "shakeSpeedHint": {
+    "message": "መነቅነቁ እንዲቆጠር መስኮቱ ምን ያህል በፍጥነት መንቀሳቀስ እንዳለበት፤ ቀስ ያሉ እንቅስቃሴዎች አያስነሱትም።"
+  },
+  "shakesNeeded": {
+    "message": "የሚያስፈልጉ መነቅነቆች"
+  },
+  "shakesNeededHint": {
+    "message": "ለመጀመር ስንት መነቅነቅ እንደሚያስፈልግ።"
+  },
+  "timeToShake": {
+    "message": "የመነቅነቂያ ጊዜ"
+  },
+  "timeToShakeField": {
+    "message": "የመነቅነቂያ ጊዜ በሚሊሰከንድ"
+  },
+  "timeToShakeHint": {
+    "message": "ፊዚክሱን ለማስጀመር $count$ መነቅነቆቹ በምን ያህል ፍጥነት መከሰት እንዳለባቸው።",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "የ«ገጹን መልስ» አዝራርን ደብቅ"
+  },
+  "hideRestoreButtonHint": {
+    "message": "ፊዚክስ ሲበራ ከላይ በቀኝ ጥግ ላይ የሚታየውን የ«ገጹን መልስ» አዝራር ይደብቃል።"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ፒክሰሎች",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ ፒክሰሎች በሰከንድ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ሚሊሰከንዶች",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "መስኮቱን በርዕስ አሞሌው <strong>ይያዙና</strong> <strong><i>ይነቅንቁት</i></strong>፣ ወይም የቅጥያውን አዶ <strong>ጠቅ ያድርጉ</strong>።"
+  },
+  "tipRestore": {
+    "message": "ገጹን ለመመለስ <kbd>Esc</kbd>ን <strong>ይጫኑ</strong>፣ የ<i>ገጹን መልስ</i> አዝራርን <strong>ጠቅ ያድርጉ</strong>፣ ወይም የቅጥያውን አዶ <strong>ጠቅ ያድርጉ</strong>።"
+  },
+  "resetSettings": {
+    "message": "ወደ ነባሪዎች ዳግም አስጀምር"
+  },
+  "resetConfirm": {
+    "message": "ሁሉም ቅንብሮች ወደ ነባሪዎቻቸው ዳግም ይጀመሩ?"
+  },
+  "resetFailed": {
+    "message": "ቅንብሮቹን ዳግም ማስጀመር አልተቻለም። እንደገና ይሞክሩ።"
+  },
+  "resetDone": {
+    "message": "ቅንብሮች ወደ ነባሪዎች ዳግም ተጀምረዋል።"
+  }
+}

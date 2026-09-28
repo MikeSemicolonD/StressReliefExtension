@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "lt"
+  },
+  "extName": {
+    "message": "Antistresas: supurtykite ekraną"
+  },
+  "extDescription": {
+    "message": "Pramogai suteikia fiziką HTML elementams dabartiniame skirtuke."
+  },
+  "badgeOn": {
+    "message": "ĮJ"
+  },
+  "restorePage": {
+    "message": "Atkurti puslapį"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika įjungta. Norėdami ją išjungti, paspauskite Escape arba mygtuką „Atkurti puslapį“."
+  },
+  "physicsOnNote": {
+    "message": "Supurčius naršyklės langą, įsijungia fizika. Norėdami ją išjungti, paspauskite mygtuką „Atkurti puslapį“ arba Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistresas: supurtykite ekraną – nustatymai"
+  },
+  "settingsHeading": {
+    "message": "Nustatymai"
+  },
+  "physicsSettings": {
+    "message": "Fizikos nustatymai"
+  },
+  "gravity": {
+    "message": "Gravitacija"
+  },
+  "gravityHint": {
+    "message": "Kai 0, puslapis lieka plokščias kaip stalas. Padidinkite ir dalys ims kristi."
+  },
+  "airDrag": {
+    "message": "Oro pasipriešinimas"
+  },
+  "airDragHint": {
+    "message": "Kaip greitai sulėtėja mestos dalys."
+  },
+  "bounce": {
+    "message": "Atšokimas"
+  },
+  "bounceHint": {
+    "message": "Kiek dalys atšoka viena nuo kitos ir nuo lango kraštų."
+  },
+  "friction": {
+    "message": "Trintis"
+  },
+  "frictionHint": {
+    "message": "Kiek dalys „kimba“, kai slysta viena pro kitą."
+  },
+  "weight": {
+    "message": "Svoris"
+  },
+  "weightHint": {
+    "message": "Kokios sunkios yra dalys."
+  },
+  "dragStrength": {
+    "message": "Tempimo stiprumas"
+  },
+  "dragStrengthHint": {
+    "message": "Kaip tvirtai dalis seka paskui žymeklį."
+  },
+  "shakeSettings": {
+    "message": "Purtymo nustatymai"
+  },
+  "shakeDistance": {
+    "message": "Mažiausias purtymo atstumas"
+  },
+  "shakeDistanceField": {
+    "message": "Mažiausias purtymo atstumas pikseliais"
+  },
+  "shakeDistanceHint": {
+    "message": "Kiek toli langas turi pasislinkti prieš pakeisdamas kryptį, kad būtų įskaitytas vienas purtymas."
+  },
+  "shakeSpeed": {
+    "message": "Mažiausias purtymo greitis"
+  },
+  "shakeSpeedField": {
+    "message": "Mažiausias purtymo greitis pikseliais per sekundę"
+  },
+  "shakeSpeedHint": {
+    "message": "Kaip greitai turi judėti langas, kad purtymas būtų įskaitytas, – taip lėti judesiai jo nesuaktyvins."
+  },
+  "shakesNeeded": {
+    "message": "Purtymų skaičius"
+  },
+  "shakesNeededHint": {
+    "message": "Kiek kartų reikia supurtyti, kad prasidėtų."
+  },
+  "timeToShake": {
+    "message": "Laikas purtymui"
+  },
+  "timeToShakeField": {
+    "message": "Laikas purtymui milisekundėmis"
+  },
+  "timeToShakeHint": {
+    "message": "Per kiek laiko reikia atlikti visus purtymus ($count$), kad įsijungtų fizika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Slėpti mygtuką „Atkurti puslapį“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Paslepia mygtuką „Atkurti puslapį“, kuris rodomas viršutiniame dešiniajame kampe, kai įjungta fizika."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "pikselių: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pikselių per sekundę",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekundžių",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Suimkite</strong> langą už pavadinimo juostos ir <strong><i>supurtykite</i></strong> ARBA <strong>spustelėkite</strong> plėtinio piktogramą."
+  },
+  "tipRestore": {
+    "message": "<strong>Paspauskite</strong> <kbd>Esc</kbd>, <strong>spustelėkite</strong> mygtuką <i>Atkurti puslapį</i> ARBA <strong>spustelėkite</strong> plėtinio piktogramą, kad atkurtumėte puslapį."
+  },
+  "resetSettings": {
+    "message": "Atkurti numatytuosius"
+  },
+  "resetConfirm": {
+    "message": "Atkurti visus numatytuosius nustatymus?"
+  },
+  "resetFailed": {
+    "message": "Nepavyko atkurti nustatymų. Bandykite dar kartą."
+  },
+  "resetDone": {
+    "message": "Atkurti numatytieji nustatymai."
+  }
+}

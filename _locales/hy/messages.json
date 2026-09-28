@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "hy"
+  },
+  "extName": {
+    "message": "Էկրանի թափահարում սթրեսի դեմ"
+  },
+  "extDescription": {
+    "message": "Ավելացնում է ֆիզիկա ընթացիկ ներդիրի HTML տարրերին՝ զվարճանքի համար։"
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Վերականգնել էջը"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Ֆիզիկան միացված է։ Այն անջատելու համար սեղմեք Escape կամ «Վերականգնել էջը»։"
+  },
+  "physicsOnNote": {
+    "message": "Դիտարկիչի պատուհանը թափահարելիս ֆիզիկան միանում է։ Այն անջատելու համար սեղմեք «Վերականգնել էջը» կամ Esc։"
+  },
+  "settingsPageTitle": {
+    "message": "Էկրանի թափահարում սթրեսի դեմ – կարգավորումներ"
+  },
+  "settingsHeading": {
+    "message": "Կարգավորումներ"
+  },
+  "physicsSettings": {
+    "message": "Ֆիզիկայի կարգավորումներ"
+  },
+  "gravity": {
+    "message": "Ձգողություն"
+  },
+  "gravityHint": {
+    "message": "0-ի դեպքում էջը մնում է հարթ սեղանի պես։ Մեծացրեք այն, որ կտորներն ընկնեն։"
+  },
+  "airDrag": {
+    "message": "Օդի դիմադրություն"
+  },
+  "airDragHint": {
+    "message": "Որքան արագ են դանդաղում նետված կտորները։"
+  },
+  "bounce": {
+    "message": "Ցատկոտում"
+  },
+  "bounceHint": {
+    "message": "Որքան են կտորները ետ ցատկում իրարից և պատուհանի եզրերից։"
+  },
+  "friction": {
+    "message": "Շփում"
+  },
+  "frictionHint": {
+    "message": "Որքան են կտորները «կառչում» իրար, երբ սահում են իրար կողքով։"
+  },
+  "weight": {
+    "message": "Քաշ"
+  },
+  "weightHint": {
+    "message": "Որքան ծանր են կտորները։"
+  },
+  "dragStrength": {
+    "message": "Քաշելու ուժ"
+  },
+  "dragStrengthHint": {
+    "message": "Որքան ամուր է կտորը հետևում ցուցիչին։"
+  },
+  "shakeSettings": {
+    "message": "Թափահարման կարգավորումներ"
+  },
+  "shakeDistance": {
+    "message": "Թափահարման նվազագույն հեռավորություն"
+  },
+  "shakeDistanceField": {
+    "message": "Թափահարման նվազագույն հեռավորություն պիքսելներով"
+  },
+  "shakeDistanceHint": {
+    "message": "Որքան պետք է շարժվի պատուհանը մինչև ուղղությունը փոխելը, որպեսզի դա հաշվվի որպես մեկ թափահարում։"
+  },
+  "shakeSpeed": {
+    "message": "Թափահարման նվազագույն արագություն"
+  },
+  "shakeSpeedField": {
+    "message": "Թափահարման նվազագույն արագություն՝ պիքսել վայրկյանում"
+  },
+  "shakeSpeedHint": {
+    "message": "Որքան արագ պետք է շարժվի պատուհանը, որ թափահարումը հաշվվի. այդպես դանդաղ շարժումները այն չեն գործարկի։"
+  },
+  "shakesNeeded": {
+    "message": "Անհրաժեշտ թափահարումներ"
+  },
+  "shakesNeededHint": {
+    "message": "Քանի թափահարում է պետք սկսելու համար։"
+  },
+  "timeToShake": {
+    "message": "Թափահարման ժամանակ"
+  },
+  "timeToShakeField": {
+    "message": "Թափահարման ժամանակ միլիվայրկյաններով"
+  },
+  "timeToShakeHint": {
+    "message": "Որքան արագ պետք է կատարվեն $count$ թափահարումները՝ ֆիզիկան միացնելու համար։",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Թաքցնել «Վերականգնել էջը» կոճակը"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Թաքցնում է «Վերականգնել էջը» կոճակը, որը հայտնվում է վերևի աջ անկյունում, երբ ֆիզիկան միացված է։"
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/վ"
+  },
+  "unitMs": {
+    "message": "մվ"
+  },
+  "valuePx": {
+    "message": "$value$ պիքսել",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ պիքսել վայրկյանում",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ միլիվայրկյան",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Բռնեք</strong> պատուհանը վերնագրի գոտուց և <strong><i>թափահարեք այն</i></strong>, ԿԱՄ <strong>սեղմեք</strong> ընդլայնման պատկերակին։"
+  },
+  "tipRestore": {
+    "message": "Էջը վերականգնելու համար <strong>սեղմեք</strong> <kbd>Esc</kbd>, <strong>սեղմեք</strong> <i>Վերականգնել էջը</i> կոճակը, ԿԱՄ <strong>սեղմեք</strong> ընդլայնման պատկերակին։"
+  },
+  "resetSettings": {
+    "message": "Վերականգնել կանխադրվածները"
+  },
+  "resetConfirm": {
+    "message": "Վերականգնե՞լ բոլոր կարգավորումների կանխադրված արժեքները։"
+  },
+  "resetFailed": {
+    "message": "Չհաջողվեց վերականգնել կարգավորումները։ Նորից փորձեք։"
+  },
+  "resetDone": {
+    "message": "Կանխադրված կարգավորումները վերականգնվեցին։"
+  }
+}

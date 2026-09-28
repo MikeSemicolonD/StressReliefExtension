@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "ar"
+  },
+  "extName": {
+    "message": "مُخفِّف التوتر بهزّ الشاشة"
+  },
+  "extDescription": {
+    "message": "يحوّل محتوى الصفحة الحالية إلى قطع فيزيائية يمكنك رميها للمتعة."
+  },
+  "badgeOn": {
+    "message": "يعمل"
+  },
+  "restorePage": {
+    "message": "استعادة الصفحة"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "الفيزياء مفعّلة. اضغط مفتاح Escape أو زر «استعادة الصفحة» لإيقافها."
+  },
+  "physicsOnNote": {
+    "message": "هزّ نافذة المتصفح يُفعّل الفيزياء. اضغط «استعادة الصفحة» أو Esc لإيقافها."
+  },
+  "settingsPageTitle": {
+    "message": "إعدادات مُخفِّف التوتر بهزّ الشاشة"
+  },
+  "settingsHeading": {
+    "message": "الإعدادات"
+  },
+  "physicsSettings": {
+    "message": "إعدادات الفيزياء"
+  },
+  "gravity": {
+    "message": "الجاذبية"
+  },
+  "gravityHint": {
+    "message": "عند 0 تبقى الصفحة كسطح طاولة مستوٍ. ارفعها لتسقط القطع."
+  },
+  "airDrag": {
+    "message": "مقاومة الهواء"
+  },
+  "airDragHint": {
+    "message": "مدى سرعة تباطؤ القطع بعد رميها."
+  },
+  "bounce": {
+    "message": "الارتداد"
+  },
+  "bounceHint": {
+    "message": "مقدار ارتداد القطع عن بعضها وعن حواف النافذة."
+  },
+  "friction": {
+    "message": "الاحتكاك"
+  },
+  "frictionHint": {
+    "message": "مقدار «تعلّق» القطع ببعضها عندما تنزلق متلاصقة."
+  },
+  "weight": {
+    "message": "الوزن"
+  },
+  "weightHint": {
+    "message": "مدى ثقل القطع."
+  },
+  "dragStrength": {
+    "message": "قوة السحب"
+  },
+  "dragStrengthHint": {
+    "message": "مدى التصاق القطعة بالمؤشر أثناء سحبها."
+  },
+  "shakeSettings": {
+    "message": "إعدادات الهزّ"
+  },
+  "shakeDistance": {
+    "message": "أدنى مسافة للهزّ"
+  },
+  "shakeDistanceField": {
+    "message": "أدنى مسافة للهزّ بالبكسل"
+  },
+  "shakeDistanceHint": {
+    "message": "المسافة التي يجب أن تتحركها النافذة قبل أن تغيّر اتجاهها لتُحتسب هزّة واحدة."
+  },
+  "shakeSpeed": {
+    "message": "أدنى سرعة للهزّ"
+  },
+  "shakeSpeedField": {
+    "message": "أدنى سرعة للهزّ بالبكسل في الثانية"
+  },
+  "shakeSpeedHint": {
+    "message": "السرعة التي يجب أن تتحرك بها النافذة لتُحتسب الهزّة، حتى لا تُفعّلها الحركات البطيئة."
+  },
+  "shakesNeeded": {
+    "message": "عدد الهزّات"
+  },
+  "shakesNeededHint": {
+    "message": "عدد الهزّات اللازمة للبدء."
+  },
+  "timeToShake": {
+    "message": "مهلة الهزّ"
+  },
+  "timeToShakeField": {
+    "message": "مهلة الهزّ بالمللي ثانية"
+  },
+  "timeToShakeHint": {
+    "message": "المدة التي يجب أن تتم خلالها الهزّات المطلوبة ($count$) لتفعيل الفيزياء.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "إخفاء زر «استعادة الصفحة»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "يُخفي زر «استعادة الصفحة» الذي يظهر في الزاوية العلوية اليسرى عند تفعيل الفيزياء."
+  },
+  "unitPx": {
+    "message": "بكسل"
+  },
+  "unitPxPerSecond": {
+    "message": "بكسل/ث"
+  },
+  "unitMs": {
+    "message": "م.ث"
+  },
+  "valuePx": {
+    "message": "$value$ بكسل",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ بكسل في الثانية",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ مللي ثانية",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>أمسك</strong> النافذة من شريط العنوان و<strong><i>هزّها</i></strong>، أو <strong>انقر</strong> على رمز الإضافة."
+  },
+  "tipRestore": {
+    "message": "<strong>اضغط</strong> <kbd>Esc</kbd>، أو <strong>انقر</strong> على زر <i>«استعادة الصفحة»</i>، أو <strong>انقر</strong> على رمز الإضافة لاستعادة الصفحة."
+  },
+  "resetSettings": {
+    "message": "إعادة الضبط إلى الإعدادات التلقائية"
+  },
+  "resetConfirm": {
+    "message": "هل تريد إعادة ضبط كل الإعدادات إلى قيمها التلقائية؟"
+  },
+  "resetFailed": {
+    "message": "تعذّرت إعادة ضبط الإعدادات. يُرجى المحاولة مرة أخرى."
+  },
+  "resetDone": {
+    "message": "تمت إعادة ضبط الإعدادات إلى قيمها التلقائية."
+  }
+}

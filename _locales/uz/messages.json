@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "uz"
+  },
+  "extName": {
+    "message": "Stressga qarshi ekran silkitish"
+  },
+  "extDescription": {
+    "message": "Qiziqish uchun joriy varaqdagi HTML elementlariga fizika qo‘shadi."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Sahifani tiklash"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika yoqilgan. O‘chirish uchun Escape tugmasini yoki “Sahifani tiklash” tugmasini bosing."
+  },
+  "physicsOnNote": {
+    "message": "Brauzer oynasini silkitsangiz, fizika yoqiladi. O‘chirish uchun “Sahifani tiklash” tugmasini yoki Esc tugmasini bosing."
+  },
+  "settingsPageTitle": {
+    "message": "Stressga qarshi ekran silkitish – sozlamalar"
+  },
+  "settingsHeading": {
+    "message": "Sozlamalar"
+  },
+  "physicsSettings": {
+    "message": "Fizika sozlamalari"
+  },
+  "gravity": {
+    "message": "Tortishish kuchi"
+  },
+  "gravityHint": {
+    "message": "0 qiymatida sahifa tekis stol bo‘lib qoladi. Bo‘laklar tushishi uchun oshiring."
+  },
+  "airDrag": {
+    "message": "Havo qarshiligi"
+  },
+  "airDragHint": {
+    "message": "Otilgan bo‘laklar qanchalik tez sekinlashadi."
+  },
+  "bounce": {
+    "message": "Sakrash"
+  },
+  "bounceHint": {
+    "message": "Bo‘laklar bir-biridan va oyna chetlaridan qanchalik sakrab qaytadi."
+  },
+  "friction": {
+    "message": "Ishqalanish"
+  },
+  "frictionHint": {
+    "message": "Bo‘laklar bir-birining yonidan sirpanib o‘tayotganda qanchalik “ilinadi”."
+  },
+  "weight": {
+    "message": "Og‘irlik"
+  },
+  "weightHint": {
+    "message": "Bo‘laklar qanchalik og‘ir."
+  },
+  "dragStrength": {
+    "message": "Sudrash kuchi"
+  },
+  "dragStrengthHint": {
+    "message": "Bo‘lak ko‘rsatkichingizga qanchalik mahkam ergashadi."
+  },
+  "shakeSettings": {
+    "message": "Silkitish sozlamalari"
+  },
+  "shakeDistance": {
+    "message": "Eng kam silkitish masofasi"
+  },
+  "shakeDistanceField": {
+    "message": "Eng kam silkitish masofasi, pikselda"
+  },
+  "shakeDistanceHint": {
+    "message": "Bitta silkitish deb hisoblanishi uchun oyna yo‘nalishini o‘zgartirishdan oldin qancha siljishi kerak."
+  },
+  "shakeSpeed": {
+    "message": "Eng kam silkitish tezligi"
+  },
+  "shakeSpeedField": {
+    "message": "Eng kam silkitish tezligi, soniyasiga pikselda"
+  },
+  "shakeSpeedHint": {
+    "message": "Silkitish hisoblanishi uchun oyna qanchalik tez harakatlanishi kerak. Shunda sekin siljitishlar uni ishga tushirmaydi."
+  },
+  "shakesNeeded": {
+    "message": "Kerakli silkitishlar"
+  },
+  "shakesNeededHint": {
+    "message": "Boshlash uchun necha marta silkitish kerak."
+  },
+  "timeToShake": {
+    "message": "Silkitish vaqti"
+  },
+  "timeToShakeField": {
+    "message": "Silkitish vaqti, millisoniyalarda"
+  },
+  "timeToShakeHint": {
+    "message": "Fizika ishga tushishi uchun $count$ marta silkitish qanchalik tez bajarilishi kerak.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "“Sahifani tiklash” tugmasini yashirish"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Fizika yoqilganda yuqori o‘ng burchakda chiqadigan “Sahifani tiklash” tugmasini yashiradi."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "soniyasiga $value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisoniya",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "Oynani sarlavha panelidan <strong>ushlang</strong> va <strong><i>silkiting</i></strong> YOKI kengaytma belgisini <strong>bosing</strong>."
+  },
+  "tipRestore": {
+    "message": "Sahifani tiklash uchun <kbd>Esc</kbd> tugmasini <strong>bosing</strong>, <i>Sahifani tiklash</i> tugmasini <strong>bosing</strong> YOKI kengaytma belgisini <strong>bosing</strong>."
+  },
+  "resetSettings": {
+    "message": "Standart holatga qaytarish"
+  },
+  "resetConfirm": {
+    "message": "Barcha sozlamalar standart holatga qaytarilsinmi?"
+  },
+  "resetFailed": {
+    "message": "Sozlamalarni qaytarib bo‘lmadi. Qayta urinib ko‘ring."
+  },
+  "resetDone": {
+    "message": "Sozlamalar standart holatga qaytarildi."
+  }
+}

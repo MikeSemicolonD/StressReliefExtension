@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "ru"
+  },
+  "extName": {
+    "message": "Антистресс: встряхни экран"
+  },
+  "extDescription": {
+    "message": "Добавляет физику HTML-элементам в текущей вкладке – просто ради забавы."
+  },
+  "badgeOn": {
+    "message": "ВКЛ"
+  },
+  "restorePage": {
+    "message": "Вернуть страницу"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физика включена. Чтобы её выключить, нажмите Escape или кнопку «Вернуть страницу»."
+  },
+  "physicsOnNote": {
+    "message": "Если встряхнуть окно браузера, включается физика. Чтобы её выключить, нажмите «Вернуть страницу» или Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Антистресс: встряхни экран – настройки"
+  },
+  "settingsHeading": {
+    "message": "Настройки"
+  },
+  "physicsSettings": {
+    "message": "Настройки физики"
+  },
+  "gravity": {
+    "message": "Гравитация"
+  },
+  "gravityHint": {
+    "message": "При 0 страница остаётся плоской, как стол. Увеличьте, чтобы кусочки падали."
+  },
+  "airDrag": {
+    "message": "Торможение"
+  },
+  "airDragHint": {
+    "message": "Как быстро замедляются брошенные кусочки."
+  },
+  "bounce": {
+    "message": "Отскок"
+  },
+  "bounceHint": {
+    "message": "Насколько сильно кусочки отскакивают друг от друга и от краёв окна."
+  },
+  "friction": {
+    "message": "Трение"
+  },
+  "frictionHint": {
+    "message": "Насколько кусочки «цепляются», когда скользят друг по другу."
+  },
+  "weight": {
+    "message": "Вес"
+  },
+  "weightHint": {
+    "message": "Насколько тяжёлые кусочки."
+  },
+  "dragStrength": {
+    "message": "Сила захвата"
+  },
+  "dragStrengthHint": {
+    "message": "Насколько плотно кусочек следует за указателем."
+  },
+  "shakeSettings": {
+    "message": "Настройки встряски"
+  },
+  "shakeDistance": {
+    "message": "Мин. размах встряски"
+  },
+  "shakeDistanceField": {
+    "message": "Минимальный размах встряски в пикселях"
+  },
+  "shakeDistanceHint": {
+    "message": "Насколько далеко окно должно сдвинуться перед сменой направления, чтобы засчиталась одна встряска."
+  },
+  "shakeSpeed": {
+    "message": "Мин. скорость встряски"
+  },
+  "shakeSpeedField": {
+    "message": "Минимальная скорость встряски в пикселях в секунду"
+  },
+  "shakeSpeedHint": {
+    "message": "Как быстро должно двигаться окно, чтобы встряска засчиталась. Медленные движения не считаются."
+  },
+  "shakesNeeded": {
+    "message": "Число встрясок"
+  },
+  "shakesNeededHint": {
+    "message": "Сколько встрясок нужно для запуска."
+  },
+  "timeToShake": {
+    "message": "Время на встряску"
+  },
+  "timeToShakeField": {
+    "message": "Время на встряску в миллисекундах"
+  },
+  "timeToShakeHint": {
+    "message": "За это время нужно успеть сделать все встряски ($count$), чтобы включилась физика.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Скрыть кнопку «Вернуть страницу»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Скрывает кнопку «Вернуть страницу», которая появляется в правом верхнем углу, когда физика включена."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "пикселей: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "пикселей в секунду: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "миллисекунд: $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Возьмите</strong> окно за строку заголовка и <strong><i>встряхните</i></strong> его ИЛИ <strong>нажмите</strong> на значок расширения."
+  },
+  "tipRestore": {
+    "message": "<strong>Нажмите</strong> <kbd>Esc</kbd>, <strong>нажмите</strong> кнопку «<i>Вернуть страницу</i>» ИЛИ <strong>нажмите</strong> на значок расширения, чтобы вернуть страницу."
+  },
+  "resetSettings": {
+    "message": "Сбросить настройки"
+  },
+  "resetConfirm": {
+    "message": "Сбросить все настройки до значений по умолчанию?"
+  },
+  "resetFailed": {
+    "message": "Не удалось сбросить настройки. Попробуйте ещё раз."
+  },
+  "resetDone": {
+    "message": "Настройки сброшены до значений по умолчанию."
+  }
+}

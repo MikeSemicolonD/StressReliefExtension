@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "is"
+  },
+  "extName": {
+    "message": "Hristu burt streituna"
+  },
+  "extDescription": {
+    "message": "Bætir eðlisfræði við HTML-einingar í núverandi flipa – bara til gamans."
+  },
+  "badgeOn": {
+    "message": "Á"
+  },
+  "restorePage": {
+    "message": "Endurheimta síðu"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Eðlisfræðin er virk. Ýttu á Escape eða „Endurheimta síðu“ til að slökkva á henni."
+  },
+  "physicsOnNote": {
+    "message": "Þegar þú hristir vafragluggann kviknar á eðlisfræðinni. Ýttu á „Endurheimta síðu“ eða Esc til að slökkva á henni."
+  },
+  "settingsPageTitle": {
+    "message": "Stillingar fyrir Hristu burt streituna"
+  },
+  "settingsHeading": {
+    "message": "Stillingar"
+  },
+  "physicsSettings": {
+    "message": "Eðlisfræðistillingar"
+  },
+  "gravity": {
+    "message": "Þyngdarafl"
+  },
+  "gravityHint": {
+    "message": "Á 0 helst síðan eins og slétt borðplata. Hækkaðu gildið til að láta bútana detta."
+  },
+  "airDrag": {
+    "message": "Loftmótstaða"
+  },
+  "airDragHint": {
+    "message": "Hve hratt kastaðir bútar hægja á sér."
+  },
+  "bounce": {
+    "message": "Skopp"
+  },
+  "bounceHint": {
+    "message": "Hve mikið bútarnir skoppa hver af öðrum og af gluggabrúnunum."
+  },
+  "friction": {
+    "message": "Núningur"
+  },
+  "frictionHint": {
+    "message": "Hve mikið bútarnir „festast“ þegar þeir renna hver fram hjá öðrum."
+  },
+  "weight": {
+    "message": "Þyngd"
+  },
+  "weightHint": {
+    "message": "Hve þungir bútarnir eru."
+  },
+  "dragStrength": {
+    "message": "Togkraftur"
+  },
+  "dragStrengthHint": {
+    "message": "Hve þétt bútur fylgir bendlinum þínum."
+  },
+  "shakeSettings": {
+    "message": "Hristingsstillingar"
+  },
+  "shakeDistance": {
+    "message": "Lágmarksvegalengd hristings"
+  },
+  "shakeDistanceField": {
+    "message": "Lágmarksvegalengd hristings í dílum"
+  },
+  "shakeDistanceHint": {
+    "message": "Hve langt glugginn þarf að færast áður en hann skiptir um stefnu til að það teljist einn hristingur."
+  },
+  "shakeSpeed": {
+    "message": "Lágmarkshraði hristings"
+  },
+  "shakeSpeedField": {
+    "message": "Lágmarkshraði hristings í dílum á sekúndu"
+  },
+  "shakeSpeedHint": {
+    "message": "Hve hratt glugginn þarf að færast til að hristingur teljist með, svo hægar hreyfingar setji ekkert af stað."
+  },
+  "shakesNeeded": {
+    "message": "Fjöldi hristinga"
+  },
+  "shakesNeededHint": {
+    "message": "Hve marga hristinga þarf til að byrja."
+  },
+  "timeToShake": {
+    "message": "Hristingstími"
+  },
+  "timeToShakeField": {
+    "message": "Hristingstími í millisekúndum"
+  },
+  "timeToShakeHint": {
+    "message": "Á hve skömmum tíma $count$ hristingar þurfa að eiga sér stað til að ræsa eðlisfræðina.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Fela hnappinn „Endurheimta síðu“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Felur hnappinn „Endurheimta síðu“ sem birtist efst til hægri þegar eðlisfræðin er virk."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ dílar",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ dílar á sekúndu",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekúndur",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Gríptu</strong> gluggann í titilstikunni og <strong><i>hristu hann</i></strong>, EÐA <strong>smelltu</strong> á tákn viðbótarinnar."
+  },
+  "tipRestore": {
+    "message": "<strong>Ýttu</strong> á <kbd>Esc</kbd>, <strong>smelltu</strong> á hnappinn <i>Endurheimta síðu</i>, EÐA <strong>smelltu</strong> á tákn viðbótarinnar til að endurheimta síðuna."
+  },
+  "resetSettings": {
+    "message": "Endurstilla á sjálfgefið"
+  },
+  "resetConfirm": {
+    "message": "Endurstilla allar stillingar á sjálfgefin gildi?"
+  },
+  "resetFailed": {
+    "message": "Ekki tókst að endurstilla stillingarnar. Reyndu aftur."
+  },
+  "resetDone": {
+    "message": "Stillingar endurstilltar á sjálfgefin gildi."
+  }
+}

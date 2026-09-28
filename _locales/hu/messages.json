@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "hu"
+  },
+  "extName": {
+    "message": "Képernyőrázó stresszoldó"
+  },
+  "extDescription": {
+    "message": "Fizikát ad az aktuális lap HTML-elemeihez, a móka kedvéért."
+  },
+  "badgeOn": {
+    "message": "BE"
+  },
+  "restorePage": {
+    "message": "Oldal visszaállítása"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "A fizika be van kapcsolva. A kikapcsoláshoz nyomja meg az Escape billentyűt vagy az „Oldal visszaállítása” gombot."
+  },
+  "physicsOnNote": {
+    "message": "A böngészőablak megrázása bekapcsolja a fizikát. A kikapcsoláshoz nyomja meg az „Oldal visszaállítása” gombot vagy az Esc billentyűt."
+  },
+  "settingsPageTitle": {
+    "message": "Képernyőrázó stresszoldó – beállítások"
+  },
+  "settingsHeading": {
+    "message": "Beállítások"
+  },
+  "physicsSettings": {
+    "message": "Fizikai beállítások"
+  },
+  "gravity": {
+    "message": "Gravitáció"
+  },
+  "gravityHint": {
+    "message": "0-nál az oldal lapos asztallap marad. Növelje, és a darabok leesnek."
+  },
+  "airDrag": {
+    "message": "Légellenállás"
+  },
+  "airDragHint": {
+    "message": "Milyen gyorsan lassulnak le az eldobott darabok."
+  },
+  "bounce": {
+    "message": "Pattanás"
+  },
+  "bounceHint": {
+    "message": "Mennyire pattannak le a darabok egymásról és az ablak széleiről."
+  },
+  "friction": {
+    "message": "Súrlódás"
+  },
+  "frictionHint": {
+    "message": "Mennyire „akadnak meg” a darabok, amikor elcsúsznak egymás mellett."
+  },
+  "weight": {
+    "message": "Súly"
+  },
+  "weightHint": {
+    "message": "Milyen nehezek a darabok."
+  },
+  "dragStrength": {
+    "message": "Húzóerő"
+  },
+  "dragStrengthHint": {
+    "message": "Milyen szorosan követi a darab a mutatót."
+  },
+  "shakeSettings": {
+    "message": "Rázási beállítások"
+  },
+  "shakeDistance": {
+    "message": "Minimális rázási távolság"
+  },
+  "shakeDistanceField": {
+    "message": "Minimális rázási távolság pixelben"
+  },
+  "shakeDistanceHint": {
+    "message": "Mennyit kell mozdulnia az ablaknak irányváltás előtt, hogy egy rázásnak számítson."
+  },
+  "shakeSpeed": {
+    "message": "Minimális rázási sebesség"
+  },
+  "shakeSpeedField": {
+    "message": "Minimális rázási sebesség pixel per másodpercben"
+  },
+  "shakeSpeedHint": {
+    "message": "Milyen gyorsan kell mozognia az ablaknak, hogy a rázás számítson – így a lassú mozdulatok nem indítják el."
+  },
+  "shakesNeeded": {
+    "message": "Szükséges rázások"
+  },
+  "shakesNeededHint": {
+    "message": "Hány rázás kell az indításhoz."
+  },
+  "timeToShake": {
+    "message": "Rázási idő"
+  },
+  "timeToShakeField": {
+    "message": "Rázási idő ezredmásodpercben"
+  },
+  "timeToShakeHint": {
+    "message": "Mennyi idő alatt kell meglennie $count$ rázásnak a fizika elindításához.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Az „Oldal visszaállítása” gomb elrejtése"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Elrejti az „Oldal visszaállítása” gombot, amely a jobb felső sarokban jelenik meg, amikor a fizika be van kapcsolva."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixel másodpercenként",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ezredmásodperc",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Fogja meg</strong> az ablakot a címsoránál, és <strong><i>rázza meg</i></strong>, VAGY <strong>kattintson</strong> a bővítmény ikonjára."
+  },
+  "tipRestore": {
+    "message": "<strong>Nyomja meg</strong> az <kbd>Esc</kbd> billentyűt, <strong>kattintson</strong> az <i>Oldal visszaállítása</i> gombra, VAGY <strong>kattintson</strong> a bővítmény ikonjára az oldal visszaállításához."
+  },
+  "resetSettings": {
+    "message": "Alapértékek visszaállítása"
+  },
+  "resetConfirm": {
+    "message": "Visszaállítja az összes beállítást az alapértékekre?"
+  },
+  "resetFailed": {
+    "message": "Nem sikerült visszaállítani a beállításokat. Próbálja újra."
+  },
+  "resetDone": {
+    "message": "A beállítások visszaálltak az alapértékekre."
+  }
+}

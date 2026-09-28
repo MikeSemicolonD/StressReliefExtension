@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "af"
+  },
+  "extName": {
+    "message": "Skud jou stres weg"
+  },
+  "extDescription": {
+    "message": "Voeg vir die pret fisika by HTML-elemente in die huidige oortjie."
+  },
+  "badgeOn": {
+    "message": "AAN"
+  },
+  "restorePage": {
+    "message": "Herstel bladsy"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fisika is aan. Druk Escape of “Herstel bladsy” om dit af te skakel."
+  },
+  "physicsOnNote": {
+    "message": "As jy jou blaaiervenster skud, word fisika aangeskakel. Druk “Herstel bladsy” of Esc om dit af te skakel."
+  },
+  "settingsPageTitle": {
+    "message": "Instellings vir Skud jou stres weg"
+  },
+  "settingsHeading": {
+    "message": "Instellings"
+  },
+  "physicsSettings": {
+    "message": "Fisika-instellings"
+  },
+  "gravity": {
+    "message": "Swaartekrag"
+  },
+  "gravityHint": {
+    "message": "Op 0 bly die bladsy 'n plat tafelblad. Verhoog dit om die stukke te laat val."
+  },
+  "airDrag": {
+    "message": "Lugweerstand"
+  },
+  "airDragHint": {
+    "message": "Hoe vinnig gegooide stukke stadiger word."
+  },
+  "bounce": {
+    "message": "Bons"
+  },
+  "bounceHint": {
+    "message": "Hoeveel die stukke van mekaar en die rande van die venster af bons."
+  },
+  "friction": {
+    "message": "Wrywing"
+  },
+  "frictionHint": {
+    "message": "Hoeveel die stukke 'vashaak' wanneer hulle by mekaar verbyskuif."
+  },
+  "weight": {
+    "message": "Gewig"
+  },
+  "weightHint": {
+    "message": "Hoe swaar die stukke is."
+  },
+  "dragStrength": {
+    "message": "Sleepkrag"
+  },
+  "dragStrengthHint": {
+    "message": "Hoe styf 'n stuk jou wyser volg."
+  },
+  "shakeSettings": {
+    "message": "Skudinstellings"
+  },
+  "shakeDistance": {
+    "message": "Minimum skudafstand"
+  },
+  "shakeDistanceField": {
+    "message": "Minimum skudafstand in piksels"
+  },
+  "shakeDistanceHint": {
+    "message": "Hoe ver die venster moet beweeg voordat dit van rigting verander om as een skud te tel."
+  },
+  "shakeSpeed": {
+    "message": "Minimum skudspoed"
+  },
+  "shakeSpeedField": {
+    "message": "Minimum skudspoed in piksels per sekonde"
+  },
+  "shakeSpeedHint": {
+    "message": "Hoe vinnig die venster moet beweeg vir 'n skud om te tel, sodat stadige bewegings dit nie aansit nie."
+  },
+  "shakesNeeded": {
+    "message": "Skuds nodig"
+  },
+  "shakesNeededHint": {
+    "message": "Hoeveel skuds dit neem om te begin."
+  },
+  "timeToShake": {
+    "message": "Skudtyd"
+  },
+  "timeToShakeField": {
+    "message": "Skudtyd in millisekondes"
+  },
+  "timeToShakeHint": {
+    "message": "Hoe vinnig die $count$ skuds moet gebeur om die fisika aan te skakel.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Versteek “Herstel bladsy”-knoppie"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Versteek die “Herstel bladsy”-knoppie wat regs bo verskyn wanneer fisika aan is."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksels",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksels per sekonde",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekondes",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Gryp</strong> die venster aan sy titelbalk en <strong><i>skud dit</i></strong>, OF <strong>klik</strong> op die uitbreiding se ikoon."
+  },
+  "tipRestore": {
+    "message": "<strong>Druk</strong> <kbd>Esc</kbd>, <strong>klik</strong> op die <i>Herstel bladsy</i>-knoppie, OF <strong>klik</strong> op die uitbreiding se ikoon om die bladsy te herstel."
+  },
+  "resetSettings": {
+    "message": "Stel terug na verstek"
+  },
+  "resetConfirm": {
+    "message": "Stel alle instellings terug na hul verstekwaardes?"
+  },
+  "resetFailed": {
+    "message": "Kon nie die instellings terugstel nie. Probeer weer."
+  },
+  "resetDone": {
+    "message": "Instellings is teruggestel na verstek."
+  }
+}

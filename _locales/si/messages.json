@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "si"
+  },
+  "extName": {
+    "message": "තිරය සොලවා ආතතිය නිවන්න"
+  },
+  "extDescription": {
+    "message": "විනෝදය සඳහා වත්මන් ටැබයේ HTML මූලද්‍රව්‍යවලට භෞතික විද්‍යාව එක් කරයි."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "පිටුව ප්‍රතිසාධනය කරන්න"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "භෞතික විද්‍යාව ක්‍රියාත්මකයි. එය ක්‍රියාවිරහිත කිරීමට එස්කේප් යතුර හෝ \"පිටුව ප්‍රතිසාධනය කරන්න\" ඔබන්න."
+  },
+  "physicsOnNote": {
+    "message": "ඔබේ බ්‍රව්සර කවුළුව සෙලවීමෙන් භෞතික විද්‍යාව ක්‍රියාත්මක වේ. එය ක්‍රියාවිරහිත කිරීමට \"පිටුව ප්‍රතිසාධනය කරන්න\" හෝ Esc ඔබන්න."
+  },
+  "settingsPageTitle": {
+    "message": "තිරය සොලවා ආතතිය නිවන්න - සැකසීම්"
+  },
+  "settingsHeading": {
+    "message": "සැකසීම්"
+  },
+  "physicsSettings": {
+    "message": "භෞතික විද්‍යා සැකසීම්"
+  },
+  "gravity": {
+    "message": "ගුරුත්වය"
+  },
+  "gravityHint": {
+    "message": "0 හිදී පිටුව පැතලි මේසයක් ලෙස පවතී. කෑලි පහළට වැටීමට එය වැඩි කරන්න."
+  },
+  "airDrag": {
+    "message": "වායු ප්‍රතිරෝධය"
+  },
+  "airDragHint": {
+    "message": "විසි කළ කෑලි කොතරම් ඉක්මනින් වේගය අඩු කරගන්නවාද."
+  },
+  "bounce": {
+    "message": "පැනීම"
+  },
+  "bounceHint": {
+    "message": "කෑලි එකිනෙක හා කවුළුවේ දාරවල වැදී කොතරම් පනිනවාද."
+  },
+  "friction": {
+    "message": "ඝර්ෂණය"
+  },
+  "frictionHint": {
+    "message": "කෑලි එකිනෙක අසලින් ලිස්සා යන විට කොතරම් 'හිර වෙනවාද'."
+  },
+  "weight": {
+    "message": "බර"
+  },
+  "weightHint": {
+    "message": "කෑලි කොතරම් බරද."
+  },
+  "dragStrength": {
+    "message": "ඇදීමේ ශක්තිය"
+  },
+  "dragStrengthHint": {
+    "message": "කෑල්ලක් ඔබේ දර්ශකය කොතරම් තදින් අනුගමනය කරයිද."
+  },
+  "shakeSettings": {
+    "message": "සෙලවීම් සැකසීම්"
+  },
+  "shakeDistance": {
+    "message": "අවම සෙලවීම් දුර"
+  },
+  "shakeDistanceField": {
+    "message": "අවම සෙලවීම් දුර, පික්සල වලින්"
+  },
+  "shakeDistanceHint": {
+    "message": "එක් සෙලවීමක් ලෙස ගණන් ගැනීමට, දිශාව මාරු වීමට පෙර කවුළුව කොපමණ දුරක් චලනය විය යුතුද."
+  },
+  "shakeSpeed": {
+    "message": "අවම සෙලවීම් වේගය"
+  },
+  "shakeSpeedField": {
+    "message": "අවම සෙලවීම් වේගය, තත්පරයට පික්සල වලින්"
+  },
+  "shakeSpeedHint": {
+    "message": "සෙලවීමක් ගණන් ගැනීමට කවුළුව කොතරම් වේගයෙන් චලනය විය යුතුද; එවිට සෙමින් කරන චලන මගින් එය ක්‍රියාත්මක නොවේ."
+  },
+  "shakesNeeded": {
+    "message": "අවශ්‍ය සෙලවීම්"
+  },
+  "shakesNeededHint": {
+    "message": "ආරම්භ කිරීමට සෙලවීම් කීයක් අවශ්‍යද."
+  },
+  "timeToShake": {
+    "message": "සෙලවීමට කාලය"
+  },
+  "timeToShakeField": {
+    "message": "සෙලවීමට කාලය, මිලිතත්පර වලින්"
+  },
+  "timeToShakeHint": {
+    "message": "භෞතික විද්‍යාව ක්‍රියාත්මක කිරීමට සෙලවීම් $count$ කොතරම් ඉක්මනින් සිදු විය යුතුද.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"පිටුව ප්‍රතිසාධනය කරන්න\" බොත්තම සඟවන්න"
+  },
+  "hideRestoreButtonHint": {
+    "message": "භෞතික විද්‍යාව ක්‍රියාත්මක විට ඉහළ දකුණු කෙළවරේ දිස්වන \"පිටුව ප්‍රතිසාධනය කරන්න\" බොත්තම සඟවයි."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "පික්සල $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "තත්පරයට පික්සල $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "මිලිතත්පර $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "කවුළුව එහි මාතෘකා තීරුවෙන් <strong>අල්ලා</strong> <strong><i>සොලවන්න</i></strong>, නැතහොත් දිගු නිරූපකය <strong>ක්ලික් කරන්න</strong>."
+  },
+  "tipRestore": {
+    "message": "පිටුව ප්‍රතිසාධනය කිරීමට <kbd>Esc</kbd> <strong>ඔබන්න</strong>, <i>පිටුව ප්‍රතිසාධනය කරන්න</i> බොත්තම <strong>ක්ලික් කරන්න</strong>, නැතහොත් දිගු නිරූපකය <strong>ක්ලික් කරන්න</strong>."
+  },
+  "resetSettings": {
+    "message": "පෙරනිමි වෙත යළි සකසන්න"
+  },
+  "resetConfirm": {
+    "message": "සියලු සැකසීම් පෙරනිමි වෙත යළි සකසන්නද?"
+  },
+  "resetFailed": {
+    "message": "සැකසීම් යළි සැකසීමට නොහැකි විය. නැවත උත්සාහ කරන්න."
+  },
+  "resetDone": {
+    "message": "සැකසීම් පෙරනිමි වෙත යළි සකසන ලදී."
+  }
+}

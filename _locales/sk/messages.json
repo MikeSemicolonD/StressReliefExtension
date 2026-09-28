@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "sk"
+  },
+  "extName": {
+    "message": "Antistres: zatraste obrazovkou"
+  },
+  "extDescription": {
+    "message": "Pre zábavu pridá fyziku prvkom HTML na aktuálnej karte."
+  },
+  "badgeOn": {
+    "message": "ZAP"
+  },
+  "restorePage": {
+    "message": "Obnoviť stránku"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fyzika je zapnutá. Vypnete ju klávesom Escape alebo tlačidlom „Obnoviť stránku“."
+  },
+  "physicsOnNote": {
+    "message": "Zatrasením okna prehliadača sa zapína fyzika. Vypnete ju tlačidlom „Obnoviť stránku“ alebo klávesom Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistres: zatraste obrazovkou – nastavenia"
+  },
+  "settingsHeading": {
+    "message": "Nastavenia"
+  },
+  "physicsSettings": {
+    "message": "Nastavenia fyziky"
+  },
+  "gravity": {
+    "message": "Gravitácia"
+  },
+  "gravityHint": {
+    "message": "Pri 0 zostane stránka ako plochý stôl. Zvýšte ju a kúsky začnú padať."
+  },
+  "airDrag": {
+    "message": "Odpor vzduchu"
+  },
+  "airDragHint": {
+    "message": "Ako rýchlo hodené kúsky spomalia."
+  },
+  "bounce": {
+    "message": "Odraz"
+  },
+  "bounceHint": {
+    "message": "Ako veľmi sa kúsky odrážajú od seba navzájom a od okrajov okna."
+  },
+  "friction": {
+    "message": "Trenie"
+  },
+  "frictionHint": {
+    "message": "Ako veľmi sa kúsky „zadrhávajú“, keď kĺžu popri sebe."
+  },
+  "weight": {
+    "message": "Váha"
+  },
+  "weightHint": {
+    "message": "Aké ťažké sú kúsky."
+  },
+  "dragStrength": {
+    "message": "Sila úchopu"
+  },
+  "dragStrengthHint": {
+    "message": "Ako tesne kúsok sleduje ukazovateľ."
+  },
+  "shakeSettings": {
+    "message": "Nastavenia trasenia"
+  },
+  "shakeDistance": {
+    "message": "Minimálna dráha zatrasenia"
+  },
+  "shakeDistanceField": {
+    "message": "Minimálna dráha zatrasenia v pixeloch"
+  },
+  "shakeDistanceHint": {
+    "message": "Ako ďaleko sa okno musí posunúť, kým zmení smer, aby sa to počítalo ako jedno zatrasenie."
+  },
+  "shakeSpeed": {
+    "message": "Minimálna rýchlosť zatrasenia"
+  },
+  "shakeSpeedField": {
+    "message": "Minimálna rýchlosť zatrasenia v pixeloch za sekundu"
+  },
+  "shakeSpeedHint": {
+    "message": "Ako rýchlo sa okno musí pohybovať, aby sa zatrasenie počítalo – pomalé pohyby ho tak nespustia."
+  },
+  "shakesNeeded": {
+    "message": "Počet zatrasení"
+  },
+  "shakesNeededHint": {
+    "message": "Koľko zatrasení treba na spustenie."
+  },
+  "timeToShake": {
+    "message": "Čas na zatrasenie"
+  },
+  "timeToShakeField": {
+    "message": "Čas na zatrasenie v milisekundách"
+  },
+  "timeToShakeHint": {
+    "message": "Za aký čas musíte oknom zatriasť $count$-krát, aby sa spustila fyzika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Skryť tlačidlo „Obnoviť stránku“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Skryje tlačidlo „Obnoviť stránku“, ktoré sa pri zapnutej fyzike zobrazuje v pravom hornom rohu."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixelov",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixelov za sekundu",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekúnd",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Uchopte</strong> okno za záhlavie a <strong><i>zatraste ním</i></strong> ALEBO <strong>kliknite</strong> na ikonu rozšírenia."
+  },
+  "tipRestore": {
+    "message": "<strong>Stlačte</strong> <kbd>Esc</kbd>, <strong>kliknite</strong> na tlačidlo <i>Obnoviť stránku</i> ALEBO <strong>kliknite</strong> na ikonu rozšírenia a stránka sa obnoví."
+  },
+  "resetSettings": {
+    "message": "Obnoviť predvolené"
+  },
+  "resetConfirm": {
+    "message": "Obnoviť všetky nastavenia na predvolené hodnoty?"
+  },
+  "resetFailed": {
+    "message": "Nastavenia sa nepodarilo obnoviť. Skúste to znova."
+  },
+  "resetDone": {
+    "message": "Nastavenia boli obnovené na predvolené hodnoty."
+  }
+}

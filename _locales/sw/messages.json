@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "sw"
+  },
+  "extName": {
+    "message": "Tikisa Skrini Upunguze Msongo"
+  },
+  "extDescription": {
+    "message": "Huongeza fizikia kwenye vipengele vya HTML katika kichupo cha sasa kwa burudani."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Rejesha ukurasa"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizikia imewashwa. Bonyeza kitufe cha Escape au \"Rejesha ukurasa\" ili kuizima."
+  },
+  "physicsOnNote": {
+    "message": "Kutikisa dirisha la kivinjari chako huwasha fizikia. Bonyeza \"Rejesha ukurasa\" au Esc ili kuizima."
+  },
+  "settingsPageTitle": {
+    "message": "Mipangilio ya Tikisa Skrini Upunguze Msongo"
+  },
+  "settingsHeading": {
+    "message": "Mipangilio"
+  },
+  "physicsSettings": {
+    "message": "Mipangilio ya Fizikia"
+  },
+  "gravity": {
+    "message": "Mvuto"
+  },
+  "gravityHint": {
+    "message": "Ikiwa 0, ukurasa unabaki kama meza tambarare. Iongeze ili vipande vianguke."
+  },
+  "airDrag": {
+    "message": "Ukinzani wa hewa"
+  },
+  "airDragHint": {
+    "message": "Jinsi vipande vilivyorushwa vinavyopunguza kasi haraka."
+  },
+  "bounce": {
+    "message": "Kudunda"
+  },
+  "bounceHint": {
+    "message": "Kiasi ambacho vipande hudunda vinapogongana na kugonga kingo za dirisha."
+  },
+  "friction": {
+    "message": "Msuguano"
+  },
+  "frictionHint": {
+    "message": "Kiasi ambacho vipande 'hukwama' vinapoteleza kupitana."
+  },
+  "weight": {
+    "message": "Uzito"
+  },
+  "weightHint": {
+    "message": "Jinsi vipande vilivyo vizito."
+  },
+  "dragStrength": {
+    "message": "Nguvu ya Kuvuta"
+  },
+  "dragStrengthHint": {
+    "message": "Jinsi kipande kinavyofuata kiashiria chako kwa karibu."
+  },
+  "shakeSettings": {
+    "message": "Mipangilio ya Kutikisa"
+  },
+  "shakeDistance": {
+    "message": "Umbali wa chini wa kutikisa"
+  },
+  "shakeDistanceField": {
+    "message": "Umbali wa chini wa kutikisa kwa pikseli"
+  },
+  "shakeDistanceHint": {
+    "message": "Umbali ambao dirisha linapaswa kusogea kabla ya kubadili mwelekeo ili kuhesabiwa kuwa mtikiso mmoja."
+  },
+  "shakeSpeed": {
+    "message": "Kasi ya chini ya kutikisa"
+  },
+  "shakeSpeedField": {
+    "message": "Kasi ya chini ya kutikisa kwa pikseli kwa sekunde"
+  },
+  "shakeSpeedHint": {
+    "message": "Kasi ambayo dirisha linapaswa kusogea ili mtikiso uhesabiwe, ili misogeo ya polepole isiiwashe."
+  },
+  "shakesNeeded": {
+    "message": "Mitikiso inayohitajika"
+  },
+  "shakesNeededHint": {
+    "message": "Idadi ya mitikiso inayohitajika ili kuanza."
+  },
+  "timeToShake": {
+    "message": "Muda wa kutikisa"
+  },
+  "timeToShakeField": {
+    "message": "Muda wa kutikisa kwa milisekunde"
+  },
+  "timeToShakeHint": {
+    "message": "Jinsi mitikiso $count$ inavyopaswa kutokea haraka ili kuwasha fizikia.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ficha kitufe cha \"Rejesha ukurasa\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Huficha kitufe cha \"Rejesha ukurasa\" kinachoonekana kwenye kona ya juu kulia fizikia ikiwa imewashwa."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "pikseli $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "pikseli $value$ kwa sekunde",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "milisekunde $value$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Shika</strong> dirisha kwenye upau wa kichwa na <strong><i>ulitikise</i></strong>, AU <strong>bofya</strong> aikoni ya kiendelezi."
+  },
+  "tipRestore": {
+    "message": "<strong>Bonyeza</strong> <kbd>Esc</kbd>, <strong>bofya</strong> kitufe cha <i>Rejesha ukurasa</i>, AU <strong>bofya</strong> aikoni ya kiendelezi ili kurejesha ukurasa."
+  },
+  "resetSettings": {
+    "message": "Rejesha chaguomsingi"
+  },
+  "resetConfirm": {
+    "message": "Ungependa kurejesha mipangilio yote kwenye chaguomsingi?"
+  },
+  "resetFailed": {
+    "message": "Imeshindwa kurejesha mipangilio. Jaribu tena."
+  },
+  "resetDone": {
+    "message": "Mipangilio imerejeshwa kwenye chaguomsingi."
+  }
+}

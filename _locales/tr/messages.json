@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "tr"
+  },
+  "extName": {
+    "message": "Ekranı Salla, Stres At"
+  },
+  "extDescription": {
+    "message": "Eğlence için geçerli sekmedeki HTML öğelerine fizik ekler."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Sayfayı geri yükle"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizik açık. Kapatmak için Escape tuşuna veya \"Sayfayı geri yükle\" düğmesine basın."
+  },
+  "physicsOnNote": {
+    "message": "Tarayıcı pencerenizi sallamak fiziği açar. Kapatmak için \"Sayfayı geri yükle\" düğmesine veya Esc tuşuna basın."
+  },
+  "settingsPageTitle": {
+    "message": "Ekranı Salla, Stres At ayarları"
+  },
+  "settingsHeading": {
+    "message": "Ayarlar"
+  },
+  "physicsSettings": {
+    "message": "Fizik ayarları"
+  },
+  "gravity": {
+    "message": "Yerçekimi"
+  },
+  "gravityHint": {
+    "message": "0'da sayfa düz bir masa gibi kalır. Parçaların düşmesi için artırın."
+  },
+  "airDrag": {
+    "message": "Hava direnci"
+  },
+  "airDragHint": {
+    "message": "Fırlatılan parçaların ne kadar çabuk yavaşladığı."
+  },
+  "bounce": {
+    "message": "Zıplama"
+  },
+  "bounceHint": {
+    "message": "Parçaların birbirinden ve pencere kenarlarından ne kadar sektiği."
+  },
+  "friction": {
+    "message": "Sürtünme"
+  },
+  "frictionHint": {
+    "message": "Parçaların birbirinin yanından kayarken ne kadar \"takıldığı\"."
+  },
+  "weight": {
+    "message": "Ağırlık"
+  },
+  "weightHint": {
+    "message": "Parçaların ne kadar ağır olduğu."
+  },
+  "dragStrength": {
+    "message": "Sürükleme gücü"
+  },
+  "dragStrengthHint": {
+    "message": "Bir parçanın işaretçinizi ne kadar sıkı takip ettiği."
+  },
+  "shakeSettings": {
+    "message": "Sallama ayarları"
+  },
+  "shakeDistance": {
+    "message": "Minimum sallama mesafesi"
+  },
+  "shakeDistanceField": {
+    "message": "Piksel cinsinden minimum sallama mesafesi"
+  },
+  "shakeDistanceHint": {
+    "message": "Bir sallama sayılması için pencerenin yön değiştirmeden önce ne kadar hareket etmesi gerektiği."
+  },
+  "shakeSpeed": {
+    "message": "Minimum sallama hızı"
+  },
+  "shakeSpeedField": {
+    "message": "Saniyede piksel cinsinden minimum sallama hızı"
+  },
+  "shakeSpeedHint": {
+    "message": "Sallamanın sayılması için pencerenin ne kadar hızlı hareket etmesi gerektiği; böylece yavaş hareketler onu tetiklemez."
+  },
+  "shakesNeeded": {
+    "message": "Gereken sallama sayısı"
+  },
+  "shakesNeededHint": {
+    "message": "Başlamak için kaç sallama gerektiği."
+  },
+  "timeToShake": {
+    "message": "Sallama süresi"
+  },
+  "timeToShakeField": {
+    "message": "Milisaniye cinsinden sallama süresi"
+  },
+  "timeToShakeHint": {
+    "message": "Fiziğin başlaması için $count$ sallamanın ne kadar sürede yapılması gerektiği.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "\"Sayfayı geri yükle\" düğmesini gizle"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Fizik açıkken sağ üst köşede görünen \"Sayfayı geri yükle\" düğmesini gizler."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/sn"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "saniyede $value$ piksel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisaniye",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "Pencereyi başlık çubuğundan <strong>tutun</strong> ve <strong><i>sallayın</i></strong> VEYA uzantı simgesini <strong>tıklayın</strong>."
+  },
+  "tipRestore": {
+    "message": "Sayfayı geri yüklemek için <kbd>Esc</kbd> tuşuna <strong>basın</strong>, <i>Sayfayı geri yükle</i> düğmesini <strong>tıklayın</strong> VEYA uzantı simgesini <strong>tıklayın</strong>."
+  },
+  "resetSettings": {
+    "message": "Varsayılanlara sıfırla"
+  },
+  "resetConfirm": {
+    "message": "Tüm ayarlar varsayılanlara sıfırlansın mı?"
+  },
+  "resetFailed": {
+    "message": "Ayarlar sıfırlanamadı. Tekrar deneyin."
+  },
+  "resetDone": {
+    "message": "Ayarlar varsayılanlara sıfırlandı."
+  }
+}

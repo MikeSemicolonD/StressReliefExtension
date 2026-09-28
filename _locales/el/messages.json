@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "el"
+  },
+  "extName": {
+    "message": "Τίναγμα οθόνης κατά του άγχους"
+  },
+  "extDescription": {
+    "message": "Προσθέτει φυσική στα στοιχεία HTML της τρέχουσας καρτέλας, για πλάκα."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "Επαναφορά σελίδας"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Η φυσική είναι ενεργή. Πατήστε Escape ή «Επαναφορά σελίδας» για να την απενεργοποιήσετε."
+  },
+  "physicsOnNote": {
+    "message": "Το τίναγμα του παραθύρου του προγράμματος περιήγησης ενεργοποιεί τη φυσική. Πατήστε «Επαναφορά σελίδας» ή Esc για να την απενεργοποιήσετε."
+  },
+  "settingsPageTitle": {
+    "message": "Τίναγμα οθόνης κατά του άγχους – Ρυθμίσεις"
+  },
+  "settingsHeading": {
+    "message": "Ρυθμίσεις"
+  },
+  "physicsSettings": {
+    "message": "Ρυθμίσεις φυσικής"
+  },
+  "gravity": {
+    "message": "Βαρύτητα"
+  },
+  "gravityHint": {
+    "message": "Στο 0 η σελίδα μένει επίπεδη σαν τραπέζι. Αυξήστε τη για να πέφτουν τα κομμάτια."
+  },
+  "airDrag": {
+    "message": "Αντίσταση αέρα"
+  },
+  "airDragHint": {
+    "message": "Πόσο γρήγορα επιβραδύνουν τα κομμάτια που πετάτε."
+  },
+  "bounce": {
+    "message": "Αναπήδηση"
+  },
+  "bounceHint": {
+    "message": "Πόσο αναπηδούν τα κομμάτια μεταξύ τους και στις άκρες του παραθύρου."
+  },
+  "friction": {
+    "message": "Τριβή"
+  },
+  "frictionHint": {
+    "message": "Πόσο «κολλάνε» τα κομμάτια όταν γλιστρούν το ένα δίπλα στο άλλο."
+  },
+  "weight": {
+    "message": "Βάρος"
+  },
+  "weightHint": {
+    "message": "Πόσο βαριά είναι τα κομμάτια."
+  },
+  "dragStrength": {
+    "message": "Δύναμη συγκράτησης"
+  },
+  "dragStrengthHint": {
+    "message": "Πόσο σφιχτά ακολουθεί ένα κομμάτι τον δείκτη σας."
+  },
+  "shakeSettings": {
+    "message": "Ρυθμίσεις τινάγματος"
+  },
+  "shakeDistance": {
+    "message": "Ελάχιστη απόσταση τινάγματος"
+  },
+  "shakeDistanceField": {
+    "message": "Ελάχιστη απόσταση τινάγματος σε pixel"
+  },
+  "shakeDistanceHint": {
+    "message": "Πόσο πρέπει να μετακινηθεί το παράθυρο πριν αλλάξει κατεύθυνση για να μετρήσει ως ένα τίναγμα."
+  },
+  "shakeSpeed": {
+    "message": "Ελάχιστη ταχύτητα τινάγματος"
+  },
+  "shakeSpeedField": {
+    "message": "Ελάχιστη ταχύτητα τινάγματος σε pixel ανά δευτερόλεπτο"
+  },
+  "shakeSpeedHint": {
+    "message": "Πόσο γρήγορα πρέπει να κινηθεί το παράθυρο για να μετρήσει το τίναγμα, ώστε οι αργές κινήσεις να μην το ενεργοποιούν."
+  },
+  "shakesNeeded": {
+    "message": "Απαιτούμενα τινάγματα"
+  },
+  "shakesNeededHint": {
+    "message": "Πόσα τινάγματα χρειάζονται για να ξεκινήσει."
+  },
+  "timeToShake": {
+    "message": "Χρόνος τινάγματος"
+  },
+  "timeToShakeField": {
+    "message": "Χρόνος τινάγματος σε χιλιοστά του δευτερολέπτου"
+  },
+  "timeToShakeHint": {
+    "message": "Πόσο γρήγορα πρέπει να γίνουν τα $count$ τινάγματα για να ενεργοποιηθεί η φυσική.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Απόκρυψη κουμπιού «Επαναφορά σελίδας»"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Κρύβει το κουμπί «Επαναφορά σελίδας» που εμφανίζεται πάνω δεξιά όταν η φυσική είναι ενεργή."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixel ανά δευτερόλεπτο",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ χιλιοστά του δευτερολέπτου",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Πιάστε</strong> το παράθυρο από τη γραμμή τίτλου και <strong><i>τινάξτε το</i></strong> Ή <strong>κάντε κλικ</strong> στο εικονίδιο της επέκτασης."
+  },
+  "tipRestore": {
+    "message": "<strong>Πατήστε</strong> <kbd>Esc</kbd>, <strong>κάντε κλικ</strong> στο κουμπί <i>Επαναφορά σελίδας</i> Ή <strong>κάντε κλικ</strong> στο εικονίδιο της επέκτασης για να επαναφέρετε τη σελίδα."
+  },
+  "resetSettings": {
+    "message": "Επαναφορά προεπιλογών"
+  },
+  "resetConfirm": {
+    "message": "Επαναφορά όλων των ρυθμίσεων στις προεπιλογές;"
+  },
+  "resetFailed": {
+    "message": "Δεν ήταν δυνατή η επαναφορά των ρυθμίσεων. Δοκιμάστε ξανά."
+  },
+  "resetDone": {
+    "message": "Έγινε επαναφορά των ρυθμίσεων στις προεπιλογές."
+  }
+}

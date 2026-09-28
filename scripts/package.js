@@ -28,6 +28,7 @@ const FILES = [
   'settings.css',
   'styles.css',
   'images',
+  '_locales',
   'fonts',
   'LICENSE'
 ];

@@ -80,7 +80,14 @@
     if (host) return;
     host = document.createElement('div');
     host.setAttribute('data-physics-restore', '');
-    host.style.cssText = 'all: initial; position: fixed; top: 16px; right: 16px; z-index: 2147483647;';
+    // In the extension's language rather than the page's (lang also picks
+    // the right glyphs for CJK text). In right-to-left languages it sits in
+    // the top-left corner, the mirror image of top-right.
+    const dir = chrome.i18n.getMessage('@@bidi_dir');
+    host.lang = chrome.i18n.getMessage('locale').replace('_', '-');
+    host.dir = dir;
+    host.style.cssText = `all: initial; direction: ${dir}; position: fixed; top: 16px; ` +
+      'inset-inline-end: 16px; z-index: 2147483647;';
     const root = host.attachShadow({ mode: 'open' });
 
     const style = document.createElement('style');
@@ -94,8 +101,8 @@
     button.setAttribute('aria-keyshortcuts', 'Escape');
     const key = document.createElement('kbd');
     key.setAttribute('aria-hidden', 'true');
-    key.textContent = 'Esc';
-    button.append('Restore page', key);
+    key.textContent = chrome.i18n.getMessage('escKey');
+    button.append(chrome.i18n.getMessage('restorePage'), key);
     button.addEventListener('click', onRestore);
     // A live region, in place (empty) before its text is set so it's announced
     const status = document.createElement('p');
@@ -115,12 +122,11 @@
     chrome.storage.local.get({ restoreHintSeen: false }, ({ restoreHintSeen }) => {
       if (!status.isConnected) return;
       if (chrome.runtime.lastError || restoreHintSeen) {
-        status.textContent = 'Physics is on. Press Escape or Restore page to turn it off.';
+        status.textContent = chrome.i18n.getMessage('physicsOnStatus');
         return;
       }
       status.className = 'note';
-      status.textContent = 'Shaking your browser window turns on physics. ' +
-        'Press Restore page or Esc to turn it off.';
+      status.textContent = chrome.i18n.getMessage('physicsOnNote');
       chrome.storage.local.set({ restoreHintSeen: true });
     });
   }

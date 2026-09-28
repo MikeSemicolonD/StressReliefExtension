@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "lo"
+  },
+  "extName": {
+    "message": "ສັ່ນຈໍຄາຍຄວາມຄຽດ"
+  },
+  "extDescription": {
+    "message": "ເພີ່ມຟີຊິກໃຫ້ອົງປະກອບ HTML ໃນແຖບປັດຈຸບັນເພື່ອຄວາມມ່ວນ."
+  },
+  "badgeOn": {
+    "message": "ເປີດ"
+  },
+  "restorePage": {
+    "message": "ຄືນຄ່າໜ້າເວັບ"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ຟີຊິກເປີດຢູ່. ກົດປຸ່ມ Escape ຫຼື \"ຄືນຄ່າໜ້າເວັບ\" ເພື່ອປິດ."
+  },
+  "physicsOnNote": {
+    "message": "ການສັ່ນໜ້າຕ່າງບຣາວເຊີຈະເປີດຟີຊິກ. ກົດ \"ຄືນຄ່າໜ້າເວັບ\" ຫຼື Esc ເພື່ອປິດ."
+  },
+  "settingsPageTitle": {
+    "message": "ການຕັ້ງຄ່າ ສັ່ນຈໍຄາຍຄວາມຄຽດ"
+  },
+  "settingsHeading": {
+    "message": "ການຕັ້ງຄ່າ"
+  },
+  "physicsSettings": {
+    "message": "ການຕັ້ງຄ່າຟີຊິກ"
+  },
+  "gravity": {
+    "message": "ແຮງໂນ້ມຖ່ວງ"
+  },
+  "gravityHint": {
+    "message": "ທີ່ 0 ໜ້າເວັບຈະແປພຽງຄືໜ້າໂຕະ. ເພີ່ມຄ່າເພື່ອໃຫ້ຊິ້ນສ່ວນຕົກລົງ."
+  },
+  "airDrag": {
+    "message": "ແຮງຕ້ານອາກາດ"
+  },
+  "airDragHint": {
+    "message": "ຊິ້ນສ່ວນທີ່ຖືກໂຍນຈະຊ້າລົງໄວປານໃດ."
+  },
+  "bounce": {
+    "message": "ການເດັ້ງ"
+  },
+  "bounceHint": {
+    "message": "ຊິ້ນສ່ວນເດັ້ງໃສ່ກັນ ແລະ ໃສ່ຂອບໜ້າຕ່າງຫຼາຍປານໃດ."
+  },
+  "friction": {
+    "message": "ແຮງສຽດທານ"
+  },
+  "frictionHint": {
+    "message": "ຊິ້ນສ່ວນ \"ຕິດ\" ກັນຫຼາຍປານໃດເມື່ອໄຖຜ່ານກັນ."
+  },
+  "weight": {
+    "message": "ນ້ຳໜັກ"
+  },
+  "weightHint": {
+    "message": "ຊິ້ນສ່ວນໜັກປານໃດ."
+  },
+  "dragStrength": {
+    "message": "ແຮງລາກ"
+  },
+  "dragStrengthHint": {
+    "message": "ຊິ້ນສ່ວນຕິດຕາມຕົວຊີ້ຂອງທ່ານແໜ້ນປານໃດ."
+  },
+  "shakeSettings": {
+    "message": "ການຕັ້ງຄ່າການສັ່ນ"
+  },
+  "shakeDistance": {
+    "message": "ໄລຍະສັ່ນຕ່ຳສຸດ"
+  },
+  "shakeDistanceField": {
+    "message": "ໄລຍະສັ່ນຕ່ຳສຸດເປັນພິກເຊວ"
+  },
+  "shakeDistanceHint": {
+    "message": "ໜ້າຕ່າງຕ້ອງເລື່ອນໄປໄກປານໃດກ່ອນປ່ຽນທິດ ຈຶ່ງນັບເປັນການສັ່ນໜຶ່ງຄັ້ງ."
+  },
+  "shakeSpeed": {
+    "message": "ຄວາມໄວສັ່ນຕ່ຳສຸດ"
+  },
+  "shakeSpeedField": {
+    "message": "ຄວາມໄວສັ່ນຕ່ຳສຸດເປັນພິກເຊວຕໍ່ວິນາທີ"
+  },
+  "shakeSpeedHint": {
+    "message": "ໜ້າຕ່າງຕ້ອງເລື່ອນໄວປານໃດຈຶ່ງນັບເປັນການສັ່ນ ເພື່ອບໍ່ໃຫ້ການເລື່ອນຊ້າໆເຮັດໃຫ້ມັນເປີດ."
+  },
+  "shakesNeeded": {
+    "message": "ຈຳນວນຄັ້ງທີ່ຕ້ອງສັ່ນ"
+  },
+  "shakesNeededHint": {
+    "message": "ຕ້ອງສັ່ນຈັກຄັ້ງຈຶ່ງຈະເລີ່ມ."
+  },
+  "timeToShake": {
+    "message": "ເວລາສັ່ນ"
+  },
+  "timeToShakeField": {
+    "message": "ເວລາສັ່ນເປັນມິລລິວິນາທີ"
+  },
+  "timeToShakeHint": {
+    "message": "ຕ້ອງສັ່ນໃຫ້ຄົບ $count$ ຄັ້ງພາຍໃນເວລາເທົ່າໃດຈຶ່ງຈະເປີດຟີຊິກ.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "ເຊື່ອງປຸ່ມ \"ຄືນຄ່າໜ້າເວັບ\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "ເຊື່ອງປຸ່ມ \"ຄືນຄ່າໜ້າເວັບ\" ທີ່ປາກົດຢູ່ມຸມຂວາເທິງເມື່ອຟີຊິກເປີດຢູ່."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ ພິກເຊວ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ ພິກເຊວຕໍ່ວິນາທີ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ ມິລລິວິນາທີ",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>ຈັບ</strong>ແຖບຊື່ຂອງໜ້າຕ່າງແລ້ວ<strong><i>ສັ່ນມັນ</i></strong> ຫຼື <strong>ຄລິກ</strong>ໄອຄອນສ່ວນຂະຫຍາຍ."
+  },
+  "tipRestore": {
+    "message": "<strong>ກົດ</strong> <kbd>Esc</kbd>, <strong>ຄລິກ</strong>ປຸ່ມ <i>ຄືນຄ່າໜ້າເວັບ</i> ຫຼື <strong>ຄລິກ</strong>ໄອຄອນສ່ວນຂະຫຍາຍເພື່ອຄືນຄ່າໜ້າເວັບ."
+  },
+  "resetSettings": {
+    "message": "ຣີເຊັດເປັນຄ່າເລີ່ມຕົ້ນ"
+  },
+  "resetConfirm": {
+    "message": "ຣີເຊັດການຕັ້ງຄ່າທັງໝົດເປັນຄ່າເລີ່ມຕົ້ນບໍ?"
+  },
+  "resetFailed": {
+    "message": "ບໍ່ສາມາດຣີເຊັດການຕັ້ງຄ່າໄດ້. ກະລຸນາລອງໃໝ່."
+  },
+  "resetDone": {
+    "message": "ຣີເຊັດການຕັ້ງຄ່າເປັນຄ່າເລີ່ມຕົ້ນແລ້ວ."
+  }
+}

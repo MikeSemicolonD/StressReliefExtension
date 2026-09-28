@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "ka"
+  },
+  "extName": {
+    "message": "ეკრანის შენჯღრევა სტრესის წინააღმდეგ"
+  },
+  "extDescription": {
+    "message": "მიმდინარე ჩანართის HTML ელემენტებს ფიზიკას ამატებს, გასართობად."
+  },
+  "badgeOn": {
+    "message": "ON"
+  },
+  "restorePage": {
+    "message": "გვერდის აღდგენა"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "ფიზიკა ჩართულია. გამოსართავად დააჭირეთ Escape-ს ან ღილაკს „გვერდის აღდგენა“."
+  },
+  "physicsOnNote": {
+    "message": "ბრაუზერის ფანჯრის შენჯღრევა ფიზიკას რთავს. გამოსართავად დააჭირეთ ღილაკს „გვერდის აღდგენა“ ან Esc-ს."
+  },
+  "settingsPageTitle": {
+    "message": "ეკრანის შენჯღრევა სტრესის წინააღმდეგ – პარამეტრები"
+  },
+  "settingsHeading": {
+    "message": "პარამეტრები"
+  },
+  "physicsSettings": {
+    "message": "ფიზიკის პარამეტრები"
+  },
+  "gravity": {
+    "message": "სიმძიმის ძალა"
+  },
+  "gravityHint": {
+    "message": "0-ზე გვერდი ბრტყელ მაგიდად რჩება. გაზარდეთ, რომ ნაწილები ჩამოცვივდეს."
+  },
+  "airDrag": {
+    "message": "ჰაერის წინააღმდეგობა"
+  },
+  "airDragHint": {
+    "message": "რამდენად სწრაფად ნელდება ნასროლი ნაწილები."
+  },
+  "bounce": {
+    "message": "ასხლეტა"
+  },
+  "bounceHint": {
+    "message": "რამდენად ასხლტება ნაწილები ერთმანეთს და ფანჯრის კიდეებს."
+  },
+  "friction": {
+    "message": "ხახუნი"
+  },
+  "frictionHint": {
+    "message": "რამდენად „ედება“ ნაწილები ერთმანეთს, როცა ერთმანეთის გვერდით სრიალებს."
+  },
+  "weight": {
+    "message": "წონა"
+  },
+  "weightHint": {
+    "message": "რამდენად მძიმეა ნაწილები."
+  },
+  "dragStrength": {
+    "message": "გადათრევის ძალა"
+  },
+  "dragStrengthHint": {
+    "message": "რამდენად მჭიდროდ მიჰყვება ნაწილი მაჩვენებელს."
+  },
+  "shakeSettings": {
+    "message": "შენჯღრევის პარამეტრები"
+  },
+  "shakeDistance": {
+    "message": "შენჯღრევის მინიმალური მანძილი"
+  },
+  "shakeDistanceField": {
+    "message": "შენჯღრევის მინიმალური მანძილი პიქსელებში"
+  },
+  "shakeDistanceHint": {
+    "message": "რამდენი უნდა გადაადგილდეს ფანჯარა მიმართულების შეცვლამდე, რომ ერთ შენჯღრევად ჩაითვალოს."
+  },
+  "shakeSpeed": {
+    "message": "შენჯღრევის მინიმალური სიჩქარე"
+  },
+  "shakeSpeedField": {
+    "message": "შენჯღრევის მინიმალური სიჩქარე, პიქსელი წამში"
+  },
+  "shakeSpeedHint": {
+    "message": "რამდენად სწრაფად უნდა იმოძრაოს ფანჯარამ, რომ შენჯღრევა ჩაითვალოს — ასე ნელი მოძრაობა მას არ ჩართავს."
+  },
+  "shakesNeeded": {
+    "message": "საჭირო შენჯღრევები"
+  },
+  "shakesNeededHint": {
+    "message": "რამდენი შენჯღრევაა საჭირო დასაწყებად."
+  },
+  "timeToShake": {
+    "message": "შენჯღრევის დრო"
+  },
+  "timeToShakeField": {
+    "message": "შენჯღრევის დრო მილიწამებში"
+  },
+  "timeToShakeHint": {
+    "message": "რამდენად სწრაფად უნდა მოხდეს $count$ შენჯღრევა, რომ ფიზიკა ჩაირთოს.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "ღილაკის „გვერდის აღდგენა“ დამალვა"
+  },
+  "hideRestoreButtonHint": {
+    "message": "მალავს ღილაკს „გვერდის აღდგენა“, რომელიც ზედა მარჯვენა კუთხეში ჩნდება, როცა ფიზიკა ჩართულია."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/წმ"
+  },
+  "unitMs": {
+    "message": "მწმ"
+  },
+  "valuePx": {
+    "message": "$value$ პიქსელი",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ პიქსელი წამში",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ მილიწამი",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>მოჰკიდეთ</strong> ფანჯარას სათაურის ზოლზე და <strong><i>შეანჯღრიეთ</i></strong>, ან <strong>დააწკაპუნეთ</strong> გაფართოების ხატულაზე."
+  },
+  "tipRestore": {
+    "message": "გვერდის აღსადგენად <strong>დააჭირეთ</strong> <kbd>Esc</kbd>-ს, <strong>დააწკაპუნეთ</strong> ღილაკზე <i>გვერდის აღდგენა</i>, ან <strong>დააწკაპუნეთ</strong> გაფართოების ხატულაზე."
+  },
+  "resetSettings": {
+    "message": "ნაგულისხმევის აღდგენა"
+  },
+  "resetConfirm": {
+    "message": "დაუბრუნდეს ყველა პარამეტრი ნაგულისხმევ მნიშვნელობებს?"
+  },
+  "resetFailed": {
+    "message": "პარამეტრების დაბრუნება ვერ მოხერხდა. სცადეთ ხელახლა."
+  },
+  "resetDone": {
+    "message": "პარამეტრები დაუბრუნდა ნაგულისხმევ მნიშვნელობებს."
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "et"
+  },
+  "extName": {
+    "message": "Ekraaniraputus stressi vastu"
+  },
+  "extDescription": {
+    "message": "Lisab lõbu pärast praeguse vahelehe HTML-elementidele füüsika."
+  },
+  "badgeOn": {
+    "message": "SEES"
+  },
+  "restorePage": {
+    "message": "Taasta leht"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Füüsika on sees. Väljalülitamiseks vajutage Escape-klahvi või nuppu „Taasta leht“."
+  },
+  "physicsOnNote": {
+    "message": "Brauseriakna raputamine lülitab füüsika sisse. Väljalülitamiseks vajutage nuppu „Taasta leht“ või klahvi Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Ekraaniraputus stressi vastu – seaded"
+  },
+  "settingsHeading": {
+    "message": "Seaded"
+  },
+  "physicsSettings": {
+    "message": "Füüsika seaded"
+  },
+  "gravity": {
+    "message": "Raskusjõud"
+  },
+  "gravityHint": {
+    "message": "Väärtusel 0 jääb leht lamedaks nagu lauaplaat. Suurendage, et tükid kukuksid."
+  },
+  "airDrag": {
+    "message": "Õhutakistus"
+  },
+  "airDragHint": {
+    "message": "Kui kiiresti visatud tükid aeglustuvad."
+  },
+  "bounce": {
+    "message": "Põrge"
+  },
+  "bounceHint": {
+    "message": "Kui palju tükid üksteiselt ja akna servadelt tagasi põrkavad."
+  },
+  "friction": {
+    "message": "Hõõrdumine"
+  },
+  "frictionHint": {
+    "message": "Kui palju tükid üksteisest mööda libisedes „kinni jäävad“."
+  },
+  "weight": {
+    "message": "Raskus"
+  },
+  "weightHint": {
+    "message": "Kui rasked tükid on."
+  },
+  "dragStrength": {
+    "message": "Haarde tugevus"
+  },
+  "dragStrengthHint": {
+    "message": "Kui täpselt tükk kursorit järgib."
+  },
+  "shakeSettings": {
+    "message": "Raputuse seaded"
+  },
+  "shakeDistance": {
+    "message": "Minimaalne raputuse ulatus"
+  },
+  "shakeDistanceField": {
+    "message": "Minimaalne raputuse ulatus pikslites"
+  },
+  "shakeDistanceHint": {
+    "message": "Kui kaugele peab aken enne suunamuutust liikuma, et see loeks üheks raputuseks."
+  },
+  "shakeSpeed": {
+    "message": "Minimaalne raputuse kiirus"
+  },
+  "shakeSpeedField": {
+    "message": "Minimaalne raputuse kiirus pikslites sekundis"
+  },
+  "shakeSpeedHint": {
+    "message": "Kui kiiresti peab aken liikuma, et raputus loeks – nii ei käivita aeglased liigutused seda."
+  },
+  "shakesNeeded": {
+    "message": "Raputuste arv"
+  },
+  "shakesNeededHint": {
+    "message": "Mitu raputust on käivitamiseks vaja."
+  },
+  "timeToShake": {
+    "message": "Raputuse aeg"
+  },
+  "timeToShakeField": {
+    "message": "Raputuse aeg millisekundites"
+  },
+  "timeToShakeHint": {
+    "message": "Kui kiiresti peab akent $count$ korda raputama, et füüsika käivituks.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Peida nupp „Taasta leht“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Peidab nupu „Taasta leht“, mis ilmub füüsika sisselülitamisel paremasse ülanurka."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pikslit",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pikslit sekundis",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekundit",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Haarake</strong> aken tiitliribast kinni ja <strong><i>raputage seda</i></strong> VÕI <strong>klõpsake</strong> laienduse ikoonil."
+  },
+  "tipRestore": {
+    "message": "<strong>Vajutage</strong> <kbd>Esc</kbd>, <strong>klõpsake</strong> nuppu <i>Taasta leht</i> VÕI <strong>klõpsake</strong> laienduse ikoonil, et leht taastada."
+  },
+  "resetSettings": {
+    "message": "Lähtesta vaikeseaded"
+  },
+  "resetConfirm": {
+    "message": "Kas lähtestada kõik seaded vaikeväärtustele?"
+  },
+  "resetFailed": {
+    "message": "Seadeid ei õnnestunud lähtestada. Proovige uuesti."
+  },
+  "resetDone": {
+    "message": "Seaded lähtestati vaikeväärtustele."
+  }
+}

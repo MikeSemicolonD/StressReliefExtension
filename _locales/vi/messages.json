@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "vi"
+  },
+  "extName": {
+    "message": "Lắc Màn Hình Xả Stress"
+  },
+  "extDescription": {
+    "message": "Thêm vật lý cho các phần tử HTML trong thẻ hiện tại để giải trí."
+  },
+  "badgeOn": {
+    "message": "BẬT"
+  },
+  "restorePage": {
+    "message": "Khôi phục trang"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Vật lý đang bật. Nhấn phím Escape hoặc \"Khôi phục trang\" để tắt."
+  },
+  "physicsOnNote": {
+    "message": "Lắc cửa sổ trình duyệt sẽ bật vật lý. Nhấn \"Khôi phục trang\" hoặc Esc để tắt."
+  },
+  "settingsPageTitle": {
+    "message": "Cài đặt Lắc Màn Hình Xả Stress"
+  },
+  "settingsHeading": {
+    "message": "Cài đặt"
+  },
+  "physicsSettings": {
+    "message": "Cài đặt vật lý"
+  },
+  "gravity": {
+    "message": "Trọng lực"
+  },
+  "gravityHint": {
+    "message": "Ở mức 0, trang nằm phẳng như mặt bàn. Tăng lên để các mảnh rơi xuống."
+  },
+  "airDrag": {
+    "message": "Lực cản không khí"
+  },
+  "airDragHint": {
+    "message": "Các mảnh bị ném chậm lại nhanh đến mức nào."
+  },
+  "bounce": {
+    "message": "Độ nảy"
+  },
+  "bounceHint": {
+    "message": "Các mảnh nảy khỏi nhau và khỏi mép cửa sổ nhiều đến mức nào."
+  },
+  "friction": {
+    "message": "Ma sát"
+  },
+  "frictionHint": {
+    "message": "Các mảnh \"vướng\" vào nhau nhiều đến mức nào khi trượt qua nhau."
+  },
+  "weight": {
+    "message": "Độ nặng"
+  },
+  "weightHint": {
+    "message": "Các mảnh nặng đến mức nào."
+  },
+  "dragStrength": {
+    "message": "Lực kéo"
+  },
+  "dragStrengthHint": {
+    "message": "Mảnh bám theo con trỏ của bạn chặt đến mức nào."
+  },
+  "shakeSettings": {
+    "message": "Cài đặt lắc"
+  },
+  "shakeDistance": {
+    "message": "Khoảng lắc tối thiểu"
+  },
+  "shakeDistanceField": {
+    "message": "Khoảng lắc tối thiểu tính bằng pixel"
+  },
+  "shakeDistanceHint": {
+    "message": "Cửa sổ phải di chuyển bao xa trước khi đổi hướng thì mới tính là một lần lắc."
+  },
+  "shakeSpeed": {
+    "message": "Tốc độ lắc tối thiểu"
+  },
+  "shakeSpeedField": {
+    "message": "Tốc độ lắc tối thiểu tính bằng pixel mỗi giây"
+  },
+  "shakeSpeedHint": {
+    "message": "Cửa sổ phải di chuyển nhanh đến mức nào thì mới tính là lắc, để di chuyển chậm không kích hoạt nhầm."
+  },
+  "shakesNeeded": {
+    "message": "Số lần lắc cần thiết"
+  },
+  "shakesNeededHint": {
+    "message": "Cần lắc bao nhiêu lần để bắt đầu."
+  },
+  "timeToShake": {
+    "message": "Thời gian lắc"
+  },
+  "timeToShakeField": {
+    "message": "Thời gian lắc tính bằng mili giây"
+  },
+  "timeToShakeHint": {
+    "message": "$count$ lần lắc phải diễn ra nhanh đến mức nào để kích hoạt vật lý.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Ẩn nút \"Khôi phục trang\""
+  },
+  "hideRestoreButtonHint": {
+    "message": "Ẩn nút \"Khôi phục trang\" xuất hiện ở góc trên bên phải khi vật lý đang bật."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ pixel",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ pixel mỗi giây",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ mili giây",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Nắm</strong> thanh tiêu đề của cửa sổ và <strong><i>lắc nó</i></strong>, HOẶC <strong>nhấp</strong> vào biểu tượng tiện ích."
+  },
+  "tipRestore": {
+    "message": "<strong>Nhấn</strong> <kbd>Esc</kbd>, <strong>nhấp</strong> vào nút <i>Khôi phục trang</i>, HOẶC <strong>nhấp</strong> vào biểu tượng tiện ích để khôi phục trang."
+  },
+  "resetSettings": {
+    "message": "Đặt lại về mặc định"
+  },
+  "resetConfirm": {
+    "message": "Đặt lại mọi cài đặt về mặc định?"
+  },
+  "resetFailed": {
+    "message": "Không thể đặt lại cài đặt. Hãy thử lại."
+  },
+  "resetDone": {
+    "message": "Đã đặt lại cài đặt về mặc định."
+  }
+}

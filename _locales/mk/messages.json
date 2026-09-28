@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "mk"
+  },
+  "extName": {
+    "message": "Антистрес: затреси го екранот"
+  },
+  "extDescription": {
+    "message": "Додава физика на HTML-елементите во тековната картичка – само за забава."
+  },
+  "badgeOn": {
+    "message": "ВКЛ"
+  },
+  "restorePage": {
+    "message": "Врати ја страницата"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Физиката е вклучена. Притиснете Escape или копчето „Врати ја страницата“ за да ја исклучите."
+  },
+  "physicsOnNote": {
+    "message": "Тресењето на прозорецот на прелистувачот ја вклучува физиката. Притиснете „Врати ја страницата“ или Esc за да ја исклучите."
+  },
+  "settingsPageTitle": {
+    "message": "Антистрес: затреси го екранот – поставки"
+  },
+  "settingsHeading": {
+    "message": "Поставки"
+  },
+  "physicsSettings": {
+    "message": "Поставки за физика"
+  },
+  "gravity": {
+    "message": "Гравитација"
+  },
+  "gravityHint": {
+    "message": "На 0 страницата останува рамна како маса. Зголемете ја за парчињата да паѓаат."
+  },
+  "airDrag": {
+    "message": "Успорување"
+  },
+  "airDragHint": {
+    "message": "Колку брзо успоруваат фрлените парчиња."
+  },
+  "bounce": {
+    "message": "Отскокнување"
+  },
+  "bounceHint": {
+    "message": "Колку силно парчињата отскокнуваат едно од друго и од рабовите на прозорецот."
+  },
+  "friction": {
+    "message": "Триење"
+  },
+  "frictionHint": {
+    "message": "Колку парчињата „се закачуваат“ кога се лизгаат едно покрај друго."
+  },
+  "weight": {
+    "message": "Тежина"
+  },
+  "weightHint": {
+    "message": "Колку се тешки парчињата."
+  },
+  "dragStrength": {
+    "message": "Сила на зафатот"
+  },
+  "dragStrengthHint": {
+    "message": "Колку цврсто парчето го следи покажувачот."
+  },
+  "shakeSettings": {
+    "message": "Поставки за тресење"
+  },
+  "shakeDistance": {
+    "message": "Мин. растојание на тресење"
+  },
+  "shakeDistanceField": {
+    "message": "Минимално растојание на тресење во пиксели"
+  },
+  "shakeDistanceHint": {
+    "message": "Колку далеку мора да се помести прозорецот пред да ја смени насоката за да се брои како едно тресење."
+  },
+  "shakeSpeed": {
+    "message": "Мин. брзина на тресење"
+  },
+  "shakeSpeedField": {
+    "message": "Минимална брзина на тресење во пиксели во секунда"
+  },
+  "shakeSpeedHint": {
+    "message": "Колку брзо мора да се движи прозорецот за да се брои тресењето. Бавните движења не се бројат."
+  },
+  "shakesNeeded": {
+    "message": "Број на тресења"
+  },
+  "shakesNeededHint": {
+    "message": "Колку тресења се потребни за почеток."
+  },
+  "timeToShake": {
+    "message": "Време за тресење"
+  },
+  "timeToShakeField": {
+    "message": "Време за тресење во милисекунди"
+  },
+  "timeToShakeHint": {
+    "message": "За колку време мора да се направат $count$ тресења за да се вклучи физиката.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Скриј го копчето „Врати ја страницата“"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Го скрива копчето „Врати ја страницата“ што се појавува во горниот десен агол кога физиката е вклучена."
+  },
+  "unitPx": {
+    "message": "пкс"
+  },
+  "unitPxPerSecond": {
+    "message": "пкс/с"
+  },
+  "unitMs": {
+    "message": "мс"
+  },
+  "valuePx": {
+    "message": "$value$ пиксели",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ пиксели во секунда",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ милисекунди",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Фатете</strong> го прозорецот за насловната лента и <strong><i>затресете го</i></strong> ИЛИ <strong>кликнете</strong> на иконата на додатокот."
+  },
+  "tipRestore": {
+    "message": "<strong>Притиснете</strong> <kbd>Esc</kbd>, <strong>кликнете</strong> на копчето „<i>Врати ја страницата</i>“ ИЛИ <strong>кликнете</strong> на иконата на додатокот за да ја вратите страницата."
+  },
+  "resetSettings": {
+    "message": "Ресетирај ги поставките"
+  },
+  "resetConfirm": {
+    "message": "Да се вратат ли сите поставки на стандардните вредности?"
+  },
+  "resetFailed": {
+    "message": "Поставките не може да се ресетираат. Обидете се повторно."
+  },
+  "resetDone": {
+    "message": "Поставките се вратени на стандардните вредности."
+  }
+}

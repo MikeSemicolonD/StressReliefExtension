@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "no"
+  },
+  "extName": {
+    "message": "Rist bort stresset"
+  },
+  "extDescription": {
+    "message": "Legger til fysikk i HTML-elementer i den gjeldende fanen – bare for moro skyld."
+  },
+  "badgeOn": {
+    "message": "PÅ"
+  },
+  "restorePage": {
+    "message": "Gjenopprett siden"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fysikk er på. Trykk på Escape eller «Gjenopprett siden» for å slå det av."
+  },
+  "physicsOnNote": {
+    "message": "Når du rister nettleservinduet, slås fysikk på. Trykk på «Gjenopprett siden» eller Esc for å slå det av."
+  },
+  "settingsPageTitle": {
+    "message": "Innstillinger for Rist bort stresset"
+  },
+  "settingsHeading": {
+    "message": "Innstillinger"
+  },
+  "physicsSettings": {
+    "message": "Fysikkinnstillinger"
+  },
+  "gravity": {
+    "message": "Tyngdekraft"
+  },
+  "gravityHint": {
+    "message": "På 0 forblir siden en flat bordplate. Skru opp for å få bitene til å falle."
+  },
+  "airDrag": {
+    "message": "Luftmotstand"
+  },
+  "airDragHint": {
+    "message": "Hvor raskt kastede biter bremser opp."
+  },
+  "bounce": {
+    "message": "Sprett"
+  },
+  "bounceHint": {
+    "message": "Hvor mye bitene spretter av hverandre og vinduskantene."
+  },
+  "friction": {
+    "message": "Friksjon"
+  },
+  "frictionHint": {
+    "message": "Hvor mye bitene «henger seg opp» når de glir forbi hverandre."
+  },
+  "weight": {
+    "message": "Vekt"
+  },
+  "weightHint": {
+    "message": "Hvor tunge bitene er."
+  },
+  "dragStrength": {
+    "message": "Trekkstyrke"
+  },
+  "dragStrengthHint": {
+    "message": "Hvor tett en bit følger pekeren din."
+  },
+  "shakeSettings": {
+    "message": "Risteinnstillinger"
+  },
+  "shakeDistance": {
+    "message": "Minste risteavstand"
+  },
+  "shakeDistanceField": {
+    "message": "Minste risteavstand i piksler"
+  },
+  "shakeDistanceHint": {
+    "message": "Hvor langt vinduet må flytte seg før det skifter retning, for at det skal telle som én risting."
+  },
+  "shakeSpeed": {
+    "message": "Minste ristehastighet"
+  },
+  "shakeSpeedField": {
+    "message": "Minste ristehastighet i piksler per sekund"
+  },
+  "shakeSpeedHint": {
+    "message": "Hvor raskt vinduet må flytte seg for at en risting skal telle, så trege bevegelser ikke utløser noe."
+  },
+  "shakesNeeded": {
+    "message": "Antall ristinger"
+  },
+  "shakesNeededHint": {
+    "message": "Hvor mange ristinger som skal til for å starte."
+  },
+  "timeToShake": {
+    "message": "Ristetid"
+  },
+  "timeToShakeField": {
+    "message": "Ristetid i millisekunder"
+  },
+  "timeToShakeHint": {
+    "message": "Hvor raskt de $count$ ristingene må skje for å slå på fysikken.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Skjul «Gjenopprett siden»-knappen"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Skjuler «Gjenopprett siden»-knappen som vises øverst til høyre når fysikk er på."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ piksler",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ piksler per sekund",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ millisekunder",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Ta tak</strong> i vinduets tittellinje og <strong><i>rist det</i></strong>, ELLER <strong>klikk</strong> på utvidelsesikonet."
+  },
+  "tipRestore": {
+    "message": "<strong>Trykk</strong> på <kbd>Esc</kbd>, <strong>klikk</strong> på <i>Gjenopprett siden</i>-knappen, ELLER <strong>klikk</strong> på utvidelsesikonet for å gjenopprette siden."
+  },
+  "resetSettings": {
+    "message": "Tilbakestill til standard"
+  },
+  "resetConfirm": {
+    "message": "Vil du tilbakestille alle innstillingene til standard?"
+  },
+  "resetFailed": {
+    "message": "Kunne ikke tilbakestille innstillingene. Prøv på nytt."
+  },
+  "resetDone": {
+    "message": "Innstillingene er tilbakestilt til standard."
+  }
+}

@@ -19,7 +19,7 @@ chrome.action.onClicked.addListener(async (tab) => {
 
 chrome.runtime.onMessage.addListener((request, sender) => {
   if (request.action === 'physicsStateChanged' && sender.tab) {
-    chrome.action.setBadgeText({ tabId: sender.tab.id, text: request.isEnabled ? 'ON' : '' });
+    chrome.action.setBadgeText({ tabId: sender.tab.id, text: request.isEnabled ? chrome.i18n.getMessage('badgeOn') : '' });
   }
 });
 

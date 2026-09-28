@@ -1,0 +1,173 @@
+{
+  "locale": {
+    "message": "sl"
+  },
+  "extName": {
+    "message": "Antistres: stresite zaslon"
+  },
+  "extDescription": {
+    "message": "Za zabavo doda fiziko elementom HTML na trenutnem zavihku."
+  },
+  "badgeOn": {
+    "message": "VKL"
+  },
+  "restorePage": {
+    "message": "Obnovi stran"
+  },
+  "escKey": {
+    "message": "Esc"
+  },
+  "physicsOnStatus": {
+    "message": "Fizika je vklopljena. Izklopite jo s tipko Escape ali z gumbom »Obnovi stran«."
+  },
+  "physicsOnNote": {
+    "message": "S stresanjem okna brskalnika vklopite fiziko. Izklopite jo z gumbom »Obnovi stran« ali s tipko Esc."
+  },
+  "settingsPageTitle": {
+    "message": "Antistres: stresite zaslon – nastavitve"
+  },
+  "settingsHeading": {
+    "message": "Nastavitve"
+  },
+  "physicsSettings": {
+    "message": "Nastavitve fizike"
+  },
+  "gravity": {
+    "message": "Gravitacija"
+  },
+  "gravityHint": {
+    "message": "Pri 0 ostane stran ravna kot miza. Povečajte jo in koščki bodo padali."
+  },
+  "airDrag": {
+    "message": "Zračni upor"
+  },
+  "airDragHint": {
+    "message": "Kako hitro se vrženi koščki upočasnijo."
+  },
+  "bounce": {
+    "message": "Odboj"
+  },
+  "bounceHint": {
+    "message": "Kako močno se koščki odbijajo drug od drugega in od robov okna."
+  },
+  "friction": {
+    "message": "Trenje"
+  },
+  "frictionHint": {
+    "message": "Kako močno se koščki »zatikajo«, ko drsijo drug mimo drugega."
+  },
+  "weight": {
+    "message": "Teža"
+  },
+  "weightHint": {
+    "message": "Kako težki so koščki."
+  },
+  "dragStrength": {
+    "message": "Moč prijema"
+  },
+  "dragStrengthHint": {
+    "message": "Kako tesno košček sledi kazalcu."
+  },
+  "shakeSettings": {
+    "message": "Nastavitve tresenja"
+  },
+  "shakeDistance": {
+    "message": "Najmanjša razdalja tresljaja"
+  },
+  "shakeDistanceField": {
+    "message": "Najmanjša razdalja tresljaja v slikovnih pikah"
+  },
+  "shakeDistanceHint": {
+    "message": "Kako daleč se mora okno premakniti, preden spremeni smer, da šteje kot en tresljaj."
+  },
+  "shakeSpeed": {
+    "message": "Najmanjša hitrost tresljaja"
+  },
+  "shakeSpeedField": {
+    "message": "Najmanjša hitrost tresljaja v slikovnih pikah na sekundo"
+  },
+  "shakeSpeedHint": {
+    "message": "Kako hitro se mora okno premikati, da tresljaj šteje – tako ga počasni premiki ne sprožijo."
+  },
+  "shakesNeeded": {
+    "message": "Število tresljajev"
+  },
+  "shakesNeededHint": {
+    "message": "Koliko tresljajev je potrebnih za začetek."
+  },
+  "timeToShake": {
+    "message": "Čas za tresenje"
+  },
+  "timeToShakeField": {
+    "message": "Čas za tresenje v milisekundah"
+  },
+  "timeToShakeHint": {
+    "message": "V kolikšnem času morate $count$-krat stresti okno, da se vklopi fizika.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "hideRestoreButton": {
+    "message": "Skrij gumb »Obnovi stran«"
+  },
+  "hideRestoreButtonHint": {
+    "message": "Skrije gumb »Obnovi stran«, ki se prikaže v zgornjem desnem kotu, ko je fizika vklopljena."
+  },
+  "unitPx": {
+    "message": "px"
+  },
+  "unitPxPerSecond": {
+    "message": "px/s"
+  },
+  "unitMs": {
+    "message": "ms"
+  },
+  "valuePx": {
+    "message": "$value$ slikovnih pik",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "40"
+      }
+    }
+  },
+  "valuePxPerSecond": {
+    "message": "$value$ slikovnih pik na sekundo",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "valueMs": {
+    "message": "$value$ milisekund",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1500"
+      }
+    }
+  },
+  "tipStart": {
+    "message": "<strong>Primite</strong> okno za naslovno vrstico in ga <strong><i>stresite</i></strong> ALI <strong>kliknite</strong> ikono razširitve."
+  },
+  "tipRestore": {
+    "message": "<strong>Pritisnite</strong> <kbd>Esc</kbd>, <strong>kliknite</strong> gumb <i>Obnovi stran</i> ALI <strong>kliknite</strong> ikono razširitve, da obnovite stran."
+  },
+  "resetSettings": {
+    "message": "Ponastavi na privzeto"
+  },
+  "resetConfirm": {
+    "message": "Želite ponastaviti vse nastavitve na privzete vrednosti?"
+  },
+  "resetFailed": {
+    "message": "Nastavitev ni bilo mogoče ponastaviti. Poskusite znova."
+  },
+  "resetDone": {
+    "message": "Nastavitve so ponastavljene na privzete vrednosti."
+  }
+}
