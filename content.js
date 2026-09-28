@@ -147,6 +147,11 @@
   // a partly off-screen piece and a wall -- skip colliding until they've
   // separated, instead of violently pushing each other apart. Each body gets
   // its own collisionFilter carrying a `ghosts` set of filters it ignores.
+  // Matter warns (once) when the runner hits its maxFrameTime budget on a heavy
+  // page. That throttling is intended, and the warning would show up as an
+  // error on the extensions page.
+  Matter.Common.logLevel = 0;
+
   const baseCanCollide = Matter.Detector.canCollide;
   Matter.Detector.canCollide = (a, b) =>
     baseCanCollide(a, b) && !(a.ghosts && a.ghosts.has(b));
@@ -1389,6 +1394,9 @@
 
   function setPhysicsEnabled(on, { animate = true } = {}) {
     if (on === isPhysicsEnabled || !document.body) return;
+    // An orphaned copy (see retire) can't start: the restore button needs
+    // chrome.i18n, which throws "Extension context invalidated" there
+    if (on && !chrome.runtime?.id) return retire();
     isPhysicsEnabled = on;
 
     if (on) {
