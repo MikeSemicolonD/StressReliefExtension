@@ -40,7 +40,7 @@ Hiding uses inline styles rather than classes because the extension stylesheet c
 Cloning details (`makeClone` / `freezeClone`):
 
 - `freezeClone` builds the copy node by node from the composed tree: shadow content is flattened in, `<slot>`s are replaced by their assigned nodes, and custom elements / shadow hosts become plain `div`s so the page's component code never runs on a copy. `display: none` subtrees are skipped.
-- Computed styles are copied onto every node of the clone so it looks right outside its original selector context; `::before`/`::after` are reified as real spans. Live form state (select index, input value/checked) is copied too.
+- Computed styles are copied onto every node of the clone so it looks right outside its original selector context; `::before`/`::after` are reified as real spans. Custom properties (`--*`) are skipped: the properties that use them are copied with `var()` already resolved, and design systems define thousands (on YouTube, about 50 KB of inline CSS per clone node). Live form state (select index, input value/checked) is copied too.
 - `pin()` overrides `transition`, `animation`, margins and min/max sizes; `markPiece()` also resets `translate/rotate/scale` on top-level pieces only (nested icons keep their rotation).
 - `iframe`/`embed`/`object` become placeholder boxes; `video`/`canvas` become canvas snapshots (cloning them would reload/restart/blank them).
 - `id` and `name` attributes are stripped (duplicate ids; cloned radios would uncheck originals).
@@ -65,7 +65,7 @@ Returns `{ el, kind, order }` picks (`order` is the flat-tree position, used for
 4. **Styled boxes** nothing took: containers of claimed pieces become empty **shells** (the box alone); others are thrown whole.
 5. **Loose text**: text nodes sitting directly in an unclaimed element, split into lines (needs the Highlight API).
 
-Every candidate is first filtered by `overlapsViewport` (a cheap rect read) before any computed-style check. Pieces may be partly off-screen; elements larger than 90% of the viewport are treated as layout and skipped. Capped at `MAX_PHYSICS_BODIES`, smallest first, all-or-nothing per element.
+Every candidate is first filtered by `overlapsViewport` (a cheap rect read) before any computed-style check. Its answers and `composedParent`'s are cached for the spawn's read phase (`clearSpawnCaches`), since every pass asks again for the same elements and ancestors. Pieces may be partly off-screen; elements larger than 90% of the viewport are treated as layout and skipped. Capped at `MAX_PHYSICS_BODIES`, smallest first, all-or-nothing per element.
 
 ### Spawning and the physics loop
 
@@ -91,6 +91,8 @@ Tests: `npm install`, `npx playwright install chromium`, then `npm test` (or the
 - Chrome quirks worth knowing: CSSOM style changes are written back to the `style` attribute lazily (see `restoreOriginals`), and a page's `transition: all` would animate our hiding (hence `transition: none` in `HIDE_ELEMENT`).
 
 Branches and CI: work goes to `staging` (CI: `ci.yml` → reusable `build.yml`, which packages a Chrome and a Firefox build via `scripts/package.js`, syntax-checks, runs the unit and browser tests, lints the Firefox build, and uploads both as artifacts), then to `main` via pull request. Every push to `main` runs `release.yml`, which packages and lints but doesn't rerun the tests (`run-tests: false`; `main` only takes pull requests whose CI tested the merged result, with branch protection requiring up-to-date branches), and releases only when `manifest.json`'s version has no `v<version>` tag yet: it creates the GitHub release with a `-chrome.zip` and a `-firefox.zip`, then calls `publish-firefox.yml`, `publish-chrome.yml` and `publish-edge.yml` directly (a release made with `GITHUB_TOKEN` can't trigger other workflows). Store workflows skip themselves until their secrets/variables exist. Third-party Actions are pinned to commit SHAs (with a `# vX.Y.Z` comment) and the `npx` tools to exact versions, because the store workflows run with publishing secrets; update pins deliberately rather than loosening them. Dependabot (`.github/dependabot.yml`) opens weekly grouped pull requests against `staging` for the pinned Actions and the npm dev dependencies; the `npx` tool versions inside `run:` steps aren't visible to it and are bumped by hand. Add any new runtime file to the list in `scripts/package.js`.
+
+Commit messages: an imperative, sentence-case subject with no trailing period ("Fix stuck empty canvas when physics fails to start"). The body is plain prose hard-wrapped at about 72 columns: what was wrong or missing and why, then what changed, naming the functions or settings involved. New tests go in a closing paragraph ("Adds tests for ..."). Use `- ` bullets only when listing separate, unrelated changes. Commits made with Claude end with its `Co-Authored-By:` trailer.
 
 Load unpacked from `chrome://extensions/` (Developer mode) using the repo folder, or in Firefox run `npm run build:firefox` and load `build/firefox/manifest.json` via `about:debugging#/runtime/this-firefox` → Load Temporary Add-on. After editing, reload the extension and refresh the target tab.
 

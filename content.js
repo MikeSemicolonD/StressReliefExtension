@@ -395,10 +395,19 @@
   }
 
   // Cheap first filter: most of a page is off-screen, and a rect read is far
-  // cheaper than the computed-style checks that follow.
+  // cheaper than the computed-style checks that follow. Every selection pass
+  // asks again, so answers are kept for the spawn (which reads, never writes,
+  // until the pieces are built).
+  let overlapCache = new Map(); // element -> boolean, reset each spawn
+
   function overlapsViewport(el) {
-    const r = el.getBoundingClientRect();
-    return r.bottom > 0 && r.top < viewport.height && r.right > 0 && r.left < viewport.width;
+    let overlaps = overlapCache.get(el);
+    if (overlaps === undefined) {
+      const r = el.getBoundingClientRect();
+      overlaps = r.bottom > 0 && r.top < viewport.height && r.right > 0 && r.left < viewport.width;
+      overlapCache.set(el, overlaps);
+    }
+    return overlaps;
   }
 
   // --- Composed tree (shadow DOM) -----------------------------------------------
@@ -432,7 +441,21 @@
     return node.childNodes;
   }
 
+  // Selection climbs ancestors for every candidate, and assignedSlot is slow
+  // to read, so parents are kept for the spawn (the tree doesn't change
+  // until the pieces are built).
+  let parentCache = new Map(); // node -> composed parent, reset each spawn
+
   function composedParent(node) {
+    let parent = parentCache.get(node);
+    if (parent === undefined) {
+      parent = findComposedParent(node);
+      parentCache.set(node, parent);
+    }
+    return parent;
+  }
+
+  function findComposedParent(node) {
     if (node.assignedSlot) return node.assignedSlot;
     const parent = node.parentNode;
     if (!parent) return null;
@@ -514,7 +537,7 @@
     const claim = (el, kind) => {
       claimed.add(el);
       pick(el, kind);
-      for (let p = composedParent(el); p; p = composedParent(p)) claimedAncestors.add(p);
+      for (let p = composedParent(el); p && !claimedAncestors.has(p); p = composedParent(p)) claimedAncestors.add(p);
     };
     const isFree = (el) => !claimed.has(el) && !claimedAncestors.has(el) && !hasAncestorIn(el, claimed);
     const unclaimed = (el) => !claimed.has(el) && !hasAncestorIn(el, claimed);
@@ -549,7 +572,7 @@
     }
     const wrapsAtom = new Set();
     for (const { el } of atoms) {
-      for (let p = composedParent(el); p; p = composedParent(p)) wrapsAtom.add(p);
+      for (let p = composedParent(el); p && !wrapsAtom.has(p); p = composedParent(p)) wrapsAtom.add(p);
     }
     atoms.filter(a => !wrapsAtom.has(a.el)).forEach(a => claim(a.el, a.kind));
 
@@ -693,11 +716,28 @@
     return null;
   }
 
+  // What a clone copies: every standard property. The list is the same for
+  // every element, so it's read once. Custom properties (--*) are left out:
+  // the properties that use them are copied with var() already resolved, and
+  // design systems define thousands, which every element would otherwise
+  // carry inline.
+  let copiedProps = null;
+
+  function copiedProperties() {
+    if (!copiedProps) {
+      const cs = window.getComputedStyle(document.documentElement);
+      copiedProps = [];
+      for (let i = 0; i < cs.length; i++) {
+        if (!cs[i].startsWith('--')) copiedProps.push(cs[i]);
+      }
+    }
+    return copiedProps;
+  }
+
   function copyComputedStyles(source, clone, computed = window.getComputedStyle(source)) {
     const defaults = nativeControlDefaults(source, computed);
     let css = '';
-    for (let i = 0; i < computed.length; i++) {
-      const prop = computed[i];
+    for (const prop of copiedProperties()) {
       const value = computed.getPropertyValue(prop);
       if (defaults && defaults.get(prop) === value) continue;
       css += `${prop}:${value};`;
@@ -730,8 +770,7 @@
       probeRoot.appendChild(probe);
       const cs = window.getComputedStyle(probe);
       const values = new Map();
-      for (let i = 0; i < cs.length; i++) {
-        const prop = cs[i];
+      for (const prop of copiedProperties()) {
         if (prop.startsWith('border') || prop.startsWith('background')) values.set(prop, cs.getPropertyValue(prop));
       }
       probe.remove();
@@ -759,8 +798,7 @@
 
     const span = document.createElement('span');
     let css = '';
-    for (let i = 0; i < cs.length; i++) {
-      const prop = cs[i];
+    for (const prop of copiedProperties()) {
       css += `${prop}:${cs.getPropertyValue(prop)};`;
     }
     span.style.cssText = css;
@@ -1260,8 +1298,14 @@
     highlightRoots = new Set();
   }
 
-  function spawnClones() {
+  function clearSpawnCaches() {
+    overlapCache = new Map();
+    parentCache = new Map();
     scaleCache = new Map();
+  }
+
+  function spawnClones() {
+    clearSpawnCaches();
     const selected = selectElements()
       .map(({ el, kind, order }) => ({ el, kind, order, rect: kind === 'shell' ? el.getBoundingClientRect() : visualRect(el) }))
       // Smallest first -- when capped, keep granular pieces over big chunks
@@ -1283,6 +1327,7 @@
       planned.push({ el, kind, order, pieces, anchor: el.getBoundingClientRect() });
       count += pieces.length;
     }
+    clearSpawnCaches(); // phase 2 changes what they describe
 
     // Phase 2, writes. Attach in flat-tree order so stacking matches the page:
     // a shell comes before (under) the pieces that were inside it.
