@@ -41,18 +41,3 @@
 .physics-canvas:active {
   cursor: grabbing;
 }
-
-/* Pseudo-elements are synthesized as real spans on the clone; suppress the
-   stylesheet-driven originals so they don't render twice. Scoped to the
-   overlay so we never touch the live page. */
-.physics-overlay [data-physics-pseudo-frozen]::before,
-.physics-overlay [data-physics-pseudo-frozen]::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* Disable selection while physics is active so dragging doesn't select text */
-body.physics-mode {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-}

@@ -9,6 +9,13 @@
 
   const CONFIG = {
     MAX_PHYSICS_BODIES: 400,
+    // Building pieces stops after this long, so a very dense page doesn't
+    // hold up turning physics on; what's left stays put on the page, like
+    // anything over MAX_PHYSICS_BODIES. A slower device builds fewer pieces
+    // in the same time. Ordinary pages build well within it (Wikipedia, GitHub
+    // and YouTube in under 170 ms on a desktop, and still within it at a
+    // quarter of the speed).
+    BUILD_BUDGET_MS: 500,
     // Minimum size for elements thrown whole; text lines only need MIN_LINE_SIZE
     MIN_ELEMENT_SIZE: 20,
     MIN_LINE_SIZE: 4,
@@ -83,7 +90,7 @@
     ]
   };
 
-  let engine, runner, world, mouseConstraint, canvas, overlay, frameId;
+  let engine, runner, world, mouseConstraint, canvas, overlay, pieceRoot, frameId;
   let walls = [];
   let items = []; // { clone, body, w, h, fx, fy, homeX, homeY, el, anchor }
   let ghostPairs = []; // [bodyA, bodyB] that ignore each other until apart
@@ -200,6 +207,15 @@
     }
   }
 
+  // Pseudo-elements are synthesized as real spans on the clone; suppress any
+  // the browser itself would add (a <q>'s quotes) so they don't render twice.
+  const PIECE_CSS = `
+    [data-physics-pseudo-frozen]::before,
+    [data-physics-pseudo-frozen]::after {
+      display: none !important;
+      content: none !important;
+    }`;
+
   function initPhysics() {
     viewport = viewportSize();
     engine = Matter.Engine.create();
@@ -214,6 +230,13 @@
     overlay.className = 'physics-overlay';
     overlay.inert = true; // keeps cloned links/inputs out of the tab order
     document.documentElement.appendChild(overlay);
+    // The pieces live in the overlay's shadow root, out of reach of the page:
+    // its CSS doesn't match them, and its scripts watching the DOM (component
+    // frameworks binding data-action and the like) don't see them arrive.
+    pieceRoot = overlay.attachShadow({ mode: 'open' });
+    const style = document.createElement('style');
+    style.textContent = PIECE_CSS;
+    pieceRoot.appendChild(style);
 
     // Transparent, full-viewport canvas on top -- Matter MouseConstraint reads
     // mouse events from here, hit-tests bodies, and handles dragging.
@@ -236,7 +259,7 @@
     // A grabbed piece comes to the front
     Matter.Events.on(mouseConstraint, 'startdrag', ({ body }) => {
       const item = items.find(i => i.body === body);
-      if (item) overlay.appendChild(item.clone);
+      if (item) pieceRoot.appendChild(item.clone);
     });
 
     // Matter only looks for a body to grab on its next step, at wherever the
@@ -254,7 +277,7 @@
     if (mouseConstraint.body) return;
     const hits = new Set(Matter.Query.point(items.map(i => i.body), mouse.position));
     let item = null;
-    for (const clone of overlay.children) {
+    for (const clone of pieceRoot.children) {
       const candidate = items.find(i => i.clone === clone);
       if (candidate && hits.has(candidate.body)) item = candidate;
     }
@@ -386,12 +409,109 @@
 
     const cs = window.getComputedStyle(el);
     if (!isShown(cs)) return false;
-    if (splittable) return true;
+    if (splittable) {
+      // Text clipped away entirely (a visually hidden heading: 1px box,
+      // overflow hidden, clip-path) still measures at full size word by word
+      const visible = intersect(el.getBoundingClientRect(), clipRegion(el, true));
+      return visible.right - visible.left >= 1 && visible.bottom - visible.top >= 1;
+    }
     if (isVisuallyEmpty(el, cs)) return false;
 
     const rect = visualRect(el);
-    if (rect.width < CONFIG.MIN_ELEMENT_SIZE || rect.height < CONFIG.MIN_ELEMENT_SIZE) return false;
+    const visible = intersect(rect, clipRegion(el));
+    // Media and form controls go down to line size: a 16px icon left behind
+    // in a button would be covered by the button's thrown shell
+    const min = CONFIG.ATOM_TAGS.has(el.localName) ? CONFIG.MIN_LINE_SIZE : CONFIG.MIN_ELEMENT_SIZE;
+    if (visible.right - visible.left < min || visible.bottom - visible.top < min) return false;
     return !isOversized(rect);
+  }
+
+  // Where an element is visible: what ancestors' overflow, clip-path: inset()
+  // and clip: rect() leave of the page, as a { left, top, right, bottom }
+  // rect (unbounded when nothing clips). With `content`, the element's own
+  // clipping counts too, for its text. Absolutely positioned content escapes
+  // the overflow of ancestors between it and its containing block, fixed
+  // content all of it; clip-path clips everything inside. <html> and <body>
+  // are left out: their overflow applies to the viewport. Shapes other than
+  // inset() are ignored. A mistake only leaves content on the page unthrown.
+  const UNCLIPPED = { left: -Infinity, top: -Infinity, right: Infinity, bottom: Infinity };
+  let clipCache = new Map(); // `${mode}` -> element -> rect, reset each spawn
+
+  function clipRegion(el, content = false) {
+    const cs = window.getComputedStyle(el);
+    const outer = regionWithin(composedParent(el), cs.position === 'fixed' ? 'fixed' :
+      cs.position === 'absolute' ? 'absolute' : 'flow');
+    // Its own clip-path clips its box too; its overflow only its contents
+    return intersect(outer, ownClip(el, cs, content ? 'flow' : 'self'));
+  }
+
+  // The region `mode` content inside `el` is visible in: 'flow' for in-flow
+  // content, 'absolute' / 'fixed' for positioned content escaping overflow
+  function regionWithin(el, mode) {
+    if (!el || el === document.body || el === document.documentElement) return UNCLIPPED;
+    let cache = clipCache.get(mode);
+    if (!cache) clipCache.set(mode, cache = new Map());
+    let region = cache.get(el);
+    if (region) return region;
+
+    const cs = window.getComputedStyle(el);
+    // An absolutely positioned descendant stops escaping at its containing block
+    const escapes = mode === 'fixed' || (mode === 'absolute' && cs.position === 'static');
+    const own = ownClip(el, cs, escapes ? mode : 'flow');
+    const parentMode = escapes ? mode :
+      cs.position === 'fixed' ? 'fixed' : cs.position === 'absolute' ? 'absolute' : 'flow';
+    region = intersect(own, regionWithin(composedParent(el), parentMode));
+    cache.set(el, region);
+    return region;
+  }
+
+  // What `el` itself clips to. Overflow only clips in-flow contents ('flow');
+  // its own box ('self') and positioned content escaping the overflow are
+  // still clipped by clip-path and clip.
+  function ownClip(el, cs, mode) {
+    let region = UNCLIPPED;
+    const box = el.getBoundingClientRect();
+    if (mode === 'flow' && cs.display !== 'inline' && cs.display !== 'contents') {
+      // The padding box (inside the borders, without scrollbars)
+      const left = box.left + el.clientLeft;
+      const top = box.top + el.clientTop;
+      if (cs.overflowX !== 'visible') region = { ...region, left, right: left + el.clientWidth };
+      if (cs.overflowY !== 'visible') region = { ...region, top, bottom: top + el.clientHeight };
+    }
+    const inset = /^inset\(([^)]*)\)/.exec(cs.clipPath);
+    if (inset) {
+      const lengths = inset[1].split(/\s+round\s/)[0].trim().split(/\s+/);
+      if (lengths.every(v => /^-?[\d.]+(px|%)$/.test(v))) {
+        const [t, r = t, b = t, l = r] = lengths;
+        const of = (v, size) => v.endsWith('%') ? parseFloat(v) / 100 * size : parseFloat(v);
+        region = intersect(region, {
+          left: box.left + of(l, box.width),
+          top: box.top + of(t, box.height),
+          right: box.right - of(r, box.width),
+          bottom: box.bottom - of(b, box.height)
+        });
+      }
+    }
+    const rect = /^rect\(([^)]*)\)/.exec(cs.clip);
+    if (rect && (cs.position === 'absolute' || cs.position === 'fixed')) {
+      const [t, r, b, l] = rect[1].split(/[\s,]+/).map(v => v === 'auto' ? null : parseFloat(v));
+      region = intersect(region, {
+        left: box.left + (l ?? 0),
+        top: box.top + (t ?? 0),
+        right: box.left + (r ?? box.width),
+        bottom: box.top + (b ?? box.height)
+      });
+    }
+    return region;
+  }
+
+  function intersect(a, b) {
+    return {
+      left: Math.max(a.left, b.left),
+      top: Math.max(a.top, b.top),
+      right: Math.min(a.right, b.right),
+      bottom: Math.min(a.bottom, b.bottom)
+    };
   }
 
   // Cheap first filter: most of a page is off-screen, and a rect read is far
@@ -587,10 +707,13 @@
       if (!isShown(cs) || isPlainBox(cs)) continue;
 
       const rect = el.getBoundingClientRect();
-      if (isOversized(rect) || Math.max(rect.width, rect.height) < CONFIG.MIN_ELEMENT_SIZE) continue;
+      const visible = intersect(rect, clipRegion(el));
+      const w = visible.right - visible.left;
+      const h = visible.bottom - visible.top;
+      if (isOversized(rect) || Math.max(w, h) < CONFIG.MIN_ELEMENT_SIZE) continue;
       if (claimedAncestors.has(el)) {
         pick(el, 'shell');
-      } else if (rect.width >= CONFIG.MIN_LINE_SIZE && rect.height >= CONFIG.MIN_LINE_SIZE) {
+      } else if (w >= CONFIG.MIN_LINE_SIZE && h >= CONFIG.MIN_LINE_SIZE) {
         claim(el, 'whole');
       }
     }
@@ -762,7 +885,7 @@
       if (!probeRoot) {
         const host = document.createElement('div');
         host.style.cssText = 'position:absolute;visibility:hidden;';
-        overlay.appendChild(host);
+        pieceRoot.appendChild(host);
         probeRoot = host.attachShadow({ mode: 'closed' });
       }
       const probe = document.createElement(source.localName);
@@ -787,12 +910,13 @@
   }
 
   // Reify a ::before or ::after pseudo-element as a real span child of the clone.
-  // Returns true if a span was inserted, false if there's no meaningful pseudo.
+  // Returns true if a span was inserted, false if there's no pseudo. Empty
+  // content counts: it's how CSS draws carets and icons (a background or mask
+  // on `content: ""`), and its box can take up room in the layout.
   function synthesizePseudo(source, clone, pseudo) {
     const cs = window.getComputedStyle(source, pseudo);
     const rawContent = cs.getPropertyValue('content');
-    if (!rawContent || rawContent === 'none' || rawContent === 'normal' ||
-        rawContent === '""' || rawContent === "''") {
+    if (!rawContent || rawContent === 'none' || rawContent === 'normal' || cs.display === 'none') {
       return false;
     }
 
@@ -900,6 +1024,9 @@
   // clone to the layout box would let text reflow across the float's space.
   function visualRect(el) {
     const rect = el.getBoundingClientRect();
+    // Media keeps its box: an <svg>'s contents are its shapes, and narrowing
+    // it to them would shrink the drawing to fit its viewBox
+    if (CONFIG.ATOM_TAGS.has(el.localName) || el instanceof SVGElement) return rect;
     const range = document.createRange();
     range.selectNodeContents(el);
     const content = range.getBoundingClientRect();
@@ -1083,7 +1210,7 @@
   // an element whose children are thrown separately).
   function splitLines(block, directOnly = false) {
     const { width: vw, height: vh } = viewport;
-    const tokens = [];
+    let tokens = [];
     const range = document.createRange();
     if (directOnly) {
       for (const child of composedChildren(block)) {
@@ -1092,6 +1219,15 @@
     } else {
       collectTokens(block, tokens, range, vh);
     }
+    // Words clipping hides stay hidden (with the block): text overflowing a
+    // visually hidden heading or a collapsed box, a slide scrolled out of a
+    // carousel. Inline atoms may be positioned out of the block's overflow,
+    // so they're checked on their own.
+    const textRegion = clipRegion(block, true);
+    tokens = tokens.filter(({ atom, rect }) => {
+      const visible = intersect(rect, atom ? clipRegion(atom) : textRegion);
+      return visible.right - visible.left >= 1 && visible.bottom - visible.top >= 1;
+    });
 
     const cs = window.getComputedStyle(block);
     const lineHeight = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.2;
@@ -1301,6 +1437,7 @@
   function clearSpawnCaches() {
     overlapCache = new Map();
     parentCache = new Map();
+    clipCache = new Map();
     scaleCache = new Map();
   }
 
@@ -1316,8 +1453,12 @@
     // make the next getComputedStyle recalculate the whole page.
     const planned = [];
     let count = 0;
+    // Smallest first, so the budget leaves the biggest pieces behind, and a
+    // shell (built after the smaller contents it frames) is never thrown
+    // over contents that stayed on the page
+    const deadline = performance.now() + CONFIG.BUILD_BUDGET_MS;
     for (const { el, kind, order, rect } of selected) {
-      if (count >= CONFIG.MAX_PHYSICS_BODIES) break;
+      if (count >= CONFIG.MAX_PHYSICS_BODIES || performance.now() > deadline) break;
       const pieces = piecesFor(el, kind, rect);
       // All of an element's pieces or none: hiding the original with only
       // some of its lines spawned would make the rest vanish.
@@ -1336,7 +1477,7 @@
     for (const { el, kind, pieces, anchor } of planned) {
       hideOriginal(el, kind, hiddenText);
       for (const { node, rect: r, pad = 0, scale = { x: 1, y: 1 } } of pieces) {
-        overlay.appendChild(node);
+        pieceRoot.appendChild(node);
         const body = Matter.Bodies.rectangle(
           r.left + r.width / 2,
           r.top + r.height / 2,
@@ -1462,7 +1603,10 @@
       }
       renderFrame();
       showRestoreButton();
-      document.body.classList.add('physics-mode');
+      // Dragging pieces mustn't select page text. Cancelled here rather than
+      // with user-select on <body>: Chrome restyles every element on the page
+      // when that changes (700 ms on Wikipedia on a slow CPU).
+      document.addEventListener('selectstart', preventDefault, true);
       document.addEventListener('contextmenu', preventDefault, true);
       document.addEventListener('keydown', onKeyDown, true);
     } else {
@@ -1541,10 +1685,9 @@
     canvas?.remove();
     if (runner) Matter.Runner.stop(runner);
     if (engine) Matter.Engine.clear(engine);
-    engine = runner = world = mouseConstraint = overlay = canvas = probeRoot = null;
+    engine = runner = world = mouseConstraint = overlay = pieceRoot = canvas = probeRoot = null;
 
-    document.body.classList.remove('physics-mode');
-    if (!document.body.classList.length) document.body.removeAttribute('class');
+    document.removeEventListener('selectstart', preventDefault, true);
     document.removeEventListener('contextmenu', preventDefault, true);
     document.removeEventListener('keydown', onKeyDown, true);
   }

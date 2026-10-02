@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hidden content fixture</title>
+<style>
+  body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; color: #222; }
+  /* The common ways sites hide text from sight but not from screen readers */
+  .sr-clip-path { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .sr-clip-path-edge { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(0 100% 100% 0); }
+  .sr-clip { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+  .toolbar { display: flex; gap: 12px; margin-bottom: 24px; }
+  button {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
+    font: inherit; color: #1f2328; background: #f6f8fa; border: 1px solid #d1d9e0; border-radius: 6px;
+  }
+  .collapsed { height: 0; overflow: hidden; }
+  .carousel { width: 320px; overflow: hidden; border: 1px solid #ccc; }
+  .track { display: flex; width: 960px; }
+  .slide { width: 320px; padding: 12px; box-sizing: border-box; }
+  /* A caret drawn on empty content, in a button that centers what it holds */
+  .dropdown { width: 180px; justify-content: center; }
+  .dropdown::after {
+    content: ""; display: block; width: 12px; height: 12px; margin-left: 8px;
+    background: linear-gradient(135deg, transparent 50%, #36c 50%);
+  }
+</style>
+</head>
+<body>
+  <h2 class="sr-clip-path">Hidden by clip-path</h2>
+  <h2 class="sr-clip-path-edge">Hidden at the edge</h2>
+  <h2 class="sr-clip">Hidden by clip</h2>
+  <h3 class="sr-clip-path"><span>Hidden inside a span</span></h3>
+
+  <div class="toolbar">
+    <!-- Small icons in styled buttons: left on the page, they'd be covered by the button's shell -->
+    <button type="button">
+      <span><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#c36"/></svg></span>
+      <span><div>main</div></span>
+      <span><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4z" fill="#555"/></svg></span>
+    </button>
+    <button type="button">
+      <span><svg width="16" height="16" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="3" fill="#36c"/></svg></span>
+      <span><div>Code</div></span>
+    </button>
+    <button type="button" class="dropdown"><span class="dropdown-text">332 languages</span></button>
+  </div>
+
+  <p>Visible paragraph that should be thrown line by line as usual.</p>
+  <div class="collapsed"><p>Inside a collapsed section</p></div>
+
+  <div class="carousel">
+    <div class="track">
+      <div class="slide"><p>First slide, showing</p></div>
+      <div class="slide"><p>Second slide, scrolled away</p></div>
+      <div class="slide"><p>Third slide, scrolled away</p></div>
+    </div>
+  </div>
+</body>
+</html>

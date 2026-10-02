@@ -29,7 +29,7 @@ One build serves every language: the browser picks `_locales/<language>/messages
 
 ### Clone, don't move
 
-Originals are never moved. Everything thrown is a clone in a fixed overlay (appended to `<html>`, not `<body>`); the originals are hidden without shifting layout, in one of three ways depending on the piece kind:
+Originals are never moved. Everything thrown is a clone in a fixed overlay (appended to `<html>`, not `<body>`), inside the overlay's open shadow root (`pieceRoot`), so the page's CSS doesn't match the clones and its scripts watching the DOM don't see them arrive (GitHub's component framework used to scan every clone for `data-action` and the like); the originals are hidden without shifting layout, in one of three ways depending on the piece kind:
 
 - **whole / split** -- inline `visibility: hidden !important`.
 - **shell** -- inline `!important` styles that strip only its box painting (background, border color, shadow); its children are unaffected.
@@ -40,11 +40,11 @@ Hiding uses inline styles rather than classes because the extension stylesheet c
 Cloning details (`makeClone` / `freezeClone`):
 
 - `freezeClone` builds the copy node by node from the composed tree: shadow content is flattened in, `<slot>`s are replaced by their assigned nodes, and custom elements / shadow hosts become plain `div`s so the page's component code never runs on a copy. `display: none` subtrees are skipped.
-- Computed styles are copied onto every node of the clone so it looks right outside its original selector context; `::before`/`::after` are reified as real spans. Custom properties (`--*`) are skipped: the properties that use them are copied with `var()` already resolved, and design systems define thousands (on YouTube, about 50 KB of inline CSS per clone node). Live form state (select index, input value/checked) is copied too.
+- Computed styles are copied onto every node of the clone so it looks right outside its original selector context; `::before`/`::after` are reified as real spans, including empty `content: ""` ones (carets and icons drawn with a background or mask; their box also takes up room, e.g. in a button that centers its contents). Custom properties (`--*`) are skipped: the properties that use them are copied with `var()` already resolved, and design systems define thousands (on YouTube, about 50 KB of inline CSS per clone node). Live form state (select index, input value/checked) is copied too.
 - `pin()` overrides `transition`, `animation`, margins and min/max sizes; `markPiece()` also resets `translate/rotate/scale` on top-level pieces only (nested icons keep their rotation).
 - `iframe`/`embed`/`object` become placeholder boxes; `video`/`canvas` become canvas snapshots (cloning them would reload/restart/blank them).
 - `id` and `name` attributes are stripped (duplicate ids; cloned radios would uncheck originals).
-- Unstyled elements are sized by `visualRect()` -- the extent of their text lines, not the layout box -- so a paragraph beside a float doesn't reflow wider once detached. Flex and grid containers keep their full box (their items would move in a narrower copy).
+- Unstyled elements are sized by `visualRect()` -- the extent of their text lines, not the layout box -- so a paragraph beside a float doesn't reflow wider once detached. Flex and grid containers keep their full box (their items would move in a narrower copy), and so do media and SVG (an icon narrowed to its shapes would shrink to fit its `viewBox`).
 - Content drawn scaled (its own or an ancestor's `scale`/`transform`, from `screenScale()`) is built in its own unscaled units and scaled back in the piece transform (`pieceTransform` appends `scale()`), since measured rects are on screen but copied styles aren't. Rotation isn't carried over.
 
 ### Line splitting (`splitLines`)
@@ -65,7 +65,7 @@ Returns `{ el, kind, order }` picks (`order` is the flat-tree position, used for
 4. **Styled boxes** nothing took: containers of claimed pieces become empty **shells** (the box alone); others are thrown whole.
 5. **Loose text**: text nodes sitting directly in an unclaimed element, split into lines (needs the Highlight API).
 
-Every candidate is first filtered by `overlapsViewport` (a cheap rect read) before any computed-style check. Its answers and `composedParent`'s are cached for the spawn's read phase (`clearSpawnCaches`), since every pass asks again for the same elements and ancestors. Pieces may be partly off-screen; elements larger than 90% of the viewport are treated as layout and skipped. Capped at `MAX_PHYSICS_BODIES`, smallest first, all-or-nothing per element.
+Every candidate is first filtered by `overlapsViewport` (a cheap rect read) before any computed-style check. Its answers and `composedParent`'s are cached for the spawn's read phase (`clearSpawnCaches`), since every pass asks again for the same elements and ancestors. Content clipped out of sight is skipped (visually hidden headings, collapsed boxes, carousel slides scrolled away): `clipRegion` works out what ancestors' overflow, `clip-path: inset()` and `clip: rect()` leave visible, following how absolute and fixed content escapes overflow, and `splitLines` drops words outside it. Whole pieces need `MIN_ELEMENT_SIZE` visible, except media and form controls, which go down to `MIN_LINE_SIZE`: a small icon left inside a button would be covered by the button's shell. Pieces may be partly off-screen; elements larger than 90% of the viewport are treated as layout and skipped. Capped at `MAX_PHYSICS_BODIES`, smallest first, all-or-nothing per element; building also stops after `BUILD_BUDGET_MS` (500 ms), so a very dense page or a slow device doesn't hold up turning physics on. Ordinary pages build well within it; what isn't reached stays put on the page, and smallest-first means a shell is never thrown over contents that weren't.
 
 ### Spawning and the physics loop
 
@@ -74,6 +74,7 @@ Every candidate is first filtered by `overlapsViewport` (a cheap rect read) befo
 - If spawning throws or yields no pieces, activation is undone at once (`setPhysicsEnabled`): the invisible canvas would otherwise cover an untouched-looking page and swallow every click.
 - Fixed-step `Matter.Runner`; walls are thick static bodies just outside the viewport, rebuilt on resize (bodies are pulled back inside). Bodies are at least `MIN_BODY_SIZE` thick so 1px rules stay grabbable.
 - `renderFrame` writes only `transform: translate() rotate()` per clone -- no layout reads.
+- Nothing on the page itself changes style while physics is on, beyond hiding the originals: text selection is blocked by cancelling `selectstart`, not with `user-select` on `<body>`, which made Chrome restyle every element (700 ms on Wikipedia on a slow CPU).
 - Settings changes update bodies in place with `Matter.Body.set` (no rebuild, positions preserved).
 - Restoring (`glideHome`) stops the simulation and CSS-transitions every clone back to its spawn transform (rotation unwound the short way, shifted by however far its original has moved since spawn, e.g. by scrolling), then tears down; the clones match the page at home, so the swap is invisible. Instant with `prefers-reduced-motion`, a second Esc, turning physics back on mid-flight, or an orphaned script. `restoreOriginals` finishes any CSS transitions the restored styles start, so a page's `transition: all` doesn't fade boxes back in.
 
