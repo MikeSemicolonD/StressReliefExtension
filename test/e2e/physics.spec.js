@@ -77,6 +77,18 @@ test.describe('article page', () => {
     return heading;
   }
 
+  test("dragging over the page, double-clicking or Ctrl+A doesn't select its text", async ({ page, extension }) => {
+    await extension.start();
+    // From empty space, so nothing is grabbed, across the text
+    await page.mouse.move(1260, 780);
+    await page.mouse.down();
+    for (let i = 1; i <= 10; i++) await page.mouse.move(1260 - 120 * i, 780 - 70 * i);
+    await page.mouse.up();
+    await page.mouse.dblclick(200, 120);
+    await page.keyboard.press('ControlOrMeta+A');
+    expect(await page.evaluate(() => getSelection().toString())).toBe('');
+  });
+
   test('pieces can still be thrown on a heavily throttled CPU', async ({ page, extension }) => {
     const cdp = await page.context().newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
@@ -298,6 +310,48 @@ test.describe('shadow DOM page', () => {
     await extension.start();
     await extension.stop();
     expect(await snapshot()).toEqual(before);
+  });
+});
+
+test.describe('page with hidden and clipped content', () => {
+  test.beforeEach(async ({ extension }) => {
+    await extension.open('hidden.html');
+  });
+
+  test('text clipped out of sight is not thrown', async ({ extension }) => {
+    await extension.start();
+    const texts = (await extension.pieceTexts()).join('\n');
+    expect(texts).toContain('Visible paragraph');
+    expect(texts).toContain('First slide, showing');
+    for (const hidden of ['Hidden by clip-path', 'Hidden at the edge', 'Hidden by clip', 'Hidden inside a span',
+      'Inside a collapsed section', 'Second slide', 'Third slide']) {
+      expect(texts).not.toContain(hidden);
+    }
+  });
+
+  test('small icons in styled buttons are thrown, not left under the button', async ({ page, extension }) => {
+    await extension.start();
+    await expect(page.locator('.physics-overlay svg')).toHaveCount(3);
+  });
+
+  test('pieces look exactly like the page they replace', async ({ extension }) => {
+    await extension.setSettings({ hideRestoreButton: true });
+    const before = await extension.screenshot();
+    await extension.start();
+    const after = await extension.screenshot();
+    expect(await extension.diffRatio(before, after)).toBeLessThan(MAX_SPAWN_DIFF);
+  });
+
+  test('a caret drawn on empty ::after content is kept, so centered contents stay put', async ({ page, extension }) => {
+    const box = (root) => page.locator(`${root} .dropdown-text`).evaluate(el => {
+      const r = el.getBoundingClientRect();
+      return [r.left, r.top];
+    });
+    const before = await box('body');
+    await extension.start();
+    const after = await box('.physics-overlay');
+    after.forEach((v, i) => expect(Math.abs(v - before[i])).toBeLessThanOrEqual(1));
+    expect(await page.locator('.physics-overlay .dropdown > span').count()).toBe(2);
   });
 });
 

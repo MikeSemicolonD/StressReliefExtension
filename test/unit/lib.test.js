@@ -59,10 +59,32 @@ test('shake: a pause mid-swing slows it below minShakeSpeed', () => {
   // 3 quick legs (2 swings); the reversal at 500ms makes the 3rd swing
   assert.deepEqual(shakeWindow(detector, { swings: 3 }), []);
   assert.equal(detector.move(-30, 0, 500), false);
-  // The 4th leg stops for 400ms: 60px over 450ms (~133 px/s), so reversing
-  // it doesn't make the 4th swing
-  assert.equal(detector.move(-30, 0, 900), false);
-  assert.equal(detector.move(60, 0, 950), false);
+  // The 4th leg stops for 200ms (too short to read as letting go): 60px
+  // over 250ms (240 px/s), so reversing it doesn't make the 4th swing
+  assert.equal(detector.move(-30, 0, 700), false);
+  assert.equal(detector.move(60, 0, 750), false);
+});
+
+test('shake: letting go of the window clears the swings so far', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  // 3 swings, a 300ms rest, then 2 more legs: 4 reversals within
+  // timeWindow, but in two separate drags
+  assert.deepEqual(shakeWindow(detector, { swings: 4 }), []);
+  assert.deepEqual(shakeWindow(detector, { swings: 2, start: 900 }), []);
+});
+
+test('shake: brief stalls at the turns still count', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  // Each leg takes 100ms, then the window sits still for 100ms at the turn
+  let t = 0;
+  let hits = 0;
+  for (let i = 0; i < 5; i++) {
+    const d = i % 2 ? -30 : 30;
+    hits += detector.move(d, 0, t += 50) ? 1 : 0;
+    hits += detector.move(d, 0, t += 50) ? 1 : 0;
+    t += 100;
+  }
+  assert.equal(hits, 1);
 });
 
 test('shake: swings spread beyond timeWindow do not add up', () => {
@@ -76,6 +98,43 @@ test('shake: dragging the window in one direction is not a shake', () => {
   let hits = 0;
   for (let t = 50; t <= 2000; t += 50) hits += detector.move(30, 0, t) ? 1 : 0;
   assert.equal(hits, 0);
+});
+
+test('shake: hand jitter while dragging the window is not a shake', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  // A quick drag to the right that twitches back a few px every 150ms
+  let hits = 0;
+  for (let t = 50; t <= 2000; t += 50) {
+    const d = t % 150 ? 30 : -3;
+    hits += detector.move(d, 0, t) ? 1 : 0;
+  }
+  assert.equal(hits, 0);
+});
+
+test('shake: a wandering drag does not add up swings across axes', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  // Right, down, left, up, right: two reversals on each axis, quickly
+  const path = [[120, 0], [0, 120], [-120, 0], [0, -120], [120, 0], [0, 120]];
+  let t = 0;
+  let hits = 0;
+  for (const [dx, dy] of path) {
+    for (let j = 0; j < 3; j++) {
+      t += 50;
+      hits += detector.move(dx / 3, dy / 3, t) ? 1 : 0;
+    }
+  }
+  assert.equal(hits, 0);
+});
+
+test('shake: diagonal shaking counts', () => {
+  const detector = createShakeDetector(() => SETTINGS);
+  let t = 0;
+  let hits = 0;
+  for (let i = 0; i < 5; i++) {
+    const d = i % 2 ? -20 : 20;
+    for (let j = 0; j < 3; j++) hits += detector.move(d, d, t += 50) ? 1 : 0;
+  }
+  assert.equal(hits, 1);
 });
 
 test('shake: a long pause starts a fresh leg', () => {
