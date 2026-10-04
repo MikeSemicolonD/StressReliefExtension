@@ -7,44 +7,65 @@
   // "swing" is a run of movement in one direction, at least `shakeDistance`
   // long and averaging at least `minShakeSpeed` px/s (so slowly moving the
   // window around doesn't count), that then reverses. `requiredShakes` swings
-  // within `timeWindow` ms make a shake. `getSettings` is read on every call
-  // so changes apply live.
+  // along the same axis within `timeWindow` ms make a shake. `getSettings` is
+  // read on every call so changes apply live.
+  const REVERSAL_FRACTION = 0.5;
+  // The page can't see the mouse button being released on the title bar, so
+  // a rest this long (ms) is taken as letting go of the window: the next
+  // drag starts counting from zero. A shake keeps the window moving, even
+  // through its turns, far more often than this.
+  const RELEASE_PAUSE_MS = 250;
   function createShakeDetector(getSettings) {
-    const axes = {
-      x: { dir: 0, travel: 0, legStart: 0, lastMove: -Infinity },
-      y: { dir: 0, travel: 0, legStart: 0, lastMove: -Infinity }
-    };
-    let swings = [];
+    // Each axis follows the window's position along it. A leg runs from one
+    // turning point (`start`) to the furthest point reached since (`peak`).
+    const newAxis = () => ({
+      dir: 0, pos: 0, start: 0, startTime: 0, peak: 0, peakTime: 0,
+      lastMove: -Infinity, swings: []
+    });
+    let axes = [newAxis(), newAxis()];
+    let lastMove = -Infinity;
     let cooldownUntil = -Infinity;
 
     // Returns true when this movement ends a long and fast enough leg by
-    // reversing
+    // reversing. A reversal only counts once the window has come back
+    // REVERSAL_FRACTION of shakeDistance from the peak: a hand dragging the
+    // window twitches back a few px now and then, and each twitch would
+    // otherwise cut one drag into several "swings".
     function track(axis, d, now, s) {
       if (!d) return false;
       const prev = axis.lastMove;
       axis.lastMove = now;
-      // A long pause starts a fresh leg rather than extending a stale one
-      const fresh = now - prev > s.timeWindow;
-      if (fresh) {
-        axis.dir = 0;
-        axis.travel = 0;
-      }
-
-      const dir = Math.sign(d);
-      if (dir === axis.dir) {
-        axis.travel += Math.abs(d);
+      const from = axis.pos;
+      axis.pos += d;
+      // A long pause starts a fresh leg rather than extending a stale one.
+      // The leg is timed from now, since the previous poll is stale (missing
+      // its first interval, which only makes it read a little fast).
+      if (axis.dir === 0 || now - prev > s.timeWindow) {
+        axis.dir = Math.sign(d);
+        axis.start = from;
+        axis.startTime = now - prev > s.timeWindow ? now : prev;
+        axis.peak = axis.pos;
+        axis.peakTime = now;
         return false;
       }
-      // The leg ended at the previous poll
-      const seconds = (prev - axis.legStart) / 1000;
-      const swung = axis.travel >= s.shakeDistance &&
-        axis.travel >= s.minShakeSpeed * seconds;
-      axis.dir = dir;
-      axis.travel = Math.abs(d);
-      // This movement happened since the previous poll, so the new leg starts
-      // there. After a pause that poll is stale, so the leg is timed from now
-      // (missing its first interval, which only makes it read a little fast).
-      axis.legStart = fresh ? now : prev;
+
+      if ((axis.pos - axis.peak) * axis.dir > 0) {
+        axis.peak = axis.pos;
+        axis.peakTime = now;
+        return false;
+      }
+      if ((axis.peak - axis.pos) * axis.dir < s.shakeDistance * REVERSAL_FRACTION) {
+        return false;
+      }
+      // The leg ended at its peak, and the next one runs from there
+      const travel = Math.abs(axis.peak - axis.start);
+      const seconds = (axis.peakTime - axis.startTime) / 1000;
+      const swung = travel >= s.shakeDistance && travel >= s.minShakeSpeed * seconds;
+      axis.dir = -axis.dir;
+      axis.start = axis.peak;
+      axis.startTime = axis.peakTime;
+      axis.peak = axis.pos;
+      axis.peakTime = now;
       return swung;
     }
 
@@ -53,27 +74,29 @@
       // Returns true when it completes a shake.
       move(dx, dy, now) {
         const s = getSettings();
-        let swung = false;
-        for (const axisSwung of [track(axes.x, dx, now, s), track(axes.y, dy, now, s)]) {
-          if (!axisSwung) continue;
-          swings = swings.filter(t => now - t <= s.timeWindow);
-          swings.push(now);
-          swung = true;
-        }
-        // Only a new swing can complete a shake: swings left over from a
-        // cooldown mustn't fire on the next small movement after it ends.
-        if (swung && swings.length >= s.requiredShakes && now >= cooldownUntil) {
-          swings = [];
-          return true;
-        }
-        return false;
+        if (now - lastMove > RELEASE_PAUSE_MS) axes = [newAxis(), newAxis()];
+        lastMove = now;
+        let shook = false;
+        [dx, dy].forEach((d, i) => {
+          const axis = axes[i];
+          if (!track(axis, d, now, s)) return;
+          // Swings are counted per axis, so a drag that wanders right, down,
+          // left and up doesn't add up to a shake
+          axis.swings = axis.swings.filter(t => now - t <= s.timeWindow);
+          axis.swings.push(now);
+          // Only a new swing can complete a shake: swings left over from a
+          // cooldown mustn't fire on the next small movement after it ends.
+          if (axis.swings.length >= s.requiredShakes && now >= cooldownUntil) shook = true;
+        });
+        if (shook) for (const axis of axes) axis.swings = [];
+        return shook;
       },
 
       // Ignore shakes until `until`, e.g. right after physics is turned off
       // so the tail of a shake doesn't turn it straight back on.
       cooldown(until) {
         cooldownUntil = until;
-        swings = [];
+        for (const axis of axes) axis.swings = [];
       }
     };
   }
