@@ -30,7 +30,8 @@ class Extension {
     await manager.goto('chrome://extensions');
     const toggle = manager.locator('extensions-item #enableToggle');
     await toggle.click();
-    await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    // Older Chromium sets aria-pressed on the toggle, newer aria-checked; both have .checked
+    await expect.poll(() => toggle.evaluate(t => t.checked)).toBe(false);
     const restarted = this.context.waitForEvent('serviceworker');
     await toggle.click();
     this.worker = await restarted;
