@@ -3,8 +3,6 @@ name: CI
 # Runs on every push to staging and on pull requests into main. Make this a
 # required status check on main so only passing changes get released.
 on:
-  push:
-    branches: [staging]
   pull_request:
     branches: [main]
 
