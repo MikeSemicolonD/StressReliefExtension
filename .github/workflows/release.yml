@@ -18,10 +18,8 @@ concurrency:
 
 jobs:
   build:
+    # Not tested again: main only takes pull requests with passing CI
     uses: ./.github/workflows/build.yml
-    with:
-      # Already tested: main only takes pull requests with passing CI
-      run-tests: false
 
   check:
     needs: build

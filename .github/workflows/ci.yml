@@ -1,11 +1,16 @@
 name: CI
 
-# Runs on every push to staging and on pull requests into main. Make this a
-# required status check on main so only passing changes get released.
+# Runs the tests on pull requests into main, and packages and lints the
+# extension alongside, so a lint error or a broken package shows here rather
+# than after merging. Make both required status checks on main so only
+# passing changes get released.
 on:
   pull_request:
     branches: [main]
 
 jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
   build:
     uses: ./.github/workflows/build.yml
