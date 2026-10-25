@@ -42,6 +42,11 @@
     // rather than requestAnimationFrame, which would keep every idle tab
     // rendering 60 frames a second.
     POSITION_POLL_MS: 50,
+    // Window movement isn't counted toward a shake until the window's size
+    // has held this long: snapping or maximizing it (or dragging its left or
+    // top edge) moves it too, in jumps that read as very fast swings. Longer
+    // than the detector's RELEASE_PAUSE_MS, so it then counts from zero.
+    RESIZE_SETTLE_MS: 500,
 
     // Cards: atomic containers thrown as one unit along with everything inside.
     CARD_CANDIDATE_SELECTOR: 'article, div, li, section, a',
@@ -828,7 +833,11 @@
       snap.width = source.videoWidth || source.width || source.clientWidth;
       snap.height = source.videoHeight || source.height || source.clientHeight;
       try {
-        snap.getContext('2d').drawImage(source, 0, 0, snap.width, snap.height);
+        const ctx = snap.getContext('2d');
+        // A video playing in picture-in-picture shows on the page as Chrome's
+        // black placeholder; its frame would make the pop-out look closed
+        if (source.getRootNode().pictureInPictureElement === source) ctx.fillRect(0, 0, snap.width, snap.height);
+        else ctx.drawImage(source, 0, 0, snap.width, snap.height);
       } catch (e) {
         // Not ready yet or zero-sized -- a blank box is fine
       }
@@ -1733,6 +1742,8 @@
   const shakeDetector = PhysicsLib.createShakeDetector(() => settings);
   let lastX = window.screenX;
   let lastY = window.screenY;
+  let lastSize = `${window.outerWidth}x${window.outerHeight}`;
+  let resizedAt = -Infinity;
 
   function pollWindowPosition() {
     if (!chrome.runtime?.id) {
@@ -1744,9 +1755,15 @@
     if (!dx && !dy) return;
     lastX += dx;
     lastY += dy;
+    const now = performance.now();
+    const size = `${window.outerWidth}x${window.outerHeight}`;
+    if (size !== lastSize) {
+      lastSize = size;
+      resizedAt = now;
+    }
     if (isPhysicsEnabled) {
       slosh(dx, dy);
-    } else if (shakeDetector.move(dx, dy, performance.now())) {
+    } else if (now - resizedAt >= CONFIG.RESIZE_SETTLE_MS && shakeDetector.move(dx, dy, now)) {
       setPhysicsEnabled(true);
     }
   }

@@ -418,6 +418,77 @@ test.describe('slow connection', () => {
   });
 });
 
+test.describe('shaking the window', () => {
+  test.beforeEach(async ({ extension }) => {
+    await extension.open('article.html');
+  });
+
+  // Moves the browser window back and forth sideways: 6 legs of 120px, each
+  // in 3 steps 50ms apart. With `resizing`, the window's width changes at
+  // every step too, as when Windows snaps a window to maximized or the user
+  // drags its left edge.
+  async function shake(page, { resizing = false } = {}) {
+    const cdp = await page.context().newCDPSession(page);
+    const { windowId } = await cdp.send('Browser.getWindowForTarget');
+    let left = 100;
+    await cdp.send('Browser.setWindowBounds', { windowId, bounds: { left, top: 100, width: 1100, height: 700 } });
+    await page.waitForTimeout(1000);
+    for (let leg = 0; leg < 6; leg++) {
+      for (let step = 0; step < 3; step++) {
+        left += leg % 2 ? -40 : 40;
+        const width = resizing && step % 2 ? 1000 : 1100;
+        await cdp.send('Browser.setWindowBounds', { windowId, bounds: { left, top: 100, width, height: 700 } });
+        await page.waitForTimeout(50);
+      }
+    }
+  }
+
+  test('a quick shake turns physics on', async ({ page, extension }) => {
+    await shake(page);
+    await expect.poll(() => extension.message({ action: 'getPhysicsState' })).toMatchObject({ isEnabled: true });
+  });
+
+  test('the window jumping as it resizes or snaps is not a shake', async ({ page, extension }) => {
+    await shake(page, { resizing: true });
+    await page.waitForTimeout(500);
+    expect(await extension.message({ action: 'getPhysicsState' })).toMatchObject({ isEnabled: false });
+  });
+});
+
+test.describe('video page', () => {
+  test.beforeEach(async ({ page, extension }) => {
+    await extension.open('video.html');
+    await page.waitForFunction(() => document.querySelector('video').readyState >= 2);
+  });
+
+  // Average colour of the thrown copy of the video
+  const pieceColor = (page) => page.locator('canvas.physics-clone').evaluate(c => {
+    const { data } = c.getContext('2d').getImageData(0, 0, c.width, c.height);
+    const sum = [0, 0, 0];
+    for (let i = 0; i < data.length; i += 4) for (let k = 0; k < 3; k++) sum[k] += data[i + k];
+    return sum.map(v => Math.round(v / (data.length / 4)));
+  });
+
+  test('a video is thrown showing its current frame', async ({ page, extension }) => {
+    await extension.start();
+    const [r, g, b] = await pieceColor(page);
+    expect(r).toBeGreaterThan(200);
+    expect(g + b).toBeLessThan(60);
+  });
+
+  test('a video playing in picture-in-picture is thrown as its black placeholder and stays popped out', async ({ page, extension }) => {
+    // requestPictureInPicture needs a user gesture
+    await page.evaluate(() => document.addEventListener('keydown',
+      () => document.querySelector('video').requestPictureInPicture(), { once: true }));
+    await page.keyboard.press('p');
+    await page.waitForFunction(() => document.pictureInPictureElement);
+    await extension.start();
+    expect(await pieceColor(page)).toEqual([0, 0, 0]);
+    await extension.stop();
+    expect(await page.evaluate(() => !!document.pictureInPictureElement)).toBe(true);
+  });
+});
+
 test.describe('scaled page', () => {
   test.beforeEach(async ({ extension }) => {
     await extension.open('scaled.html');
