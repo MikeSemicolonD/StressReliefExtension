@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Video</title></head>
+<body>
+  <p>A video, playing a solid red picture.</p>
+  <video width="320" height="180" muted></video>
+  <script>
+    // A canvas stream rather than a file: the fixtures have no network
+    const canvas = document.createElement('canvas');
+    canvas.width = 320;
+    canvas.height = 180;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'red';
+    setInterval(() => ctx.fillRect(0, 0, 320, 180), 30);
+    const video = document.querySelector('video');
+    video.srcObject = canvas.captureStream();
+    video.play();
+  </script>
+</body>
+</html>
